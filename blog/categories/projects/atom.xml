@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Projects | Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/blog/categories/projects/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-02-24T00:19:01+05:30</updated>
+  <updated>2013-02-24T03:29:49+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -18,40 +18,48 @@
     <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
     <updated>2010-02-23T05:48:22+05:30</updated>
     <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
-    <content type="html"><![CDATA[<p><strong><em>tested with :</em></strong></p>
+    <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
-<p>i) ubuntu 8.10</p>
+<ol>
+<li><p>ubuntu 8.10</p></li>
+<li><p>gnokii</p></li>
+<li><p>mysql 5</p></li>
+<li><p>lg kp 199</p></li>
+</ol>
 
-<p>ii)gnokii</p>
 
-<p>iii) mysql 5</p>
+<h1><em><strong>Functionalities :</strong></em></h1>
 
-<p>iv) lg kp 199</p>
+<ol>
+<li><p>just message "<strong>lock</strong>" to your server mobile to lock the screen</p></li>
+<li><p>  "<strong>unlock</strong>" to release the screen</p></li>
+<li><p>you can even change the pidgin status by messaging "<strong>status:your status here</strong> "</p></li>
+</ol>
 
-<p><em><strong>functionalities :</strong></em></p>
 
-<p>i) just message "<strong>lock</strong>" to your server mobile to lock the screen</p>
+<p>4.  execute any shell commands that take return value  below 160  characters</p>
 
-<p>ii)   "<strong>unlock</strong>" to release the screen</p>
+<h1><em><strong>Procedure:</strong></em></h1>
 
-<p>iii) you can even change the pidgin status by messaging "<strong>status:your status here</strong> "</p>
+<h2><strong><em>step 1) </em></strong></h2>
 
-<p>iv )  execute any shell commands that take return value  below 160  characters</p>
+<ul>
+<li>set the memory for sms to sim and run the smsd daemon as</li>
+</ul>
 
-<p><em><strong>procedure:</strong></em></p>
-
-<p><strong><em>step 1) </em></strong></p>
-
-<p>set the memory for sms to sim and run the smsd daemon as</p>
 
 <p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root --password=password -b SM -f /var/log/smsdaemon.log</strong></p>
 
-<p><em><strong>step 2)</strong></em></p>
+<h2><em><strong>step 2)</strong></em></h2>
 
-<p>run this python script  and minimize the shell</p>
+<ul>
+<li>run this python script  and minimize the shell</li>
+</ul>
 
-<p>_#!/usr/bin/python
-``` python</p>
+
+<p>``` python</p>
+
+<h1>!/usr/bin/python</h1>
 
 <h1>    before running this program you must configured gnokii-smsd and it must be up and running</h1>
 
@@ -61,112 +69,75 @@
 
 <h1>install python-MySQLdb  before importing this module</h1>
 
-<p>import MySQLdb</p>
+<p>import MySQLdb
+import os
+processed=1;
+while(True):
+  host="localhost"
+  user="root"
+  passwd="123456"
+  db="smsgw"</p>
 
-<h1>imported inorder to perform shell operations</h1>
+<p>  db=MySQLdb.connect(host,user,passwd,db)
+  cursor=db.cursor()
+  cursor.execute("delete from inbox where text=\"\"")
+  cursor.execute(" select number,text,id,processed from inbox where id=(select max(id) from inbox)")
+  record=cursor.fetchall()
+  for result in record:</p>
 
-<p>import os</p>
+<pre><code>word=result[1]
+number=result[0]
+row=result[2]
+processed=result[3]
 
-<p>processed=1;</p>
-
-<h1>run as a daemon and never exit this thread</h1>
-
-<p>while(True):</p>
-
-<h1>defines the database parameter change according to your configuration</h1>
-
-<p>host="localhost"</p>
-
-<p>user="root"</p>
-
-<p>passwd="123456"</p>
-
-<p>db="smsgw"</p>
-
-<h1>creates a database object for corresponding config</h1>
-
-<p>db=MySQLdb.connect(host,user,passwd,db)</p>
-
-<p>cursor=db.cursor()</p>
-
-<h1>performs pruning of inbox table which may contain null entities</h1>
-
-<p>cursor.execute("delete from inbox where text=\"\"")</p>
-
-<h1>gets the latest entered SMS from Mysql server</h1>
-
-<p>cursor.execute(" select number,text,id,processed from inbox where id=(select max(id) from inbox)")</p>
-
-<p>record=cursor.fetchall()</p>
-
-<p>for result in record:</p>
-
-<h1>gets the word to find meaning</h1>
-
-<p>word=result[1]</p>
-
-<h1>get the number bcoz u have to reply the meaning to this number later ;)</h1>
-
-<p>number=result[0]</p>
-
-<p>row=result[2]</p>
-
-<p>processed=result[3]</p>
-
-<p>if(processed==0):</p>
+if(processed==0):
+</code></pre>
 
 <h1>script to get meaning of a word from google server</h1>
 
-<p>if(word=="lock"):
-up="gnome-screensaver-command --lock";
-elif(word=="unlock"):
-up="xset dpms force on &amp;&amp; gnome-screensaver-command -d";</p>
+<pre><code>  if(word=="lock"):
+    up="gnome-screensaver-command --lock";
 
-<p>elif(word.startswith("status:")):
-up=" purple-remote \"setstatus?status=available&amp;message="+str(word.replace("status:",""))+"\"";</p>
+  elif(word=="unlock"):
+    up="xset dpms force on &amp;&amp; gnome-screensaver-command -d";
 
-<p>else:
-up=word+" >meaning.txt";</p>
+  elif(word.startswith("status:")):
+    up=" purple-remote \"setstatus?status=available&amp;message="+str(word.replace("status:",""))+"\"";
 
-<p>print up;</p>
+  else:
+    up=word+" &gt;meaning.txt";
+</code></pre>
 
 <h1>set the entity to be processed when taken out</h1>
 
-<p>cursor.execute(" update inbox  set processed=1 where id="+str(row));</p>
+<pre><code>cursor.execute(" update inbox  set processed=1 where id="+str(row));
+</code></pre>
 
 <h1>run the command in shell and write it to file named meaning.txt</h1>
 
-<p>os.system(up)</p>
-
-<h1>open the file in read only mode</h1>
-
-<p>filehandle=open('meaning.txt','r')</p>
+<pre><code>  os.system(up)
+  filehandle=open('meaning.txt','r')
+</code></pre>
 
 <h1>load the meaning in the string text</h1>
 
-<p>text=filehandle.read()</p>
+<pre><code>  text=filehandle.read()
+  print " text is "+text;
+  filehandle.close()
+  if(text!=""):
+    cursor.execute("insert into outbox(number,text) values(%s,%s)",(number,text))
+  cursor.close()
+  db.close()
+</code></pre>
 
-<p>print " text is "+text;</p>
+<p>```</p>
 
-<h1>we no more need this</h1>
+<h2><em><strong>step 3)</strong></em></h2>
 
-<p>filehandle.close()</p>
+<ul>
+<li>You are done. Now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</li>
+</ul>
 
-<p>if(text!=""):
-cursor.execute("insert into outbox(number,text) values(%s,%s)",(number,text))</p>
-
-<h1>close all active connections :)</h1>
-
-<p>cursor.close()</p>
-
-<p>db.close()</p>
-
-<h1>thank you !_</h1>
-
-<p>```
-<em><strong>step 3)</strong></em></p>
-
-<p>your done with now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</p>
 ]]></content>
   </entry>
   

@@ -6,7 +6,10 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 23rd, 2010 Tags: Linux, Projects tested with : i) ubuntu 8.10 ii)gnokii iii) mysql 5 iv) lg kp 199 functionalities : i) just &hellip;">
+	<meta name="description" content="Published on: Feb 23rd, 2010 Tags: Linux, Projects Tested with : ubuntu 8.10
+gnokii
+mysql 5
+lg kp 199 Functionalities : just message &#8221;lock&# &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -130,39 +133,44 @@
 
 </div>
     </div>
-		<p><strong><em>tested with :</em></strong></p>
+		<h1><strong><em>Tested with :</em></strong></h1>
 
-<p>i) ubuntu 8.10</p>
+<ol>
+<li><p>ubuntu 8.10</p></li>
+<li><p>gnokii</p></li>
+<li><p>mysql 5</p></li>
+<li><p>lg kp 199</p></li>
+</ol>
 
-<p>ii)gnokii</p>
 
-<p>iii) mysql 5</p>
+<h1><em><strong>Functionalities :</strong></em></h1>
 
-<p>iv) lg kp 199</p>
+<ol>
+<li><p>just message &#8221;<strong>lock</strong>&#8221; to your server mobile to lock the screen</p></li>
+<li><p>  &#8221;<strong>unlock</strong>&#8221; to release the screen</p></li>
+<li><p>you can even change the pidgin status by messaging &#8221;<strong>status:your status here</strong> &#8221;</p></li>
+</ol>
 
-<p><em><strong>functionalities :</strong></em></p>
 
-<p>i) just message &#8221;<strong>lock</strong>&#8221; to your server mobile to lock the screen</p>
+<p>4.  execute any shell commands that take return value  below 160  characters</p>
 
-<p>ii)   &#8221;<strong>unlock</strong>&#8221; to release the screen</p>
+<h1><em><strong>Procedure:</strong></em></h1>
 
-<p>iii) you can even change the pidgin status by messaging &#8221;<strong>status:your status here</strong> &#8221;</p>
+<h2><strong><em>step 1) </em></strong></h2>
 
-<p>iv )  execute any shell commands that take return value  below 160  characters</p>
+<ul>
+<li>set the memory for sms to sim and run the smsd daemon as</li>
+</ul>
 
-<p><em><strong>procedure:</strong></em></p>
-
-<p><strong><em>step 1) </em></strong></p>
-
-<p>set the memory for sms to sim and run the smsd daemon as</p>
 
 <p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root &#8211;password=password -b SM -f /var/log/smsdaemon.log</strong></p>
 
-<p><em><strong>step 2)</strong></em></p>
+<h2><em><strong>step 2)</strong></em></h2>
 
-<p>run this python script  and minimize the shell</p>
+<ul>
+<li>run this python script  and minimize the shell</li>
+</ul>
 
-<p>_#!/usr/bin/python</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -219,179 +227,70 @@
 <span class='line-number'>53</span>
 <span class='line-number'>54</span>
 <span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#    before running this program you must configured gnokii-smsd and it must be up and running</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
+</span><span class='line'><span class="c">#    before running this program you must configured gnokii-smsd and it must be up and running</span>
 </span><span class='line'><span class="c">#     @Author:    Karthik selvakumar</span>
 </span><span class='line'><span class="c">#    Name :     Dictionary Server</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># install python-MySQLdb  before importing this module</span>
-</span><span class='line'>
 </span><span class='line'><span class="kn">import</span> <span class="nn">MySQLdb</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># imported inorder to perform shell operations</span>
-</span><span class='line'>
 </span><span class='line'><span class="kn">import</span> <span class="nn">os</span>
-</span><span class='line'>
 </span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="c"># run as a daemon and never exit this thread</span>
-</span><span class='line'>
 </span><span class='line'><span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
+</span><span class='line'>  <span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span>
+</span><span class='line'>  <span class="n">user</span><span class="o">=</span><span class="s">&quot;root&quot;</span>
+</span><span class='line'>  <span class="n">passwd</span><span class="o">=</span><span class="s">&quot;123456&quot;</span>
+</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="s">&quot;smsgw&quot;</span>
 </span><span class='line'>
-</span><span class='line'><span class="c">#defines the database parameter change according to your configuration</span>
+</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">db</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">cursor</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;delete from inbox where text=</span><span class="se">\&quot;\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; select number,text,id,processed from inbox where id=(select max(id) from inbox)&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">record</span><span class="o">=</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span><span class='line'>  <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">word</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">number</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">row</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">processed</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">user</span><span class="o">=</span><span class="s">&quot;root&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">passwd</span><span class="o">=</span><span class="s">&quot;123456&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">db</span><span class="o">=</span><span class="s">&quot;smsgw&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#creates a database object for corresponding config</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">db</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">db</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">cursor</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#performs pruning of inbox table which may contain null entities</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;delete from inbox where text=</span><span class="se">\&quot;\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#gets the latest entered SMS from Mysql server</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; select number,text,id,processed from inbox where id=(select max(id) from inbox)&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">record</span><span class="o">=</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># gets the word to find meaning</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">word</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># get the number bcoz u have to reply the meaning to this number later ;)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">number</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">row</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">processed</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
-</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">processed</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
 </span><span class='line'><span class="c"># script to get meaning of a word from google server</span>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;lock&quot;</span><span class="p">):</span>
-</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot;gnome-screensaver-command --lock&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;unlock&quot;</span><span class="p">):</span>
-</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot;xset dpms force on &amp;&amp; gnome-screensaver-command -d&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;lock&quot;</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;gnome-screensaver-command --lock&quot;</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">)):</span>
-</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot; purple-remote </span><span class="se">\&quot;</span><span class="s">setstatus?status=available&amp;message=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;unlock&quot;</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;xset dpms force on &amp;&amp; gnome-screensaver-command -d&quot;</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">else</span><span class="p">:</span>
-</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="s">&quot; &gt;meaning.txt&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">)):</span>
+</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot; purple-remote </span><span class="se">\&quot;</span><span class="s">setstatus?status=available&amp;message=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="n">up</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="s">&quot; &gt;meaning.txt&quot;</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c">#set the entity to be processed when taken out</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; update inbox  set processed=1 where id=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; update inbox  set processed=1 where id=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># run the command in shell and write it to file named meaning.txt</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># open the file in read only mode</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">filehandle</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;meaning.txt&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">filehandle</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;meaning.txt&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c"># load the meaning in the string text</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">text</span><span class="o">=</span><span class="n">filehandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot; text is &quot;</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># we no more need this</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">filehandle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">text</span><span class="o">!=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
-</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;insert into outbox(number,text) values(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,(</span><span class="n">number</span><span class="p">,</span><span class="n">text</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c"># close all active connections :)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#thank you !_</span>
+</span><span class='line'>      <span class="n">text</span><span class="o">=</span><span class="n">filehandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>      <span class="k">print</span> <span class="s">&quot; text is &quot;</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">filehandle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">text</span><span class="o">!=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;insert into outbox(number,text) values(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,(</span><span class="n">number</span><span class="p">,</span><span class="n">text</span><span class="p">))</span>
+</span><span class='line'>      <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>      <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><em><strong>step 3)</strong></em></p>
+<h2><em><strong>step 3)</strong></em></h2>
 
-<p>your done with now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</p>
+<ul>
+<li>You are done. Now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</li>
+</ul>
+
 
 		
 		
