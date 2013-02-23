@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Current affairs | Hacker's Diary]]></title>
+  <link href="http://karthikselva.github.com/blog/categories/current-affairs/atom.xml" rel="self"/>
+  <link href="http://karthikselva.github.com/"/>
+  <updated>2013-02-24T00:19:01+05:30</updated>
+  <id>http://karthikselva.github.com/</id>
+  <author>
+    <name><![CDATA[karthikselva's log]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Network Simulator 2 in Ubuntu ]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
+    <updated>2010-02-10T22:08:25+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
+    <content type="html"><![CDATA[<p><em>Are you baffled by random errands saying "  ns2 doesn't work on ubuntu " and so ?</em></p>
+
+<p><em>Are you a linux geek don't wanna boot to windows for network simulator software ?</em></p>
+
+<p><em>did your lab admin made a mess with your system in the name of installing ns2 :D ?</em></p>
+
+<p>_then you are in a right place :)
+_</p>
+
+<p><strong>You can make NS working in your system by putting little effort  on your ubuntu :)</strong></p>
+
+<p><em><strong>Step 1:</strong></em></p>
+
+<p>Download <a href="http://sourceforge.net/projects/nsnam/files/">network simulator software from here </a></p>
+
+<p>if you prefer other old versions you can swich by viewing files in that page</p>
+
+<p>the file will be of almost 57 MB</p>
+
+<p><em><strong>Step 2: </strong></em></p>
+
+<p>Extract the files to your own desired directory</p>
+
+<p>I did in <strong>/home/karthik/Desktop/ </strong></p>
+
+<p><em><strong>step 3:</strong></em></p>
+
+<p>now go to your working directory of ns2 by</p>
+
+<p><strong>cd /home/karthik/Desktop/ns-allinone-2.34</strong></p>
+
+<p><em><strong>step 4:</strong></em></p>
+
+<p>Run this command to check any unresolved dependencies existing between installation</p>
+
+<p><strong>sudo apt-get install build-essential autoconf automake libxmu-dev</strong></p>
+
+<p>run the command <strong>./install</strong> in terminal</p>
+
+<p>it will take around 5 minutes</p>
+
+<p><em><strong>step 5:</strong></em></p>
+
+<p>Well Thats were your installation of ns2 exits :)</p>
+
+<p>now you have to configure to make it alive</p>
+
+<p>you have to edit in the shell</p>
+
+<p>run <strong>gedit ~./bashrc</strong></p>
+
+<p>add at end of the file this lines</p>
+
+<p>remember change  <strong>/home/karthik/Desktop/ </strong>to your file path say <strong>/home/host-name/</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em># LD_LIBRARY_PATH
+OTCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/otcl-1.13
+NS2_LIB=/home/karthik/Desktop/ns-allinone-2.34/lib
+X11_LIB=/usr/X11R6/lib
+USR_LOCAL_LIB=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OTCL_LIB:$NS2_LIB:$X11</em>
+LIB:$USR_LOCAL_LIB_</p>
+
+<p><em># TCL_LIBRARY
+TCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/tcl8.4.18/library
+USR_LIB=/usr/lib
+export TCL_LIBRARY=$TCL_LIB:$USR_LIB</em></p>
+
+<p><em># PATH
+XGRAPH=/home/karthik/Desktop/ns-allinone-2.34/bin: /home/karthik/Desktop/
+ns-allinone-2.34/tcl8.4.18/unix : /home/karthik/Desktop/ns-allinone-2.34/tk8.4.18/unix
+NS=/home/karthik/Desktop/ns-allinone-2.34/ns-2.34/
+NAM=/home/karthik/Desktop/ns-allinone-2.34/nam-1.14/
+PATH=$PATH:$XGRAPH:$NS:$NAM</em></p>
+
+<p>now save the file and close it</p>
+
+<p>run<strong> source ~/.bashrc</strong></p>
+
+<p>ignore if any errors ;)</p>
+
+<p>then run<strong> ./validate</strong></p>
+
+<p>this is the longest step it takes <strong>30-45 minutes</strong> hence you can have a meal during the course of time ;)</p>
+
+<p><em><strong>step 6: </strong></em></p>
+
+<p>this  is editing thing ( optional )</p>
+
+<p>just make  links to the files in <strong>/home/karthik/Desktop/ns-allinone-2.34/bin </strong> by right click on all files and choose <strong>make link</strong></p>
+
+<p>copy  all and paste to <strong>/usr/bin/ </strong>directory  by running</p>
+
+<p><strong>sudo nautilus</strong></p>
+
+<p>then<strong> rename</strong> the file name for eg) <strong>link to ns </strong> to <strong>ns</strong> and so on . do this till all files are renamed .</p>
+
+<p><em><strong>step 7: </strong></em></p>
+
+<p>Sample code</p>
+
+<p>now u can check out a demo to test you ns 2 by writing a sample code as below :</p>
+
+<p><em>#Create a simulator object
+set ns [new Simulator]</em></p>
+
+<p><em>#Open the nam trace file
+set nf [open out.nam w]
+$ns namtrace-all $nf</em></p>
+
+<p>_#Define a 'finish' procedure
+proc finish {} {
+global ns nf
+$ns flush-trace</p>
+
+<h1>Close the trace file</h1>
+
+<p>close $nf</p>
+
+<h1>Execute nam on the trace file</h1>
+
+<p>exec nam out.nam &amp;
+exit 0
+}_</p>
+
+<p><em>#Create two nodes
+set n0 [$ns node]
+set n1 [$ns node]</em></p>
+
+<p><em>#Create a duplex link between the nodes
+$ns duplex-link $n0 $n1 1Mb 10ms DropTail</em></p>
+
+<p><em>#Call the finish procedure after 5 seconds of simulation time
+$ns at 5.0 "finish"</em></p>
+
+<p><em>#Run the simulation
+$ns run</em></p>
+
+<p>now copy this code and paste to a file say  <strong>myfirstprogram.tcl</strong></p>
+
+<p>then run <strong>ns myfirstprogram.tcl</strong></p>
+
+<p>you must see a window like this :</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png"><img src="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png" alt="my ubuntu screen running NS2" /></a></p>
+
+<p>and  ...   You did it , Enjoy   :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Facebook mouseclicks hack !]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack/"/>
+    <updated>2010-01-01T21:05:04+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack</id>
+    <content type="html"><![CDATA[<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
+
+<p>it is as simple as a crap code ... with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
+
+<p><em><strong>step 1:</strong></em></p>
+
+<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
+
+<p>the code seems like :</p>
+
+<p><em>import java.awt.Robot;
+import java.awt.event.InputEvent;
+/<strong>
+*
+* @author karthik
+*/
+public class Main {
+/</strong>
+* @param args the command line arguments
+*/
+public static void main(String[] args) throws Throwable {
+Robot r=new Robot();</em></p>
+
+<p>_ System.out.println("Hurry up ! you have 10 seconds left ");
+System.out.println("This time you must have focused your mouse pointer on START button of facebook appln");
+r.delay(10000);_</p>
+
+<p><em>// TODO code application logic here
+for(int i=0;i&lt;10000;i++){
+r.mousePress(InputEvent.BUTTON1_MASK);
+System.out.println("Clicking "+i+"th time ");
+r.mouseRelease(InputEvent.BUTTON1_MASK);
+System.out.println();
+System.out.println();
+}System.out.println("Congrats ! you did it man  B-)");</em></p>
+
+<p><em>}
+}</em></p>
+
+<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
+
+<p><em><strong>step 2:</strong></em></p>
+
+<p>open <strong>terminal </strong></p>
+
+<p>compile the java code by running from the location where code is located by</p>
+
+<p><strong>javac Main.java</strong></p>
+
+<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
+
+<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
+
+<p><em><strong>step 3:</strong></em></p>
+
+<p>Run the java code now this is critical part</p>
+
+<p><strong>java Main </strong></p>
+
+<p><strong>( you can directly run this  by extracting Main.java.zip from above )
+</strong></p>
+
+<p>you will get a screen saying</p>
+
+<p><em>"Hurry up ! you have 10 seconds left</em></p>
+
+<p><em>This time you must have focused your mouse pointer on START button of facebook appln"</em></p>
+
+<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
+
+<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
+
+<p><strong>for more clear details watch the video below :</strong></p>
+
+<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
+
+<p>Thank you :)</p>
+
+<p><em><strong>Disclaimer :</strong></em></p>
+
+<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Nokia Hacks and tips ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips/"/>
+    <updated>2009-11-22T06:24:36+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips</id>
+    <content type="html"><![CDATA[<p>Try  this codes in your cell if you are not familiar with this one  b4..</p>
+
+<p>_This may help you when you are stuck up or trace some details out of your Mobile :
+_</p>
+
+<p><strong>*3370#</strong> Activate Enhanced Full Rate Codec (EFR) - Your phone uses the
+best sound quality but talk time is reduced my approx. 5%</p>
+
+<p><strong>#3370# </strong>Deactivate Enhanced Full Rate Codec (EFR)</p>
+
+<p><strong>*4720#</strong> Activate Half Rate Codec - Your phone uses a lower quality
+sound but you should gain approx 30% more Talk Time.</p>
+
+<p><strong>#4720# </strong>Deactivate Half Rate Codec.</p>
+
+<p><strong>*#0000# </strong>Displays your phones software version, 1st Line : Software
+Version, 2nd Line : Software Release Date, 3rd Line :
+Compression Type.</p>
+
+<p><em><strong>#9999# </strong>Phones software version if </em>#0000# does not work.</p>
+
+<p><strong>*#06# </strong>For checking the International Mobile Equipment Identity (IMEI
+Number).</p>
+
+<p><strong>#pw+1234567890+1# </strong>
+Provider Lock Status. (use the "*" button to obtain the "p,w" and "+" symbols).</p>
+
+<p><strong>#pw+1234567890+2# </strong>
+Network Lock Status. (use the "*" button to obtain the "p,w" and "+" symbols).</p>
+
+<p><strong>#pw+1234567890+3# </strong>
+Country Lock Status. (use the "*" button to obtain the "p,w" and "+" symbols).</p>
+
+<p><strong>#pw+1234567890+4# </strong>
+SIM Card Lock Status. (use the "*" button to obtain the "p,w" and "+" symbols).</p>
+
+<p><strong>*#147#</strong> (vodafone) this lets you know who called you last.</p>
+
+<p><strong>*#1471# </strong>Last call (Only vodofone).</p>
+
+<p><strong>*#21#</strong> Allows you to check the number that "All Calls" are diverted to.</p>
+
+<p><strong>*#2640#</strong> Displays security code in use.</p>
+
+<p><strong>*#30# </strong>Lets you see the private number.</p>
+
+<p><strong>*#43# </strong>Allows you to check the "Call Waiting" status of your phone.</p>
+
+<p><strong>*#61# </strong>Allows you to check the number that "On No Reply" calls are
+diverted to.</p>
+
+<p><strong>*#62#</strong> Allows you to check the number that "Divert If Unreachable (no
+service)" calls are diverted to.</p>
+
+<p><strong>*#67#</strong> Allows you to check the number that "On Busy Calls" are diverted
+to.</p>
+
+<p><strong>*#67705646# </strong>Removes operator logo on 3310 &amp; 3330.</p>
+
+<p><strong>*#73# </strong>Reset phone timers and game scores.</p>
+
+<p><strong>*#746025625# </strong>Displays the SIM Clock status, if your phone supports this power
+saving feature "SIM Clock Stop Allowed", it means you will get
+the best standby time possible.</p>
+
+<p><em><strong>#7760#</strong> Manufactures code.
+**
+</em>#7780#** Restore factory settings.</p>
+
+<p><strong>*#8110# </strong>Software version for the nokia 8110.</p>
+
+<p><strong>*#92702689# </strong>Displays - 1.Serial Number, 2.Date Made, 3.Purchase Date,
+4.Date of last repair (0000 for no repairs), 5.Transfer User Data.
+To exit this mode you need to switch your phone off then on again.</p>
+
+<p><strong>*#94870345123456789# </strong>Deactivate the PWM-Mem.</p>
+
+<p><strong><em>*21</em>number# </strong>Turn on "All Calls" diverting to the phone number entered.</p>
+
+<p><strong><em>*61</em>number# </strong>Turn on "No Reply" diverting to the phone number entered.</p>
+
+<p><strong><em>*67</em>number#</strong> Turn on "On Busy" diverting to the phone number entered.</p>
+
+<p><strong>12345</strong> This is the default security code.</p>
+
+<p>Remember few of these codes may not work for recent nokia models ....</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Is New Orkut Really New ?]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new/"/>
+    <updated>2009-11-16T06:39:26+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new</id>
+    <content type="html"><![CDATA[<p>Well few days Back I heard something called new orkut . It took weeks before since last time I logged in  Orkut . Facebook attracted me more and some how addicted to it .Now heard about<strong> "New Orkut "</strong> I came back to my old orkut :) .</p>
+
+<p>Goodness I got invite from some one ( sad thing is New Orkut too is a<strong> Invite and use system</strong> ). Well when I saw try new orkut at top , Clicked it really expecting a amazing wonder as an Alice . But I seen a page something very similar to face-book which disappointed me a lot .</p>
+
+<p><em>What they say new in this version are ...</em></p>
+
+<p>i) They say '<strong> Friends updates are available to every one</strong> ' .. Do you guess this thing new as an FB user  :P</p>
+
+<p>ii) second '<strong>Every one can comment on any friends notification</strong> , updates ,application and friend acceptance ' .</p>
+
+<p>iii) A new thing I found interesting is<strong> Video chatting integrated</strong> with orkut ( pity on Linux users , it says ' OS not supported ')</p>
+
+<p>iv) Best feature I found in this release is <strong>IE 6</strong> is not at all supported :) .</p>
+
+<p>v) Next humorous thing I found is adding a general sucky template  and five sticky colors  of their own  choice and  they said  " <strong>Pick your favorite colors We've made orkut even more colorful </strong>"  ..</p>
+
+<p><strong>vi) Speed</strong> is the main thing they mentioned they have increased .. But instead of static pages I can see my page still buffering in status bar  ( stealing my pity small free  download limit I have :( )</p>
+
+<p>vii) And the highlight of all is they mentioned <strong>moving chat bar from left side to right side</strong> as a new feature :D ( I guess the only thing they didnt imitate is the notification bar you can see under  as In face Book )</p>
+
+<p><img src="http://karthikselvakumar.files.wordpress.com/2009/11/screenshot-51.gif?w=300" alt="New Orkut" /></p>
+
+<p>I guess it may take time to  digest this things and to switch over to new orkut .  The thing I like the most is the prefix <strong>Beta</strong> in Orkut  ( a word which can answer almost  all the bugs  user raises :P  )</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Chrome Os - Rush Time ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time/"/>
+    <updated>2009-11-15T02:40:50+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time</id>
+    <content type="html"><![CDATA[<p><strong>As for Google mentioned :</strong></p>
+
+<p><em>" Google Chrome OS is an open source, lightweight operating system that will initially be targeted at net-books. Later this year we will open-source its code, and net books running Google Chrome OS will be available for consumers in the second half of 2010. Because we’re already talking to partners about the project, and we’ll soon be working with the open source community, we wanted to share our vision now so everyone understands what we are trying to achieve. "</em></p>
+
+<p>But the <strong>major leaks </strong>I found is every file you store move or even trash happens to be in remote server .</p>
+
+<p>It is similar to saying even your personal credential files will be exposed to them and your only allocated necessary privileges to access the files . I dono how far it is gonna be secure .</p>
+
+<p>Persons with limited network bandwidth will be harder to use because  each operation is a complicated network oriented .</p>
+
+<p>Third even if I have huge hard disk say several TB's we are forced to access file from/to network which adds on burden for traditional off-line users .</p>
+
+<p>As they mentioned  Chrome OS as LIGHT WEIGHT  BROWSER BASED OS they doesn't seem to match with high end gaming as well as with advanced hardware and software support . They seem to simplify more as only single processor is utilized even you have multi-core's.( Under utilization of available resource as far as I learnt :))</p>
+
+<p>Guess this is a better matched OS for atom based processors and x86 series.</p>
+
+<p>well  this time Im expecting a<strong> real worthy  OS from Google </strong>( rather years ago I got a distro named GOS which is nothing rather than a new Themed Ubuntu :P)</p>
+
+<p><strong>Google chrome OS demo:</strong>
+[youtube=http://www.youtube.com/watch?v=nJByVHyNIi0&amp;feature=player_embedded]</p>
+
+<p>Free open source and Linux kernel are the pleasing words , as for as the project is concerned which gained my attention.</p>
+
+<p><a href="http://www.payoffers.in/Kotak.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70"><strong>Get Rs.250 cash back on your Trump Card now-      Kotak Mahindra Bank</strong>
+<img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

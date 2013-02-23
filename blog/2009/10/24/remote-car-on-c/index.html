@@ -1,0 +1,368 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Remote car on 'C' - Hacker's Diary</title>
+    <meta name="author" content="karthikselva's log">
+    
+	<meta name="description" content="remote car on c /** This is a basic hardware program in c interfacing a remote car
+here consider a basic table lpt port has pin 2-9 for data we can &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Hacker's Diary" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        karthikselva's log
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/karthikselva" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/115315132809115213147?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  <!-- Facebook -->
+  <li>
+  <a href="http://www.facebook.com/karthikselvakumar47" class="facebook" title="Facebook"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/karthikselva" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+	<li ><a href="http://careers.stackoverflow.com/karthikselva">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">Remote Car on 'C'</h2>
+	<div class="entry-content"><p>remote car on c</p>
+
+<p>/** This is a basic hardware program in c interfacing a remote car
+here consider a basic table</p>
+
+<p>lpt port has pin 2-9 for data we can send data to it by calling</p>
+
+<p>here we use only data pins 2,3,4,5 only</p>
+
+<p>syntax : outport(port_address,number);</p>
+
+<p>port address is 0×378 for lpt 2 and 0×3bc for lpt 1</p>
+
+<p>well now move towards the code concentrate on lowest 4 bits</p>
+
+<p>number data operation</p>
+
+<p>1 0001 right steer
+2 0010 left steer
+4 0100 forward
+8 1000 backward
+5 0101 right steering + forward (right turn forward)
+10 1010 left steering + backward (left turn backward)
+6 0110 right steering + backward (right turn back)
+9 1001 left steering + forward(left turn front)</p>
+
+<p>this is the logic of code
+*/</p>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<p>void circle() //to move in circular path
+{int i=0;
+while(!getch())
+{
+outport(0×3bc,5); // 5 = 0101 means on the right and on the forward</p>
+
+<p>}
+}</p>
+
+<p>void rectangle()
+{
+int i=0;
+coutl;cin>>b;
+while(!getch())
+{
+outport(0×3bc,4); // forward
+i++;
+delay(1000<em>b);
+outport(0×3bc,5); // right steer
+delay(1000);
+outport(0×3bc,4); // forward
+delay(1000</em>l);
+}
+}</p>
+
+<p>void zigzag()
+{
+while(!getch())
+{
+outport(0×3bc,5); //right forward
+delay(3000);
+outport(0×3bc,9); // left forward
+delay(3000);</p>
+
+<p>}
+}</p>
+
+<p>void manual()</p>
+
+<p>{char c=’a&#8217;;
+while(c!=’x&#8217;)
+{
+clear();
+cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;&#8221; use move keys for direction &#8216;x&#8217; to exit&#8221;;
+c=getch();
+if(c==&#8217;<sup>[[A&#8217;)</sup>
+{
+outportb(0x3bc,1);
+delay(1000);
+}
+else if(c==&#8217;<sup>[[B&#8217;)</sup>
+{
+outport(0x3bc,4);
+}
+else if(c==&#8217;<sup>[[C&#8217;)</sup>
+{
+outportb(0x3bc,2);
+delay(1000);
+}
+else if(c==&#8217;<sup>[[D&#8217;)</sup>
+{
+outportb(0x3bc,8);
+delay(1000);
+}
+}
+}</p>
+
+<p>void manual(char choice, int time) // oveloaded fn for creative
+{char c;
+c=choice;
+while(c!=&#8217;x&#8217;)
+{
+clear();</p>
+
+<p>if(c==&#8217;<sup>[[A&#8217;)</sup>
+{
+outportb(0x3bc,1);
+delay(time<em>1000);
+}
+else if(c==&#8217;<sup>[[B&#8217;)</sup>
+{
+outport(0x3bc,4);
+delay(time</em>1000);
+}
+else if(c==&#8217;<sup>[[C&#8217;)</sup>
+{
+outportb(0x3bc,2);
+delay(time<em>1000);
+}
+else if(c==&#8217;<sup>[[D&#8217;)</sup>
+{
+outportb(0x3bc,8);
+delay(time</em>1000);
+}
+}
+}
+void creative()
+{
+char str[20];
+int i=0,n[20];
+while(str[i]!=&#8217;x&#8217;)
+{
+coutstr[i];
+coutn[i];
+i++;
+}
+i=0;
+while(str[i]!=’x&#8217;)
+{
+manual(str[i],n[i]);
+}
+}</p>
+
+<p>void automatic()
+{
+clear(); int g,h;
+cout&lt;&lt;&#8221; enter 1 to circle &#8220;&lt;&lt;endl&lt;&lt;&#8221; 2 to rectangle move&#8221;g;</p>
+
+<p>if(g==1)
+{
+circle();
+}
+else if(g==2)
+{
+rectangle();
+}
+else if(g==3)
+{
+zigzag();
+}
+else if(g==4)
+{
+creative();
+}
+}</p>
+
+<p>void clear()
+{
+int n=0;
+while(n&lt;300)
+{
+cout&lt;&lt;endl;
+n++;
+}
+}</p>
+
+<p>void menu()
+{
+clear(); int ch;
+cout&lt;&lt;&#8221; 1 for manual&#8221;&lt;&lt;endl&lt;&lt;&#8221; 2 for automatic &#8220;ch;
+if(ch==1)
+{
+manual();
+}
+else if(ch==2)
+{
+automatic();
+}
+}
+/* now its time to open your car’s remote
+step 1: find the wires which goes for right ,left forward backward
+step 2: attach lpt ports pin 2 to right 3 to left 4 to forward 5 to backward and ground to pin 23
+warning ! remove external batteries from remote which may leak at times
+step 3: run this code and enjoy racing !</p>
+
+<p>thank you !
+by karthik selvakumar B</p>
+
+<p>mail bugs to karthikselvakumar@tce.edu
+*/</p>
+</div>
+
+<div class="meta">
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    karthikselva's log
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

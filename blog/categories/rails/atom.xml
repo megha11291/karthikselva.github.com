@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | Hacker's Diary]]></title>
+  <link href="http://karthikselva.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://karthikselva.github.com/"/>
+  <updated>2013-02-24T00:19:01+05:30</updated>
+  <id>http://karthikselva.github.com/</id>
+  <author>
+    <name><![CDATA[karthikselva's log]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ Rails with Vim - how and why it works ? ]]></title>
+    <link href="http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
+    <updated>2012-12-26T23:36:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
+    <content type="html"><![CDATA[<h2>How it started</h2>
+
+<p>I started my coding in a windows machine with notepad.
+Then I came through a term called IDE which has everything a programmer
+needs in one place ( except beer ). Starting with netbeans for java
+and some random Junit test tools in eclipse , I really regreted for
+wasting my time in notepad. Usually I wasted my time in
+* Searching the API sheet for exact name of method
+  * In Java typically confused with length() , size() , count or length variable usage
+  * I know rubyists , ruby has everything
+* Missing ( , { or some parantheses ( not as much careless as initial days  )
+  * I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet
+* Variable declared with one name but using it with different name</p>
+
+<pre><code>* I used to decalre a variable with User#name  and trying to access with User#username 
+</code></pre>
+
+<ul>
+<li>Version control integration
+
+<ul>
+<li>Version control itself is a different topic to discuss for hours</li>
+<li>I use some set of plugins to commit and revert ( which I don't even bother on what command it is being translated on in background )</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

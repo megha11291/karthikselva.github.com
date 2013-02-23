@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Hacker's Diary]]></title>
+  <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
+  <link href="http://karthikselva.github.com/"/>
+  <updated>2013-02-24T00:19:01+05:30</updated>
+  <id>http://karthikselva.github.com/</id>
+  <author>
+    <name><![CDATA[karthikselva's log]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Binary Tree - Zigzag traversal of nodes]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes/"/>
+    <updated>2013-01-04T23:48:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Zigzag ruby (zig_zag_traversal.rb)</span> <a href='http://karthikselva.github.com/downloads/code/zig_zag_traversal.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
+</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
+</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">display</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="vi">@data</span>
+</span><span class='line'>    <span class="vi">@right</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@right</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>    <span class="vi">@left</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@left</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">zigzag</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">currentlevel</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>    <span class="n">nextlevel</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">toggle</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="n">currentlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">while</span> <span class="o">!</span><span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>      <span class="n">tree</span> <span class="o">=</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">pop</span>
+</span><span class='line'>      <span class="k">unless</span> <span class="n">tree</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>        <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">.</span><span class="n">data</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">toggle</span>
+</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span>
+</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>        <span class="n">toggle</span> <span class="o">=</span> <span class="o">!</span><span class="n">toggle</span>
+</span><span class='line'>        <span class="n">tmp</span> <span class="o">=</span> <span class="n">currentlevel</span>
+</span><span class='line'>        <span class="n">currentlevel</span> <span class="o">=</span> <span class="n">nextlevel</span>
+</span><span class='line'>        <span class="n">nextlevel</span> <span class="o">=</span> <span class="n">tmp</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
+</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">test_tree</span><span class="o">.</span><span class="n">zigzag</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'><span class="c1">#test_tree.display</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ Rails with Vim - how and why it works ? ]]></title>
+    <link href="http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
+    <updated>2012-12-26T23:36:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
+    <content type="html"><![CDATA[<h2>How it started</h2>
+
+<p>I started my coding in a windows machine with notepad.
+Then I came through a term called IDE which has everything a programmer
+needs in one place ( except beer ). Starting with netbeans for java
+and some random Junit test tools in eclipse , I really regreted for
+wasting my time in notepad. Usually I wasted my time in
+* Searching the API sheet for exact name of method
+  * In Java typically confused with length() , size() , count or length variable usage
+  * I know rubyists , ruby has everything
+* Missing ( , { or some parantheses ( not as much careless as initial days  )
+  * I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet
+* Variable declared with one name but using it with different name</p>
+
+<pre><code>* I used to decalre a variable with User#name  and trying to access with User#username 
+</code></pre>
+
+<ul>
+<li>Version control integration
+
+<ul>
+<li>Version control itself is a different topic to discuss for hours</li>
+<li>I use some set of plugins to commit and revert ( which I don&#8217;t even bother on what command it is being translated on in background )</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <updated>2010-02-23T05:48:22+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <content type="html"><![CDATA[<p><strong><em>tested with :</em></strong></p>
+
+<p>i) ubuntu 8.10</p>
+
+<p>ii)gnokii</p>
+
+<p>iii) mysql 5</p>
+
+<p>iv) lg kp 199</p>
+
+<p><em><strong>functionalities :</strong></em></p>
+
+<p>i) just message &#8221;<strong>lock</strong>&#8221; to your server mobile to lock the screen</p>
+
+<p>ii)   &#8221;<strong>unlock</strong>&#8221; to release the screen</p>
+
+<p>iii) you can even change the pidgin status by messaging &#8221;<strong>status:your status here</strong> &#8221;</p>
+
+<p>iv )  execute any shell commands that take return value  below 160  characters</p>
+
+<p><em><strong>procedure:</strong></em></p>
+
+<p><strong><em>step 1) </em></strong></p>
+
+<p>set the memory for sms to sim and run the smsd daemon as</p>
+
+<p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root &#8211;password=password -b SM -f /var/log/smsdaemon.log</strong></p>
+
+<p><em><strong>step 2)</strong></em></p>
+
+<p>run this python script  and minimize the shell</p>
+
+<p>_#!/usr/bin/python</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#    before running this program you must configured gnokii-smsd and it must be up and running</span>
+</span><span class='line'><span class="c">#     @Author:    Karthik selvakumar</span>
+</span><span class='line'><span class="c">#    Name :     Dictionary Server</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># install python-MySQLdb  before importing this module</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">MySQLdb</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># imported inorder to perform shell operations</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">os</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="c"># run as a daemon and never exit this thread</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#defines the database parameter change according to your configuration</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">user</span><span class="o">=</span><span class="s">&quot;root&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">passwd</span><span class="o">=</span><span class="s">&quot;123456&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">db</span><span class="o">=</span><span class="s">&quot;smsgw&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#creates a database object for corresponding config</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">db</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">db</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">cursor</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#performs pruning of inbox table which may contain null entities</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;delete from inbox where text=</span><span class="se">\&quot;\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#gets the latest entered SMS from Mysql server</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; select number,text,id,processed from inbox where id=(select max(id) from inbox)&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">record</span><span class="o">=</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># gets the word to find meaning</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">word</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># get the number bcoz u have to reply the meaning to this number later ;)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">number</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">row</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">processed</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># script to get meaning of a word from google server</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;lock&quot;</span><span class="p">):</span>
+</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot;gnome-screensaver-command --lock&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;unlock&quot;</span><span class="p">):</span>
+</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot;xset dpms force on &amp;&amp; gnome-screensaver-command -d&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">)):</span>
+</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="s">&quot; purple-remote </span><span class="se">\&quot;</span><span class="s">setstatus?status=available&amp;message=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">else</span><span class="p">:</span>
+</span><span class='line'><span class="n">up</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="s">&quot; &gt;meaning.txt&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">up</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#set the entity to be processed when taken out</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; update inbox  set processed=1 where id=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># run the command in shell and write it to file named meaning.txt</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># open the file in read only mode</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">filehandle</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;meaning.txt&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># load the meaning in the string text</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">text</span><span class="o">=</span><span class="n">filehandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot; text is &quot;</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># we no more need this</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">filehandle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="n">text</span><span class="o">!=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
+</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;insert into outbox(number,text) values(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,(</span><span class="n">number</span><span class="p">,</span><span class="n">text</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># close all active connections :)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#thank you !_</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em><strong>step 3)</strong></em></p>
+
+<p>your done with now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A simple start to SVN]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn/"/>
+    <updated>2010-02-18T05:10:10+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn</id>
+    <content type="html"><![CDATA[<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
+
+<p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
+
+<p><em><strong>Step1 :</strong></em></p>
+
+<p>First before starting with your coding create a repo name in SVN as :</p>
+
+<p><strong>svnadmin create<your-repo-name></strong></p>
+
+<p>e.g) svnadmin create mediaplayer</p>
+
+<p>now you have created a repo named <strong>mediaplayer</strong></p>
+
+<p>this copy is the master copy for all clients</p>
+
+<p>this will be a directory with some system defined files in it</p>
+
+<p>note the directory you have  created a repositiory</p>
+
+<p><em><strong>Step 2:</strong></em></p>
+
+<p>now you cannot directly do modify on master copy</p>
+
+<p>you have to checkout this repo to some workspace and start working</p>
+
+<p>let it be a directory called workspace</p>
+
+<p><strong>mkdir workspace</strong></p>
+
+<p><strong>cd workspace</strong></p>
+
+<p>now you can checkout the master copy and start your coding process</p>
+
+<p><strong>svn co file:///home/<user-name>/<repo-name></strong></p>
+
+<p>eg:)  svn co file:///home/karthik/mediaplayer</p>
+
+<p>now you will have a directory named mediaplayer</p>
+
+<p>go into the directory  by</p>
+
+<p><strong>cd mediaplayer</strong></p>
+
+<p>then start a code name it as <strong>myfile.java</strong></p>
+
+<p>now save it in this directory  . To add this into your master copy do</p>
+
+<p><strong>svn add  <file-name></strong></p>
+
+<p>eg) svn add myfile.java</p>
+
+<p><em><strong>Step 3:</strong></em></p>
+
+<p>you can optionally use these commands</p>
+
+<p><strong>i) svn commit</strong> - to  commit the current modification to the master copy ( Do this whenever you do minor changes to you files)</p>
+
+<p><strong>ii) svn status</strong> - to check the status of files in working copy</p>
+
+<p><strong>here </strong><strong>? </strong>means unknown <strong> A </strong>means added<strong> M</strong> means modified but not added</p>
+
+<p><strong>iii) svn update</strong> - to update to the latest revision of the master copy ( this will be usefull when more than one client has modified the master copy without your knowledge )</p>
+
+<p><a href="http://www.linuxfromscratch.org/blfs/edguide/chapter03.html">for more details refere here </a></p>
+
+<p>Thank you :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <updated>2010-02-14T04:29:35+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
+
+<p><em><strong>Requirments :</strong></em></p>
+
+<p>i)  A GSM mobile phone</p>
+
+<p>ii)  Linux  with python</p>
+
+<p>iii) Mysql Database</p>
+
+<p>iv)  Gnokii-SMSD</p>
+
+<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
+
+<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
+
+<p><em><strong>Code :</strong></em></p>
+
+<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
+
+<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
+
+<p><em>#!/usr/bin/python</em></p>
+
+<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
+
+<h1>    @Author:    Karthik selvakumar</h1>
+
+<h1>    Name :     Dictionary Server_</h1>
+
+<p><em># install python-MySQLdb  before importing this module</em></p>
+
+<p><em>import MySQLdb</em></p>
+
+<p><em># imported inorder to perform shell operations</em></p>
+
+<p><em>import os</em></p>
+
+<p><em># run as a daemon and never exit this thread</em></p>
+
+<p><em>while(True):</em></p>
+
+<p><em>#defines the database parameter change according to your configuration</em></p>
+
+<p><em>host=&#8221;localhost&#8221;</em></p>
+
+<p><em>user=&#8221;root&#8221;</em></p>
+
+<p><em>passwd=&#8221;password&#8221;</em></p>
+
+<p><em>db=&#8221;smsgw&#8221;</em></p>
+
+<p><em>#creates a database object for corresponding config</em></p>
+
+<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
+
+<p><em>cursor=db.cursor()</em></p>
+
+<p><em>#performs pruning of inbox table which may contain null entities</em></p>
+
+<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
+
+<p><em>#gets the latest entered SMS from Mysql server</em></p>
+
+<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
+
+<p><em>record=cursor.fetchall()</em></p>
+
+<p><em>for result in record:</em></p>
+
+<p><em># gets the word to find meaning</em></p>
+
+<p><em>word=result[1]</em></p>
+
+<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
+
+<p><em>number=result[0]</em></p>
+
+<p><em>row=result[2]</em></p>
+
+<p><em># script to get meaning of a word from google server</em></p>
+
+<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
+
+<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
+
+<p><em># run the command in shell and write it to file named meaning.txt</em></p>
+
+<p><em>os.system(up+word+low)</em></p>
+
+<p><em># open the file in read only mode</em></p>
+
+<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
+
+<p><em># load the meaning in the string text</em></p>
+
+<p><em>text=filehandle.read()</em></p>
+
+<p><em># we no more need this</em></p>
+
+<p><em>filehandle.close()</em></p>
+
+<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
+
+<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
+
+<p><em># close all active connections :)</em></p>
+
+<p><em>cursor.close()</em></p>
+
+<p><em>db.close()</em></p>
+
+<p><em>#thank you !</em></p>
+
+<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
+
+<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
+
+<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
+
+<p>Enjoy :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Network Simulator 2 in Ubuntu ]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
+    <updated>2010-02-10T22:08:25+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
+    <content type="html"><![CDATA[<p><em>Are you baffled by random errands saying &#8220;  ns2 doesn&#8217;t work on ubuntu &#8221; and so ?</em></p>
+
+<p><em>Are you a linux geek don&#8217;t wanna boot to windows for network simulator software ?</em></p>
+
+<p><em>did your lab admin made a mess with your system in the name of installing ns2 :D ?</em></p>
+
+<p>_then you are in a right place :)
+_</p>
+
+<p><strong>You can make NS working in your system by putting little effort  on your ubuntu :)</strong></p>
+
+<p><em><strong>Step 1:</strong></em></p>
+
+<p>Download <a href="http://sourceforge.net/projects/nsnam/files/">network simulator software from here </a></p>
+
+<p>if you prefer other old versions you can swich by viewing files in that page</p>
+
+<p>the file will be of almost 57 MB</p>
+
+<p><em><strong>Step 2: </strong></em></p>
+
+<p>Extract the files to your own desired directory</p>
+
+<p>I did in <strong>/home/karthik/Desktop/ </strong></p>
+
+<p><em><strong>step 3:</strong></em></p>
+
+<p>now go to your working directory of ns2 by</p>
+
+<p><strong>cd /home/karthik/Desktop/ns-allinone-2.34</strong></p>
+
+<p><em><strong>step 4:</strong></em></p>
+
+<p>Run this command to check any unresolved dependencies existing between installation</p>
+
+<p><strong>sudo apt-get install build-essential autoconf automake libxmu-dev</strong></p>
+
+<p>run the command <strong>./install</strong> in terminal</p>
+
+<p>it will take around 5 minutes</p>
+
+<p><em><strong>step 5:</strong></em></p>
+
+<p>Well Thats were your installation of ns2 exits :)</p>
+
+<p>now you have to configure to make it alive</p>
+
+<p>you have to edit in the shell</p>
+
+<p>run <strong>gedit ~./bashrc</strong></p>
+
+<p>add at end of the file this lines</p>
+
+<p>remember change  <strong>/home/karthik/Desktop/ </strong>to your file path say <strong>/home/host-name/</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em># LD_LIBRARY_PATH
+OTCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/otcl-1.13
+NS2_LIB=/home/karthik/Desktop/ns-allinone-2.34/lib
+X11_LIB=/usr/X11R6/lib
+USR_LOCAL_LIB=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OTCL_LIB:$NS2_LIB:$X11</em>
+LIB:$USR_LOCAL_LIB_</p>
+
+<p><em># TCL_LIBRARY
+TCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/tcl8.4.18/library
+USR_LIB=/usr/lib
+export TCL_LIBRARY=$TCL_LIB:$USR_LIB</em></p>
+
+<p><em># PATH
+XGRAPH=/home/karthik/Desktop/ns-allinone-2.34/bin: /home/karthik/Desktop/
+ns-allinone-2.34/tcl8.4.18/unix : /home/karthik/Desktop/ns-allinone-2.34/tk8.4.18/unix
+NS=/home/karthik/Desktop/ns-allinone-2.34/ns-2.34/
+NAM=/home/karthik/Desktop/ns-allinone-2.34/nam-1.14/
+PATH=$PATH:$XGRAPH:$NS:$NAM</em></p>
+
+<p>now save the file and close it</p>
+
+<p>run<strong> source ~/.bashrc</strong></p>
+
+<p>ignore if any errors ;)</p>
+
+<p>then run<strong> ./validate</strong></p>
+
+<p>this is the longest step it takes <strong>30-45 minutes</strong> hence you can have a meal during the course of time ;)</p>
+
+<p><em><strong>step 6: </strong></em></p>
+
+<p>this  is editing thing ( optional )</p>
+
+<p>just make  links to the files in <strong>/home/karthik/Desktop/ns-allinone-2.34/bin </strong> by right click on all files and choose <strong>make link</strong></p>
+
+<p>copy  all and paste to <strong>/usr/bin/ </strong>directory  by running</p>
+
+<p><strong>sudo nautilus</strong></p>
+
+<p>then<strong> rename</strong> the file name for eg) <strong>link to ns </strong> to <strong>ns</strong> and so on . do this till all files are renamed .</p>
+
+<p><em><strong>step 7: </strong></em></p>
+
+<p>Sample code</p>
+
+<p>now u can check out a demo to test you ns 2 by writing a sample code as below :</p>
+
+<p><em>#Create a simulator object
+set ns [new Simulator]</em></p>
+
+<p><em>#Open the nam trace file
+set nf [open out.nam w]
+$ns namtrace-all $nf</em></p>
+
+<p>_#Define a &#8216;finish&#8217; procedure
+proc finish {} {
+global ns nf
+$ns flush-trace</p>
+
+<h1>Close the trace file</h1>
+
+<p>close $nf</p>
+
+<h1>Execute nam on the trace file</h1>
+
+<p>exec nam out.nam &amp;
+exit 0
+}_</p>
+
+<p><em>#Create two nodes
+set n0 [$ns node]
+set n1 [$ns node]</em></p>
+
+<p><em>#Create a duplex link between the nodes
+$ns duplex-link $n0 $n1 1Mb 10ms DropTail</em></p>
+
+<p><em>#Call the finish procedure after 5 seconds of simulation time
+$ns at 5.0 &#8220;finish&#8221;</em></p>
+
+<p><em>#Run the simulation
+$ns run</em></p>
+
+<p>now copy this code and paste to a file say  <strong>myfirstprogram.tcl</strong></p>
+
+<p>then run <strong>ns myfirstprogram.tcl</strong></p>
+
+<p>you must see a window like this :</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png"><img src="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png" alt="my ubuntu screen running NS2" /></a></p>
+
+<p>and  &#8230;   You did it , Enjoy   :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <updated>2010-02-01T03:33:06+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
+_</p>
+
+<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+
+<p>_
+_</p>
+
+<p>you can use this code to move the cursor</p>
+
+<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
+
+<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
+</a></strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em><strong>To Do :</strong></em></p>
+
+<p><em><strong>
+</strong></em></p>
+
+<p>step i) run the server.class first in machine u want to control say A</p>
+
+<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step ii) run the client.class in second machine u have the mouse say B</p>
+
+<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step iii) move  mouse in machine B so that it moves on machine A</p>
+
+<p><em><strong>Algorithm behind :</strong></em></p>
+
+<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
+
+<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
+
+<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
+
+<p>iii) send the string to slave node using Socket output stream</p>
+
+<p>iv) get the encrypt string and extract x and Y position  by</p>
+
+<p><strong>X=encrypt/10000;</strong></p>
+
+<p><strong>y=encrypt - X;</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+
+<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
+    <updated>2010-01-04T00:48:02+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
+    <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive :)_</p>
+
+<p><em>Follow the simple steps below :</em></p>
+
+<p><em><strong>i) Installation:</strong></em></p>
+
+<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
+
+<p><strong><em>ii) Configure :</em></strong></p>
+
+<p>now configure the interface you use</p>
+
+<p>say for ethernet  run <strong>tleds eth0 </strong></p>
+
+<p>and for wirless  run <strong>tleds wlan0</strong></p>
+
+<p><em>Perform a restart :)</em></p>
+
+<p><em><strong>iii) Customize :</strong></em></p>
+
+<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
+
+<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
+
+<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
+
+<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
+
+<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
+_</p>
+
+<p>enjoy :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Facebook mouseclicks hack !]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack/"/>
+    <updated>2010-01-01T21:05:04+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack</id>
+    <content type="html"><![CDATA[<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
+
+<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
+
+<p><em><strong>step 1:</strong></em></p>
+
+<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
+
+<p>the code seems like :</p>
+
+<p><em>import java.awt.Robot;
+import java.awt.event.InputEvent;
+/<strong>
+*
+* @author karthik
+*/
+public class Main {
+/</strong>
+* @param args the command line arguments
+*/
+public static void main(String[] args) throws Throwable {
+Robot r=new Robot();</em></p>
+
+<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
+System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
+r.delay(10000);_</p>
+
+<p><em>// TODO code application logic here
+for(int i=0;i&lt;10000;i++){
+r.mousePress(InputEvent.BUTTON1_MASK);
+System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
+r.mouseRelease(InputEvent.BUTTON1_MASK);
+System.out.println();
+System.out.println();
+}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
+
+<p><em>}
+}</em></p>
+
+<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
+
+<p><em><strong>step 2:</strong></em></p>
+
+<p>open <strong>terminal </strong></p>
+
+<p>compile the java code by running from the location where code is located by</p>
+
+<p><strong>javac Main.java</strong></p>
+
+<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
+
+<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
+
+<p><em><strong>step 3:</strong></em></p>
+
+<p>Run the java code now this is critical part</p>
+
+<p><strong>java Main </strong></p>
+
+<p><strong>( you can directly run this  by extracting Main.java.zip from above )
+</strong></p>
+
+<p>you will get a screen saying</p>
+
+<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
+
+<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
+
+<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
+
+<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
+
+<p><strong>for more clear details watch the video below :</strong></p>
+
+<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
+
+<p>Thank you :)</p>
+
+<p><em><strong>Disclaimer :</strong></em></p>
+
+<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Music in Humble terminal]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/01/music-in-humble-terminal/"/>
+    <updated>2010-01-01T18:21:29+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/01/music-in-humble-terminal</id>
+    <content type="html"><![CDATA[<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
+
+<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
+
+<p>_iii) if your admin blocked gui
+_</p>
+
+<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
+
+<p><strong><em>Step 1:</em></strong></p>
+
+<p>install the <strong>sox</strong> for linux by running</p>
+
+<p><strong>sudo apt-get install sox</strong></p>
+
+<p><em><strong>Step 2:</strong></em></p>
+
+<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
+
+<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
+
+<p><em><strong>Step 3 :</strong></em></p>
+
+<p>Now your done with  :)</p>
+
+<p>just locate the music folder and run the file</p>
+
+<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
+
+<p>for eg:</p>
+
+<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
+
+<p><em>I&#8217;m So Available.mp3:</em></p>
+
+<p><em>File Size: 7.93M     Bit Rate: 239k
+Encoding: MPEG audio    Info: 2009
+Channels: 2 @ 16-bit   Track: 3
+Samplerate: 44100Hz      Album: Akon - Collection
+Replaygain: off         Artist: Akon Feat. Flo-Rida
+Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
+
+<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
+
+<p>this is what you will see</p>
+
+<p><em><strong>Step 4: </strong></em></p>
+
+<p>not only listening you can also record from terminal</p>
+
+<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
+
+<p>you will se output recording screen as</p>
+
+<p><em>Input File     : &#8216;default&#8217; (alsa)
+Channels       : 2
+Sample Rate    : 48000
+Precision      : 16-bit
+Sample Encoding: 16-bit Signed Integer PCM</em></p>
+
+<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
+
+<p>now your recording will be saved in my-recording.wav file in music folder</p>
+
+<p>enjoy with sox :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Read CPU Core Temperature ]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/01/read-cpu-core-temperature/"/>
+    <updated>2010-01-01T04:30:24+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/01/read-cpu-core-temperature</id>
+    <content type="html"><![CDATA[<p>Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . Then I chose lm-sensor for this purpose .</p>
+
+<p><strong><em>step1</em></strong></p>
+
+<p>Installation :</p>
+
+<p>install the package lm sensors for your linux distro</p>
+
+<p><strong>sudo apt-get install lm-sensors</strong></p>
+
+<p><strong><em>step 2:</em></strong></p>
+
+<p>run <strong>sensors</strong> in terminal</p>
+
+<p>if you have installed for first time probe it to kernel first</p>
+
+<p><em>step 3: </em>restart the system and try sensors now</p>
+
+<p>I have a core2quad processor and i get temperature of four processors as</p>
+
+<p><em>karthik@Karthik:~/Programs$ sensors
+coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:      +47.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0001
+Adapter: ISA adapter
+Core 1:      +37.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0002
+Adapter: ISA adapter
+Core 2:      +39.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0003
+Adapter: ISA adapter
+Core 3:      +46.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><strong><em>step 3: </em></strong></p>
+
+<p>call the <strong>process </strong>class of java and get back the string returned</p>
+
+<p><em>import java.io.*;
+class cpu {
+public static void main(String []args) throws Exception
+{
+Runtime r=Runtime.getRuntime();
+String f,temp,res=&#8221;&#8220;;
+int i=0,j=0;
+f=&#8221;sensors&#8221;;
+Process p=r.exec(f);
+BufferedReader pin=new BufferedReader(new InputStreamReader(p.getInputStream()));
+while((temp=pin.readLine())!=null)
+{
+System.out.println(temp);
+}
+}</em>
+<em>}</em></p>
+
+<p>Then make it flexible for your own purpose  by proper string parsing &#8230;.</p>
+
+<p>Thank you !<em><strong>
+</strong></em></p>
+
+<p>_
+_</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Avatar (2009)]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/12/29/avatar-2009/"/>
+    <updated>2009-12-29T00:54:43+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/12/29/avatar-2009</id>
+    <content type="html"><![CDATA[<p><img src="http://media.silive.com/entertainment_impact_tvfilm/photo/12-17avatarjpg-8785ff894e35e1b6_large.jpg" alt="" /></p>
+
+<p>I have to start with saying Cameroon dissaponted me &#8230;</p>
+
+<p>Even storyline doesnt seems to be great but   visual effects are fantastic and real . Na&#8217;vi&#8217;s are the creatures in a planet pandora . For me their appearance resembles as traditional character Lord  Rama  . Avatar too is sanskrit word meaning phases of vishnu where one is Rama . I guess it may be a copy :P  .</p>
+
+<p>No great explanation about the planets existence whats their origin where is it actually located .. blah blah  . The most humorous thing I  noticed is the base attack with lumps of fire ( where the place  people struggle for oxygen ,  but how combustion is possible  :P  ) .</p>
+
+<p>I don&#8217;t know where to categorize this film .. either in animation or  comic series or scientific fiction or just an entertainer .. Only plus point makes the film still run is 3D . the existence of evya the holy god still confuses me whether film falls under spiritual r religious category :D .</p>
+
+<p>The soul DNA transformation concept , electrochemical network of trees , the precious stones significance and  the hair like generic  interface between avatar and rest living creatures  could  be explained little more.</p>
+
+<p>Its seems like Cameroon loosing his originality and resembles Speilsburg &#8216;s Jurassic park. A must watch  film for kids &lt; 10 :D .</p>
+
+<p>Well if you fix on to watch this movie I recommend you  to watch it in 3D with surround sound ( don&#8217;t watch it out in your damn old pc and get disappointed )</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Nokia Hacks and tips ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips/"/>
+    <updated>2009-11-22T06:24:36+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips</id>
+    <content type="html"><![CDATA[<p>Try  this codes in your cell if you are not familiar with this one  b4..</p>
+
+<p>_This may help you when you are stuck up or trace some details out of your Mobile :
+_</p>
+
+<p><strong>*3370#</strong> Activate Enhanced Full Rate Codec (EFR) - Your phone uses the
+best sound quality but talk time is reduced my approx. 5%</p>
+
+<p><strong>#3370# </strong>Deactivate Enhanced Full Rate Codec (EFR)</p>
+
+<p><strong>*4720#</strong> Activate Half Rate Codec - Your phone uses a lower quality
+sound but you should gain approx 30% more Talk Time.</p>
+
+<p><strong>#4720# </strong>Deactivate Half Rate Codec.</p>
+
+<p><strong>*#0000# </strong>Displays your phones software version, 1st Line : Software
+Version, 2nd Line : Software Release Date, 3rd Line :
+Compression Type.</p>
+
+<p><em><strong>#9999# </strong>Phones software version if </em>#0000# does not work.</p>
+
+<p><strong>*#06# </strong>For checking the International Mobile Equipment Identity (IMEI
+Number).</p>
+
+<p><strong>#pw+1234567890+1# </strong>
+Provider Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
+
+<p><strong>#pw+1234567890+2# </strong>
+Network Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
+
+<p><strong>#pw+1234567890+3# </strong>
+Country Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
+
+<p><strong>#pw+1234567890+4# </strong>
+SIM Card Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
+
+<p><strong>*#147#</strong> (vodafone) this lets you know who called you last.</p>
+
+<p><strong>*#1471# </strong>Last call (Only vodofone).</p>
+
+<p><strong>*#21#</strong> Allows you to check the number that &#8220;All Calls&#8221; are diverted to.</p>
+
+<p><strong>*#2640#</strong> Displays security code in use.</p>
+
+<p><strong>*#30# </strong>Lets you see the private number.</p>
+
+<p><strong>*#43# </strong>Allows you to check the &#8220;Call Waiting&#8221; status of your phone.</p>
+
+<p><strong>*#61# </strong>Allows you to check the number that &#8220;On No Reply&#8221; calls are
+diverted to.</p>
+
+<p><strong>*#62#</strong> Allows you to check the number that &#8220;Divert If Unreachable (no
+service)&#8221; calls are diverted to.</p>
+
+<p><strong>*#67#</strong> Allows you to check the number that &#8220;On Busy Calls&#8221; are diverted
+to.</p>
+
+<p><strong>*#67705646# </strong>Removes operator logo on 3310 &amp; 3330.</p>
+
+<p><strong>*#73# </strong>Reset phone timers and game scores.</p>
+
+<p><strong>*#746025625# </strong>Displays the SIM Clock status, if your phone supports this power
+saving feature &#8220;SIM Clock Stop Allowed&#8221;, it means you will get
+the best standby time possible.</p>
+
+<p><em><strong>#7760#</strong> Manufactures code.
+**
+</em>#7780#** Restore factory settings.</p>
+
+<p><strong>*#8110# </strong>Software version for the nokia 8110.</p>
+
+<p><strong>*#92702689# </strong>Displays - 1.Serial Number, 2.Date Made, 3.Purchase Date,
+4.Date of last repair (0000 for no repairs), 5.Transfer User Data.
+To exit this mode you need to switch your phone off then on again.</p>
+
+<p><strong>*#94870345123456789# </strong>Deactivate the PWM-Mem.</p>
+
+<p><strong><em>*21</em>number# </strong>Turn on &#8220;All Calls&#8221; diverting to the phone number entered.</p>
+
+<p><strong><em>*61</em>number# </strong>Turn on &#8220;No Reply&#8221; diverting to the phone number entered.</p>
+
+<p><strong><em>*67</em>number#</strong> Turn on &#8220;On Busy&#8221; diverting to the phone number entered.</p>
+
+<p><strong>12345</strong> This is the default security code.</p>
+
+<p>Remember few of these codes may not work for recent nokia models &#8230;.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 10.04 Lucid Lynx]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/21/ubuntu-10-04-lucid-lynx/"/>
+    <updated>2009-11-21T04:14:16+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/21/ubuntu-10-04-lucid-lynx</id>
+    <content type="html"><![CDATA[<p>Ubuntu 10.04 release named <strong>Lucid Lynx</strong> is the next release..</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg?w=300" alt="" /></a></p>
+
+<p>Well<strong> 10 second boot time</strong> is the main aim of this release it seems . I felt the high speed booting of my 9.10 karmic now from older hardy heron( 65 seconds to 25 seconds ) . still lucid aims at 10 seconds boo time as the main aim to achieve  . This release seems to be released at next year 2010 .</p>
+
+<p><strong><em>The 10 second boot time is acheived by equal partitoin of modules at start up  with:</em></strong></p>
+
+<p>i) loading the kernel and initramfs should take two seconds,</p>
+
+<p>ii) driver loading, filesystem mounting, and other &#8220;plumbing&#8221; should take two seconds,</p>
+
+<p>iii) launching Xorg should take two seconds</p>
+
+<p>iv)  the remaining four seconds should be used to launch the desktop environment and other services that are part of the user&#8217;s session.</p>
+
+<p>( if you are not well verse in this terms then please open your eyes after 10 seconds from start of booting  )</p>
+
+<p><em>The computer should be fully booted and ready to use at the end of ten seconds</em></p>
+
+<p>_
+_</p>
+
+<p><em>but as a sad part GIMP is removed from standard installation of ubuntu  when queried  developers say  :</em></p>
+
+<ul>
+<li><p>the general user doesn’t use it</p></li>
+<li><p>its user-interface is too complex</p></li>
+<li><p>it’s an application for professionals</p></li>
+<li><p>desktop users just want to edit photos and they can do that in F-Spot</p></li>
+<li><p>it’s a photoshop replacement and photoshop isn’t included by default in Windows…</p></li>
+<li><p>it takes up room on the disc</p></li>
+</ul>
+
+
+<p>_
+_</p>
+
+<p><em>Im realy sad about this plot and really the fifth point  &#8220;it’s a photoshop replacement and photoshop isn’t included by default in Windows…&#8221;    . comparing a linux distro with a windows .</em></p>
+
+<p><strong><em>If they speak so then linux must be a simple skeleton with a sucky media player and a paint program as some others do. </em></strong></p>
+
+<p>well even it &#8216;s sad ,  I guess it doesnt takes more than a couple of minutes to trigger <strong>sudo apt-get install gimp :D
+</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make your own OS ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/18/make-your-own-os/"/>
+    <updated>2009-11-18T18:56:52+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/18/make-your-own-os</id>
+    <content type="html"><![CDATA[<p><strong>Make your Operating System of your choice with five simple steps ( for linux geeks only ) :</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em><strong>Step 1: Download and install Reconstructor</strong></em></p>
+
+<p><a href="http://www.box.net/shared/5cqxv1obr6"> Downloads click here</a></p>
+
+<p>and run<em> </em><strong>sudo dpkg -i   reconstructor_2.8.1_by_hacktolive.org.deb</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><strong><em>Step 2: Meta&#8211;>System Tools &#8211;> Recontructor </em></strong></p>
+
+<p>Now open the package reconstructor from system tools and enter your root password  . Click Next .</p>
+
+<p><em><strong>Step 3: Choose alternate cd option</strong></em>
+on available options choose alternate cd to make a installable bootable OS  , or live cd fr live session of the cd</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/start1.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/start1.gif?w=300" alt="" /></a></p>
+
+<p><em><strong>Step 4:  setting up the base </strong></em></p>
+
+<p>Now choose the working directory  and swap space to work up . Locate the iso image of your ubuntu CD or enter Ubuntu CD into cd rom</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/cd.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/cd.gif?w=300" alt="" /></a></p>
+
+<p><em><strong>Step 5:adding up your own packages </strong></em></p>
+
+<p>Now you can add new packages or delete the unwamnted ones  and choose wallpapers , thems , the appln to boot on start up , the one you dont need with simple interface</p>
+
+<p>and finally create disk will create your fresh piece of distro</p>
+
+<p>You can have a try of remaster sys or  if you are really a linux geek try to do from scratch try the lengthy  step as in Linux  wiki  with squashfs tools</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/addpackage.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/addpackage.gif?w=300" alt="" /></a></p>
+
+<p>Now you can burn this iso image and distribute among your circle and call this as your   NEW DEVELOPED OS  as people say  :P</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Is New Orkut Really New ?]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new/"/>
+    <updated>2009-11-16T06:39:26+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new</id>
+    <content type="html"><![CDATA[<p>Well few days Back I heard something called new orkut . It took weeks before since last time I logged in  Orkut . Facebook attracted me more and some how addicted to it .Now heard about<strong> &#8220;New Orkut &#8221;</strong> I came back to my old orkut :) .</p>
+
+<p>Goodness I got invite from some one ( sad thing is New Orkut too is a<strong> Invite and use system</strong> ). Well when I saw try new orkut at top , Clicked it really expecting a amazing wonder as an Alice . But I seen a page something very similar to face-book which disappointed me a lot .</p>
+
+<p><em>What they say new in this version are &#8230;</em></p>
+
+<p>i) They say &#8217;<strong> Friends updates are available to every one</strong> &#8217; .. Do you guess this thing new as an FB user  :P</p>
+
+<p>ii) second &#8217;<strong>Every one can comment on any friends notification</strong> , updates ,application and friend acceptance &#8217; .</p>
+
+<p>iii) A new thing I found interesting is<strong> Video chatting integrated</strong> with orkut ( pity on Linux users , it says &#8217; OS not supported &#8216;)</p>
+
+<p>iv) Best feature I found in this release is <strong>IE 6</strong> is not at all supported :) .</p>
+
+<p>v) Next humorous thing I found is adding a general sucky template  and five sticky colors  of their own  choice and  they said  &#8221; <strong>Pick your favorite colors We&#8217;ve made orkut even more colorful </strong>&#8220;  ..</p>
+
+<p><strong>vi) Speed</strong> is the main thing they mentioned they have increased .. But instead of static pages I can see my page still buffering in status bar  ( stealing my pity small free  download limit I have :( )</p>
+
+<p>vii) And the highlight of all is they mentioned <strong>moving chat bar from left side to right side</strong> as a new feature :D ( I guess the only thing they didnt imitate is the notification bar you can see under  as In face Book )</p>
+
+<p><img src="http://karthikselvakumar.files.wordpress.com/2009/11/screenshot-51.gif?w=300" alt="New Orkut" /></p>
+
+<p>I guess it may take time to  digest this things and to switch over to new orkut .  The thing I like the most is the prefix <strong>Beta</strong> in Orkut  ( a word which can answer almost  all the bugs  user raises :P  )</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using windows NT Boot Loader with Linux]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/16/using-windows-nt-boot-loader/"/>
+    <updated>2009-11-16T05:33:34+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/16/using-windows-nt-boot-loader</id>
+    <content type="html"><![CDATA[<p>_
+Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_</p>
+
+<p><em>Do you wanna taste the difference booting your Linux system through a windows boot loader ?</em></p>
+
+<p>_
+_</p>
+
+<p><em><strong>Follow Five simple steps To make it working  :</strong></em></p>
+
+<p><em><strong>
+</strong></em></p>
+
+<p><strong>Step i)  Copy your grub.bin  file to windows </strong></p>
+
+<p>Open your terminal and run  <strong> dd if=/dev/sdaN of=grub.bin bs=512 count=1</strong> where <strong>N</strong> denotes your Linux installed medium</p>
+
+<p><em>*Step ii) Copy the grub.bin file to c:*</em></p>
+
+<p>Well now boot into windows and copy <strong>grub.bin</strong> file to your windows  primary medium (you can  use flash medium to take grub.bin from linux )</p>
+
+<p><strong>step iii) working out in boot.ini </strong></p>
+
+<p>now set all previleges to boot.ini file by running<strong> attrib -r -w -s c:\boot.ini </strong>on windows</p>
+
+<p><strong>step iV) add the linux entry to it</strong></p>
+
+<p>Open the<strong> boot.ini </strong>file and add a line<strong> c:\grub.bin=&#8221;XPUD &#8221; </strong>denoting XP with Ubuntu Desktop , Name is  of your choice</p>
+
+<p><strong>Step v) save and restart</strong></p>
+
+<p>Now save all the changes and <strong>restart </strong>now you will see the windows NT loader showing two entires windows and Linux</p>
+
+<p><img src="http://www.xpud.org/image/windows-boot.png" alt="http://www.xpud.org/image/windows-boot.png" /></p>
+
+<p>Switch between any of choices as you wish ;)</p>
+
+<p><em>note i: If you got any fatal errors during the switch over try replacing grub by a rescue disk</em></p>
+
+<p>_
+note ii: if you choose not to place MBR with GRUB during linux installation then  you have no choice to load your Linux from hard disk ( for advanced users ) then you can use live CD and run above commands for Linux to fix it up _</p>
+
+<p>_
+_</p>
+
+<p>If you are ready to loose the power of grub and want  something experimenting and new I recommend  this ;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Orkut Scrap made me mad Before ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/15/orkut-scrap-made-me-mad-before/"/>
+    <updated>2009-11-15T19:40:33+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/15/orkut-scrap-made-me-mad-before</id>
+    <content type="html"><![CDATA[<p>well this morning I received a flash embedded scrap from my friend and I&#8217;m really afraid and searched for web cam&#8217;s all around and even tried after disconnecting from net  what a shit  worked too :(</p>
+
+<p>Now take a try of this application as many times as possible till you find it fails , and  let they accept you cheated it &#8230;</p>
+
+<p><strong><a href="http://www.orkut-scrapping.com/img/special/mindreader.swf">Mind reader</a></strong>( remember its a flash application )</p>
+
+<p>Now come back here .. Guess you must anxious and afraid how it works exactly as your mind thinks it   ( the same situation where I&#8217;m few hours before )</p>
+
+<p>I tried it as many times as possible  , this happened unless my browser crashed and till I&#8217;m satisfied that it&#8217;s not a trial and error</p>
+
+<p> I thought in different angle as I can ,  whether they trace thro&#8217; webcam , with my angle of inclination of head ,etc etc,.</p>
+
+<p>Then I really thought how stupid I&#8217;m when i keenly watched the application for several times .</p>
+
+<p>well guess you tried it before and now what makes a application less than 100 kb to guess what your mind reads</p>
+
+<p><strong>
+A simple logic now keenly watch all the logos in multiples of 9 ..( Thats what you are going to get   :P)</strong></p>
+
+<p>and try now you got the thing ( if you didn&#8217;t know its logic so far ) and see how many pale faces are still waiting to be cheated :D</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Chrome Os - Rush Time ]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time/"/>
+    <updated>2009-11-15T02:40:50+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time</id>
+    <content type="html"><![CDATA[<p><strong>As for Google mentioned :</strong></p>
+
+<p><em>&#8221; Google Chrome OS is an open source, lightweight operating system that will initially be targeted at net-books. Later this year we will open-source its code, and net books running Google Chrome OS will be available for consumers in the second half of 2010. Because we’re already talking to partners about the project, and we’ll soon be working with the open source community, we wanted to share our vision now so everyone understands what we are trying to achieve. &#8221;</em></p>
+
+<p>But the <strong>major leaks </strong>I found is every file you store move or even trash happens to be in remote server .</p>
+
+<p>It is similar to saying even your personal credential files will be exposed to them and your only allocated necessary privileges to access the files . I dono how far it is gonna be secure .</p>
+
+<p>Persons with limited network bandwidth will be harder to use because  each operation is a complicated network oriented .</p>
+
+<p>Third even if I have huge hard disk say several TB&#8217;s we are forced to access file from/to network which adds on burden for traditional off-line users .</p>
+
+<p>As they mentioned  Chrome OS as LIGHT WEIGHT  BROWSER BASED OS they doesn&#8217;t seem to match with high end gaming as well as with advanced hardware and software support . They seem to simplify more as only single processor is utilized even you have multi-core&#8217;s.( Under utilization of available resource as far as I learnt :))</p>
+
+<p>Guess this is a better matched OS for atom based processors and x86 series.</p>
+
+<p>well  this time Im expecting a<strong> real worthy  OS from Google </strong>( rather years ago I got a distro named GOS which is nothing rather than a new Themed Ubuntu :P)</p>
+
+<p><strong>Google chrome OS demo:</strong>
+[youtube=http://www.youtube.com/watch?v=nJByVHyNIi0&amp;feature=player_embedded]</p>
+
+<p>Free open source and Linux kernel are the pleasing words , as for as the project is concerned which gained my attention.</p>
+
+<p><a href="http://www.payoffers.in/Kotak.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70"><strong>Get Rs.250 cash back on your Trump Card now-      Kotak Mahindra Bank</strong>
+<img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70" alt="" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Grub or Lilo ? what are they ?]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/11/14/grub-or-lilo-what-are-they/"/>
+    <updated>2009-11-14T14:55:03+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/11/14/grub-or-lilo-what-are-they</id>
+    <content type="html"><![CDATA[<p><strong> well before stating about GRUB and LILO let me briefly say what are they :</strong></p>
+
+<p>They are <strong>Boot loaders </strong>.. Exactly they are piece of code which places your operating system from secondary hard disk to RAM when you switch on your PC . Thats why we say &#8217; My PC didn&#8217;t boot &#8217; instead saying like Iron box or TV  doesnt switch &#8216;on&#8217;  .</p>
+
+<p><strong>well any how this doesn&#8217;t be much seen by naive users and mostly hidden Then why care about those thing ?</strong></p>
+
+<p>even seems like its hidden it has many consequence on multiple OS environment  . If you used Linux past three years before then you will be more familiar about grub <strong>error 17 stage 1.5 error </strong>( once we annoyed at this strange one and thought even hardware is totally gone useless :D )</p>
+
+<p>I know speaking about grub and LILO is a most unresolvable one like we already have</p>
+
+<p>**KDE vs Gnome</p>
+
+<p>Emacs Vs Vi**</p>
+
+<p><strong>as once Linux article said :</strong></p>
+
+<p>_&#8221; no arguing about a Linux distribution&#8217;s bootloader. With LILO (LInux LOader) as the dominant software for this purpose, many seasoned Linux system administrators had mastered the art of creating a lilo.conf file out of thin air, without having to look through any LILO documentation. &#8221;
+_</p>
+
+<p>But Unfortunately for them, the release notes of Red Hat 7.2, released in October 2001, informed us that &#8220;we now use GRUB as the default boot loader.&#8221;  This is point where Grub emerges</p>
+
+<p><strong>Cool Grub at start up :</strong></p>
+
+<p><img src="http://cache.techie-buzz.com/images/posts/grub.jpg" alt="Grub" /></p>
+
+<p>At present at <strong>Ubuntu 9.10 grub 1.97 is beta </strong>( remember once its alpha release with several bugs)    and even detects RAID 0,1 and all server configuration with less effort and also Grub provides its own <strong>unique interface</strong> ( Type grub in console to open up )</p>
+
+<p>As far as Linux geeks  grub is emerging technology with efforts to replace  LILO  and easify users with problems stuck on MBR</p>
+
+<p>Any how , competitions makes a better product  in all   &#8230;.. well this is not an exceptional case ;)</p>
+
+<p><a href="http://www.payoffers.in/VLCC.php?a_aid=bfdaf6da&amp;a_bid=37f04f1c"><img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=37f04f1c" alt="Click Here" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

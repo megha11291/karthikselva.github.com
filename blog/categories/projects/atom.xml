@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Projects | Hacker's Diary]]></title>
+  <link href="http://karthikselva.github.com/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://karthikselva.github.com/"/>
+  <updated>2013-02-24T00:19:01+05:30</updated>
+  <id>http://karthikselva.github.com/</id>
+  <author>
+    <name><![CDATA[karthikselva's log]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <updated>2010-02-23T05:48:22+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <content type="html"><![CDATA[<p><strong><em>tested with :</em></strong></p>
+
+<p>i) ubuntu 8.10</p>
+
+<p>ii)gnokii</p>
+
+<p>iii) mysql 5</p>
+
+<p>iv) lg kp 199</p>
+
+<p><em><strong>functionalities :</strong></em></p>
+
+<p>i) just message "<strong>lock</strong>" to your server mobile to lock the screen</p>
+
+<p>ii)   "<strong>unlock</strong>" to release the screen</p>
+
+<p>iii) you can even change the pidgin status by messaging "<strong>status:your status here</strong> "</p>
+
+<p>iv )  execute any shell commands that take return value  below 160  characters</p>
+
+<p><em><strong>procedure:</strong></em></p>
+
+<p><strong><em>step 1) </em></strong></p>
+
+<p>set the memory for sms to sim and run the smsd daemon as</p>
+
+<p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root --password=password -b SM -f /var/log/smsdaemon.log</strong></p>
+
+<p><em><strong>step 2)</strong></em></p>
+
+<p>run this python script  and minimize the shell</p>
+
+<p>_#!/usr/bin/python
+``` python</p>
+
+<h1>    before running this program you must configured gnokii-smsd and it must be up and running</h1>
+
+<h1>    @Author:    Karthik selvakumar</h1>
+
+<h1>    Name :     Dictionary Server</h1>
+
+<h1>install python-MySQLdb  before importing this module</h1>
+
+<p>import MySQLdb</p>
+
+<h1>imported inorder to perform shell operations</h1>
+
+<p>import os</p>
+
+<p>processed=1;</p>
+
+<h1>run as a daemon and never exit this thread</h1>
+
+<p>while(True):</p>
+
+<h1>defines the database parameter change according to your configuration</h1>
+
+<p>host="localhost"</p>
+
+<p>user="root"</p>
+
+<p>passwd="123456"</p>
+
+<p>db="smsgw"</p>
+
+<h1>creates a database object for corresponding config</h1>
+
+<p>db=MySQLdb.connect(host,user,passwd,db)</p>
+
+<p>cursor=db.cursor()</p>
+
+<h1>performs pruning of inbox table which may contain null entities</h1>
+
+<p>cursor.execute("delete from inbox where text=\"\"")</p>
+
+<h1>gets the latest entered SMS from Mysql server</h1>
+
+<p>cursor.execute(" select number,text,id,processed from inbox where id=(select max(id) from inbox)")</p>
+
+<p>record=cursor.fetchall()</p>
+
+<p>for result in record:</p>
+
+<h1>gets the word to find meaning</h1>
+
+<p>word=result[1]</p>
+
+<h1>get the number bcoz u have to reply the meaning to this number later ;)</h1>
+
+<p>number=result[0]</p>
+
+<p>row=result[2]</p>
+
+<p>processed=result[3]</p>
+
+<p>if(processed==0):</p>
+
+<h1>script to get meaning of a word from google server</h1>
+
+<p>if(word=="lock"):
+up="gnome-screensaver-command --lock";
+elif(word=="unlock"):
+up="xset dpms force on &amp;&amp; gnome-screensaver-command -d";</p>
+
+<p>elif(word.startswith("status:")):
+up=" purple-remote \"setstatus?status=available&amp;message="+str(word.replace("status:",""))+"\"";</p>
+
+<p>else:
+up=word+" >meaning.txt";</p>
+
+<p>print up;</p>
+
+<h1>set the entity to be processed when taken out</h1>
+
+<p>cursor.execute(" update inbox  set processed=1 where id="+str(row));</p>
+
+<h1>run the command in shell and write it to file named meaning.txt</h1>
+
+<p>os.system(up)</p>
+
+<h1>open the file in read only mode</h1>
+
+<p>filehandle=open('meaning.txt','r')</p>
+
+<h1>load the meaning in the string text</h1>
+
+<p>text=filehandle.read()</p>
+
+<p>print " text is "+text;</p>
+
+<h1>we no more need this</h1>
+
+<p>filehandle.close()</p>
+
+<p>if(text!=""):
+cursor.execute("insert into outbox(number,text) values(%s,%s)",(number,text))</p>
+
+<h1>close all active connections :)</h1>
+
+<p>cursor.close()</p>
+
+<p>db.close()</p>
+
+<h1>thank you !_</h1>
+
+<p>```
+<em><strong>step 3)</strong></em></p>
+
+<p>your done with now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <updated>2010-02-14T04:29:35+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
+
+<p><em><strong>Requirments :</strong></em></p>
+
+<p>i)  A GSM mobile phone</p>
+
+<p>ii)  Linux  with python</p>
+
+<p>iii) Mysql Database</p>
+
+<p>iv)  Gnokii-SMSD</p>
+
+<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
+
+<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
+
+<p><em><strong>Code :</strong></em></p>
+
+<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
+
+<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
+
+<p><em>#!/usr/bin/python</em></p>
+
+<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
+
+<h1>    @Author:    Karthik selvakumar</h1>
+
+<h1>    Name :     Dictionary Server_</h1>
+
+<p><em># install python-MySQLdb  before importing this module</em></p>
+
+<p><em>import MySQLdb</em></p>
+
+<p><em># imported inorder to perform shell operations</em></p>
+
+<p><em>import os</em></p>
+
+<p><em># run as a daemon and never exit this thread</em></p>
+
+<p><em>while(True):</em></p>
+
+<p><em>#defines the database parameter change according to your configuration</em></p>
+
+<p><em>host="localhost"</em></p>
+
+<p><em>user="root"</em></p>
+
+<p><em>passwd="password"</em></p>
+
+<p><em>db="smsgw"</em></p>
+
+<p><em>#creates a database object for corresponding config</em></p>
+
+<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
+
+<p><em>cursor=db.cursor()</em></p>
+
+<p><em>#performs pruning of inbox table which may contain null entities</em></p>
+
+<p><em>cursor.execute("delete from inbox where text=\"\"")</em></p>
+
+<p><em>#gets the latest entered SMS from Mysql server</em></p>
+
+<p><em>cursor.execute(" select number,text,id from inbox where id=(select max(id) from inbox)");</em></p>
+
+<p><em>record=cursor.fetchall()</em></p>
+
+<p><em>for result in record:</em></p>
+
+<p><em># gets the word to find meaning</em></p>
+
+<p><em>word=result[1]</em></p>
+
+<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
+
+<p><em>number=result[0]</em></p>
+
+<p><em>row=result[2]</em></p>
+
+<p><em># script to get meaning of a word from google server</em></p>
+
+<p><em>up='/usr/bin/curl -s -A \'Mozilla/4.0\' \'http://www.google.com/search?q=define%3A\''</em></p>
+
+<p><em>low='| html2text -ascii -nobs -style compact -width 500 | grep "*" | head -n 1 -q | tail -n 1 > meaning.txt'</em></p>
+
+<p><em># run the command in shell and write it to file named meaning.txt</em></p>
+
+<p><em>os.system(up+word+low)</em></p>
+
+<p><em># open the file in read only mode</em></p>
+
+<p><em>filehandle=open('meaning.txt','r')</em></p>
+
+<p><em># load the meaning in the string text</em></p>
+
+<p><em>text=filehandle.read()</em></p>
+
+<p><em># we no more need this</em></p>
+
+<p><em>filehandle.close()</em></p>
+
+<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
+
+<p><em>cursor.execute("insert into outbox(number,text) values(%s,%s)",(number,text))</em></p>
+
+<p><em># close all active connections :)</em></p>
+
+<p><em>cursor.close()</em></p>
+
+<p><em>db.close()</em></p>
+
+<p><em>#thank you !</em></p>
+
+<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
+
+<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
+
+<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
+
+<p>Enjoy :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <updated>2010-02-01T03:33:06+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
+_</p>
+
+<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+
+<p>_
+_</p>
+
+<p>you can use this code to move the cursor</p>
+
+<p>and with little modification you can emulate a whole mouse and keyboard functionalities too ...</p>
+
+<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
+</a></strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em><strong>To Do :</strong></em></p>
+
+<p><em><strong>
+</strong></em></p>
+
+<p>step i) run the server.class first in machine u want to control say A</p>
+
+<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step ii) run the client.class in second machine u have the mouse say B</p>
+
+<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step iii) move  mouse in machine B so that it moves on machine A</p>
+
+<p><em><strong>Algorithm behind :</strong></em></p>
+
+<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
+
+<p>ii) send the position in a '<strong>encrypt</strong>' string with X and Y positions merged</p>
+
+<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
+
+<p>iii) send the string to slave node using Socket output stream</p>
+
+<p>iv) get the encrypt string and extract x and Y position  by</p>
+
+<p><strong>X=encrypt/10000;</strong></p>
+
+<p><strong>y=encrypt - X;</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+
+<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
+    <link href="http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
+    <updated>2010-01-04T00:48:02+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
+    <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led's to monitor packets send and receive :)_</p>
+
+<p><em>Follow the simple steps below :</em></p>
+
+<p><em><strong>i) Installation:</strong></em></p>
+
+<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
+
+<p><strong><em>ii) Configure :</em></strong></p>
+
+<p>now configure the interface you use</p>
+
+<p>say for ethernet  run <strong>tleds eth0 </strong></p>
+
+<p>and for wirless  run <strong>tleds wlan0</strong></p>
+
+<p><em>Perform a restart :)</em></p>
+
+<p><em><strong>iii) Customize :</strong></em></p>
+
+<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
+
+<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
+
+<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
+
+<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
+
+<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
+_</p>
+
+<p>enjoy :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple chess]]></title>
+    <link href="http://karthikselva.github.com/blog/2009/10/24/simple-chess/"/>
+    <updated>2009-10-24T07:02:52+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2009/10/24/simple-chess</id>
+    <content type="html"><![CDATA[<p>Is it too boring ..?
+Then try my  web chess ,  a simple  php and mysql based application with simple GUI .
+(guess you Know we need two people to play chess )<br/>
+<a href="http://karthikselva.noadsfree.com/webchess/">Try the link from anywhere around the world and choose opponent's from every where . </a>
+Have Fun :)</p>
+]]></content>
+  </entry>
+  
+</feed>
