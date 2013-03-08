@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithms | Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-02-24T03:29:49+05:30</updated>
+  <updated>2013-03-08T10:09:29+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -18,112 +18,7 @@
     <link href="http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes/"/>
     <updated>2013-01-04T23:48:00+05:30</updated>
     <id>http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes</id>
-    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Zigzag ruby (zig_zag_traversal.rb)</span> <a href='/downloads/code/zig_zag_traversal.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
-</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
-</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
-</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">display</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="vi">@data</span>
-</span><span class='line'>    <span class="vi">@right</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@right</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>    <span class="vi">@left</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@left</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">zigzag</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>    <span class="n">currentlevel</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>    <span class="n">nextlevel</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">toggle</span> <span class="o">=</span> <span class="kp">false</span>
-</span><span class='line'>    <span class="n">currentlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">while</span> <span class="o">!</span><span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>      <span class="n">tree</span> <span class="o">=</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">pop</span>
-</span><span class='line'>      <span class="k">unless</span> <span class="n">tree</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>        <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">.</span><span class="n">data</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">toggle</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">if</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>        <span class="n">toggle</span> <span class="o">=</span> <span class="o">!</span><span class="n">toggle</span>
-</span><span class='line'>        <span class="n">tmp</span> <span class="o">=</span> <span class="n">currentlevel</span>
-</span><span class='line'>        <span class="n">currentlevel</span> <span class="o">=</span> <span class="n">nextlevel</span>
-</span><span class='line'>        <span class="n">nextlevel</span> <span class="o">=</span> <span class="n">tmp</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
-</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="n">test_tree</span><span class="o">.</span><span class="n">zigzag</span><span class="o">.</span><span class="n">inspect</span>
-</span><span class='line'><span class="c1">#test_tree.display</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+    <content type="html"><![CDATA[<p>{% include_code Zigzag ruby zig_zag_traversal.rb %}</p>
 ]]></content>
   </entry>
   
