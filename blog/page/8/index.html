@@ -6,8 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 1st, 2010 Tags: Linux, Projects _If you have more than one system and need to acces all with a single mouse ?
-_ Wanna hack your &hellip;">
+	<meta name="description" content="Published on: Feb 10th, 2010 Tags: Current affairs, Linux Are you baffled by random errands saying &#8220;  ns2 doesn&#8217;t work on ubuntu &#8221 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +108,9 @@ _ Wanna hack your &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/01/cursor-play-with-your-neigbour-system/">
+		<a href="/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/">
 		
-			Cursor Play With Your Neigbour System</a>
+			Installing Network Simulator 2 in Ubuntu</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,78 +126,165 @@ _ Wanna hack your &hellip;">
   
 
 
-<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
+<time datetime="2010-02-10T22:08:25+05:30" pubdate data-updated="true">Feb 10<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p>_If you have more than one system and need to acces all with a single mouse ?
+		<p><em>Are you baffled by random errands saying &#8220;  ns2 doesn&#8217;t work on ubuntu &#8221; and so ?</em></p>
+
+<p><em>Are you a linux geek don&#8217;t wanna boot to windows for network simulator software ?</em></p>
+
+<p><em>did your lab admin made a mess with your system in the name of installing ns2 :D ?</em></p>
+
+<p>_then you are in a right place :)
 _</p>
 
-<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+<p><strong>You can make NS working in your system by putting little effort  on your ubuntu :)</strong></p>
 
-<p>_
-_</p>
+<p><em><strong>Step 1:</strong></em></p>
 
-<p>you can use this code to move the cursor</p>
+<p>Download <a href="http://sourceforge.net/projects/nsnam/files/">network simulator software from here </a></p>
 
-<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
+<p>if you prefer other old versions you can swich by viewing files in that page</p>
 
-<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
-</a></strong></p>
+<p>the file will be of almost 57 MB</p>
 
-<p><strong>
-</strong></p>
+<p><em><strong>Step 2: </strong></em></p>
 
-<p><em><strong>To Do :</strong></em></p>
+<p>Extract the files to your own desired directory</p>
 
-<p><em><strong>
-</strong></em></p>
+<p>I did in <strong>/home/karthik/Desktop/ </strong></p>
 
-<p>step i) run the server.class first in machine u want to control say A</p>
+<p><em><strong>step 3:</strong></em></p>
 
-<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
+<p>now go to your working directory of ns2 by</p>
 
-<p><strong>
-</strong></p>
+<p><strong>cd /home/karthik/Desktop/ns-allinone-2.34</strong></p>
 
-<p>step ii) run the client.class in second machine u have the mouse say B</p>
+<p><em><strong>step 4:</strong></em></p>
 
-<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
+<p>Run this command to check any unresolved dependencies existing between installation</p>
 
-<p><strong>
-</strong></p>
+<p><strong>sudo apt-get install build-essential autoconf automake libxmu-dev</strong></p>
 
-<p>step iii) move  mouse in machine B so that it moves on machine A</p>
+<p>run the command <strong>./install</strong> in terminal</p>
 
-<p><em><strong>Algorithm behind :</strong></em></p>
+<p>it will take around 5 minutes</p>
 
-<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
+<p><em><strong>step 5:</strong></em></p>
 
-<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
+<p>Well Thats were your installation of ns2 exits :)</p>
 
-<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
+<p>now you have to configure to make it alive</p>
 
-<p>iii) send the string to slave node using Socket output stream</p>
+<p>you have to edit in the shell</p>
 
-<p>iv) get the encrypt string and extract x and Y position  by</p>
+<p>run <strong>gedit ~./bashrc</strong></p>
 
-<p><strong>X=encrypt/10000;</strong></p>
+<p>add at end of the file this lines</p>
 
-<p><strong>y=encrypt - X;</strong></p>
+<p>remember change  <strong>/home/karthik/Desktop/ </strong>to your file path say <strong>/home/host-name/</strong></p>
 
 <p><strong>
 </strong></p>
 
-<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+<p><em># LD_LIBRARY_PATH
+OTCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/otcl-1.13
+NS2_LIB=/home/karthik/Desktop/ns-allinone-2.34/lib
+X11_LIB=/usr/X11R6/lib
+USR_LOCAL_LIB=/usr/local/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OTCL_LIB:$NS2_LIB:$X11</em>
+LIB:$USR_LOCAL_LIB_</p>
 
-<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
+<p><em># TCL_LIBRARY
+TCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/tcl8.4.18/library
+USR_LIB=/usr/lib
+export TCL_LIBRARY=$TCL_LIB:$USR_LIB</em></p>
+
+<p><em># PATH
+XGRAPH=/home/karthik/Desktop/ns-allinone-2.34/bin: /home/karthik/Desktop/
+ns-allinone-2.34/tcl8.4.18/unix : /home/karthik/Desktop/ns-allinone-2.34/tk8.4.18/unix
+NS=/home/karthik/Desktop/ns-allinone-2.34/ns-2.34/
+NAM=/home/karthik/Desktop/ns-allinone-2.34/nam-1.14/
+PATH=$PATH:$XGRAPH:$NS:$NAM</em></p>
+
+<p>now save the file and close it</p>
+
+<p>run<strong> source ~/.bashrc</strong></p>
+
+<p>ignore if any errors ;)</p>
+
+<p>then run<strong> ./validate</strong></p>
+
+<p>this is the longest step it takes <strong>30-45 minutes</strong> hence you can have a meal during the course of time ;)</p>
+
+<p><em><strong>step 6: </strong></em></p>
+
+<p>this  is editing thing ( optional )</p>
+
+<p>just make  links to the files in <strong>/home/karthik/Desktop/ns-allinone-2.34/bin </strong> by right click on all files and choose <strong>make link</strong></p>
+
+<p>copy  all and paste to <strong>/usr/bin/ </strong>directory  by running</p>
+
+<p><strong>sudo nautilus</strong></p>
+
+<p>then<strong> rename</strong> the file name for eg) <strong>link to ns </strong> to <strong>ns</strong> and so on . do this till all files are renamed .</p>
+
+<p><em><strong>step 7: </strong></em></p>
+
+<p>Sample code</p>
+
+<p>now u can check out a demo to test you ns 2 by writing a sample code as below :</p>
+
+<p><em>#Create a simulator object
+set ns [new Simulator]</em></p>
+
+<p><em>#Open the nam trace file
+set nf [open out.nam w]
+$ns namtrace-all $nf</em></p>
+
+<p>_#Define a &#8216;finish&#8217; procedure
+proc finish {} {
+global ns nf
+$ns flush-trace</p>
+
+<h1>Close the trace file</h1>
+
+<p>close $nf</p>
+
+<h1>Execute nam on the trace file</h1>
+
+<p>exec nam out.nam &amp;
+exit 0
+}_</p>
+
+<p><em>#Create two nodes
+set n0 [$ns node]
+set n1 [$ns node]</em></p>
+
+<p><em>#Create a duplex link between the nodes
+$ns duplex-link $n0 $n1 1Mb 10ms DropTail</em></p>
+
+<p><em>#Call the finish procedure after 5 seconds of simulation time
+$ns at 5.0 &#8220;finish&#8221;</em></p>
+
+<p><em>#Run the simulation
+$ns run</em></p>
+
+<p>now copy this code and paste to a file say  <strong>myfirstprogram.tcl</strong></p>
+
+<p>then run <strong>ns myfirstprogram.tcl</strong></p>
+
+<p>you must see a window like this :</p>
+
+<p><a href="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png"><img src="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png" alt="my ubuntu screen running NS2" /></a></p>
+
+<p>and  &#8230;   You did it , Enjoy   :)</p>
 
 		
 		

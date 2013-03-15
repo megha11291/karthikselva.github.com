@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-03-15T16:12:25+05:30</updated>
+  <updated>2013-03-16T02:13:15+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,266 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Regex saves the day - Part 1]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1/"/>
+    <updated>2013-03-15T23:10:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1</id>
+    <content type="html"><![CDATA[<blockquote><p>Regular expression is a good servant but a bad master (analogy to fire in real life)</p></blockquote>
+
+<h2>Before Regular expressions </h2>
+
+<p>I felt strange having regular expressions in my code. I felt it alien.
+I was really afraid of regular expressions. I was really comfortable using
+N number of lsplit,rsplit and gsubs which I could have done thru single regex.
+I felt regex are old and it will be replaced by better and simple libraries.</p>
+
+<h2>Problems with regex - Source: xkcd </h2>
+
+<p><img src="http://imgs.xkcd.com/comics/perl_problems.png"></p>
+
+<h2>After Regular expressions</h2>
+
+<p>But I was proved wrong. Regular expressions are not programming languages.
+They will never fade off like cobol, fortran or smalltalk. They are immortal entities
+of programming. Regular expressions are set of notations which define specific patterns.
+Different programming langauges may add extra spice to Regex, but at its
+core it is rock solid. It has limited set of notations with complex behaviour.</p>
+
+<h2>Using Regex everywhere - Source : xkcd </h2>
+
+<p><img src="http://imgs.xkcd.com/comics/regular_expressions.png"></p>
+
+<blockquote><p>Everything should be made as simple as possible. But not simpler. (Einstein)</p></blockquote>
+
+<h2>Simpler the tools are, its complex to get the job done </h2>
+
+<p>This patterns recurs everywhere. <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> is the minimalistic estoeric programming
+language with just six notations +, -, &lt;, >, [, ]. But it is impossible ( or nearly impossible ) to
+write a product that could be shipped to cutsomers. <a href="http://en.wikipedia.org/wiki/Ruby_(programming_language">Ruby</a>
+implementation is internally very complicated
+( <a href="http://stackoverflow.com/questions/4967556/ruby-craziness-class-vs-object">Starting from understanding class itself is a singleton object of class</a> ).
+But it has vast set of API's and notations wherein you could guess the method name you want.It is dynamic
+and well suited for rapid application development, only because of it extensive notations
+and using convention over configuration approach everywhere.(as in RoR)</p>
+
+<h2>Regular expressions everywhere</h2>
+
+<p>But regular expressions aren't horrible to the extent of Brainfuck. It is really usable and it can save the day
+if you use it like a pinch of salt.If you overdose, it you would spoil the dish.</p>
+
+<p>I realized they are not old, they are classic.I found support for regex everywhere.
+From sql query we execute,to the editor I use (Vim) , to my favourite language ruby.</p>
+
+<h2>Regex in SQL queries</h2>
+
+<p><code>
+SELECT file_names REGEXP "^*\.xlsx?" FROM file_tables;
+</code></p>
+
+<p>This will fetch you all excel 2003,2007 documents from your file_tables databse.</p>
+
+<p><a href="http://dev.mysql.com/doc/refman/5.1/en/regexp.html">Complete Reference here</a></p>
+
+<h2>Regex in Vim</h2>
+
+<p><code>
+/\chttps?:\/\/.*?\/
+</code></p>
+
+<p>This will search for all the urls which are either http or https, embedded in the html file.</p>
+
+<p><a href="http://vimregex.com/">Complete Reference here</a></p>
+
+<h2>Regex in Ruby</h2>
+
+<p>```
+excel_files = []</p>
+
+<p>file_lists.each do |file|
+  if file =~ /.xlsx?$/i</p>
+
+<pre><code>excel_files &lt;&lt; file 
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<blockquote><p>This will get all the xls and xlsx files from a directory.</p></blockquote>
+
+<p>```
+file_lists.each do |file|
+  if ['xls','xlsx','XLS','XLSX'].include? file.split('.').last</p>
+
+<pre><code>excel_files &lt;&lt; file 
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<blockquote><p>This would be my approach without regex.</p></blockquote>
+
+<p>The above array may even get worser if the extension has mixed cases
+like ['xls','xLS','Xls',...] or additionally I would do a downcase ( crazy right! ).</p>
+
+<p>This is the first code which made me feel regex are cleaner because of no split and include? combination.
+( which are now considered to be sins of a programmer )</p>
+
+<h2>Regex Notations </h2>
+
+<ul>
+<li>$ Notation here denotes any string ending with</li>
+<li>? denotes either zero or one times</li>
+<li>i at end of regex after / denotes case insensitive match</li>
+<li>escape any symbol with \</li>
+<li>. matches a single character</li>
+<li>[a-z] for small case match</li>
+<li>[A-Z] for capital case</li>
+<li>[0-9] or \d to match a digit</li>
+</ul>
+
+
+<h2>Brevity of Regex</h2>
+
+<p>```</p>
+
+<blockquote><p>/.xlsx?$/i
+```</p></blockquote>
+
+<p>It clearly reads like a poem.</p>
+
+<blockquote><p>Any word which has a dot in between and if it has xls or xlsx
+and if the word is ending with that, then report these culprits to your master,
+additionally do it case insensitive.</p></blockquote>
+
+<p>As you see above they remain same in all languages and in all tools.
+They integrate seamlessly. This is the one tool that works universally the same.</p>
+
+<h2>Regex implementations </h2>
+
+<p>There are different debates on implementation of regex. Regex implementation in
+normal programming languages seems to be very slow compared to Thomson NFA.
+It is in the difference of milliseconds and microseconds. Which means we don't have to worry much about.
+If you are curious about these <a href="http://swtch.com/~rsc/regexp/regexp1.html">you can refer here</a></p>
+
+<p>There are some minimal set of Thompson NFA in re2 module of python. You can experiment once you
+master regex.</p>
+
+<h2>Regex are bad masters</h2>
+
+<p>It seems regular expressions are cool. Then why can't all the string manipulations
+and complex logics clubbed into single regular expression. The one capsule which
+cures all the medicine. Like the number 42 which answers all the questions of <a href="http://en.wikipedia.org/wiki/Answer_to_The_Ultimate_Question_of_Life,_the_Universe,_and_Everything#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29">life ,
+universe and everything.</a></p>
+
+<h2>Readablity Problems in regex</h2>
+
+<p>The main reason is readablity. In the world of (collaborative coding) everyone should be
+able to understand the code and readablity is important tradeoff than all other factors ( like optimisation , LOC , etc. ).
+<a href="http://www.codinghorror.com/blog/2005/02/regex-use-vs-regex-abuse.html">In codinghorror blog</a>
+Jeff mentioned about this <a href="http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html">megamoth</a> regular expressions.</p>
+
+<h2>Bad construction of regex</h2>
+
+<p>There are some greedy notations in regex which can collapse all your assumptions.
+In regex specificaly * is a greedy operator. If you don't know the proper end of
+the string and just match it with * it will fetch all the literals it can till the end.
+If you have enabled extended and multiline search then it is still disastrous and at some
+point it might hang.</p>
+
+<p>One clever trick I saw people using are using Timouts.</p>
+
+<p>```
+  Timout exceeds more than 1 minute exit this block</p>
+
+<pre><code>Regular expression block
+</code></pre>
+
+<p>  end
+```</p>
+
+<p>This may avoid our program from being hung but our ultimate goal
+of matching may fail due to these types og regex.Other way is
+digging a level deep into regex and fix the actual problem.
+( which is quiet painfull in regex )</p>
+
+<p>Consider an example:</p>
+
+<blockquote><p>Vampires bites zombies.Zombies bites Mummies.Mummies bites Vampires.</p></blockquote>
+
+<p>If you are interested in who bite whom then you would build a regex like:</p>
+
+<p>```
+  result = sentence.match /(.<em>)bites(.</em>)/</p>
+
+<p>  puts "Parasite: #{result[1]}"
+  # => Parasite: Vampires bites zombies.Zombies bites Mummies.Mummies bites</p>
+
+<p>  puts "Victim: #{result[2]}"
+  # => Victimit: Vampires
+```</p>
+
+<p>This is not what we wanted.Parasite has fetched the whole sentenct till it finds the last one.
+Yep as the name suggests it is definitely greedy.I usually test with very limited
+or no test sometimes and put this types of regex on production.</p>
+
+<h2>Testing Regex with Bad test case </h2>
+
+<p>My test case would be</p>
+
+<p><code>
+  Test String: "X bites Y"
+  Parasite: X
+  Victim: Y
+</code></p>
+
+<p>Eureka! it works. I would happily commit it.
+But on some worst case if we find 'bites' at end of
+a 2 TB log file imagine what would be the matching string.
+Hence exhaustive testing each regex as an unit and
+as a whole if they are combined with '|' would be necessary.
+We should be expecting the unexpected.</p>
+
+<h2>(?) The Lion tamer</h2>
+
+<p>Inorder to attenuate the greediness of this '*' we can use '?' at end of it.</p>
+
+<p><code>
+  result = sentence.match /(.*?)bites(.*?)\/
+</code></p>
+
+<p>This would be the non-greedy version of our regex.</p>
+
+<h2>Additional Language features</h2>
+
+<p>There are some more syntactic sugar added to regex in ruby 1.9.2
+which would makes things more simple with hashed matches.</p>
+
+<p><code>
+  result = sentence.match /(?&lt;Parasite&gt;.*?)bites(?&lt;Victim&gt;.*?)\/
+  result.inspect
+  { "Parasite": "X" , "Victim": "Y"}
+</code></p>
+
+<h2>Catastrophic Backtracking - weird problems in Regex</h2>
+
+<p>This may occur while we use regex negligently and redundantly.
+<a href="http://www.regular-expressions.info/catastrophic.html">This article</a> clearly
+explains the possible cases on how a naive programmer could misue regex.</p>
+
+<p>Try running <a href="http://rubular.com/r/DTz3YI1EWB">this regex on rubular</a>.</p>
+
+<p><code>
+  /(\d+)+Y/
+  # on string: "123332432424524524542542363465326524" which doesn't have Y
+</code></p>
+
+<p><a href="www.rubular.com">Rubular</a> is really a good site to start playing with wide variety of regular expressions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>

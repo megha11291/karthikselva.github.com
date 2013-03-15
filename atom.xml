@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-03-15T16:12:25+05:30</updated>
+  <updated>2013-03-16T02:13:15+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,281 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Regex saves the day - Part 1]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1/"/>
+    <updated>2013-03-15T23:10:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1</id>
+    <content type="html"><![CDATA[<blockquote><p>Regular expression is a good servant but a bad master (analogy to fire in real life)</p></blockquote>
+
+<h2>Before Regular expressions </h2>
+
+<p>I felt strange having regular expressions in my code. I felt it alien.
+I was really afraid of regular expressions. I was really comfortable using
+N number of lsplit,rsplit and gsubs which I could have done thru single regex.
+I felt regex are old and it will be replaced by better and simple libraries.</p>
+
+<h2>Problems with regex - Source: xkcd </h2>
+
+<p><img src="http://imgs.xkcd.com/comics/perl_problems.png"></p>
+
+<h2>After Regular expressions</h2>
+
+<p>But I was proved wrong. Regular expressions are not programming languages.
+They will never fade off like cobol, fortran or smalltalk. They are immortal entities
+of programming. Regular expressions are set of notations which define specific patterns.
+Different programming langauges may add extra spice to Regex, but at its
+core it is rock solid. It has limited set of notations with complex behaviour.</p>
+
+<h2>Using Regex everywhere - Source : xkcd </h2>
+
+<p><img src="http://imgs.xkcd.com/comics/regular_expressions.png"></p>
+
+<blockquote><p>Everything should be made as simple as possible. But not simpler. (Einstein)</p></blockquote>
+
+<h2>Simpler the tools are, its complex to get the job done </h2>
+
+<p>This patterns recurs everywhere. <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> is the minimalistic estoeric programming
+language with just six notations +, -, &lt;, >, [, ]. But it is impossible ( or nearly impossible ) to
+write a product that could be shipped to cutsomers. <a href="http://en.wikipedia.org/wiki/Ruby_(programming_language">Ruby</a>
+implementation is internally very complicated
+( <a href="http://stackoverflow.com/questions/4967556/ruby-craziness-class-vs-object">Starting from understanding class itself is a singleton object of class</a> ).
+But it has vast set of API&#8217;s and notations wherein you could guess the method name you want.It is dynamic
+and well suited for rapid application development, only because of it extensive notations
+and using convention over configuration approach everywhere.(as in RoR)</p>
+
+<h2>Regular expressions everywhere</h2>
+
+<p>But regular expressions aren&#8217;t horrible to the extent of Brainfuck. It is really usable and it can save the day
+if you use it like a pinch of salt.If you overdose, it you would spoil the dish.</p>
+
+<p>I realized they are not old, they are classic.I found support for regex everywhere.
+From sql query we execute,to the editor I use (Vim) , to my favourite language ruby.</p>
+
+<h2>Regex in SQL queries</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SELECT file_names REGEXP "^*\.xlsx?" FROM file_tables;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will fetch you all excel 2003,2007 documents from your file_tables databse.</p>
+
+<p><a href="http://dev.mysql.com/doc/refman/5.1/en/regexp.html">Complete Reference here</a></p>
+
+<h2>Regex in Vim</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/\chttps?:\/\/.*?\/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will search for all the urls which are either http or https, embedded in the html file.</p>
+
+<p><a href="http://vimregex.com/">Complete Reference here</a></p>
+
+<h2>Regex in Ruby</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>excel_files = []
+</span><span class='line'>
+</span><span class='line'>file_lists.each do |file|
+</span><span class='line'>  if file =~ /\.xlsx?$/i
+</span><span class='line'>    excel_files &lt;&lt; file 
+</span><span class='line'>  end 
+</span><span class='line'>end </span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>This will get all the xls and xlsx files from a directory.</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>file_lists.each do |file|
+</span><span class='line'>  if ['xls','xlsx','XLS','XLSX'].include? file.split('.').last
+</span><span class='line'>    excel_files &lt;&lt; file 
+</span><span class='line'>  end 
+</span><span class='line'>end </span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>This would be my approach without regex.</p></blockquote>
+
+<p>The above array may even get worser if the extension has mixed cases
+like [&#8216;xls&#8217;,&#8217;xLS&#8217;,&#8217;Xls&#8217;,&#8230;] or additionally I would do a downcase ( crazy right! ).</p>
+
+<p>This is the first code which made me feel regex are cleaner because of no split and include? combination.
+( which are now considered to be sins of a programmer )</p>
+
+<h2>Regex Notations </h2>
+
+<ul>
+<li>$ Notation here denotes any string ending with</li>
+<li>? denotes either zero or one times</li>
+<li>i at end of regex after / denotes case insensitive match</li>
+<li>escape any symbol with \</li>
+<li>. matches a single character</li>
+<li>[a-z] for small case match</li>
+<li>[A-Z] for capital case</li>
+<li>[0-9] or \d to match a digit</li>
+</ul>
+
+
+<h2>Brevity of Regex</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; /\.xlsx?$/i</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It clearly reads like a poem.</p>
+
+<blockquote><p>Any word which has a dot in between and if it has xls or xlsx
+and if the word is ending with that, then report these culprits to your master,
+additionally do it case insensitive.</p></blockquote>
+
+<p>As you see above they remain same in all languages and in all tools.
+They integrate seamlessly. This is the one tool that works universally the same.</p>
+
+<h2>Regex implementations </h2>
+
+<p>There are different debates on implementation of regex. Regex implementation in
+normal programming languages seems to be very slow compared to Thomson NFA.
+It is in the difference of milliseconds and microseconds. Which means we don&#8217;t have to worry much about.
+If you are curious about these <a href="http://swtch.com/~rsc/regexp/regexp1.html">you can refer here</a></p>
+
+<p>There are some minimal set of Thompson NFA in re2 module of python. You can experiment once you
+master regex.</p>
+
+<h2>Regex are bad masters</h2>
+
+<p>It seems regular expressions are cool. Then why can&#8217;t all the string manipulations
+and complex logics clubbed into single regular expression. The one capsule which
+cures all the medicine. Like the number 42 which answers all the questions of <a href="http://en.wikipedia.org/wiki/Answer_to_The_Ultimate_Question_of_Life,_the_Universe,_and_Everything#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29">life ,
+universe and everything.</a></p>
+
+<h2>Readablity Problems in regex</h2>
+
+<p>The main reason is readablity. In the world of (collaborative coding) everyone should be
+able to understand the code and readablity is important tradeoff than all other factors ( like optimisation , LOC , etc. ).
+<a href="http://www.codinghorror.com/blog/2005/02/regex-use-vs-regex-abuse.html">In codinghorror blog</a>
+Jeff mentioned about this <a href="http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html">megamoth</a> regular expressions.</p>
+
+<h2>Bad construction of regex</h2>
+
+<p>There are some greedy notations in regex which can collapse all your assumptions.
+In regex specificaly * is a greedy operator. If you don&#8217;t know the proper end of
+the string and just match it with * it will fetch all the literals it can till the end.
+If you have enabled extended and multiline search then it is still disastrous and at some
+point it might hang.</p>
+
+<p>One clever trick I saw people using are using Timouts.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  Timout exceeds more than 1 minute exit this block
+</span><span class='line'>    Regular expression block
+</span><span class='line'>  end </span></code></pre></td></tr></table></div></figure>
+
+
+<p>This may avoid our program from being hung but our ultimate goal
+of matching may fail due to these types og regex.Other way is
+digging a level deep into regex and fix the actual problem.
+( which is quiet painfull in regex )</p>
+
+<p>Consider an example:</p>
+
+<blockquote><p>Vampires bites zombies.Zombies bites Mummies.Mummies bites Vampires.</p></blockquote>
+
+<p>If you are interested in who bite whom then you would build a regex like:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  result = sentence.match /(.*)bites(.*)/
+</span><span class='line'>
+</span><span class='line'>  puts "Parasite: #{result[1]}"
+</span><span class='line'>  # =&gt; Parasite: Vampires bites zombies.Zombies bites Mummies.Mummies bites
+</span><span class='line'>
+</span><span class='line'>  puts "Victim: #{result[2]}"
+</span><span class='line'>  # =&gt; Victimit: Vampires</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is not what we wanted.Parasite has fetched the whole sentenct till it finds the last one.
+Yep as the name suggests it is definitely greedy.I usually test with very limited
+or no test sometimes and put this types of regex on production.</p>
+
+<h2>Testing Regex with Bad test case </h2>
+
+<p>My test case would be</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  Test String: "X bites Y"
+</span><span class='line'>  Parasite: X
+</span><span class='line'>  Victim: Y </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Eureka! it works. I would happily commit it.
+But on some worst case if we find &#8216;bites&#8217; at end of
+a 2 TB log file imagine what would be the matching string.
+Hence exhaustive testing each regex as an unit and
+as a whole if they are combined with &#8216;|&#8217; would be necessary.
+We should be expecting the unexpected.</p>
+
+<h2>(?) The Lion tamer</h2>
+
+<p>Inorder to attenuate the greediness of this &#8216;*&#8217; we can use &#8216;?&#8217; at end of it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  result = sentence.match /(.*?)bites(.*?)\/</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>This would be the non-greedy version of our regex.</p>
+
+<h2>Additional Language features</h2>
+
+<p>There are some more syntactic sugar added to regex in ruby 1.9.2
+which would makes things more simple with hashed matches.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  result = sentence.match /(?&lt;Parasite&gt;.*?)bites(?&lt;Victim&gt;.*?)\/
+</span><span class='line'>  result.inspect 
+</span><span class='line'>  { "Parasite": "X" , "Victim": "Y"}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Catastrophic Backtracking - weird problems in Regex</h2>
+
+<p>This may occur while we use regex negligently and redundantly.
+<a href="http://www.regular-expressions.info/catastrophic.html">This article</a> clearly
+explains the possible cases on how a naive programmer could misue regex.</p>
+
+<p>Try running <a href="http://rubular.com/r/DTz3YI1EWB">this regex on rubular</a>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  /(\d+)+Y/
+</span><span class='line'>  # on string: "123332432424524524542542363465326524" which doesn't have Y</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="www.rubular.com">Rubular</a> is really a good site to start playing with wide variety of regular expressions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>
@@ -1421,39 +1696,6 @@ _</p>
 A simple logic now keenly watch all the logos in multiples of 9 ..( Thats what you are going to get   :P)</strong></p>
 
 <p>and try now you got the thing ( if you didn&#8217;t know its logic so far ) and see how many pale faces are still waiting to be cheated :D</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Google Chrome Os - Rush Time ]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time/"/>
-    <updated>2009-11-15T02:40:50+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/15/google-chrome-os-rush-time</id>
-    <content type="html"><![CDATA[<p><strong>As for Google mentioned :</strong></p>
-
-<p><em>&#8221; Google Chrome OS is an open source, lightweight operating system that will initially be targeted at net-books. Later this year we will open-source its code, and net books running Google Chrome OS will be available for consumers in the second half of 2010. Because we’re already talking to partners about the project, and we’ll soon be working with the open source community, we wanted to share our vision now so everyone understands what we are trying to achieve. &#8221;</em></p>
-
-<p>But the <strong>major leaks </strong>I found is every file you store move or even trash happens to be in remote server .</p>
-
-<p>It is similar to saying even your personal credential files will be exposed to them and your only allocated necessary privileges to access the files . I dono how far it is gonna be secure .</p>
-
-<p>Persons with limited network bandwidth will be harder to use because  each operation is a complicated network oriented .</p>
-
-<p>Third even if I have huge hard disk say several TB&#8217;s we are forced to access file from/to network which adds on burden for traditional off-line users .</p>
-
-<p>As they mentioned  Chrome OS as LIGHT WEIGHT  BROWSER BASED OS they doesn&#8217;t seem to match with high end gaming as well as with advanced hardware and software support . They seem to simplify more as only single processor is utilized even you have multi-core&#8217;s.( Under utilization of available resource as far as I learnt :))</p>
-
-<p>Guess this is a better matched OS for atom based processors and x86 series.</p>
-
-<p>well  this time Im expecting a<strong> real worthy  OS from Google </strong>( rather years ago I got a distro named GOS which is nothing rather than a new Themed Ubuntu :P)</p>
-
-<p><strong>Google chrome OS demo:</strong>
-[youtube=http://www.youtube.com/watch?v=nJByVHyNIi0&amp;feature=player_embedded]</p>
-
-<p>Free open source and Linux kernel are the pleasing words , as for as the project is concerned which gained my attention.</p>
-
-<p><a href="http://www.payoffers.in/Kotak.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70"><strong>Get Rs.250 cash back on your Trump Card now-      Kotak Mahindra Bank</strong>
-<img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=17a2ea70" alt="" /></a></p>
 ]]></content>
   </entry>
   
