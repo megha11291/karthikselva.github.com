@@ -6,7 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 4th, 2010 Tags: Linux, Projects _ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive &hellip;">
+	<meta name="description" content="Published on: Feb 1st, 2010 Tags: Linux, Projects _If you have more than one system and need to acces all with a single mouse ?
+_ Wanna hack your &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +109,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/04/keyboard-as-network-packet-monitor/">
+		<a href="/blog/2010/02/01/cursor-play-with-your-neigbour-system/">
 		
-			Keyboard as Network Packet Monitor</a>
+			Cursor Play With Your Neigbour System</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +127,7 @@
   
 
 
-<time datetime="2010-01-04T00:48:02+05:30" pubdate data-updated="true">Jan 4<span>th</span>, 2010</time></div>
+<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,38 +136,69 @@
 
 </div>
     </div>
-		<p>_ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive :)_</p>
-
-<p><em>Follow the simple steps below :</em></p>
-
-<p><em><strong>i) Installation:</strong></em></p>
-
-<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
-
-<p><strong><em>ii) Configure :</em></strong></p>
-
-<p>now configure the interface you use</p>
-
-<p>say for ethernet  run <strong>tleds eth0 </strong></p>
-
-<p>and for wirless  run <strong>tleds wlan0</strong></p>
-
-<p><em>Perform a restart :)</em></p>
-
-<p><em><strong>iii) Customize :</strong></em></p>
-
-<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
-
-<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
-
-<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
-
-<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
-
-<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
+		<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 
-<p>enjoy :)</p>
+<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+
+<p>_
+_</p>
+
+<p>you can use this code to move the cursor</p>
+
+<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
+
+<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
+</a></strong></p>
+
+<p><strong>
+</strong></p>
+
+<p><em><strong>To Do :</strong></em></p>
+
+<p><em><strong>
+</strong></em></p>
+
+<p>step i) run the server.class first in machine u want to control say A</p>
+
+<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step ii) run the client.class in second machine u have the mouse say B</p>
+
+<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
+
+<p><strong>
+</strong></p>
+
+<p>step iii) move  mouse in machine B so that it moves on machine A</p>
+
+<p><em><strong>Algorithm behind :</strong></em></p>
+
+<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
+
+<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
+
+<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
+
+<p>iii) send the string to slave node using Socket output stream</p>
+
+<p>iv) get the encrypt string and extract x and Y position  by</p>
+
+<p><strong>X=encrypt/10000;</strong></p>
+
+<p><strong>y=encrypt - X;</strong></p>
+
+<p><strong>
+</strong></p>
+
+<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+
+<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
 
 		
 		

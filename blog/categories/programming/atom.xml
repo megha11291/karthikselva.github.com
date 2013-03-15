@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Hacker's Diary]]></title>
+  <link href="http://karthikselva.github.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://karthikselva.github.com/"/>
+  <updated>2013-03-15T16:04:20+05:30</updated>
+  <id>http://karthikselva.github.com/</id>
+  <author>
+    <name><![CDATA[karthikselva's log]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/03/15/mischeivous-bang-operator-in-ruby/"/>
+    <updated>2013-03-15T16:02:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/03/15/mischeivous-bang-operator-in-ruby</id>
+    <content type="html"><![CDATA[<p>This is a typical ruby programmer's style of overwriting on the same object:</p>
+
+<pre><code>array = [1.2 , 2.7] 
+array.map!(&amp;:floor)
+</code></pre>
+
+<p>This will modify my same object <em>array</em>.</p>
+
+<pre><code>puts array
+#=&gt; [1,2]
+</code></pre>
+
+<p>Similarly, the below code removes <strong>nil</strong> values from an array :</p>
+
+<pre><code>array = [1 , 2, nil, 3, nil, 5]
+new_array = array.compact
+puts new_array
+#=&gt; [1,2,3,5]
+</code></pre>
+
+<p>But if we try to use bang operator for compact we will end up with nil for no nil value cases in an array.</p>
+
+<pre><code>array = [1 , 2, 3] # No nil values present
+array.compact!
+puts array
+#=&gt; nil
+</code></pre>
+
+<p>This can easily escapes from our eyes while debugging the code.</p>
+
+<p>http://ruby-doc.org/core-1.9.3/Array.html#method-i-collect-21</p>
+]]></content>
+  </entry>
+  
+</feed>
