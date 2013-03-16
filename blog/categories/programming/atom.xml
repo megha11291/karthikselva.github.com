@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-03-16T09:49:17+05:30</updated>
+  <updated>2013-03-16T17:10:21+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -166,8 +166,8 @@ You can experiment once you master regex.</p>
 <h2>Regex are bad masters</h2>
 
 <p>It seems regular expressions are cool. Then why can't all the string manipulations
-and complex logics clubbed into single regular expression. The one capsule which
-cures all the medicine. Like the number 42 which answers all the questions of <a href="http://en.wikipedia.org/wiki/Answer_to_The_Ultimate_Question_of_Life,_the_Universe,_and_Everything#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29">life ,
+and complex logics combined into single regular expression. The one capsule which
+cures all the disease. Like the number 42 which answers all the questions of <a href="http://en.wikipedia.org/wiki/Answer_to_The_Ultimate_Question_of_Life,_the_Universe,_and_Everything#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29">life ,
 universe and everything.</a></p>
 
 <h2>Readablity Problems in regex</h2>
@@ -282,6 +282,16 @@ explains the possible cases on how a naive programmer could misue regex.</p>
 </code></p>
 
 <p><a href="www.rubular.com">Rubular</a> is really a good site to start playing with wide variety of regular expressions.</p>
+
+<h2>Regex for web-developers</h2>
+
+<p>Most of my ignorance to regex for a long time was due to my wrong assumptions.
+I assumed regex are for nerds who write new programming languages. Geeks who
+optimizes the compiler instructions. Data scientists who dig deep into web logs
+and all sorts of unstructured big datas. May be I am true to some extent.
+Web-developers may not need to write a new regular expression parser but we really need
+some set of regex which occurs in our javascript validation day-to-day.
+<a href="http://web.archive.org/web/20090318193321/http://immike.net/blog/2007/04/06/5-regular-expressions-every-web-programmer-should-know/">This post gives five basic regex which every regex programmer should know.</a></p>
 ]]></content>
   </entry>
   
