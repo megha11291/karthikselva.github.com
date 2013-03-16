@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-03-16T02:13:15+05:30</updated>
+  <updated>2013-03-16T09:49:17+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -23,9 +23,9 @@
 <h2>Before Regular expressions </h2>
 
 <p>I felt strange having regular expressions in my code. I felt it alien.
-I was really afraid of regular expressions. I was really comfortable using
+I was really afraid of regular expressions. I was comfortable using
 N number of lsplit,rsplit and gsubs which I could have done thru single regex.
-I felt regex are old and it will be replaced by better and simple libraries.</p>
+I felt regex are old and it will be replaced by better and simpler libraries.</p>
 
 <h2>Problems with regex - Source: xkcd </h2>
 
@@ -33,19 +33,21 @@ I felt regex are old and it will be replaced by better and simple libraries.</p>
 
 <h2>After Regular expressions</h2>
 
-<p>But I was proved wrong. Regular expressions are not programming languages.
+<p><a href="http://blog.stevenlevithan.com/archives/10-reasons-to-learn-and-use-regular-expressions">But I was proved wrong</a>.
+Regular expressions are not programming languages.
 They will never fade off like cobol, fortran or smalltalk. They are immortal entities
 of programming. Regular expressions are set of notations which define specific patterns.
+Curiosity to find why the regular expressions are named <a href="http://www.grymoire.com/Unix/Regular.html">regular expressions lead me here</a>.
 Different programming langauges may add extra spice to Regex, but at its
-core it is rock solid. It has limited set of notations with complex behaviour.</p>
+core it is one and the same. It has limited set of notations with complex behaviour.</p>
 
 <h2>Using Regex everywhere - Source : xkcd </h2>
 
 <p><img src="http://imgs.xkcd.com/comics/regular_expressions.png"></p>
 
-<blockquote><p>Everything should be made as simple as possible. But not simpler. (Einstein)</p></blockquote>
-
 <h2>Simpler the tools are, its complex to get the job done </h2>
+
+<blockquote><p>Everything should be made as simple as possible. But not simpler. (Einstein)</p></blockquote>
 
 <p>This patterns recurs everywhere. <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a> is the minimalistic estoeric programming
 language with just six notations +, -, &lt;, >, [, ]. But it is impossible ( or nearly impossible ) to
@@ -59,7 +61,7 @@ and using convention over configuration approach everywhere.(as in RoR)</p>
 <h2>Regular expressions everywhere</h2>
 
 <p>But regular expressions aren't horrible to the extent of Brainfuck. It is really usable and it can save the day
-if you use it like a pinch of salt.If you overdose, it you would spoil the dish.</p>
+if you use it like a pinch of salt.If you overdose it, you would spoil the dish.</p>
 
 <p>I realized they are not old, they are classic.I found support for regex everywhere.
 From sql query we execute,to the editor I use (Vim) , to my favourite language ruby.</p>
@@ -131,6 +133,7 @@ like ['xls','xLS','Xls',...] or additionally I would do a downcase ( crazy right
 <li>[a-z] for small case match</li>
 <li>[A-Z] for capital case</li>
 <li>[0-9] or \d to match a digit</li>
+<li><a href="http://www.regular-expressions.info/reference.html">More notations here ..</a></li>
 </ul>
 
 
@@ -153,12 +156,12 @@ They integrate seamlessly. This is the one tool that works universally the same.
 <h2>Regex implementations </h2>
 
 <p>There are different debates on implementation of regex. Regex implementation in
-normal programming languages seems to be very slow compared to Thomson NFA.
+normal programming languages seems to be very slow compared to Thompson NFA.
 It is in the difference of milliseconds and microseconds. Which means we don't have to worry much about.
 If you are curious about these <a href="http://swtch.com/~rsc/regexp/regexp1.html">you can refer here</a></p>
 
-<p>There are some minimal set of Thompson NFA in re2 module of python. You can experiment once you
-master regex.</p>
+<p>There are some minimal set of <a href="https://github.com/facebook/pyre2">Thompson NFA in re2 module of python</a>.
+You can experiment once you master regex.</p>
 
 <h2>Regex are bad masters</h2>
 
@@ -169,7 +172,7 @@ universe and everything.</a></p>
 
 <h2>Readablity Problems in regex</h2>
 
-<p>The main reason is readablity. In the world of (collaborative coding) everyone should be
+<p>The main reason is readablity. In the world of collaborative coding everyone should be
 able to understand the code and readablity is important tradeoff than all other factors ( like optimisation , LOC , etc. ).
 <a href="http://www.codinghorror.com/blog/2005/02/regex-use-vs-regex-abuse.html">In codinghorror blog</a>
 Jeff mentioned about this <a href="http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html">megamoth</a> regular expressions.</p>
@@ -262,11 +265,20 @@ which would makes things more simple with hashed matches.</p>
 <a href="http://www.regular-expressions.info/catastrophic.html">This article</a> clearly
 explains the possible cases on how a naive programmer could misue regex.</p>
 
+<p>Consider an Example:</p>
+
+<ul>
+<li>We want to extract time from a file.</li>
+<li>patterns can be 7am , 12pm , etc</li>
+<li>Instead of the pattern \d\d?(am|pm) if we came up with wrong Regex /(\d+)+(am|pm)/ then this regular expression will never exit.</li>
+</ul>
+
+
 <p>Try running <a href="http://rubular.com/r/DTz3YI1EWB">this regex on rubular</a>.</p>
 
 <p><code>
-  /(\d+)+Y/
-  # on string: "123332432424524524542542363465326524" which doesn't have Y
+  /(\d+)+am/
+  # on string: "123332432424524524542542363465326524" which doesn't have am or pm at the end.
 </code></p>
 
 <p><a href="www.rubular.com">Rubular</a> is really a good site to start playing with wide variety of regular expressions.</p>
