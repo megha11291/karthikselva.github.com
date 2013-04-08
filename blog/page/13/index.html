@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . &hellip;">
+	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux _ i)  Are you in need of humble player which consumes least your memory_ _ii)  If your xserver doesnt open &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/read-cpu-core-temperature/">
+		<a href="/blog/2010/01/01/music-in-humble-terminal/">
 		
-			Read CPU Core Temperature</a>
+			Music in Humble Terminal</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +126,7 @@
   
 
 
-<time datetime="2010-01-01T04:30:24+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-01-01T18:21:29+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,71 +135,71 @@
 
 </div>
     </div>
-		<p>Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . Then I chose lm-sensor for this purpose .</p>
+		<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
 
-<p><strong><em>step1</em></strong></p>
+<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
 
-<p>Installation :</p>
-
-<p>install the package lm sensors for your linux distro</p>
-
-<p><strong>sudo apt-get install lm-sensors</strong></p>
-
-<p><strong><em>step 2:</em></strong></p>
-
-<p>run <strong>sensors</strong> in terminal</p>
-
-<p>if you have installed for first time probe it to kernel first</p>
-
-<p><em>step 3: </em>restart the system and try sensors now</p>
-
-<p>I have a core2quad processor and i get temperature of four processors as</p>
-
-<p><em>karthik@Karthik:~/Programs$ sensors
-coretemp-isa-0000
-Adapter: ISA adapter
-Core 0:      +47.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0001
-Adapter: ISA adapter
-Core 1:      +37.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0002
-Adapter: ISA adapter
-Core 2:      +39.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0003
-Adapter: ISA adapter
-Core 3:      +46.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><strong><em>step 3: </em></strong></p>
-
-<p>call the <strong>process </strong>class of java and get back the string returned</p>
-
-<p><em>import java.io.*;
-class cpu {
-public static void main(String []args) throws Exception
-{
-Runtime r=Runtime.getRuntime();
-String f,temp,res=&#8221;&#8220;;
-int i=0,j=0;
-f=&#8221;sensors&#8221;;
-Process p=r.exec(f);
-BufferedReader pin=new BufferedReader(new InputStreamReader(p.getInputStream()));
-while((temp=pin.readLine())!=null)
-{
-System.out.println(temp);
-}
-}</em>
-<em>}</em></p>
-
-<p>Then make it flexible for your own purpose  by proper string parsing &#8230;.</p>
-
-<p>Thank you !<em><strong>
-</strong></em></p>
-
-<p>_
+<p>_iii) if your admin blocked gui
 _</p>
+
+<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
+
+<p><strong><em>Step 1:</em></strong></p>
+
+<p>install the <strong>sox</strong> for linux by running</p>
+
+<p><strong>sudo apt-get install sox</strong></p>
+
+<p><em><strong>Step 2:</strong></em></p>
+
+<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
+
+<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
+
+<p><em><strong>Step 3 :</strong></em></p>
+
+<p>Now your done with  :)</p>
+
+<p>just locate the music folder and run the file</p>
+
+<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
+
+<p>for eg:</p>
+
+<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
+
+<p><em>I&#8217;m So Available.mp3:</em></p>
+
+<p><em>File Size: 7.93M     Bit Rate: 239k
+Encoding: MPEG audio    Info: 2009
+Channels: 2 @ 16-bit   Track: 3
+Samplerate: 44100Hz      Album: Akon - Collection
+Replaygain: off         Artist: Akon Feat. Flo-Rida
+Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
+
+<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
+
+<p>this is what you will see</p>
+
+<p><em><strong>Step 4: </strong></em></p>
+
+<p>not only listening you can also record from terminal</p>
+
+<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
+
+<p>you will se output recording screen as</p>
+
+<p><em>Input File     : &#8216;default&#8217; (alsa)
+Channels       : 2
+Sample Rate    : 48000
+Precision      : 16-bit
+Sample Encoding: 16-bit Signed Integer PCM</em></p>
+
+<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
+
+<p>now your recording will be saved in my-recording.wav file in music folder</p>
+
+<p>enjoy with sox :)</p>
 
 		
 		

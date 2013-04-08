@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 14th, 2010 Tags: Linux, Projects Do you want to run a dictionary server that messages you the actual meaning Requirments : i)  A &hellip;">
+	<meta name="description" content="Published on: Feb 18th, 2010 Tags: Linux SVN is a version control system used to track your various versions of your software over various levels &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/14/running-sms-dictionary-server-in-your-home/">
+		<a href="/blog/2010/02/18/a-simple-start-to-svn/">
 		
-			Running SMS Dictionary Server in Your Home</a>
+			A Simple Start to SVN</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,136 +126,82 @@
   
 
 
-<time datetime="2010-02-14T04:29:35+05:30" pubdate data-updated="true">Feb 14<span>th</span>, 2010</time></div>
+<time datetime="2010-02-18T05:10:10+05:30" pubdate data-updated="true">Feb 18<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
+		<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
 
-<p><em><strong>Requirments :</strong></em></p>
+<p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
 
-<p>i)  A GSM mobile phone</p>
+<p><em><strong>Step1 :</strong></em></p>
 
-<p>ii)  Linux  with python</p>
+<p>First before starting with your coding create a repo name in SVN as :</p>
 
-<p>iii) Mysql Database</p>
+<p><strong>svnadmin create<your-repo-name></strong></p>
 
-<p>iv)  Gnokii-SMSD</p>
+<p>e.g) svnadmin create mediaplayer</p>
 
-<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
+<p>now you have created a repo named <strong>mediaplayer</strong></p>
 
-<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
+<p>this copy is the master copy for all clients</p>
 
-<p><em><strong>Code :</strong></em></p>
+<p>this will be a directory with some system defined files in it</p>
 
-<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
+<p>note the directory you have  created a repositiory</p>
 
-<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
+<p><em><strong>Step 2:</strong></em></p>
 
-<p><em>#!/usr/bin/python</em></p>
+<p>now you cannot directly do modify on master copy</p>
 
-<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
+<p>you have to checkout this repo to some workspace and start working</p>
 
-<h1>    @Author:    Karthik selvakumar</h1>
+<p>let it be a directory called workspace</p>
 
-<h1>    Name :     Dictionary Server_</h1>
+<p><strong>mkdir workspace</strong></p>
 
-<p><em># install python-MySQLdb  before importing this module</em></p>
+<p><strong>cd workspace</strong></p>
 
-<p><em>import MySQLdb</em></p>
+<p>now you can checkout the master copy and start your coding process</p>
 
-<p><em># imported inorder to perform shell operations</em></p>
+<p><strong>svn co file:///home/<user-name>/<repo-name></strong></p>
 
-<p><em>import os</em></p>
+<p>eg:)  svn co file:///home/karthik/mediaplayer</p>
 
-<p><em># run as a daemon and never exit this thread</em></p>
+<p>now you will have a directory named mediaplayer</p>
 
-<p><em>while(True):</em></p>
+<p>go into the directory  by</p>
 
-<p><em>#defines the database parameter change according to your configuration</em></p>
+<p><strong>cd mediaplayer</strong></p>
 
-<p><em>host=&#8221;localhost&#8221;</em></p>
+<p>then start a code name it as <strong>myfile.java</strong></p>
 
-<p><em>user=&#8221;root&#8221;</em></p>
+<p>now save it in this directory  . To add this into your master copy do</p>
 
-<p><em>passwd=&#8221;password&#8221;</em></p>
+<p><strong>svn add  <file-name></strong></p>
 
-<p><em>db=&#8221;smsgw&#8221;</em></p>
+<p>eg) svn add myfile.java</p>
 
-<p><em>#creates a database object for corresponding config</em></p>
+<p><em><strong>Step 3:</strong></em></p>
 
-<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
+<p>you can optionally use these commands</p>
 
-<p><em>cursor=db.cursor()</em></p>
+<p><strong>i) svn commit</strong> - to  commit the current modification to the master copy ( Do this whenever you do minor changes to you files)</p>
 
-<p><em>#performs pruning of inbox table which may contain null entities</em></p>
+<p><strong>ii) svn status</strong> - to check the status of files in working copy</p>
 
-<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
+<p><strong>here </strong><strong>? </strong>means unknown <strong> A </strong>means added<strong> M</strong> means modified but not added</p>
 
-<p><em>#gets the latest entered SMS from Mysql server</em></p>
+<p><strong>iii) svn update</strong> - to update to the latest revision of the master copy ( this will be usefull when more than one client has modified the master copy without your knowledge )</p>
 
-<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
+<p><a href="http://www.linuxfromscratch.org/blfs/edguide/chapter03.html">for more details refere here </a></p>
 
-<p><em>record=cursor.fetchall()</em></p>
-
-<p><em>for result in record:</em></p>
-
-<p><em># gets the word to find meaning</em></p>
-
-<p><em>word=result[1]</em></p>
-
-<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
-
-<p><em>number=result[0]</em></p>
-
-<p><em>row=result[2]</em></p>
-
-<p><em># script to get meaning of a word from google server</em></p>
-
-<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
-
-<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
-
-<p><em># run the command in shell and write it to file named meaning.txt</em></p>
-
-<p><em>os.system(up+word+low)</em></p>
-
-<p><em># open the file in read only mode</em></p>
-
-<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
-
-<p><em># load the meaning in the string text</em></p>
-
-<p><em>text=filehandle.read()</em></p>
-
-<p><em># we no more need this</em></p>
-
-<p><em>filehandle.close()</em></p>
-
-<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
-
-<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
-
-<p><em># close all active connections :)</em></p>
-
-<p><em>cursor.close()</em></p>
-
-<p><em>db.close()</em></p>
-
-<p><em>#thank you !</em></p>
-
-<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
-
-<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
-
-<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
-
-<p>Enjoy :)</p>
+<p>Thank you :)</p>
 
 		
 		
