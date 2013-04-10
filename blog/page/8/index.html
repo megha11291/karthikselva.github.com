@@ -6,7 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 14th, 2010 Tags: Linux, Projects Do you want to run a dictionary server that messages you the actual meaning Requirments : i)  A &hellip;">
+	<meta name="description" content="Published on: Dec 26th, 2012 Tags: IDE, Rails, Vim How it started I started my coding in a windows XP with notepad.
+I can realize now how terrible &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +109,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/14/running-sms-dictionary-server-in-your-home/">
+		<a href="/blog/2012/12/26/rails-with-vim-how-and-why-it-works/">
 		
-			Running SMS Dictionary Server in Your Home</a>
+			Rails With Vim - How and Why It Works ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,136 +127,55 @@
   
 
 
-<time datetime="2010-02-14T04:29:35+05:30" pubdate data-updated="true">Feb 14<span>th</span>, 2010</time></div>
+<time datetime="2012-12-26T23:36:00+05:30" pubdate data-updated="true">Dec 26<span>th</span>, 2012</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/ide/'>IDE</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/vim/'>Vim</a>
 
 
 </div>
     </div>
-		<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
+		<h2>How it started</h2>
 
-<p><em><strong>Requirments :</strong></em></p>
+<p>I started my coding in a windows XP with notepad.
+I can realize now how terrible it was.
+Then I came through a term called IDE which has everything a programmer
+needs in one place. Starting with netbeans for java
+and some random Junit test tools in eclipse , I really regreted for
+wasting my time in notepad.</p>
 
-<p>i)  A GSM mobile phone</p>
+<p>Most of the times I used to do one among these listed items apart from real typing/coding:</p>
 
-<p>ii)  Linux  with python</p>
+<ul>
+<li><p>Searching the API sheet for exact name of method</p>
 
-<p>iii) Mysql Database</p>
+<ul>
+<li>In Java typically confused with length() , size() , count or length variable usage</li>
+<li>I know rubyists , ruby has everything</li>
+</ul>
+</li>
+<li><p>Missing ( , { or some parantheses ( not as much careless as initial days  )</p>
 
-<p>iv)  Gnokii-SMSD</p>
+<ul>
+<li>I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet</li>
+</ul>
+</li>
+<li><p>Variable declared with one name but using it with different name</p>
 
-<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
+<ul>
+<li>I used to decalre a variable with User#name  and trying to access with User#username</li>
+</ul>
+</li>
+<li><p>Version control integration</p>
 
-<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
+<ul>
+<li>Version control itself is a different topic to discuss for hours</li>
+<li>I use some set of plugins to commit and revert ( which I don&#8217;t even bother on what command it is being translated on in background )</li>
+</ul>
+</li>
+</ul>
 
-<p><em><strong>Code :</strong></em></p>
-
-<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
-
-<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
-
-<p><em>#!/usr/bin/python</em></p>
-
-<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
-
-<h1>    @Author:    Karthik selvakumar</h1>
-
-<h1>    Name :     Dictionary Server_</h1>
-
-<p><em># install python-MySQLdb  before importing this module</em></p>
-
-<p><em>import MySQLdb</em></p>
-
-<p><em># imported inorder to perform shell operations</em></p>
-
-<p><em>import os</em></p>
-
-<p><em># run as a daemon and never exit this thread</em></p>
-
-<p><em>while(True):</em></p>
-
-<p><em>#defines the database parameter change according to your configuration</em></p>
-
-<p><em>host=&#8221;localhost&#8221;</em></p>
-
-<p><em>user=&#8221;root&#8221;</em></p>
-
-<p><em>passwd=&#8221;password&#8221;</em></p>
-
-<p><em>db=&#8221;smsgw&#8221;</em></p>
-
-<p><em>#creates a database object for corresponding config</em></p>
-
-<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
-
-<p><em>cursor=db.cursor()</em></p>
-
-<p><em>#performs pruning of inbox table which may contain null entities</em></p>
-
-<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
-
-<p><em>#gets the latest entered SMS from Mysql server</em></p>
-
-<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
-
-<p><em>record=cursor.fetchall()</em></p>
-
-<p><em>for result in record:</em></p>
-
-<p><em># gets the word to find meaning</em></p>
-
-<p><em>word=result[1]</em></p>
-
-<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
-
-<p><em>number=result[0]</em></p>
-
-<p><em>row=result[2]</em></p>
-
-<p><em># script to get meaning of a word from google server</em></p>
-
-<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
-
-<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
-
-<p><em># run the command in shell and write it to file named meaning.txt</em></p>
-
-<p><em>os.system(up+word+low)</em></p>
-
-<p><em># open the file in read only mode</em></p>
-
-<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
-
-<p><em># load the meaning in the string text</em></p>
-
-<p><em>text=filehandle.read()</em></p>
-
-<p><em># we no more need this</em></p>
-
-<p><em>filehandle.close()</em></p>
-
-<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
-
-<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
-
-<p><em># close all active connections :)</em></p>
-
-<p><em>cursor.close()</em></p>
-
-<p><em>db.close()</em></p>
-
-<p><em>#thank you !</em></p>
-
-<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
-
-<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
-
-<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
-
-<p>Enjoy :)</p>
 
 		
 		

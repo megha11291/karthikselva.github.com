@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 12th, 2009 Tags: My Cool day&#8217;s Semester five .. well a suckiest sem I have ever seen . well every time I speak I used to say &hellip;">
+	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux _Are you a Linux critic saying graphics doesn&#8217;t work on ? Haven&#8217;t explored SDL graphic part &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/12/sem-v/">
+		<a href="/blog/2009/11/14/graphics-h-fails-in-linux/">
 		
-			SEM v &#8216;.&#8217;</a>
+			Graphics.h Fails in Linux ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,26 +126,60 @@
   
 
 
-<time datetime="2009-11-12T17:35:32+05:30" pubdate data-updated="true">Nov 12<span>th</span>, 2009</time></div>
+<time datetime="2009-11-14T00:27:16+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p><img src="http://www.tsiba.org.za/uploads/images/give_5_logo_op_2.jpg" alt="5 Th sem :(" /></p>
+		<p>_Are you a Linux critic saying graphics doesn&#8217;t work on ?</p>
 
-<p>Semester five .. well a suckiest sem I have ever seen  .</p>
+<p>Haven&#8217;t explored SDL graphic part thrro&#8217;   C?</p>
 
-<p> well every time I speak I used to say the latter is the worst . But now  situation seems more and more bad :) . Writing exams for filling up 3 hours and not even bothering about labs . But actually that&#8217;s  the sem i thought to do lots and more :P .</p>
+<p>Switched on to linux recently and breaking your heads on graphics libraries for linux ?_</p>
 
-<p>successfully completed my semester examinations at worser than worse. That doesn&#8217;t even matter for me . Thought of enjoying a full month leave .Nothing gonna help me releaving from this boring holidays ( I tried everything I can ) .  But happiest one is Sem V is no more . I have passed by one of the 8 . ( Not sure about results )</p>
+<p>The packages you need before working on with graphics library in linux are:</p>
 
-<p>But this semester made a huge list of remarkable things and actually I feel the semester I have enjoyed a lot relatively . Proximity knows about that :P. Let it B.</p>
+<p>Try  installing thro&#8217; console by</p>
 
-<p>Thought of doing some useful things in this holidays .Let me see what awaits ;) .</p>
+<p><strong>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 guile-1.8-dev libsdl1.2debian-arts libartsc0-dev libaudiofile-dev libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6(upgrade) libaa1 libaa1-dev libslang2-dev libasound2 libasound-dev</strong></p>
+
+<p>or select the package in <strong>synaptic </strong>it will automatically resolve dependency&#8217;s</p>
+
+<p><em><strong>LibGraph Installing and configuring:</strong></em></p>
+
+<p>First download libgraph from <a href="http://www.box.net/shared/bnj7usolue"> here </a></p>
+
+<p>Then as usual extract
+tar.gz   and run</p>
+
+<p><strong>./configure
+make
+make install
+</strong>
+write some c with graphics implemenation and name it as <strong>test.c</strong></p>
+
+<p>Thats it :D</p>
+
+<p><em><strong>Now compile and run the file as:</strong></em></p>
+
+<p><strong>g++ test.cpp -o test.o -lgraph
+And execute the program by ./test.o
+</strong>
+-lgraph links with graphics library</p>
+
+<p>if you get any shared library error ( ofcourse most people get this thing)</p>
+
+<p>then shift as  <strong>sudo cp /usr/local/lib/libgraph.* /usr/lib</strong></p>
+
+<p>you may  now see a SDL output window showing smooth graphical 32 bit output (rather resorted dos window :P )</p>
+
+<p>3D chess  game in graphics  C  <img src="http://mfarrelly.rarelyfar.com/res/chessnix.jpg" alt="chess" /></p>
+
+<p>Learn , code and Enjoy Linux geeks  :)</p>
 
 		
 		

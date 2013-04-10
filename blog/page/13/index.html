@@ -6,7 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux _ i)  Are you in need of humble player which consumes least your memory_ _ii)  If your xserver doesnt open &hellip;">
+	<meta name="description" content="Published on: Feb 1st, 2010 Tags: Linux, Projects _If you have more than one system and need to acces all with a single mouse ?
+_ Wanna hack your &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +109,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/music-in-humble-terminal/">
+		<a href="/blog/2010/02/01/cursor-play-with-your-neigbour-system/">
 		
-			Music in Humble Terminal</a>
+			Cursor Play With Your Neigbour System</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,80 +127,78 @@
   
 
 
-<time datetime="2010-01-01T18:21:29+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
 
 
 </div>
     </div>
-		<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
-
-<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
-
-<p>_iii) if your admin blocked gui
+		<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 
-<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
+<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
 
-<p><strong><em>Step 1:</em></strong></p>
+<p>_
+_</p>
 
-<p>install the <strong>sox</strong> for linux by running</p>
+<p>you can use this code to move the cursor</p>
 
-<p><strong>sudo apt-get install sox</strong></p>
+<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
 
-<p><em><strong>Step 2:</strong></em></p>
+<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
+</a></strong></p>
 
-<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
+<p><strong>
+</strong></p>
 
-<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
+<p><em><strong>To Do :</strong></em></p>
 
-<p><em><strong>Step 3 :</strong></em></p>
+<p><em><strong>
+</strong></em></p>
 
-<p>Now your done with  :)</p>
+<p>step i) run the server.class first in machine u want to control say A</p>
 
-<p>just locate the music folder and run the file</p>
+<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
 
-<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
+<p><strong>
+</strong></p>
 
-<p>for eg:</p>
+<p>step ii) run the client.class in second machine u have the mouse say B</p>
 
-<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
+<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
+</code></pre>
 
-<p><em>I&#8217;m So Available.mp3:</em></p>
+<p><strong>
+</strong></p>
 
-<p><em>File Size: 7.93M     Bit Rate: 239k
-Encoding: MPEG audio    Info: 2009
-Channels: 2 @ 16-bit   Track: 3
-Samplerate: 44100Hz      Album: Akon - Collection
-Replaygain: off         Artist: Akon Feat. Flo-Rida
-Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
+<p>step iii) move  mouse in machine B so that it moves on machine A</p>
 
-<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
+<p><em><strong>Algorithm behind :</strong></em></p>
 
-<p>this is what you will see</p>
+<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
 
-<p><em><strong>Step 4: </strong></em></p>
+<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
 
-<p>not only listening you can also record from terminal</p>
+<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
 
-<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
+<p>iii) send the string to slave node using Socket output stream</p>
 
-<p>you will se output recording screen as</p>
+<p>iv) get the encrypt string and extract x and Y position  by</p>
 
-<p><em>Input File     : &#8216;default&#8217; (alsa)
-Channels       : 2
-Sample Rate    : 48000
-Precision      : 16-bit
-Sample Encoding: 16-bit Signed Integer PCM</em></p>
+<p><strong>X=encrypt/10000;</strong></p>
 
-<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
+<p><strong>y=encrypt - X;</strong></p>
 
-<p>now your recording will be saved in my-recording.wav file in music folder</p>
+<p><strong>
+</strong></p>
 
-<p>enjoy with sox :)</p>
+<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+
+<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
 
 		
 		

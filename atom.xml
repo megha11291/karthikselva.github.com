@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-04-08T20:16:12+05:30</updated>
+  <updated>2013-04-11T02:54:36+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,241 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linked List - Find Palindrome ina linked list]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/"/>
+    <updated>2013-04-11T02:53:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ListPalindrome ruby (palindrome_list.rb)</span> <a href='http://karthikselva.github.com/downloads/code/palindrome_list.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">List</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:next</span> <span class="p">,</span> <span class="ss">:data</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">print_list</span>
+</span><span class='line'>      <span class="n">root</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">root</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">root</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2"> =&gt; &quot;</span>
+</span><span class='line'>          <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="s2">&quot;NULL&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">find_length</span>
+</span><span class='line'>      <span class="n">root</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">root</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">l</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">is_palindrome</span>
+</span><span class='line'>      <span class="n">st</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>      <span class="n">node</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">find_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">st</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">find_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">st</span><span class="o">[-</span><span class="mi">1</span><span class="o">].</span><span class="n">eql?</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">st</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">st</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">test_list</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">is_palindrome</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion - Find all subsets of given set]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/04/11/recursion-find-all-subsets-of-given-set/"/>
+    <updated>2013-04-11T00:24:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/04/11/recursion-find-all-subsets-of-given-set</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Subset ruby (subsets_of_set.rb)</span> <a href='http://karthikselva.github.com/downloads/code/subsets_of_set.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">get_first</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">exclude_first</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">subsets</span><span class="p">(</span><span class="n">set</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">set</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="n">all_sets</span> <span class="o">=</span> <span class="n">subsets</span><span class="p">(</span><span class="n">exclude_first</span><span class="p">(</span><span class="n">set</span><span class="p">))</span>
+</span><span class='line'>      <span class="n">all_sets</span><span class="o">.</span><span class="n">clone</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">val</span><span class="o">|</span>
+</span><span class='line'>          <span class="n">all_sets</span> <span class="o">&lt;&lt;</span> <span class="n">val</span><span class="o">+</span><span class="n">get_first</span><span class="p">(</span><span class="n">set</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>  
+</span><span class='line'>      <span class="k">return</span> <span class="n">all_sets</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="k">return</span> <span class="o">[</span><span class="n">set</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">subsets</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#Output:</span>
+</span><span class='line'><span class="c1">#[&quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;ba&quot;, &quot;c&quot;, &quot;ca&quot;, &quot;cb&quot;, &quot;cba&quot;, &quot;d&quot;, &quot;da&quot;, &quot;db&quot;, &quot;dba&quot;, &quot;dc&quot;, &quot;dca&quot;, &quot;dcb&quot;, &quot;dcba&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion - Child and Stair Jumping Problem]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/04/10/recursion-child-and-stair-jumping-problem/"/>
+    <updated>2013-04-10T23:47:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/04/10/recursion-child-and-stair-jumping-problem</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ChildStair ruby (child_and_stair.rb)</span> <a href='http://karthikselva.github.com/downloads/code/child_and_stair.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1"># Child and Stairs </span>
+</span><span class='line'><span class="k">def</span> <span class="nf">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="k">return</span> <span class="p">(</span> <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>               <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>               <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">find_chances_for</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Output </span>
+</span><span class='line'><span class="c1"># ------</span>
+</span><span class='line'><span class="c1"># 4</span>
+</span><span class='line'><span class="c1"># Explanation</span>
+</span><span class='line'><span class="c1"># -----------</span>
+</span><span class='line'><span class="c1"># They are </span>
+</span><span class='line'><span class="c1"># (1,1,1)</span>
+</span><span class='line'><span class="c1"># (1,2)</span>
+</span><span class='line'><span class="c1"># (2,1)</span>
+</span><span class='line'><span class="c1"># (3)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Binary Tree - Find Vertical Sum]]></title>
@@ -1621,142 +1856,6 @@ _</p>
 
 <p>well even it &#8216;s sad ,  I guess it doesnt takes more than a couple of minutes to trigger <strong>sudo apt-get install gimp :D
 </strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Make your own OS ]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/18/make-your-own-os/"/>
-    <updated>2009-11-18T18:56:52+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/18/make-your-own-os</id>
-    <content type="html"><![CDATA[<p><strong>Make your Operating System of your choice with five simple steps ( for linux geeks only ) :</strong></p>
-
-<p><strong>
-</strong></p>
-
-<p><em><strong>Step 1: Download and install Reconstructor</strong></em></p>
-
-<p><a href="http://www.box.net/shared/5cqxv1obr6"> Downloads click here</a></p>
-
-<p>and run<em> </em><strong>sudo dpkg -i   reconstructor_2.8.1_by_hacktolive.org.deb</strong></p>
-
-<p><strong>
-</strong></p>
-
-<p><strong>
-</strong></p>
-
-<p><strong><em>Step 2: Meta&#8211;>System Tools &#8211;> Recontructor </em></strong></p>
-
-<p>Now open the package reconstructor from system tools and enter your root password  . Click Next .</p>
-
-<p><em><strong>Step 3: Choose alternate cd option</strong></em>
-on available options choose alternate cd to make a installable bootable OS  , or live cd fr live session of the cd</p>
-
-<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/start1.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/start1.gif?w=300" alt="" /></a></p>
-
-<p><em><strong>Step 4:  setting up the base </strong></em></p>
-
-<p>Now choose the working directory  and swap space to work up . Locate the iso image of your ubuntu CD or enter Ubuntu CD into cd rom</p>
-
-<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/cd.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/cd.gif?w=300" alt="" /></a></p>
-
-<p><em><strong>Step 5:adding up your own packages </strong></em></p>
-
-<p>Now you can add new packages or delete the unwamnted ones  and choose wallpapers , thems , the appln to boot on start up , the one you dont need with simple interface</p>
-
-<p>and finally create disk will create your fresh piece of distro</p>
-
-<p>You can have a try of remaster sys or  if you are really a linux geek try to do from scratch try the lengthy  step as in Linux  wiki  with squashfs tools</p>
-
-<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/addpackage.gif"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/addpackage.gif?w=300" alt="" /></a></p>
-
-<p>Now you can burn this iso image and distribute among your circle and call this as your   NEW DEVELOPED OS  as people say  :P</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Is New Orkut Really New ?]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new/"/>
-    <updated>2009-11-16T06:39:26+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/16/is-new-orkut-really-new</id>
-    <content type="html"><![CDATA[<p>Well few days Back I heard something called new orkut . It took weeks before since last time I logged in  Orkut . Facebook attracted me more and some how addicted to it .Now heard about<strong> &#8220;New Orkut &#8221;</strong> I came back to my old orkut :) .</p>
-
-<p>Goodness I got invite from some one ( sad thing is New Orkut too is a<strong> Invite and use system</strong> ). Well when I saw try new orkut at top , Clicked it really expecting a amazing wonder as an Alice . But I seen a page something very similar to face-book which disappointed me a lot .</p>
-
-<p><em>What they say new in this version are &#8230;</em></p>
-
-<p>i) They say &#8217;<strong> Friends updates are available to every one</strong> &#8217; .. Do you guess this thing new as an FB user  :P</p>
-
-<p>ii) second &#8217;<strong>Every one can comment on any friends notification</strong> , updates ,application and friend acceptance &#8217; .</p>
-
-<p>iii) A new thing I found interesting is<strong> Video chatting integrated</strong> with orkut ( pity on Linux users , it says &#8217; OS not supported &#8216;)</p>
-
-<p>iv) Best feature I found in this release is <strong>IE 6</strong> is not at all supported :) .</p>
-
-<p>v) Next humorous thing I found is adding a general sucky template  and five sticky colors  of their own  choice and  they said  &#8221; <strong>Pick your favorite colors We&#8217;ve made orkut even more colorful </strong>&#8220;  ..</p>
-
-<p><strong>vi) Speed</strong> is the main thing they mentioned they have increased .. But instead of static pages I can see my page still buffering in status bar  ( stealing my pity small free  download limit I have :( )</p>
-
-<p>vii) And the highlight of all is they mentioned <strong>moving chat bar from left side to right side</strong> as a new feature :D ( I guess the only thing they didnt imitate is the notification bar you can see under  as In face Book )</p>
-
-<p><img src="http://karthikselvakumar.files.wordpress.com/2009/11/screenshot-51.gif?w=300" alt="New Orkut" /></p>
-
-<p>I guess it may take time to  digest this things and to switch over to new orkut .  The thing I like the most is the prefix <strong>Beta</strong> in Orkut  ( a word which can answer almost  all the bugs  user raises :P  )</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using windows NT Boot Loader with Linux]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/16/using-windows-nt-boot-loader/"/>
-    <updated>2009-11-16T05:33:34+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/16/using-windows-nt-boot-loader</id>
-    <content type="html"><![CDATA[<p>_
-Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_</p>
-
-<p><em>Do you wanna taste the difference booting your Linux system through a windows boot loader ?</em></p>
-
-<p>_
-_</p>
-
-<p><em><strong>Follow Five simple steps To make it working  :</strong></em></p>
-
-<p><em><strong>
-</strong></em></p>
-
-<p><strong>Step i)  Copy your grub.bin  file to windows </strong></p>
-
-<p>Open your terminal and run  <strong> dd if=/dev/sdaN of=grub.bin bs=512 count=1</strong> where <strong>N</strong> denotes your Linux installed medium</p>
-
-<p><em>*Step ii) Copy the grub.bin file to c:*</em></p>
-
-<p>Well now boot into windows and copy <strong>grub.bin</strong> file to your windows  primary medium (you can  use flash medium to take grub.bin from linux )</p>
-
-<p><strong>step iii) working out in boot.ini </strong></p>
-
-<p>now set all previleges to boot.ini file by running<strong> attrib -r -w -s c:\boot.ini </strong>on windows</p>
-
-<p><strong>step iV) add the linux entry to it</strong></p>
-
-<p>Open the<strong> boot.ini </strong>file and add a line<strong> c:\grub.bin=&#8221;XPUD &#8221; </strong>denoting XP with Ubuntu Desktop , Name is  of your choice</p>
-
-<p><strong>Step v) save and restart</strong></p>
-
-<p>Now save all the changes and <strong>restart </strong>now you will see the windows NT loader showing two entires windows and Linux</p>
-
-<p><img src="http://www.xpud.org/image/windows-boot.png" alt="http://www.xpud.org/image/windows-boot.png" /></p>
-
-<p>Switch between any of choices as you wish ;)</p>
-
-<p><em>note i: If you got any fatal errors during the switch over try replacing grub by a rescue disk</em></p>
-
-<p>_
-note ii: if you choose not to place MBR with GRUB during linux installation then  you have no choice to load your Linux from hard disk ( for advanced users ) then you can use live CD and run above commands for Linux to fix it up _</p>
-
-<p>_
-_</p>
-
-<p>If you are ready to loose the power of grub and want  something experimenting and new I recommend  this ;)</p>
 ]]></content>
   </entry>
   

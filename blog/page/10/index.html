@@ -6,8 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 1st, 2010 Tags: Linux, Projects _If you have more than one system and need to acces all with a single mouse ?
-_ Wanna hack your &hellip;">
+	<meta name="description" content="Published on: Feb 18th, 2010 Tags: Linux SVN is a version control system used to track your various versions of your software over various levels &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +108,9 @@ _ Wanna hack your &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/01/cursor-play-with-your-neigbour-system/">
+		<a href="/blog/2010/02/18/a-simple-start-to-svn/">
 		
-			Cursor Play With Your Neigbour System</a>
+			A Simple Start to SVN</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,78 +126,82 @@ _ Wanna hack your &hellip;">
   
 
 
-<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
+<time datetime="2010-02-18T05:10:10+05:30" pubdate data-updated="true">Feb 18<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p>_If you have more than one system and need to acces all with a single mouse ?
-_</p>
+		<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
 
-<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+<p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
 
-<p>_
-_</p>
+<p><em><strong>Step1 :</strong></em></p>
 
-<p>you can use this code to move the cursor</p>
+<p>First before starting with your coding create a repo name in SVN as :</p>
 
-<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
+<p><strong>svnadmin create<your-repo-name></strong></p>
 
-<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
-</a></strong></p>
+<p>e.g) svnadmin create mediaplayer</p>
 
-<p><strong>
-</strong></p>
+<p>now you have created a repo named <strong>mediaplayer</strong></p>
 
-<p><em><strong>To Do :</strong></em></p>
+<p>this copy is the master copy for all clients</p>
 
-<p><em><strong>
-</strong></em></p>
+<p>this will be a directory with some system defined files in it</p>
 
-<p>step i) run the server.class first in machine u want to control say A</p>
+<p>note the directory you have  created a repositiory</p>
 
-<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
+<p><em><strong>Step 2:</strong></em></p>
 
-<p><strong>
-</strong></p>
+<p>now you cannot directly do modify on master copy</p>
 
-<p>step ii) run the client.class in second machine u have the mouse say B</p>
+<p>you have to checkout this repo to some workspace and start working</p>
 
-<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
+<p>let it be a directory called workspace</p>
 
-<p><strong>
-</strong></p>
+<p><strong>mkdir workspace</strong></p>
 
-<p>step iii) move  mouse in machine B so that it moves on machine A</p>
+<p><strong>cd workspace</strong></p>
 
-<p><em><strong>Algorithm behind :</strong></em></p>
+<p>now you can checkout the master copy and start your coding process</p>
 
-<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
+<p><strong>svn co file:///home/<user-name>/<repo-name></strong></p>
 
-<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
+<p>eg:)  svn co file:///home/karthik/mediaplayer</p>
 
-<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
+<p>now you will have a directory named mediaplayer</p>
 
-<p>iii) send the string to slave node using Socket output stream</p>
+<p>go into the directory  by</p>
 
-<p>iv) get the encrypt string and extract x and Y position  by</p>
+<p><strong>cd mediaplayer</strong></p>
 
-<p><strong>X=encrypt/10000;</strong></p>
+<p>then start a code name it as <strong>myfile.java</strong></p>
 
-<p><strong>y=encrypt - X;</strong></p>
+<p>now save it in this directory  . To add this into your master copy do</p>
 
-<p><strong>
-</strong></p>
+<p><strong>svn add  <file-name></strong></p>
 
-<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
+<p>eg) svn add myfile.java</p>
 
-<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
+<p><em><strong>Step 3:</strong></em></p>
+
+<p>you can optionally use these commands</p>
+
+<p><strong>i) svn commit</strong> - to  commit the current modification to the master copy ( Do this whenever you do minor changes to you files)</p>
+
+<p><strong>ii) svn status</strong> - to check the status of files in working copy</p>
+
+<p><strong>here </strong><strong>? </strong>means unknown <strong> A </strong>means added<strong> M</strong> means modified but not added</p>
+
+<p><strong>iii) svn update</strong> - to update to the latest revision of the master copy ( this will be usefull when more than one client has modified the master copy without your knowledge )</p>
+
+<p><a href="http://www.linuxfromscratch.org/blfs/edguide/chapter03.html">for more details refere here </a></p>
+
+<p>Thank you :)</p>
 
 		
 		

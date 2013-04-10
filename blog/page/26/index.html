@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux _Are you a Linux critic saying graphics doesn&#8217;t work on ? Haven&#8217;t explored SDL graphic part &hellip;">
+	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux well before stating about GRUB and LILO let me briefly say what are they : They are Boot loaders .. Exactly &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/14/graphics-h-fails-in-linux/">
+		<a href="/blog/2009/11/14/grub-or-lilo-what-are-they/">
 		
-			Graphics.h Fails in Linux ?</a>
+			Grub or Lilo ? What Are They ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +126,7 @@
   
 
 
-<time datetime="2009-11-14T00:27:16+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
+<time datetime="2009-11-14T14:55:03+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,51 +135,38 @@
 
 </div>
     </div>
-		<p>_Are you a Linux critic saying graphics doesn&#8217;t work on ?</p>
+		<p><strong> well before stating about GRUB and LILO let me briefly say what are they :</strong></p>
 
-<p>Haven&#8217;t explored SDL graphic part thrro&#8217;   C?</p>
+<p>They are <strong>Boot loaders </strong>.. Exactly they are piece of code which places your operating system from secondary hard disk to RAM when you switch on your PC . Thats why we say &#8217; My PC didn&#8217;t boot &#8217; instead saying like Iron box or TV  doesnt switch &#8216;on&#8217;  .</p>
 
-<p>Switched on to linux recently and breaking your heads on graphics libraries for linux ?_</p>
+<p><strong>well any how this doesn&#8217;t be much seen by naive users and mostly hidden Then why care about those thing ?</strong></p>
 
-<p>The packages you need before working on with graphics library in linux are:</p>
+<p>even seems like its hidden it has many consequence on multiple OS environment  . If you used Linux past three years before then you will be more familiar about grub <strong>error 17 stage 1.5 error </strong>( once we annoyed at this strange one and thought even hardware is totally gone useless :D )</p>
 
-<p>Try  installing thro&#8217; console by</p>
+<p>I know speaking about grub and LILO is a most unresolvable one like we already have</p>
 
-<p><strong>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 guile-1.8-dev libsdl1.2debian-arts libartsc0-dev libaudiofile-dev libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6(upgrade) libaa1 libaa1-dev libslang2-dev libasound2 libasound-dev</strong></p>
+<p>**KDE vs Gnome</p>
 
-<p>or select the package in <strong>synaptic </strong>it will automatically resolve dependency&#8217;s</p>
+<p>Emacs Vs Vi**</p>
 
-<p><em><strong>LibGraph Installing and configuring:</strong></em></p>
+<p><strong>as once Linux article said :</strong></p>
 
-<p>First download libgraph from <a href="http://www.box.net/shared/bnj7usolue"> here </a></p>
+<p>_&#8221; no arguing about a Linux distribution&#8217;s bootloader. With LILO (LInux LOader) as the dominant software for this purpose, many seasoned Linux system administrators had mastered the art of creating a lilo.conf file out of thin air, without having to look through any LILO documentation. &#8221;
+_</p>
 
-<p>Then as usual extract
-tar.gz   and run</p>
+<p>But Unfortunately for them, the release notes of Red Hat 7.2, released in October 2001, informed us that &#8220;we now use GRUB as the default boot loader.&#8221;  This is point where Grub emerges</p>
 
-<p><strong>./configure
-make
-make install
-</strong>
-write some c with graphics implemenation and name it as <strong>test.c</strong></p>
+<p><strong>Cool Grub at start up :</strong></p>
 
-<p>Thats it :D</p>
+<p><img src="http://cache.techie-buzz.com/images/posts/grub.jpg" alt="Grub" /></p>
 
-<p><em><strong>Now compile and run the file as:</strong></em></p>
+<p>At present at <strong>Ubuntu 9.10 grub 1.97 is beta </strong>( remember once its alpha release with several bugs)    and even detects RAID 0,1 and all server configuration with less effort and also Grub provides its own <strong>unique interface</strong> ( Type grub in console to open up )</p>
 
-<p><strong>g++ test.cpp -o test.o -lgraph
-And execute the program by ./test.o
-</strong>
--lgraph links with graphics library</p>
+<p>As far as Linux geeks  grub is emerging technology with efforts to replace  LILO  and easify users with problems stuck on MBR</p>
 
-<p>if you get any shared library error ( ofcourse most people get this thing)</p>
+<p>Any how , competitions makes a better product  in all   &#8230;.. well this is not an exceptional case ;)</p>
 
-<p>then shift as  <strong>sudo cp /usr/local/lib/libgraph.* /usr/lib</strong></p>
-
-<p>you may  now see a SDL output window showing smooth graphical 32 bit output (rather resorted dos window :P )</p>
-
-<p>3D chess  game in graphics  C  <img src="http://mfarrelly.rarelyfar.com/res/chessnix.jpg" alt="chess" /></p>
-
-<p>Learn , code and Enjoy Linux geeks  :)</p>
+<p><a href="http://www.payoffers.in/VLCC.php?a_aid=bfdaf6da&amp;a_bid=37f04f1c"><img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=37f04f1c" alt="Click Here" /></a></p>
 
 		
 		

@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 21st, 2009 Tags: Linux Ubuntu 10.04 release named Lucid Lynx is the next release.. Well 10 second boot time is the main aim of &hellip;">
+	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/21/ubuntu-10-04-lucid-lynx/">
+		<a href="/blog/2010/01/01/read-cpu-core-temperature/">
 		
-			Ubuntu 10.04 Lucid Lynx</a>
+			Read CPU Core Temperature</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +126,7 @@
   
 
 
-<time datetime="2009-11-21T04:14:16+05:30" pubdate data-updated="true">Nov 21<span>st</span>, 2009</time></div>
+<time datetime="2010-01-01T04:30:24+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,50 +135,71 @@
 
 </div>
     </div>
-		<p>Ubuntu 10.04 release named <strong>Lucid Lynx</strong> is the next release..</p>
+		<p>Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . Then I chose lm-sensor for this purpose .</p>
 
-<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg?w=300" alt="" /></a></p>
+<p><strong><em>step1</em></strong></p>
 
-<p>Well<strong> 10 second boot time</strong> is the main aim of this release it seems . I felt the high speed booting of my 9.10 karmic now from older hardy heron( 65 seconds to 25 seconds ) . still lucid aims at 10 seconds boo time as the main aim to achieve  . This release seems to be released at next year 2010 .</p>
+<p>Installation :</p>
 
-<p><strong><em>The 10 second boot time is acheived by equal partitoin of modules at start up  with:</em></strong></p>
+<p>install the package lm sensors for your linux distro</p>
 
-<p>i) loading the kernel and initramfs should take two seconds,</p>
+<p><strong>sudo apt-get install lm-sensors</strong></p>
 
-<p>ii) driver loading, filesystem mounting, and other &#8220;plumbing&#8221; should take two seconds,</p>
+<p><strong><em>step 2:</em></strong></p>
 
-<p>iii) launching Xorg should take two seconds</p>
+<p>run <strong>sensors</strong> in terminal</p>
 
-<p>iv)  the remaining four seconds should be used to launch the desktop environment and other services that are part of the user&#8217;s session.</p>
+<p>if you have installed for first time probe it to kernel first</p>
 
-<p>( if you are not well verse in this terms then please open your eyes after 10 seconds from start of booting  )</p>
+<p><em>step 3: </em>restart the system and try sensors now</p>
 
-<p><em>The computer should be fully booted and ready to use at the end of ten seconds</em></p>
+<p>I have a core2quad processor and i get temperature of four processors as</p>
+
+<p><em>karthik@Karthik:~/Programs$ sensors
+coretemp-isa-0000
+Adapter: ISA adapter
+Core 0:      +47.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0001
+Adapter: ISA adapter
+Core 1:      +37.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0002
+Adapter: ISA adapter
+Core 2:      +39.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><em>coretemp-isa-0003
+Adapter: ISA adapter
+Core 3:      +46.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
+
+<p><strong><em>step 3: </em></strong></p>
+
+<p>call the <strong>process </strong>class of java and get back the string returned</p>
+
+<p><em>import java.io.*;
+class cpu {
+public static void main(String []args) throws Exception
+{
+Runtime r=Runtime.getRuntime();
+String f,temp,res=&#8221;&#8220;;
+int i=0,j=0;
+f=&#8221;sensors&#8221;;
+Process p=r.exec(f);
+BufferedReader pin=new BufferedReader(new InputStreamReader(p.getInputStream()));
+while((temp=pin.readLine())!=null)
+{
+System.out.println(temp);
+}
+}</em>
+<em>}</em></p>
+
+<p>Then make it flexible for your own purpose  by proper string parsing &#8230;.</p>
+
+<p>Thank you !<em><strong>
+</strong></em></p>
 
 <p>_
 _</p>
-
-<p><em>but as a sad part GIMP is removed from standard installation of ubuntu  when queried  developers say  :</em></p>
-
-<ul>
-<li><p>the general user doesn’t use it</p></li>
-<li><p>its user-interface is too complex</p></li>
-<li><p>it’s an application for professionals</p></li>
-<li><p>desktop users just want to edit photos and they can do that in F-Spot</p></li>
-<li><p>it’s a photoshop replacement and photoshop isn’t included by default in Windows…</p></li>
-<li><p>it takes up room on the disc</p></li>
-</ul>
-
-
-<p>_
-_</p>
-
-<p><em>Im realy sad about this plot and really the fifth point  &#8220;it’s a photoshop replacement and photoshop isn’t included by default in Windows…&#8221;    . comparing a linux distro with a windows .</em></p>
-
-<p><strong><em>If they speak so then linux must be a simple skeleton with a sucky media player and a paint program as some others do. </em></strong></p>
-
-<p>well even it &#8216;s sad ,  I guess it doesnt takes more than a couple of minutes to trigger <strong>sudo apt-get install gimp :D
-</strong></p>
 
 		
 		

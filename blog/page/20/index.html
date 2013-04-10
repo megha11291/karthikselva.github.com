@@ -6,8 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 16th, 2009 Tags: Linux _
-Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_ Do you wanna taste the &hellip;">
+	<meta name="description" content="Published on: Nov 21st, 2009 Tags: Linux Ubuntu 10.04 release named Lucid Lynx is the next release.. Well 10 second boot time is the main aim of &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +108,9 @@ Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/16/using-windows-nt-boot-loader/">
+		<a href="/blog/2009/11/21/ubuntu-10-04-lucid-lynx/">
 		
-			Using Windows NT Boot Loader With Linux</a>
+			Ubuntu 10.04 Lucid Lynx</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,7 +126,7 @@ Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_
   
 
 
-<time datetime="2009-11-16T05:33:34+05:30" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time></div>
+<time datetime="2009-11-21T04:14:16+05:30" pubdate data-updated="true">Nov 21<span>st</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
@@ -136,52 +135,50 @@ Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_
 
 </div>
     </div>
-		<p>_
-Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_</p>
+		<p>Ubuntu 10.04 release named <strong>Lucid Lynx</strong> is the next release..</p>
 
-<p><em>Do you wanna taste the difference booting your Linux system through a windows boot loader ?</em></p>
+<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg?w=300" alt="" /></a></p>
 
-<p>_
-_</p>
+<p>Well<strong> 10 second boot time</strong> is the main aim of this release it seems . I felt the high speed booting of my 9.10 karmic now from older hardy heron( 65 seconds to 25 seconds ) . still lucid aims at 10 seconds boo time as the main aim to achieve  . This release seems to be released at next year 2010 .</p>
 
-<p><em><strong>Follow Five simple steps To make it working  :</strong></em></p>
+<p><strong><em>The 10 second boot time is acheived by equal partitoin of modules at start up  with:</em></strong></p>
 
-<p><em><strong>
-</strong></em></p>
+<p>i) loading the kernel and initramfs should take two seconds,</p>
 
-<p><strong>Step i)  Copy your grub.bin  file to windows </strong></p>
+<p>ii) driver loading, filesystem mounting, and other &#8220;plumbing&#8221; should take two seconds,</p>
 
-<p>Open your terminal and run  <strong> dd if=/dev/sdaN of=grub.bin bs=512 count=1</strong> where <strong>N</strong> denotes your Linux installed medium</p>
+<p>iii) launching Xorg should take two seconds</p>
 
-<p><em>*Step ii) Copy the grub.bin file to c:*</em></p>
+<p>iv)  the remaining four seconds should be used to launch the desktop environment and other services that are part of the user&#8217;s session.</p>
 
-<p>Well now boot into windows and copy <strong>grub.bin</strong> file to your windows  primary medium (you can  use flash medium to take grub.bin from linux )</p>
+<p>( if you are not well verse in this terms then please open your eyes after 10 seconds from start of booting  )</p>
 
-<p><strong>step iii) working out in boot.ini </strong></p>
-
-<p>now set all previleges to boot.ini file by running<strong> attrib -r -w -s c:\boot.ini </strong>on windows</p>
-
-<p><strong>step iV) add the linux entry to it</strong></p>
-
-<p>Open the<strong> boot.ini </strong>file and add a line<strong> c:\grub.bin=&#8221;XPUD &#8221; </strong>denoting XP with Ubuntu Desktop , Name is  of your choice</p>
-
-<p><strong>Step v) save and restart</strong></p>
-
-<p>Now save all the changes and <strong>restart </strong>now you will see the windows NT loader showing two entires windows and Linux</p>
-
-<p><img src="http://www.xpud.org/image/windows-boot.png" alt="http://www.xpud.org/image/windows-boot.png" /></p>
-
-<p>Switch between any of choices as you wish ;)</p>
-
-<p><em>note i: If you got any fatal errors during the switch over try replacing grub by a rescue disk</em></p>
-
-<p>_
-note ii: if you choose not to place MBR with GRUB during linux installation then  you have no choice to load your Linux from hard disk ( for advanced users ) then you can use live CD and run above commands for Linux to fix it up _</p>
+<p><em>The computer should be fully booted and ready to use at the end of ten seconds</em></p>
 
 <p>_
 _</p>
 
-<p>If you are ready to loose the power of grub and want  something experimenting and new I recommend  this ;)</p>
+<p><em>but as a sad part GIMP is removed from standard installation of ubuntu  when queried  developers say  :</em></p>
+
+<ul>
+<li><p>the general user doesn’t use it</p></li>
+<li><p>its user-interface is too complex</p></li>
+<li><p>it’s an application for professionals</p></li>
+<li><p>desktop users just want to edit photos and they can do that in F-Spot</p></li>
+<li><p>it’s a photoshop replacement and photoshop isn’t included by default in Windows…</p></li>
+<li><p>it takes up room on the disc</p></li>
+</ul>
+
+
+<p>_
+_</p>
+
+<p><em>Im realy sad about this plot and really the fifth point  &#8220;it’s a photoshop replacement and photoshop isn’t included by default in Windows…&#8221;    . comparing a linux distro with a windows .</em></p>
+
+<p><strong><em>If they speak so then linux must be a simple skeleton with a sucky media player and a paint program as some others do. </em></strong></p>
+
+<p>well even it &#8216;s sad ,  I guess it doesnt takes more than a couple of minutes to trigger <strong>sudo apt-get install gimp :D
+</strong></p>
 
 		
 		

@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Apr 8th, 2013 Tags: Algorithms Original Source VerticalSum ruby (vertical_sum.rb) download 1
+	<meta name="description" content="Published on: Apr 11th, 2013 Tags: Algorithms ListPalindrome ruby (palindrome_list.rb) download 1
 2
 3
 4
@@ -22,7 +22,10 @@
 14
 15
 16
-17 &hellip;">
+17
+18
+19
+20 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -124,9 +127,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2013/04/08/binary-tree-find-vertical-sum/">
+		<a href="/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/">
 		
-			Binary Tree - Find Vertical Sum</a>
+			Linked List - Find Palindrome Ina Linked List</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -142,7 +145,7 @@
   
 
 
-<time datetime="2013-04-08T20:01:00+05:30" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time></div>
+<time datetime="2013-04-11T02:53:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
       <div class="tags">Tags: 
 
 
@@ -151,9 +154,7 @@
 
 </div>
     </div>
-		<p><a href="http://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/">Original Source</a></p>
-
-<figure class='code'><figcaption><span>VerticalSum ruby (vertical_sum.rb)</span> <a href='/downloads/code/vertical_sum.rb'>download</a></figcaption>
+		<figure class='code'><figcaption><span>ListPalindrome ruby (palindrome_list.rb)</span> <a href='/downloads/code/palindrome_list.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -180,35 +181,87 @@
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
 <span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">SUM</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
-</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
-</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
-</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">List</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:next</span> <span class="p">,</span> <span class="ss">:data</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">if</span> <span class="o">!</span><span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>      <span class="no">SUM</span><span class="o">[</span><span class="n">dist</span><span class="o">]</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">data</span>
-</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">dist</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">dist</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">print_list</span>
+</span><span class='line'>      <span class="n">root</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">root</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">root</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2"> =&gt; &quot;</span>
+</span><span class='line'>          <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="s2">&quot;NULL&quot;</span>
 </span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">find_length</span>
+</span><span class='line'>      <span class="n">root</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">root</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">l</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">is_palindrome</span>
+</span><span class='line'>      <span class="n">st</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>      <span class="n">node</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>      <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">find_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">st</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">find_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">st</span><span class="o">[-</span><span class="mi">1</span><span class="o">].</span><span class="n">eql?</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'>              <span class="n">st</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="n">l</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">st</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
 </span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
-</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span><span class="o">.</span><span class="n">vertical_sums</span><span class="p">(</span><span class="n">test_tree</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="no">SUM</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'><span class="n">test_list</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1"># Output:</span>
-</span><span class='line'><span class="c1"># {0=&gt;15, -1=&gt;3, -2=&gt;1, 1=&gt;7, 2=&gt;8}</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">is_palindrome</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
 
 
 		

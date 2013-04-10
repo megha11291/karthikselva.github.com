@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Oct 30th, 2009 Tags: Linux Is your hands sore of messaging on whole day with your abc mobile keypad ? Are you in need of tracking all &hellip;">
+	<meta name="description" content="Published on: Nov 5th, 2009 Tags: Linux My Ubuntu Desktop snapshot If you are a newbee to ubuntu or cant leave some of the features of windows then &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/10/30/abc-to-qwerty-messaging/">
+		<a href="/blog/2009/11/05/windows-inside-ubuntu/">
 		
-			Abc to Qwerty Messaging</a>
+			Windows Inside Ubuntu</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +126,7 @@
   
 
 
-<time datetime="2009-10-30T21:04:59+05:30" pubdate data-updated="true">Oct 30<span>th</span>, 2009</time></div>
+<time datetime="2009-11-05T08:46:44+05:30" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,177 +135,41 @@
 
 </div>
     </div>
-		<p>Is your hands sore of messaging on whole day with your abc mobile keypad ?</p>
+		<pre><code>                                           My Ubuntu Desktop snapshot 
+</code></pre>
 
-<p>Are you in need of tracking all your messages your loved ones send with some database ?</p>
+<p><img src="http://karthikselvakumar.files.wordpress.com/2009/11/screenshot.png" alt="" /></p>
 
-<p>Need of a online chatting environment for sms ?</p>
+<pre><code>           If you are a newbee to ubuntu  or cant leave some of  the features of windows then best way to use virtual os. 
+</code></pre>
 
-<p>Here you are ,</p>
+<p>Now make your gui easier  and use both at same time.</p>
 
-<p>All you need is :</p>
+<p>Install <strong>virtualbox </strong>a free virtual os manager from sun microsystems .</p>
 
-<p>_ i) Any Linux OS
- ii)  Mysql database to store the message
-iii) SMSD  to track and send message
-iv) gnokii  Suite
-_</p>
+<p><strong>sudo apt-get install virtualbox</strong></p>
 
-<p><em><strong>Installing Linux :</strong></em></p>
+<p>run as super user (or else you may get errors at times )</p>
 
-<p>I guess every one knows how to install linux in your desktop , if not <a href="https://help.ubuntu.com/community/Installation"> Check this link </a>
-**</p>
+<p><strong>sudo virtualbox</strong></p>
 
-<p><em>Installing Mysql database :**</em></p>
+<p>install the virtual os  , before that create a <strong> virtual hard disk </strong>of required size</p>
 
-<p>try <strong> sudo apt-get install mysql</strong></p>
+<p>go to the settings tab of virtualbox and</p>
 
-<p>or</p>
+<p> <strong>mount the xp or vista iso image </strong></p>
 
-<p><strong>directly from synaptic </strong></p>
+<p>click start button and you must get a boot option do as prompted</p>
 
-<p><em><strong>Installing gnokii and smsd :
-</strong></em></p>
+<p>then on the mode use</p>
 
-<p><strong>sudo apt-get install gnokii
-</strong>
-and then</p>
+<p><strong>seamless mode</strong></p>
 
-<p>smsd as  <strong>  sudo apt-get install gnokii-smsd-mysql
-</strong></p>
+<p>thats it ! now you can use both OS with  single interface</p>
 
-<p>_Now you have setup a base  :D _</p>
+<p>Demo video is here .. you can have a look at it  ;)</p>
 
-<p>_
-Step 1:_</p>
-
-<p><strong>Configuring gnokii:</strong></p>
-
-<p> Connect your mobile via datacable or bluetooth to pc</p>
-
-<p>create a file called<em> /home/.gnokiirc</em></p>
-
-<p><strong>sudo gedit /home/.gnokiirc</strong></p>
-
-<p>add this lines to the file if you have Nokia mobile</p>
-
-<p>**
-[global]
-port = /dev/ttyACM0
-model = series40
-initlength = default
-connection = dku2libusb
-use_locking = no
-serial_baudrate = 19200
-smsc_timeout = 10</p>
-
-<p>[gnokiid]
-bindir = /usr/local/sbin/</p>
-
-<p>[connect_script]
-TELEPHONE = +919xxxxxxxxx  <br/>
-[disconnect_script]</p>
-
-<p>[logging]
-debug = on
-rlpdebug = off
-xdebug = off **</p>
-
-<p>replace phone number field with yours</p>
-
-<p>if you are not Nokia user try <a href="http://wiki.gnokii.org/index.php/Config"> this link to configure your mobile </a></p>
-
-<p>save the file</p>
-
-<p>Open terminal and type   <strong>sudo gnokii &#8212;identify </strong></p>
-
-<p>it must say something like this</p>
-
-<p><em>GNOKII Version 0.6.26
-LOG: debug mask is 0x1
-Config read from file /home/karthik/.gnokiirc.
-phone instance config:
-model = series40
-port = /dev/ttyACM0
-connection = dku2libusb
-initlength = default
-serial_baudrate = 19200
-serial_write_usleep = -1
-handshake = software
-require_dcd = 0
-smsc_timeout = 10
-rfcomm_channel = 1
-sm_retry = 0
-Connecting
-Serial device: opening device USB
-Ignoring extra header, type 171, length 5
-Found FBUS interface
-Can&#8217;t set configuration: -16
-Getting model&#8230;
-Message sent: 0x1b / 0x0006
-00 01 00 07 01 00                               |               <br/>
-Message received: 0x1b / 0x003e
-01 39 00 08 00 01 58 38 00 31 56 20 30 35 2e 38 |  9    X8 1V 05.8
-30 0a 31 38 2d 31 32 2d 30 38 0a 52 4d 2d 34 39 | 0 18-12-08 RM-49
-35 0a 28 63 29 20 4e 6f 6b 69 61 20 20 20 20 20 | 5 (c) Nokia   <br/>
-20 20 20 20 20 20 20 0a 4d 48 00 00 00 00       |         MH    <br/>
-Received message type 1b
-model length: 6
-Received model RM-495
-Identifying&#8230;
-Message sent: 0x1b / 0x0005
-00 01 00 00 41                                  |     A         <br/>
-Message sent: 0x1b / 0x0006
-00 01 00 07 01 00                               |               <br/>
-Message received: 0x1b / 0x001a
-01 39 00 01 00 01 41 14 00 10 33 35 34 32 32 33 |  9    A   354223
-30 33 30 30 33 39 33 31 37 00                   | 030039317     <br/>
-Received message type 1b
-Received imei 354223030039317
-Message received: 0x1b / 0x003e
-01 39 00 08 00 01 58 38 00 31 56 20 30 35 2e 38 |  9    X8 1V 05.8
-30 0a 31 38 2d 31 32 2d 30 38 0a 52 4d 2d 34 39 | 0 18-12-08 RM-49
-35 0a 28 63 29 20 4e 6f 6b 69 61 20 20 20 20 20 | 5 (c) Nokia   <br/>
-20 20 20 20 20 20 20 0a 4d 48 00 00 00 00       |         MH    <br/>
-Received message type 1b
-Received revision V 05.80
-model length: 6
-Received model RM-495
-IMEI         : 354223030039317
-Manufacturer : Nokia
-Model        : RM-495
-Product name : RM-495
-Revision     : V 05.80
-Serial device: closing device</em></p>
-
-<p><em>Step 2:</em></p>
-
-<p>Then move on to smsd</p>
-
-<p>Configure smsd very simple as follows in <a href="http://wiki.gnokii.org/index.php/Smsd">this  link </a>
-replace this line as</p>
-
-<p>  <strong>mysql -u root -p your-db-password smsgw &lt; /usr/share/doc/gnokii-smsd-mysql/sms.tables.mysql.sql</strong></p>
-
-<p>if you get access denied error</p>
-
-<p>same thing in replace the sms line as below</p>
-
-<p>and start the sms daemon</p>
-
-<p><strong>/usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -p  your-db-password -b IN -f /var/log/smsdaemon.log</strong></p>
-
-<p> Now all inbox and outbox messages will be in</p>
-
-<p> <strong>smsgw</strong> database as <strong>inbox </strong>and <strong>outbox</strong> table :D</p>
-
-<p>insert a tuple in outbox table to message to your friends
-as<br/>
-<strong>insert into outbox (number,text) values(&#8216;+91987654321&#8217;, &#8216;message from sms daemon ;-)&#8217;);</strong></p>
-
-<p>enjoy messaging by inserting values into database as above :)</p>
-
-<p>to be continued &#8230;&#8230;&#8230;.</p>
+<p>[youtube=http://www.youtube.com/watch?v=tIQo77KEhG0]</p>
 
 		
 		

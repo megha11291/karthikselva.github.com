@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Dec 29th, 2009 Tags: Movie review I have to start with saying Cameroon dissaponted me &#8230; Even storyline doesnt seems to be great &hellip;">
+	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Current affairs, Linux I came across a facebook application which counts maximum number of clicks per second and &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/12/29/avatar-2009/">
+		<a href="/blog/2010/01/01/facebook-mouseclicks-hack/">
 		
-			Avatar (2009)</a>
+			Facebook Mouseclicks Hack !</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,30 +126,96 @@
   
 
 
-<time datetime="2009-12-29T00:54:43+05:30" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time></div>
+<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/movie-review/'>Movie review</a>
+	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p><img src="http://media.silive.com/entertainment_impact_tvfilm/photo/12-17avatarjpg-8785ff894e35e1b6_large.jpg" alt="" /></p>
+		<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
 
-<p>I have to start with saying Cameroon dissaponted me &#8230;</p>
+<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
 
-<p>Even storyline doesnt seems to be great but   visual effects are fantastic and real . Na&#8217;vi&#8217;s are the creatures in a planet pandora . For me their appearance resembles as traditional character Lord  Rama  . Avatar too is sanskrit word meaning phases of vishnu where one is Rama . I guess it may be a copy :P  .</p>
+<p><em><strong>step 1:</strong></em></p>
 
-<p>No great explanation about the planets existence whats their origin where is it actually located .. blah blah  . The most humorous thing I  noticed is the base attack with lumps of fire ( where the place  people struggle for oxygen ,  but how combustion is possible  :P  ) .</p>
+<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
 
-<p>I don&#8217;t know where to categorize this film .. either in animation or  comic series or scientific fiction or just an entertainer .. Only plus point makes the film still run is 3D . the existence of evya the holy god still confuses me whether film falls under spiritual r religious category :D .</p>
+<p>the code seems like :</p>
 
-<p>The soul DNA transformation concept , electrochemical network of trees , the precious stones significance and  the hair like generic  interface between avatar and rest living creatures  could  be explained little more.</p>
+<p><em>import java.awt.Robot;
+import java.awt.event.InputEvent;
+/<strong>
+*
+* @author karthik
+*/
+public class Main {
+/</strong>
+* @param args the command line arguments
+*/
+public static void main(String[] args) throws Throwable {
+Robot r=new Robot();</em></p>
 
-<p>Its seems like Cameroon loosing his originality and resembles Speilsburg &#8216;s Jurassic park. A must watch  film for kids &lt; 10 :D .</p>
+<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
+System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
+r.delay(10000);_</p>
 
-<p>Well if you fix on to watch this movie I recommend you  to watch it in 3D with surround sound ( don&#8217;t watch it out in your damn old pc and get disappointed )</p>
+<p><em>// TODO code application logic here
+for(int i=0;i&lt;10000;i++){
+r.mousePress(InputEvent.BUTTON1_MASK);
+System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
+r.mouseRelease(InputEvent.BUTTON1_MASK);
+System.out.println();
+System.out.println();
+}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
+
+<p><em>}
+}</em></p>
+
+<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
+
+<p><em><strong>step 2:</strong></em></p>
+
+<p>open <strong>terminal </strong></p>
+
+<p>compile the java code by running from the location where code is located by</p>
+
+<p><strong>javac Main.java</strong></p>
+
+<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
+
+<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
+
+<p><em><strong>step 3:</strong></em></p>
+
+<p>Run the java code now this is critical part</p>
+
+<p><strong>java Main </strong></p>
+
+<p><strong>( you can directly run this  by extracting Main.java.zip from above )
+</strong></p>
+
+<p>you will get a screen saying</p>
+
+<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
+
+<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
+
+<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
+
+<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
+
+<p><strong>for more clear details watch the video below :</strong></p>
+
+<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
+
+<p>Thank you :)</p>
+
+<p><em><strong>Disclaimer :</strong></em></p>
+
+<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
 
 		
 		
