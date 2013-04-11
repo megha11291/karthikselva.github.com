@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-04-11T03:02:57+05:30</updated>
+  <updated>2013-04-11T17:35:14+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bit Manipulation - Floating Decimal to Binary]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/"/>
+    <updated>2013-04-11T17:33:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary</id>
+    <content type="html"><![CDATA[<p>File /Users/karthikselvakumarbhuvaneswaran/SkyDrive/Blog/octopress/source/downloads/code/decimal_to_binary.rb could not be found</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linked List - kth element from last - Recursion ]]></title>
@@ -1797,100 +1806,6 @@ _</p>
 <p>Its seems like Cameroon loosing his originality and resembles Speilsburg &#8216;s Jurassic park. A must watch  film for kids &lt; 10 :D .</p>
 
 <p>Well if you fix on to watch this movie I recommend you  to watch it in 3D with surround sound ( don&#8217;t watch it out in your damn old pc and get disappointed )</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Nokia Hacks and tips ]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips/"/>
-    <updated>2009-11-22T06:24:36+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/22/nokia-hacks-and-tips</id>
-    <content type="html"><![CDATA[<p>Try  this codes in your cell if you are not familiar with this one  b4..</p>
-
-<p>_This may help you when you are stuck up or trace some details out of your Mobile :
-_</p>
-
-<p><strong>*3370#</strong> Activate Enhanced Full Rate Codec (EFR) - Your phone uses the
-best sound quality but talk time is reduced my approx. 5%</p>
-
-<p><strong>#3370# </strong>Deactivate Enhanced Full Rate Codec (EFR)</p>
-
-<p><strong>*4720#</strong> Activate Half Rate Codec - Your phone uses a lower quality
-sound but you should gain approx 30% more Talk Time.</p>
-
-<p><strong>#4720# </strong>Deactivate Half Rate Codec.</p>
-
-<p><strong>*#0000# </strong>Displays your phones software version, 1st Line : Software
-Version, 2nd Line : Software Release Date, 3rd Line :
-Compression Type.</p>
-
-<p><em><strong>#9999# </strong>Phones software version if </em>#0000# does not work.</p>
-
-<p><strong>*#06# </strong>For checking the International Mobile Equipment Identity (IMEI
-Number).</p>
-
-<p><strong>#pw+1234567890+1# </strong>
-Provider Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+2# </strong>
-Network Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+3# </strong>
-Country Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+4# </strong>
-SIM Card Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>*#147#</strong> (vodafone) this lets you know who called you last.</p>
-
-<p><strong>*#1471# </strong>Last call (Only vodofone).</p>
-
-<p><strong>*#21#</strong> Allows you to check the number that &#8220;All Calls&#8221; are diverted to.</p>
-
-<p><strong>*#2640#</strong> Displays security code in use.</p>
-
-<p><strong>*#30# </strong>Lets you see the private number.</p>
-
-<p><strong>*#43# </strong>Allows you to check the &#8220;Call Waiting&#8221; status of your phone.</p>
-
-<p><strong>*#61# </strong>Allows you to check the number that &#8220;On No Reply&#8221; calls are
-diverted to.</p>
-
-<p><strong>*#62#</strong> Allows you to check the number that &#8220;Divert If Unreachable (no
-service)&#8221; calls are diverted to.</p>
-
-<p><strong>*#67#</strong> Allows you to check the number that &#8220;On Busy Calls&#8221; are diverted
-to.</p>
-
-<p><strong>*#67705646# </strong>Removes operator logo on 3310 &amp; 3330.</p>
-
-<p><strong>*#73# </strong>Reset phone timers and game scores.</p>
-
-<p><strong>*#746025625# </strong>Displays the SIM Clock status, if your phone supports this power
-saving feature &#8220;SIM Clock Stop Allowed&#8221;, it means you will get
-the best standby time possible.</p>
-
-<p><em><strong>#7760#</strong> Manufactures code.
-**
-</em>#7780#** Restore factory settings.</p>
-
-<p><strong>*#8110# </strong>Software version for the nokia 8110.</p>
-
-<p><strong>*#92702689# </strong>Displays - 1.Serial Number, 2.Date Made, 3.Purchase Date,
-4.Date of last repair (0000 for no repairs), 5.Transfer User Data.
-To exit this mode you need to switch your phone off then on again.</p>
-
-<p><strong>*#94870345123456789# </strong>Deactivate the PWM-Mem.</p>
-
-<p><strong><em>*21</em>number# </strong>Turn on &#8220;All Calls&#8221; diverting to the phone number entered.</p>
-
-<p><strong><em>*61</em>number# </strong>Turn on &#8220;No Reply&#8221; diverting to the phone number entered.</p>
-
-<p><strong><em>*67</em>number#</strong> Turn on &#8220;On Busy&#8221; diverting to the phone number entered.</p>
-
-<p><strong>12345</strong> This is the default security code.</p>
-
-<p>Remember few of these codes may not work for recent nokia models &#8230;.</p>
 ]]></content>
   </entry>
   
