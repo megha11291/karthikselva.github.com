@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Apr 11th, 2013 Tags: Algorithms KthELementList ruby (kth_element_in_list.rb) download 1
+	<meta name="description" content="Published on: Apr 11th, 2013 Tags: Algorithms decimal_to_binary (decimal_to_binary.rb) download 1
 2
 3
 4
@@ -24,7 +24,8 @@
 16
 17
 18
-19 &hellip;">
+19
+20 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -126,9 +127,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2013/04/11/linked-list-kth-element-from-last-recursion/">
+		<a href="/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/">
 		
-			Linked List - Kth Element From Last - Recursion</a>
+			Bit Manipulation - Floating Decimal to Binary</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -144,7 +145,7 @@
   
 
 
-<time datetime="2013-04-11T03:01:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
+<time datetime="2013-04-11T17:33:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
       <div class="tags">Tags: 
 
 
@@ -153,7 +154,7 @@
 
 </div>
     </div>
-		<figure class='code'><figcaption><span>KthELementList ruby (kth_element_in_list.rb)</span> <a href='/downloads/code/kth_element_in_list.rb'>download</a></figcaption>
+		<figure class='code'><figcaption><span>decimal_to_binary (decimal_to_binary.rb)</span> <a href='/downloads/code/decimal_to_binary.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -192,44 +193,342 @@
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">List</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:next</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">print_binary</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="s2">&quot;ERROR&quot;</span>
 </span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">print_list</span>
-</span><span class='line'>      <span class="n">root</span> <span class="o">=</span> <span class="nb">self</span>
-</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">root</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>          <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">root</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2"> =&gt; &quot;</span>
-</span><span class='line'>          <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>  <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="n">n</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="n">res</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">32</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s1">&#39;ERROR&#39;</span>
 </span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>      <span class="nb">p</span> <span class="s2">&quot;NULL&quot;</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">kth_element</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>      <span class="n">list</span> <span class="o">=</span> <span class="n">kth_element</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">next</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">l</span>
-</span><span class='line'>          <span class="k">return</span> <span class="n">node</span>
+</span><span class='line'>      <span class="n">r</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;1&#39;</span>
+</span><span class='line'>          <span class="n">n</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>          <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;0&#39;</span>
+</span><span class='line'>          <span class="n">n</span> <span class="o">=</span> <span class="n">r</span>
 </span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>      <span class="k">return</span> <span class="n">list</span>
 </span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="n">res</span>
 </span><span class='line'><span class="k">end</span>
 </span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">print_frac_binary</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="s2">&quot;ERROR&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+</span><span class='line'>  <span class="n">frac</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="n">n</span>
+</span><span class='line'>      <span class="nb">p</span> <span class="n">res</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">32</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s1">&#39;ERROR&#39;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">frac</span>
+</span><span class='line'>          <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;1&#39;</span>
+</span><span class='line'>          <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">frac</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>          <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39;0&#39;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">frac</span> <span class="o">/=</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">res</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">test_list</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">print_binary</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">78</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot;---------------------&quot;</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">print_frac_binary</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">78</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">kth_element</span><span class="p">(</span><span class="n">test_list</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">data</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#Output:</span>
-</span><span class='line'><span class="c1"># karthiks-MacBook-Pro-2:code karthikselvakumarbhuvaneswaran$ ruby kth_element_in_list.rb</span>
-</span><span class='line'><span class="c1"># =&gt; 3</span>
+</span><span class='line'><span class="c1"># Output:</span>
+</span><span class='line'><span class="c1"># karthiks-MacBook-Pro-2:code karthikselvakumarbhuvaneswaran$ ruby decimal_in_binary.rb</span>
+</span><span class='line'><span class="c1"># 0.78</span>
+</span><span class='line'><span class="c1"># &quot;.&quot;</span>
+</span><span class='line'><span class="c1"># 0.56</span>
+</span><span class='line'><span class="c1"># &quot;.1&quot;</span>
+</span><span class='line'><span class="c1"># 0.1200000000000001</span>
+</span><span class='line'><span class="c1"># &quot;.11&quot;</span>
+</span><span class='line'><span class="c1"># 0.2400000000000002</span>
+</span><span class='line'><span class="c1"># &quot;.110&quot;</span>
+</span><span class='line'><span class="c1"># 0.4800000000000004</span>
+</span><span class='line'><span class="c1"># &quot;.1100&quot;</span>
+</span><span class='line'><span class="c1"># 0.9600000000000009</span>
+</span><span class='line'><span class="c1"># &quot;.11000&quot;</span>
+</span><span class='line'><span class="c1"># 0.9200000000000017</span>
+</span><span class='line'><span class="c1"># &quot;.110001&quot;</span>
+</span><span class='line'><span class="c1"># 0.8400000000000034</span>
+</span><span class='line'><span class="c1"># &quot;.1100011&quot;</span>
+</span><span class='line'><span class="c1"># 0.6800000000000068</span>
+</span><span class='line'><span class="c1"># &quot;.11000111&quot;</span>
+</span><span class='line'><span class="c1"># 0.36000000000001364</span>
+</span><span class='line'><span class="c1"># &quot;.110001111&quot;</span>
+</span><span class='line'><span class="c1"># 0.7200000000000273</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110&quot;</span>
+</span><span class='line'><span class="c1"># 0.44000000000005457</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101&quot;</span>
+</span><span class='line'><span class="c1"># 0.8800000000001091</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010&quot;</span>
+</span><span class='line'><span class="c1"># 0.7600000000002183</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101&quot;</span>
+</span><span class='line'><span class="c1"># 0.5200000000004366</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011&quot;</span>
+</span><span class='line'><span class="c1"># 0.040000000000873115</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111&quot;</span>
+</span><span class='line'><span class="c1"># 0.08000000000174623</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110&quot;</span>
+</span><span class='line'><span class="c1"># 0.16000000000349246</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100&quot;</span>
+</span><span class='line'><span class="c1"># 0.3200000000069849</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000&quot;</span>
+</span><span class='line'><span class="c1"># 0.6400000000139698</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000&quot;</span>
+</span><span class='line'><span class="c1"># 0.2800000000279397</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001&quot;</span>
+</span><span class='line'><span class="c1"># 0.5600000000558794</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010&quot;</span>
+</span><span class='line'><span class="c1"># 0.12000000011175871</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101&quot;</span>
+</span><span class='line'><span class="c1"># 0.24000000022351742</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010&quot;</span>
+</span><span class='line'><span class="c1"># 0.48000000044703484</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100&quot;</span>
+</span><span class='line'><span class="c1"># 0.9600000008940697</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000&quot;</span>
+</span><span class='line'><span class="c1"># 0.9200000017881393</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001&quot;</span>
+</span><span class='line'><span class="c1"># 0.8400000035762787</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100011&quot;</span>
+</span><span class='line'><span class="c1"># 0.6800000071525574</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000111&quot;</span>
+</span><span class='line'><span class="c1"># 0.36000001430511475</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001111&quot;</span>
+</span><span class='line'><span class="c1"># 0.7200000286102295</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100011110&quot;</span>
+</span><span class='line'><span class="c1"># 0.440000057220459</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000111101&quot;</span>
+</span><span class='line'><span class="c1"># 0.880000114440918</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001111010&quot;</span>
+</span><span class='line'><span class="c1"># &quot;ERROR&quot;</span>
+</span><span class='line'><span class="c1"># &quot;---------------------&quot;</span>
+</span><span class='line'><span class="c1"># 0.78</span>
+</span><span class='line'><span class="c1"># &quot;.&quot;</span>
+</span><span class='line'><span class="c1"># 0.28</span>
+</span><span class='line'><span class="c1"># &quot;.1&quot;</span>
+</span><span class='line'><span class="c1"># 0.030000000000000027</span>
+</span><span class='line'><span class="c1"># &quot;.11&quot;</span>
+</span><span class='line'><span class="c1"># 0.030000000000000027</span>
+</span><span class='line'><span class="c1"># &quot;.110&quot;</span>
+</span><span class='line'><span class="c1"># 0.030000000000000027</span>
+</span><span class='line'><span class="c1"># &quot;.1100&quot;</span>
+</span><span class='line'><span class="c1"># 0.030000000000000027</span>
+</span><span class='line'><span class="c1"># &quot;.11000&quot;</span>
+</span><span class='line'><span class="c1"># 0.014375000000000027</span>
+</span><span class='line'><span class="c1"># &quot;.110001&quot;</span>
+</span><span class='line'><span class="c1"># 0.006562500000000027</span>
+</span><span class='line'><span class="c1"># &quot;.1100011&quot;</span>
+</span><span class='line'><span class="c1"># 0.0026562500000000266</span>
+</span><span class='line'><span class="c1"># &quot;.11000111&quot;</span>
+</span><span class='line'><span class="c1"># 0.0007031250000000266</span>
+</span><span class='line'><span class="c1"># &quot;.110001111&quot;</span>
+</span><span class='line'><span class="c1"># 0.0007031250000000266</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110&quot;</span>
+</span><span class='line'><span class="c1"># 0.00021484375000002665</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101&quot;</span>
+</span><span class='line'><span class="c1"># 0.00021484375000002665</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010&quot;</span>
+</span><span class='line'><span class="c1"># 9.277343750002665e-05</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101&quot;</span>
+</span><span class='line'><span class="c1"># 3.1738281250026645e-05</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011&quot;</span>
+</span><span class='line'><span class="c1"># 1.2207031250266454e-06</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111&quot;</span>
+</span><span class='line'><span class="c1"># 1.2207031250266454e-06</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110&quot;</span>
+</span><span class='line'><span class="c1"># 1.2207031250266454e-06</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100&quot;</span>
+</span><span class='line'><span class="c1"># 1.2207031250266454e-06</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000&quot;</span>
+</span><span class='line'><span class="c1"># 1.2207031250266454e-06</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000&quot;</span>
+</span><span class='line'><span class="c1"># 2.6702880862039535e-07</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001&quot;</span>
+</span><span class='line'><span class="c1"># 2.6702880862039535e-07</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010&quot;</span>
+</span><span class='line'><span class="c1"># 2.8610229518832853e-08</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101&quot;</span>
+</span><span class='line'><span class="c1"># 2.8610229518832853e-08</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010&quot;</span>
+</span><span class='line'><span class="c1"># 2.8610229518832853e-08</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100&quot;</span>
+</span><span class='line'><span class="c1"># 2.8610229518832853e-08</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000&quot;</span>
+</span><span class='line'><span class="c1"># 1.3709068324985196e-08</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001&quot;</span>
+</span><span class='line'><span class="c1"># 6.258487728061368e-09</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100011&quot;</span>
+</span><span class='line'><span class="c1"># 2.533197429599454e-09</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000111&quot;</span>
+</span><span class='line'><span class="c1"># 6.705522803684971e-10</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001111&quot;</span>
+</span><span class='line'><span class="c1"># 6.705522803684971e-10</span>
+</span><span class='line'><span class="c1"># &quot;.110001111010111000010100011110&quot;</span>
+</span><span class='line'><span class="c1"># 2.0489099306075786e-10</span>
+</span><span class='line'><span class="c1"># &quot;.1100011110101110000101000111101&quot;</span>
+</span><span class='line'><span class="c1"># 2.0489099306075786e-10</span>
+</span><span class='line'><span class="c1"># &quot;.11000111101011100001010001111010&quot;</span>
+</span><span class='line'><span class="c1"># &quot;ERROR&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

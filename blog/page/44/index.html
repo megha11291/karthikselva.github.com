@@ -6,8 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Oct 24th, 2009 Tags: Projects remote car on c /** This is a basic hardware program in c interfacing a remote car
-here consider a basic &hellip;">
+	<meta name="description" content="Published on: Oct 24th, 2009 Tags: Projects Is it too boring ..?
+Then try my web chess , a simple php and mysql based application with simple GUI &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +109,9 @@ here consider a basic &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/10/24/remote-car-on-c/">
+		<a href="/blog/2009/10/24/simple-chess/">
 		
-			Remote Car on &#8216;C&#8217;</a>
+			Simple Chess</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,7 +127,7 @@ here consider a basic &hellip;">
   
 
 
-<time datetime="2009-10-24T06:58:12+05:30" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
+<time datetime="2009-10-24T07:02:52+05:30" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
@@ -136,213 +136,11 @@ here consider a basic &hellip;">
 
 </div>
     </div>
-		<p>remote car on c</p>
-
-<p>/** This is a basic hardware program in c interfacing a remote car
-here consider a basic table</p>
-
-<p>lpt port has pin 2-9 for data we can send data to it by calling</p>
-
-<p>here we use only data pins 2,3,4,5 only</p>
-
-<p>syntax : outport(port_address,number);</p>
-
-<p>port address is 0×378 for lpt 2 and 0×3bc for lpt 1</p>
-
-<p>well now move towards the code concentrate on lowest 4 bits</p>
-
-<p>number data operation</p>
-
-<p>1 0001 right steer
-2 0010 left steer
-4 0100 forward
-8 1000 backward
-5 0101 right steering + forward (right turn forward)
-10 1010 left steering + backward (left turn backward)
-6 0110 right steering + backward (right turn back)
-9 1001 left steering + forward(left turn front)</p>
-
-<p>this is the logic of code
-*/</p>
-
-<h1>include</h1>
-
-<h1>include</h1>
-
-<h1>include</h1>
-
-<h1>include</h1>
-
-<p>void circle() //to move in circular path
-{int i=0;
-while(!getch())
-{
-outport(0×3bc,5); // 5 = 0101 means on the right and on the forward</p>
-
-<p>}
-}</p>
-
-<p>void rectangle()
-{
-int i=0;
-coutl;cin>>b;
-while(!getch())
-{
-outport(0×3bc,4); // forward
-i++;
-delay(1000<em>b);
-outport(0×3bc,5); // right steer
-delay(1000);
-outport(0×3bc,4); // forward
-delay(1000</em>l);
-}
-}</p>
-
-<p>void zigzag()
-{
-while(!getch())
-{
-outport(0×3bc,5); //right forward
-delay(3000);
-outport(0×3bc,9); // left forward
-delay(3000);</p>
-
-<p>}
-}</p>
-
-<p>void manual()</p>
-
-<p>{char c=’a&#8217;;
-while(c!=’x&#8217;)
-{
-clear();
-cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;&#8221; use move keys for direction &#8216;x&#8217; to exit&#8221;;
-c=getch();
-if(c==&#8217;<sup>[[A&#8217;)</sup>
-{
-outportb(0x3bc,1);
-delay(1000);
-}
-else if(c==&#8217;<sup>[[B&#8217;)</sup>
-{
-outport(0x3bc,4);
-}
-else if(c==&#8217;<sup>[[C&#8217;)</sup>
-{
-outportb(0x3bc,2);
-delay(1000);
-}
-else if(c==&#8217;<sup>[[D&#8217;)</sup>
-{
-outportb(0x3bc,8);
-delay(1000);
-}
-}
-}</p>
-
-<p>void manual(char choice, int time) // oveloaded fn for creative
-{char c;
-c=choice;
-while(c!=&#8217;x&#8217;)
-{
-clear();</p>
-
-<p>if(c==&#8217;<sup>[[A&#8217;)</sup>
-{
-outportb(0x3bc,1);
-delay(time<em>1000);
-}
-else if(c==&#8217;<sup>[[B&#8217;)</sup>
-{
-outport(0x3bc,4);
-delay(time</em>1000);
-}
-else if(c==&#8217;<sup>[[C&#8217;)</sup>
-{
-outportb(0x3bc,2);
-delay(time<em>1000);
-}
-else if(c==&#8217;<sup>[[D&#8217;)</sup>
-{
-outportb(0x3bc,8);
-delay(time</em>1000);
-}
-}
-}
-void creative()
-{
-char str[20];
-int i=0,n[20];
-while(str[i]!=&#8217;x&#8217;)
-{
-coutstr[i];
-coutn[i];
-i++;
-}
-i=0;
-while(str[i]!=’x&#8217;)
-{
-manual(str[i],n[i]);
-}
-}</p>
-
-<p>void automatic()
-{
-clear(); int g,h;
-cout&lt;&lt;&#8221; enter 1 to circle &#8220;&lt;&lt;endl&lt;&lt;&#8221; 2 to rectangle move&#8221;g;</p>
-
-<p>if(g==1)
-{
-circle();
-}
-else if(g==2)
-{
-rectangle();
-}
-else if(g==3)
-{
-zigzag();
-}
-else if(g==4)
-{
-creative();
-}
-}</p>
-
-<p>void clear()
-{
-int n=0;
-while(n&lt;300)
-{
-cout&lt;&lt;endl;
-n++;
-}
-}</p>
-
-<p>void menu()
-{
-clear(); int ch;
-cout&lt;&lt;&#8221; 1 for manual&#8221;&lt;&lt;endl&lt;&lt;&#8221; 2 for automatic &#8220;ch;
-if(ch==1)
-{
-manual();
-}
-else if(ch==2)
-{
-automatic();
-}
-}
-/* now its time to open your car’s remote
-step 1: find the wires which goes for right ,left forward backward
-step 2: attach lpt ports pin 2 to right 3 to left 4 to forward 5 to backward and ground to pin 23
-warning ! remove external batteries from remote which may leak at times
-step 3: run this code and enjoy racing !</p>
-
-<p>thank you !
-by karthik selvakumar B</p>
-
-<p>mail bugs to karthikselvakumar@tce.edu
-*/</p>
+		<p>Is it too boring ..?
+Then try my  web chess ,  a simple  php and mysql based application with simple GUI .
+(guess you Know we need two people to play chess )<br/>
+<a href="http://karthikselva.noadsfree.com/webchess/">Try the link from anywhere around the world and choose opponent&#8217;s from every where . </a>
+Have Fun :)</p>
 
 		
 		
