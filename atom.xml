@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-04-11T18:19:19+05:30</updated>
+  <updated>2013-04-17T23:57:40+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,95 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Array - Maximum Subsequence with start and end of index]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index/"/>
+    <updated>2013-04-17T23:53:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>MaximumSubsequence ruby (maximum_subsequence.rb)</span> <a href='http://karthikselva.github.com/downloads/code/maximum_subsequence.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">arr</span> <span class="o">=</span> <span class="o">[</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">ending</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">maxsofar</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">maxendinghere</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">j</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">i</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">j</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">arr</span><span class="o">.</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">val</span><span class="p">,</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">maxendinghere</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">maxendinghere</span> <span class="o">+</span> <span class="n">val</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">maxendinghere</span> <span class="o">&gt;</span> <span class="n">maxsofar</span>
+</span><span class='line'>    <span class="n">ending</span> <span class="o">=</span> <span class="n">i</span>
+</span><span class='line'>    <span class="n">maxsofar</span> <span class="o">=</span> <span class="n">maxendinghere</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="c1"># Backtrack to find the start </span>
+</span><span class='line'><span class="c1"># Another n traversal =&gt; 2n :: O(n)</span>
+</span><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.ending</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">from_end</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">sum</span> <span class="o">+=</span> <span class="n">arr</span><span class="o">[</span><span class="n">ending</span> <span class="o">-</span> <span class="n">from_end</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">sum</span> <span class="o">==</span> <span class="n">maxsofar</span>
+</span><span class='line'>    <span class="n">start</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">from_end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot; starting from index: </span><span class="si">#{</span><span class="n">start</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot; ending at index: </span><span class="si">#{</span><span class="n">ending</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot;Maximum sum is: </span><span class="si">#{</span><span class="n">maxsofar</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="c1"># Output:</span>
+</span><span class='line'><span class="c1">#&quot; starting from index: 3&quot;</span>
+</span><span class='line'><span class="c1">#&quot; ending at index: 12&quot;</span>
+</span><span class='line'><span class="c1">#&quot;Maximum sum is: 24&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bit Manipulation - Merge m bits into n bits at given i and j]]></title>
@@ -2145,79 +2234,6 @@ Sample Encoding: 16-bit Signed Integer PCM</em></p>
 <p>now your recording will be saved in my-recording.wav file in music folder</p>
 
 <p>enjoy with sox :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Read CPU Core Temperature ]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/01/01/read-cpu-core-temperature/"/>
-    <updated>2010-01-01T04:30:24+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/01/01/read-cpu-core-temperature</id>
-    <content type="html"><![CDATA[<p>Well this is a tricky part where I have struggled for a function returning cpu temp in java and failed . Then I chose lm-sensor for this purpose .</p>
-
-<p><strong><em>step1</em></strong></p>
-
-<p>Installation :</p>
-
-<p>install the package lm sensors for your linux distro</p>
-
-<p><strong>sudo apt-get install lm-sensors</strong></p>
-
-<p><strong><em>step 2:</em></strong></p>
-
-<p>run <strong>sensors</strong> in terminal</p>
-
-<p>if you have installed for first time probe it to kernel first</p>
-
-<p><em>step 3: </em>restart the system and try sensors now</p>
-
-<p>I have a core2quad processor and i get temperature of four processors as</p>
-
-<p><em>karthik@Karthik:~/Programs$ sensors
-coretemp-isa-0000
-Adapter: ISA adapter
-Core 0:      +47.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0001
-Adapter: ISA adapter
-Core 1:      +37.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0002
-Adapter: ISA adapter
-Core 2:      +39.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><em>coretemp-isa-0003
-Adapter: ISA adapter
-Core 3:      +46.0°C  (high = +74.0°C, crit = +100.0°C)</em></p>
-
-<p><strong><em>step 3: </em></strong></p>
-
-<p>call the <strong>process </strong>class of java and get back the string returned</p>
-
-<p><em>import java.io.*;
-class cpu {
-public static void main(String []args) throws Exception
-{
-Runtime r=Runtime.getRuntime();
-String f,temp,res=&#8221;&#8220;;
-int i=0,j=0;
-f=&#8221;sensors&#8221;;
-Process p=r.exec(f);
-BufferedReader pin=new BufferedReader(new InputStreamReader(p.getInputStream()));
-while((temp=pin.readLine())!=null)
-{
-System.out.println(temp);
-}
-}</em>
-<em>}</em></p>
-
-<p>Then make it flexible for your own purpose  by proper string parsing &#8230;.</p>
-
-<p>Thank you !<em><strong>
-</strong></em></p>
-
-<p>_
-_</p>
 ]]></content>
   </entry>
   
