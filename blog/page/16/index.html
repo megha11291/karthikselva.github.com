@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 10th, 2010 Tags: Current affairs, Linux Are you baffled by random errands saying &#8220;  ns2 doesn&#8217;t work on ubuntu &#8221 &hellip;">
+	<meta name="description" content="Published on: Feb 14th, 2010 Tags: Linux, Projects Do you want to run a dictionary server that messages you the actual meaning Requirments : i)  A &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/">
+		<a href="/blog/2010/02/14/running-sms-dictionary-server-in-your-home/">
 		
-			Installing Network Simulator 2 in Ubuntu</a>
+			Running SMS Dictionary Server in Your Home</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,165 +126,136 @@
   
 
 
-<time datetime="2010-02-10T22:08:25+05:30" pubdate data-updated="true">Feb 10<span>th</span>, 2010</time></div>
+<time datetime="2010-02-14T04:29:35+05:30" pubdate data-updated="true">Feb 14<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
 
 
 </div>
     </div>
-		<p><em>Are you baffled by random errands saying &#8220;  ns2 doesn&#8217;t work on ubuntu &#8221; and so ?</em></p>
+		<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
-<p><em>Are you a linux geek don&#8217;t wanna boot to windows for network simulator software ?</em></p>
+<p><em><strong>Requirments :</strong></em></p>
 
-<p><em>did your lab admin made a mess with your system in the name of installing ns2 :D ?</em></p>
+<p>i)  A GSM mobile phone</p>
 
-<p>_then you are in a right place :)
-_</p>
+<p>ii)  Linux  with python</p>
 
-<p><strong>You can make NS working in your system by putting little effort  on your ubuntu :)</strong></p>
+<p>iii) Mysql Database</p>
 
-<p><em><strong>Step 1:</strong></em></p>
+<p>iv)  Gnokii-SMSD</p>
 
-<p>Download <a href="http://sourceforge.net/projects/nsnam/files/">network simulator software from here </a></p>
+<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
 
-<p>if you prefer other old versions you can swich by viewing files in that page</p>
+<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
 
-<p>the file will be of almost 57 MB</p>
+<p><em><strong>Code :</strong></em></p>
 
-<p><em><strong>Step 2: </strong></em></p>
+<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
 
-<p>Extract the files to your own desired directory</p>
+<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
 
-<p>I did in <strong>/home/karthik/Desktop/ </strong></p>
+<p><em>#!/usr/bin/python</em></p>
 
-<p><em><strong>step 3:</strong></em></p>
+<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
 
-<p>now go to your working directory of ns2 by</p>
+<h1>    @Author:    Karthik selvakumar</h1>
 
-<p><strong>cd /home/karthik/Desktop/ns-allinone-2.34</strong></p>
+<h1>    Name :     Dictionary Server_</h1>
 
-<p><em><strong>step 4:</strong></em></p>
+<p><em># install python-MySQLdb  before importing this module</em></p>
 
-<p>Run this command to check any unresolved dependencies existing between installation</p>
+<p><em>import MySQLdb</em></p>
 
-<p><strong>sudo apt-get install build-essential autoconf automake libxmu-dev</strong></p>
+<p><em># imported inorder to perform shell operations</em></p>
 
-<p>run the command <strong>./install</strong> in terminal</p>
+<p><em>import os</em></p>
 
-<p>it will take around 5 minutes</p>
+<p><em># run as a daemon and never exit this thread</em></p>
 
-<p><em><strong>step 5:</strong></em></p>
+<p><em>while(True):</em></p>
 
-<p>Well Thats were your installation of ns2 exits :)</p>
+<p><em>#defines the database parameter change according to your configuration</em></p>
 
-<p>now you have to configure to make it alive</p>
+<p><em>host=&#8221;localhost&#8221;</em></p>
 
-<p>you have to edit in the shell</p>
+<p><em>user=&#8221;root&#8221;</em></p>
 
-<p>run <strong>gedit ~./bashrc</strong></p>
+<p><em>passwd=&#8221;password&#8221;</em></p>
 
-<p>add at end of the file this lines</p>
+<p><em>db=&#8221;smsgw&#8221;</em></p>
 
-<p>remember change  <strong>/home/karthik/Desktop/ </strong>to your file path say <strong>/home/host-name/</strong></p>
+<p><em>#creates a database object for corresponding config</em></p>
 
-<p><strong>
-</strong></p>
+<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
 
-<p><em># LD_LIBRARY_PATH
-OTCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/otcl-1.13
-NS2_LIB=/home/karthik/Desktop/ns-allinone-2.34/lib
-X11_LIB=/usr/X11R6/lib
-USR_LOCAL_LIB=/usr/local/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OTCL_LIB:$NS2_LIB:$X11</em>
-LIB:$USR_LOCAL_LIB_</p>
+<p><em>cursor=db.cursor()</em></p>
 
-<p><em># TCL_LIBRARY
-TCL_LIB=/home/karthik/Desktop/ns-allinone-2.34/tcl8.4.18/library
-USR_LIB=/usr/lib
-export TCL_LIBRARY=$TCL_LIB:$USR_LIB</em></p>
+<p><em>#performs pruning of inbox table which may contain null entities</em></p>
 
-<p><em># PATH
-XGRAPH=/home/karthik/Desktop/ns-allinone-2.34/bin: /home/karthik/Desktop/
-ns-allinone-2.34/tcl8.4.18/unix : /home/karthik/Desktop/ns-allinone-2.34/tk8.4.18/unix
-NS=/home/karthik/Desktop/ns-allinone-2.34/ns-2.34/
-NAM=/home/karthik/Desktop/ns-allinone-2.34/nam-1.14/
-PATH=$PATH:$XGRAPH:$NS:$NAM</em></p>
+<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
 
-<p>now save the file and close it</p>
+<p><em>#gets the latest entered SMS from Mysql server</em></p>
 
-<p>run<strong> source ~/.bashrc</strong></p>
+<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
 
-<p>ignore if any errors ;)</p>
+<p><em>record=cursor.fetchall()</em></p>
 
-<p>then run<strong> ./validate</strong></p>
+<p><em>for result in record:</em></p>
 
-<p>this is the longest step it takes <strong>30-45 minutes</strong> hence you can have a meal during the course of time ;)</p>
+<p><em># gets the word to find meaning</em></p>
 
-<p><em><strong>step 6: </strong></em></p>
+<p><em>word=result[1]</em></p>
 
-<p>this  is editing thing ( optional )</p>
+<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
 
-<p>just make  links to the files in <strong>/home/karthik/Desktop/ns-allinone-2.34/bin </strong> by right click on all files and choose <strong>make link</strong></p>
+<p><em>number=result[0]</em></p>
 
-<p>copy  all and paste to <strong>/usr/bin/ </strong>directory  by running</p>
+<p><em>row=result[2]</em></p>
 
-<p><strong>sudo nautilus</strong></p>
+<p><em># script to get meaning of a word from google server</em></p>
 
-<p>then<strong> rename</strong> the file name for eg) <strong>link to ns </strong> to <strong>ns</strong> and so on . do this till all files are renamed .</p>
+<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
 
-<p><em><strong>step 7: </strong></em></p>
+<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
 
-<p>Sample code</p>
+<p><em># run the command in shell and write it to file named meaning.txt</em></p>
 
-<p>now u can check out a demo to test you ns 2 by writing a sample code as below :</p>
+<p><em>os.system(up+word+low)</em></p>
 
-<p><em>#Create a simulator object
-set ns [new Simulator]</em></p>
+<p><em># open the file in read only mode</em></p>
 
-<p><em>#Open the nam trace file
-set nf [open out.nam w]
-$ns namtrace-all $nf</em></p>
+<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
 
-<p>_#Define a &#8216;finish&#8217; procedure
-proc finish {} {
-global ns nf
-$ns flush-trace</p>
+<p><em># load the meaning in the string text</em></p>
 
-<h1>Close the trace file</h1>
+<p><em>text=filehandle.read()</em></p>
 
-<p>close $nf</p>
+<p><em># we no more need this</em></p>
 
-<h1>Execute nam on the trace file</h1>
+<p><em>filehandle.close()</em></p>
 
-<p>exec nam out.nam &amp;
-exit 0
-}_</p>
+<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
 
-<p><em>#Create two nodes
-set n0 [$ns node]
-set n1 [$ns node]</em></p>
+<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
 
-<p><em>#Create a duplex link between the nodes
-$ns duplex-link $n0 $n1 1Mb 10ms DropTail</em></p>
+<p><em># close all active connections :)</em></p>
 
-<p><em>#Call the finish procedure after 5 seconds of simulation time
-$ns at 5.0 &#8220;finish&#8221;</em></p>
+<p><em>cursor.close()</em></p>
 
-<p><em>#Run the simulation
-$ns run</em></p>
+<p><em>db.close()</em></p>
 
-<p>now copy this code and paste to a file say  <strong>myfirstprogram.tcl</strong></p>
+<p><em>#thank you !</em></p>
 
-<p>then run <strong>ns myfirstprogram.tcl</strong></p>
+<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
 
-<p>you must see a window like this :</p>
+<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
 
-<p><a href="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png"><img src="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png" alt="my ubuntu screen running NS2" /></a></p>
+<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
 
-<p>and  &#8230;   You did it , Enjoy   :)</p>
+<p>Enjoy :)</p>
 
 		
 		

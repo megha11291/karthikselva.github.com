@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 13th, 2009 Tags: Current affairs ![wave](http://youbettawork.files.wordpress.com/2009/10/googlewavebig.jpg) Every one from email &hellip;">
+	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux _Are you a Linux critic saying graphics doesn&#8217;t work on ? Haven&#8217;t explored SDL graphic part &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/13/google-wave/">
+		<a href="/blog/2009/11/14/graphics-h-fails-in-linux/">
 		
-			Google Wave</a>
+			Graphics.h Fails in Linux ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,78 +126,60 @@
   
 
 
-<time datetime="2009-11-13T17:59:14+05:30" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time></div>
+<time datetime="2009-11-14T00:27:16+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<pre><code>  ![wave](http://youbettawork.files.wordpress.com/2009/10/googlewavebig.jpg)
-</code></pre>
+		<p>_Are you a Linux critic saying graphics doesn&#8217;t work on ?</p>
 
-<p>Every one from email users to high end technocrats speak about this Google wave &#8230;</p>
+<p>Haven&#8217;t explored SDL graphic part thrro&#8217;   C?</p>
 
-<p>Its sounds every where but sad thing is we can use it only with invites :(</p>
+<p>Switched on to linux recently and breaking your heads on graphics libraries for linux ?_</p>
 
-<p>This is not  new for Google the same thing happened when gmail was introduced . well whats it why people long for it ?</p>
+<p>The packages you need before working on with graphics library in linux are:</p>
 
-<p><strong>as Google :</strong></p>
+<p>Try  installing thro&#8217; console by</p>
 
-<p>_&#8221;Google Wave is a project announced by Google at the Google I/O conference on May 28, 2009 It is a web application and computing platform designed to bring together e-mail, instant messaging, wiki, and social networking, with a strong collaborative focus, mixed with spellchecker and translator extensions, which are able to work in concert, in real-time. It is planned to be released later in 2009.&#8221;
-_</p>
+<p><strong>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 guile-1.8-dev libsdl1.2debian-arts libartsc0-dev libaudiofile-dev libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6(upgrade) libaa1 libaa1-dev libslang2-dev libasound2 libasound-dev</strong></p>
 
-<p><strong>The user page of google wave seems something like below :</strong></p>
+<p>or select the package in <strong>synaptic </strong>it will automatically resolve dependency&#8217;s</p>
 
-<p><img src="http://wave.google.com/help/wave/images/ss1.gif" alt="wave page" /></p>
+<p><em><strong>LibGraph Installing and configuring:</strong></em></p>
 
-<p>seems like it had added something like yahoo answers i.e called <strong>brainstorming </strong>by google wave</p>
+<p>First download libgraph from <a href="http://www.box.net/shared/bnj7usolue"> here </a></p>
 
-<p>next point  <strong>photo sharing</strong> instead you need not go for separate thing like picasa , flickr , phototub , etc</p>
+<p>Then as usual extract
+tar.gz   and run</p>
 
-<p>wave is integrated with photo sharing</p>
+<p><strong>./configure
+make
+make install
+</strong>
+write some c with graphics implemenation and name it as <strong>test.c</strong></p>
 
-<p>And <strong>interactive games</strong> too have been added to play online ( guess this is alrdy in yahoo )</p>
+<p>Thats it :D</p>
 
-<p>finally its not at all in need of any software as previous gtalk, picasa etc</p>
+<p><em><strong>Now compile and run the file as:</strong></em></p>
 
-<p> every thing is embedded in pure browser environment making simple and integrated</p>
+<p><strong>g++ test.cpp -o test.o -lgraph
+And execute the program by ./test.o
+</strong>
+-lgraph links with graphics library</p>
 
-<p><a href="http://www.payoffers.in/akbartravelsonline.php?a_aid=bfdaf6da&amp;a_bid=79bf362b"><img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=79bf362b" alt="click here" /></a>
-<strong>how to get invite ?</strong></p>
+<p>if you get any shared library error ( ofcourse most people get this thing)</p>
 
-<pre><code>  1. You signed up early on for a Google Wave account. Google put up a request form for Wave invites not long after Wave was announced. Most of the invites arriving tomorrow will go to people on that list. Your chances improve if you signed up early on and wrote a message to the Wave team.
+<p>then shift as  <strong>sudo cp /usr/local/lib/libgraph.* /usr/lib</strong></p>
 
+<p>you may  now see a SDL output window showing smooth graphical 32 bit output (rather resorted dos window :P )</p>
 
+<p>3D chess  game in graphics  C  <img src="http://mfarrelly.rarelyfar.com/res/chessnix.jpg" alt="chess" /></p>
 
-  2. You have an account on the Developer Preview of Wave. The Sandbox version of Google Wave has been active for a select group of developers for several months now, allowing them to test Wave, report bugs, and build Wave extensions. They will all get accounts.
-
-
-
-  3. Some paying users of Google Apps will get accounts. It’s likely several companies asked Google for invites when the real-time tool launched. They will get accounts. Some schools that use Google Apps will also get early access.
-
-
-
-  4. You are invited by someone currently using Wave. This is the most intriguing revelation made today by the search giant. 
-
-
-
-
-
-
-  **Regardless, these are currently the only four ways to get an account on Wave. So if you don’t get an invite tomorrow, you still have hope. You’ll probably have to beg someone for an invite, though.
-</code></pre>
-
-<p>**</p>
-
-<p>_Let me taste it when invite comes  ;)</p>
-
-<p> if any one experienced the taste of wave you can share yours too  :)_</p>
-
-<p><a href="http://www.payoffers.in/join.php?a_aid=bfdaf6da&amp;a_bid=d72deaf7"><strong>Earn commissions from your Web Traffic</strong><br/>
-<img src="http://payoffers.in/affiliate/scripts/sb.php?a_aid=bfdaf6da&amp;a_bid=d72deaf7" alt="" /></a></p>
+<p>Learn , code and Enjoy Linux geeks  :)</p>
 
 		
 		

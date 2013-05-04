@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-04-17T23:57:40+05:30</updated>
+  <updated>2013-05-05T02:21:06+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,117 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Matrix - Rotate a matrix 90* to Right]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right/"/>
+    <updated>2013-05-05T02:17:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Rotate ruby (rotate_matrix.rb)</span> <a href='http://karthikselva.github.com/downloads/code/rotate_matrix.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">mat</span> <span class="o">=</span> <span class="o">[</span>
+</span><span class='line'>    <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="o">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="o">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="o">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="o">]</span>
+</span><span class='line'>    <span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">layer</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">first</span> <span class="o">=</span> <span class="n">layer</span>
+</span><span class='line'>    <span class="n">last</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">layer</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">last</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">last_offset</span> <span class="o">=</span> <span class="n">last</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">-</span> <span class="n">first</span> <span class="p">)</span>
+</span><span class='line'>      <span class="n">tmp</span> <span class="o">=</span> <span class="n">img</span><span class="o">[</span><span class="n">first</span><span class="o">][</span><span class="n">i</span><span class="o">]</span>
+</span><span class='line'>      <span class="n">img</span><span class="o">[</span><span class="n">first</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">[</span><span class="n">last_offset</span><span class="o">][</span><span class="n">first</span><span class="o">]</span>
+</span><span class='line'>      <span class="n">img</span><span class="o">[</span><span class="n">last_offset</span><span class="o">][</span><span class="n">first</span><span class="o">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">[</span><span class="n">last</span><span class="o">][</span><span class="n">last_offset</span><span class="o">]</span>
+</span><span class='line'>      <span class="n">img</span><span class="o">[</span><span class="n">last</span><span class="o">][</span><span class="n">last_offset</span><span class="o">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">last</span><span class="o">]</span>
+</span><span class='line'>      <span class="n">img</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">last</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">arr</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">ar</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">ar</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>      <span class="nb">print</span> <span class="n">i</span>
+</span><span class='line'>      <span class="nb">print</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot; Input Matrix &quot;</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'><span class="n">rotate</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot; Rotated Matrix (90* to right)&quot;</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Output: </span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'><span class="c1">#&quot; Input Matrix &quot;</span>
+</span><span class='line'><span class="c1">#1 2 3 4</span>
+</span><span class='line'><span class="c1">#5 6 7 8</span>
+</span><span class='line'><span class="c1">#9 10 11 12</span>
+</span><span class='line'><span class="c1">#13 14 15 16</span>
+</span><span class='line'><span class="c1">#&quot; Rotated Matrix (90* to right)&quot;</span>
+</span><span class='line'><span class="c1">#13 9 5 1</span>
+</span><span class='line'><span class="c1">#14 10 6 2</span>
+</span><span class='line'><span class="c1">#15 11 7 3</span>
+</span><span class='line'><span class="c1">#16 12 8 4</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Array - Maximum Subsequence with start and end of index]]></title>
@@ -2161,79 +2272,6 @@ System.out.println();
 <p><em><strong>Disclaimer :</strong></em></p>
 
 <p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Music in Humble terminal]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/01/01/music-in-humble-terminal/"/>
-    <updated>2010-01-01T18:21:29+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/01/01/music-in-humble-terminal</id>
-    <content type="html"><![CDATA[<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
-
-<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
-
-<p>_iii) if your admin blocked gui
-_</p>
-
-<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
-
-<p><strong><em>Step 1:</em></strong></p>
-
-<p>install the <strong>sox</strong> for linux by running</p>
-
-<p><strong>sudo apt-get install sox</strong></p>
-
-<p><em><strong>Step 2:</strong></em></p>
-
-<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
-
-<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
-
-<p><em><strong>Step 3 :</strong></em></p>
-
-<p>Now your done with  :)</p>
-
-<p>just locate the music folder and run the file</p>
-
-<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
-
-<p>for eg:</p>
-
-<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
-
-<p><em>I&#8217;m So Available.mp3:</em></p>
-
-<p><em>File Size: 7.93M     Bit Rate: 239k
-Encoding: MPEG audio    Info: 2009
-Channels: 2 @ 16-bit   Track: 3
-Samplerate: 44100Hz      Album: Akon - Collection
-Replaygain: off         Artist: Akon Feat. Flo-Rida
-Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
-
-<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
-
-<p>this is what you will see</p>
-
-<p><em><strong>Step 4: </strong></em></p>
-
-<p>not only listening you can also record from terminal</p>
-
-<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
-
-<p>you will se output recording screen as</p>
-
-<p><em>Input File     : &#8216;default&#8217; (alsa)
-Channels       : 2
-Sample Rate    : 48000
-Precision      : 16-bit
-Sample Encoding: 16-bit Signed Integer PCM</em></p>
-
-<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
-
-<p>now your recording will be saved in my-recording.wav file in music folder</p>
-
-<p>enjoy with sox :)</p>
 ]]></content>
   </entry>
   
