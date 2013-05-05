@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-05T19:40:55+05:30</updated>
+  <updated>2013-05-05T22:44:48+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,131 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Matrix - Robot with block detection]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/05/matrix-robot-with-block-detection/"/>
+    <updated>2013-05-05T22:35:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/05/matrix-robot-with-block-detection</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>RobotMatrix ruby (path_to_robot.rb)</span> <a href='http://karthikselva.github.com/downloads/code/path_to_robot.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">realtime_grid</span> <span class="o">=</span> <span class="o">[</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">]</span>
+</span><span class='line'><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">is_safe</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">mat</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">].</span><span class="n">eql?</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="kp">true</span> <span class="p">:</span> <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">path_finder</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">mat</span><span class="p">,</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">path</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">success</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">is_safe</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">success</span> <span class="o">=</span> <span class="n">path_finder</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">mat</span><span class="p">,</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="o">!</span><span class="n">success</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">is_safe</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mat</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">success</span> <span class="o">=</span> <span class="n">path_finder</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">mat</span><span class="p">,</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span> <span class="o">!</span><span class="n">success</span>
+</span><span class='line'>    <span class="n">path</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="o">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="n">success</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">arr</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">ar</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">ar</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>      <span class="nb">print</span> <span class="n">i</span>
+</span><span class='line'>      <span class="nb">print</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">path</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="n">path_finder</span><span class="p">(</span><span class="n">realtime_grid</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">realtime_grid</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">realtime_grid</span><span class="p">,</span><span class="n">path</span><span class="p">)</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">realtime_grid</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">path</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#Output:</span>
+</span><span class='line'><span class="c1">#-------</span>
+</span><span class='line'><span class="c1">#1 0 0 1 0</span>
+</span><span class='line'><span class="c1">#1 1 0 0 0</span>
+</span><span class='line'><span class="c1">#1 1 1 1 1</span>
+</span><span class='line'><span class="c1">#0 0 0 0 1</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">#&quot;[[3, 4], [2, 4], [2, 3], [2, 2], [2, 1], [1, 1], [1, 0], [0, 0]]&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Prime - Seive of Erastothenes]]></title>
@@ -2246,46 +2371,6 @@ _</p>
 <p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
 
 <p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
-    <updated>2010-01-04T00:48:02+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
-    <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive :)_</p>
-
-<p><em>Follow the simple steps below :</em></p>
-
-<p><em><strong>i) Installation:</strong></em></p>
-
-<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
-
-<p><strong><em>ii) Configure :</em></strong></p>
-
-<p>now configure the interface you use</p>
-
-<p>say for ethernet  run <strong>tleds eth0 </strong></p>
-
-<p>and for wirless  run <strong>tleds wlan0</strong></p>
-
-<p><em>Perform a restart :)</em></p>
-
-<p><em><strong>iii) Customize :</strong></em></p>
-
-<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
-
-<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
-
-<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
-
-<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
-
-<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
-_</p>
-
-<p>enjoy :)</p>
 ]]></content>
   </entry>
   

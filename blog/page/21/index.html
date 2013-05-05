@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Current affairs, Linux I came across a facebook application which counts maximum number of clicks per second and &hellip;">
+	<meta name="description" content="Published on: Jan 4th, 2010 Tags: Linux, Projects _ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/facebook-mouseclicks-hack/">
+		<a href="/blog/2010/01/04/keyboard-as-network-packet-monitor/">
 		
-			Facebook Mouseclicks Hack !</a>
+			Keyboard as Network Packet Monitor</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,96 +126,47 @@
   
 
 
-<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-01-04T00:48:02+05:30" pubdate data-updated="true">Jan 4<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
 
 
 </div>
     </div>
-		<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
+		<p>_ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive :)_</p>
 
-<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
+<p><em>Follow the simple steps below :</em></p>
 
-<p><em><strong>step 1:</strong></em></p>
+<p><em><strong>i) Installation:</strong></em></p>
 
-<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
+<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
 
-<p>the code seems like :</p>
+<p><strong><em>ii) Configure :</em></strong></p>
 
-<p><em>import java.awt.Robot;
-import java.awt.event.InputEvent;
-/<strong>
-*
-* @author karthik
-*/
-public class Main {
-/</strong>
-* @param args the command line arguments
-*/
-public static void main(String[] args) throws Throwable {
-Robot r=new Robot();</em></p>
+<p>now configure the interface you use</p>
 
-<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
-System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
-r.delay(10000);_</p>
+<p>say for ethernet  run <strong>tleds eth0 </strong></p>
 
-<p><em>// TODO code application logic here
-for(int i=0;i&lt;10000;i++){
-r.mousePress(InputEvent.BUTTON1_MASK);
-System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
-r.mouseRelease(InputEvent.BUTTON1_MASK);
-System.out.println();
-System.out.println();
-}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
+<p>and for wirless  run <strong>tleds wlan0</strong></p>
 
-<p><em>}
-}</em></p>
+<p><em>Perform a restart :)</em></p>
 
-<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
+<p><em><strong>iii) Customize :</strong></em></p>
 
-<p><em><strong>step 2:</strong></em></p>
+<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
 
-<p>open <strong>terminal </strong></p>
+<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
 
-<p>compile the java code by running from the location where code is located by</p>
+<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
 
-<p><strong>javac Main.java</strong></p>
+<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
 
-<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
+<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
+_</p>
 
-<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
-
-<p><em><strong>step 3:</strong></em></p>
-
-<p>Run the java code now this is critical part</p>
-
-<p><strong>java Main </strong></p>
-
-<p><strong>( you can directly run this  by extracting Main.java.zip from above )
-</strong></p>
-
-<p>you will get a screen saying</p>
-
-<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
-
-<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
-
-<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
-
-<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
-
-<p><strong>for more clear details watch the video below :</strong></p>
-
-<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
-
-<p>Thank you :)</p>
-
-<p><em><strong>Disclaimer :</strong></em></p>
-
-<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
+<p>enjoy :)</p>
 
 		
 		
