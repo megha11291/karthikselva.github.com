@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-05T22:44:48+05:30</updated>
+  <updated>2013-05-05T23:20:25+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,115 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linked List - Loop detection and Removal]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/05/linked-list-loop-detection-and-removal/"/>
+    <updated>2013-05-05T23:18:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/05/linked-list-loop-detection-and-removal</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>LoopInList ruby (loop_in_list.rb)</span> <a href='http://karthikselva.github.com/downloads/code/loop_in_list.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">List</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:next</span> <span class="p">,</span> <span class="ss">:data</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">has_loop</span>
+</span><span class='line'>      <span class="n">hare</span><span class="p">,</span><span class="n">tortoise</span> <span class="o">=</span> <span class="nb">self</span><span class="p">,</span><span class="nb">self</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="p">)</span>
+</span><span class='line'>              <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">remove_loop</span>
+</span><span class='line'>      <span class="n">hare</span><span class="p">,</span><span class="n">tortoise</span> <span class="o">=</span> <span class="nb">self</span><span class="p">,</span><span class="nb">self</span>
+</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>          <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="p">)</span>
+</span><span class='line'>              <span class="k">break</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">hare</span> <span class="o">=</span> <span class="nb">self</span>
+</span><span class='line'>    <span class="k">while</span> <span class="o">!</span><span class="n">tortoise</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>      <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kp">nil</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">test_list</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">has_loop</span>
+</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">remove_loop</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">has_loop</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Matrix - Robot with block detection]]></title>
@@ -2300,77 +2409,6 @@ $ns run</em></p>
 <p><a href="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png"><img src="http://karthikselvakumar.files.wordpress.com/2010/02/my_ubuntu_ns2.png" alt="my ubuntu screen running NS2" /></a></p>
 
 <p>and  &#8230;   You did it , Enjoy   :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
-    <updated>2010-02-01T03:33:06+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
-    <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
-_</p>
-
-<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
-
-<p>_
-_</p>
-
-<p>you can use this code to move the cursor</p>
-
-<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
-
-<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
-</a></strong></p>
-
-<p><strong>
-</strong></p>
-
-<p><em><strong>To Do :</strong></em></p>
-
-<p><em><strong>
-</strong></em></p>
-
-<p>step i) run the server.class first in machine u want to control say A</p>
-
-<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
-
-<p><strong>
-</strong></p>
-
-<p>step ii) run the client.class in second machine u have the mouse say B</p>
-
-<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
-
-<p><strong>
-</strong></p>
-
-<p>step iii) move  mouse in machine B so that it moves on machine A</p>
-
-<p><em><strong>Algorithm behind :</strong></em></p>
-
-<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
-
-<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
-
-<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
-
-<p>iii) send the string to slave node using Socket output stream</p>
-
-<p>iv) get the encrypt string and extract x and Y position  by</p>
-
-<p><strong>X=encrypt/10000;</strong></p>
-
-<p><strong>y=encrypt - X;</strong></p>
-
-<p><strong>
-</strong></p>
-
-<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
-
-<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
 ]]></content>
   </entry>
   
