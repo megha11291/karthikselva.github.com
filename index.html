@@ -6,7 +6,31 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: May 5th, 2013 Tags: Algorithms Include file &#8216;Combinatronics ruby combinatronic_subset.rb&#8217; contains invalid characters or &hellip;">
+	<meta name="description" content="Published on: May 5th, 2013 Tags: Algorithms (combinatronic_subset.rb) download 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -135,7 +159,59 @@
 
 </div>
     </div>
-		<p>Include file &#8216;Combinatronics ruby combinatronic_subset.rb&#8217; contains invalid characters or sequences</p>
+		<figure class='code'><figcaption><span> (combinatronic_subset.rb)</span> <a href='/downloads/code/combinatronic_subset.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">subsets</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">result</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="n">n</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">convert_in_to_set</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">convert_in_to_set</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">tmp</span> <span class="o">=</span> <span class="n">x</span>
+</span><span class='line'>  <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="n">set</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="n">set</span> <span class="o">&lt;&lt;</span> <span class="n">str</span><span class="o">[</span><span class="n">index</span><span class="o">.</span><span class="n">.index</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">set</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">subsets</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="c1">#[&quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;ab&quot;, &quot;c&quot;, &quot;ac&quot;, &quot;bc&quot;, &quot;abc&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 		
 		
