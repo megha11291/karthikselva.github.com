@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-05T02:21:06+05:30</updated>
+  <updated>2013-05-05T19:40:55+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,109 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Prime - Seive of Erastothenes]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/05/prime-seive-of-erastothenes/"/>
+    <updated>2013-05-05T19:38:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/05/prime-seive-of-erastothenes</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>SeiveOfErastothens (seive_of_erastothenes.rb)</span> <a href='http://karthikselva.github.com/downloads/code/seive_of_erastothenes.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">((</span><span class="n">num</span><span class="o">**</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">.array</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">array</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">seive</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">nil</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">]*</span><span class="n">num</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.num</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>      <span class="n">a</span><span class="o">=</span><span class="n">set</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="n">a</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">seive</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'><span class="c1">##Output</span>
+</span><span class='line'><span class="c1">#2</span>
+</span><span class='line'><span class="c1">#3</span>
+</span><span class='line'><span class="c1">#5</span>
+</span><span class='line'><span class="c1">#7</span>
+</span><span class='line'><span class="c1">#9</span>
+</span><span class='line'><span class="c1">#11</span>
+</span><span class='line'><span class="c1">#13</span>
+</span><span class='line'><span class="c1">#15</span>
+</span><span class='line'><span class="c1">#17</span>
+</span><span class='line'><span class="c1">#19</span>
+</span><span class='line'><span class="c1">#21</span>
+</span><span class='line'><span class="c1">#23</span>
+</span><span class='line'><span class="c1">#25</span>
+</span><span class='line'><span class="c1">#29</span>
+</span><span class='line'><span class="c1">#31</span>
+</span><span class='line'><span class="c1">#35</span>
+</span><span class='line'><span class="c1">#37</span>
+</span><span class='line'><span class="c1">#41</span>
+</span><span class='line'><span class="c1">#43</span>
+</span><span class='line'><span class="c1">#47</span>
+</span><span class='line'><span class="c1">#49</span>
+</span><span class='line'><span class="c1">#&quot;[0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1]&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Matrix - Rotate a matrix 90* to Right]]></title>
@@ -2183,95 +2286,6 @@ _</p>
 _</p>
 
 <p>enjoy :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Facebook mouseclicks hack !]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack/"/>
-    <updated>2010-01-01T21:05:04+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/01/01/facebook-mouseclicks-hack</id>
-    <content type="html"><![CDATA[<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
-
-<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
-
-<p><em><strong>step 1:</strong></em></p>
-
-<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
-
-<p>the code seems like :</p>
-
-<p><em>import java.awt.Robot;
-import java.awt.event.InputEvent;
-/<strong>
-*
-* @author karthik
-*/
-public class Main {
-/</strong>
-* @param args the command line arguments
-*/
-public static void main(String[] args) throws Throwable {
-Robot r=new Robot();</em></p>
-
-<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
-System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
-r.delay(10000);_</p>
-
-<p><em>// TODO code application logic here
-for(int i=0;i&lt;10000;i++){
-r.mousePress(InputEvent.BUTTON1_MASK);
-System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
-r.mouseRelease(InputEvent.BUTTON1_MASK);
-System.out.println();
-System.out.println();
-}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
-
-<p><em>}
-}</em></p>
-
-<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
-
-<p><em><strong>step 2:</strong></em></p>
-
-<p>open <strong>terminal </strong></p>
-
-<p>compile the java code by running from the location where code is located by</p>
-
-<p><strong>javac Main.java</strong></p>
-
-<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
-
-<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
-
-<p><em><strong>step 3:</strong></em></p>
-
-<p>Run the java code now this is critical part</p>
-
-<p><strong>java Main </strong></p>
-
-<p><strong>( you can directly run this  by extracting Main.java.zip from above )
-</strong></p>
-
-<p>you will get a screen saying</p>
-
-<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
-
-<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
-
-<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
-
-<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
-
-<p><strong>for more clear details watch the video below :</strong></p>
-
-<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
-
-<p>Thank you :)</p>
-
-<p><em><strong>Disclaimer :</strong></em></p>
-
-<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
 ]]></content>
   </entry>
   
