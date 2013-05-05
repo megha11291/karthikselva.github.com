@@ -6,29 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: May 5th, 2013 Tags: Algorithms LoopInList ruby (loop_in_list.rb) download 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23 &hellip;">
+	<meta name="description" content=" Published on: May 5th, 2013 Tags: Algorithms {% include Combinatronics ruby combinatronic_subset.rb ">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -130,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2013/05/05/linked-list-loop-detection-and-removal/">
+		<a href="/blog/2013/05/05/combinatronics-all-subsets-of-a-set/">
 		
-			Linked List - Loop Detection and Removal</a>
+			Combinatronics - All Subsets of a Set</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -148,7 +126,7 @@
   
 
 
-<time datetime="2013-05-05T23:18:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
+<time datetime="2013-05-05T23:58:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
       <div class="tags">Tags: 
 
 
@@ -157,107 +135,7 @@
 
 </div>
     </div>
-		<figure class='code'><figcaption><span>LoopInList ruby (loop_in_list.rb)</span> <a href='/downloads/code/loop_in_list.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">List</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:next</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span class='line'>      <span class="nb">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">d</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">has_loop</span>
-</span><span class='line'>      <span class="n">hare</span><span class="p">,</span><span class="n">tortoise</span> <span class="o">=</span> <span class="nb">self</span><span class="p">,</span><span class="nb">self</span>
-</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>          <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>          <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="p">)</span>
-</span><span class='line'>              <span class="k">return</span> <span class="kp">true</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">remove_loop</span>
-</span><span class='line'>      <span class="n">hare</span><span class="p">,</span><span class="n">tortoise</span> <span class="o">=</span> <span class="nb">self</span><span class="p">,</span><span class="nb">self</span>
-</span><span class='line'>      <span class="k">while</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>          <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>          <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="p">)</span>
-</span><span class='line'>              <span class="k">break</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">hare</span> <span class="o">=</span> <span class="nb">self</span>
-</span><span class='line'>    <span class="k">while</span> <span class="o">!</span><span class="n">tortoise</span><span class="o">.</span><span class="n">nil?</span> <span class="ow">and</span> <span class="o">!</span><span class="n">hare</span><span class="o">.</span><span class="n">eql?</span><span class="p">(</span><span class="n">tortoise</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">hare</span> <span class="o">=</span> <span class="n">hare</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>      <span class="n">tortoise</span> <span class="o">=</span> <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>    <span class="n">tortoise</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kp">nil</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="n">test_list</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">has_loop</span>
-</span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">remove_loop</span>
-</span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">has_loop</span>
-</span></code></pre></td></tr></table></div></figure>
-
+		<p>{% include Combinatronics ruby combinatronic_subset.rb</p>
 
 		
 		

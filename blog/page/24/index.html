@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux _ i)  Are you in need of humble player which consumes least your memory_ _ii)  If your xserver doesnt open &hellip;">
+	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Current affairs, Linux I came across a facebook application which counts maximum number of clicks per second and &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/music-in-humble-terminal/">
+		<a href="/blog/2010/01/01/facebook-mouseclicks-hack/">
 		
-			Music in Humble Terminal</a>
+			Facebook Mouseclicks Hack !</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,80 +126,96 @@
   
 
 
-<time datetime="2010-01-01T18:21:29+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
+		<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
 
-<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
+<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
 
-<p>_iii) if your admin blocked gui
-_</p>
+<p><em><strong>step 1:</strong></em></p>
 
-<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
+<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
 
-<p><strong><em>Step 1:</em></strong></p>
+<p>the code seems like :</p>
 
-<p>install the <strong>sox</strong> for linux by running</p>
+<p><em>import java.awt.Robot;
+import java.awt.event.InputEvent;
+/<strong>
+*
+* @author karthik
+*/
+public class Main {
+/</strong>
+* @param args the command line arguments
+*/
+public static void main(String[] args) throws Throwable {
+Robot r=new Robot();</em></p>
 
-<p><strong>sudo apt-get install sox</strong></p>
+<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
+System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
+r.delay(10000);_</p>
 
-<p><em><strong>Step 2:</strong></em></p>
+<p><em>// TODO code application logic here
+for(int i=0;i&lt;10000;i++){
+r.mousePress(InputEvent.BUTTON1_MASK);
+System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
+r.mouseRelease(InputEvent.BUTTON1_MASK);
+System.out.println();
+System.out.println();
+}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
 
-<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
+<p><em>}
+}</em></p>
 
-<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
+<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
 
-<p><em><strong>Step 3 :</strong></em></p>
+<p><em><strong>step 2:</strong></em></p>
 
-<p>Now your done with  :)</p>
+<p>open <strong>terminal </strong></p>
 
-<p>just locate the music folder and run the file</p>
+<p>compile the java code by running from the location where code is located by</p>
 
-<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
+<p><strong>javac Main.java</strong></p>
 
-<p>for eg:</p>
+<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
 
-<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
+<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
 
-<p><em>I&#8217;m So Available.mp3:</em></p>
+<p><em><strong>step 3:</strong></em></p>
 
-<p><em>File Size: 7.93M     Bit Rate: 239k
-Encoding: MPEG audio    Info: 2009
-Channels: 2 @ 16-bit   Track: 3
-Samplerate: 44100Hz      Album: Akon - Collection
-Replaygain: off         Artist: Akon Feat. Flo-Rida
-Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
+<p>Run the java code now this is critical part</p>
 
-<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
+<p><strong>java Main </strong></p>
 
-<p>this is what you will see</p>
+<p><strong>( you can directly run this  by extracting Main.java.zip from above )
+</strong></p>
 
-<p><em><strong>Step 4: </strong></em></p>
+<p>you will get a screen saying</p>
 
-<p>not only listening you can also record from terminal</p>
+<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
 
-<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
+<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
 
-<p>you will se output recording screen as</p>
+<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
 
-<p><em>Input File     : &#8216;default&#8217; (alsa)
-Channels       : 2
-Sample Rate    : 48000
-Precision      : 16-bit
-Sample Encoding: 16-bit Signed Integer PCM</em></p>
+<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
 
-<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
+<p><strong>for more clear details watch the video below :</strong></p>
 
-<p>now your recording will be saved in my-recording.wav file in music folder</p>
+<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
 
-<p>enjoy with sox :)</p>
+<p>Thank you :)</p>
+
+<p><em><strong>Disclaimer :</strong></em></p>
+
+<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
 
 		
 		
