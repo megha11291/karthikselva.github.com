@@ -6,10 +6,23 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 23rd, 2010 Tags: Linux, Projects Tested with : ubuntu 8.10
-gnokii
-mysql 5
-lg kp 199 Functionalities : just message &#8221;lock&# &hellip;">
+	<meta name="description" content="Published on: Apr 8th, 2013 Tags: Algorithms Original Source VerticalSum ruby (vertical_sum.rb) download 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -111,9 +124,9 @@ lg kp 199 Functionalities : just message &#8221;lock&# &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/">
+		<a href="/blog/2013/04/08/binary-tree-find-vertical-sum/">
 		
-			Lock and Unlock Gnome With Gsm</a>
+			Binary Tree - Find Vertical Sum</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -129,55 +142,19 @@ lg kp 199 Functionalities : just message &#8221;lock&# &hellip;">
   
 
 
-<time datetime="2010-02-23T05:48:22+05:30" pubdate data-updated="true">Feb 23<span>rd</span>, 2010</time></div>
+<time datetime="2013-04-08T20:01:00+05:30" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/algorithms/'>Algorithms</a>
 
 
 </div>
     </div>
-		<h1><strong><em>Tested with :</em></strong></h1>
+		<p><a href="http://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/">Original Source</a></p>
 
-<ol>
-<li><p>ubuntu 8.10</p></li>
-<li><p>gnokii</p></li>
-<li><p>mysql 5</p></li>
-<li><p>lg kp 199</p></li>
-</ol>
-
-
-<h1><em><strong>Functionalities :</strong></em></h1>
-
-<ol>
-<li><p>just message &#8221;<strong>lock</strong>&#8221; to your server mobile to lock the screen</p></li>
-<li><p>  &#8221;<strong>unlock</strong>&#8221; to release the screen</p></li>
-<li><p>you can even change the pidgin status by messaging &#8221;<strong>status:your status here</strong> &#8221;</p></li>
-</ol>
-
-
-<p>4.  execute any shell commands that take return value  below 160  characters</p>
-
-<h1><em><strong>Procedure:</strong></em></h1>
-
-<h2><strong><em>step 1) </em></strong></h2>
-
-<ul>
-<li>set the memory for sms to sim and run the smsd daemon as</li>
-</ul>
-
-
-<p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root &#8211;password=password -b SM -f /var/log/smsdaemon.log</strong></p>
-
-<h2><em><strong>step 2)</strong></em></h2>
-
-<ul>
-<li>run this python script  and minimize the shell</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>VerticalSum ruby (vertical_sum.rb)</span> <a href='/downloads/code/vertical_sum.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -203,98 +180,35 @@ lg kp 199 Functionalities : just message &#8221;lock&# &hellip;">
 <span class='line-number'>24</span>
 <span class='line-number'>25</span>
 <span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
-</span><span class='line'><span class="c">#    before running this program you must configured gnokii-smsd and it must be up and running</span>
-</span><span class='line'><span class="c">#     @Author:    Karthik selvakumar</span>
-</span><span class='line'><span class="c">#    Name :     Dictionary Server</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">SUM</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
+</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
+</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="c"># install python-MySQLdb  before importing this module</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">MySQLdb</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">os</span>
-</span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
-</span><span class='line'>  <span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span>
-</span><span class='line'>  <span class="n">user</span><span class="o">=</span><span class="s">&quot;root&quot;</span>
-</span><span class='line'>  <span class="n">passwd</span><span class="o">=</span><span class="s">&quot;123456&quot;</span>
-</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="s">&quot;smsgw&quot;</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">!</span><span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>      <span class="no">SUM</span><span class="o">[</span><span class="n">dist</span><span class="o">]</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">data</span>
+</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">dist</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">dist</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">db</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;delete from inbox where text=</span><span class="se">\&quot;\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; select number,text,id,processed from inbox where id=(select max(id) from inbox)&quot;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">record</span><span class="o">=</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</span><span class='line'>  <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">word</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">number</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">row</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">processed</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
+</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">processed</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
-</span><span class='line'><span class="c"># script to get meaning of a word from google server</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;lock&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;gnome-screensaver-command --lock&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="n">test_tree</span><span class="o">.</span><span class="n">vertical_sums</span><span class="p">(</span><span class="n">test_tree</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">SUM</span><span class="o">.</span><span class="n">inspect</span>
 </span><span class='line'>
-</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;unlock&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;xset dpms force on &amp;&amp; gnome-screensaver-command -d&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">)):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot; purple-remote </span><span class="se">\&quot;</span><span class="s">setstatus?status=available&amp;message=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="s">&quot; &gt;meaning.txt&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#set the entity to be processed when taken out</span>
-</span><span class='line'>    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; update inbox  set processed=1 where id=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># run the command in shell and write it to file named meaning.txt</span>
-</span><span class='line'>      <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">filehandle</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;meaning.txt&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># load the meaning in the string text</span>
-</span><span class='line'>      <span class="n">text</span><span class="o">=</span><span class="n">filehandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>      <span class="k">print</span> <span class="s">&quot; text is &quot;</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
-</span><span class='line'>      <span class="n">filehandle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">text</span><span class="o">!=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;insert into outbox(number,text) values(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,(</span><span class="n">number</span><span class="p">,</span><span class="n">text</span><span class="p">))</span>
-</span><span class='line'>      <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>      <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="c1"># Output:</span>
+</span><span class='line'><span class="c1"># {0=&gt;15, -1=&gt;3, -2=&gt;1, 1=&gt;7, 2=&gt;8}</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2><em><strong>step 3)</strong></em></h2>
-
-<ul>
-<li>You are done. Now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</li>
-</ul>
 
 
 		

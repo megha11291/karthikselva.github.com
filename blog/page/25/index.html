@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Linux _ i)  Are you in need of humble player which consumes least your memory_ _ii)  If your xserver doesnt open &hellip;">
+	<meta name="description" content="Published on: Feb 14th, 2010 Tags: Linux, Projects Do you want to run a dictionary server that messages you the actual meaning Requirments : i)  A &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/music-in-humble-terminal/">
+		<a href="/blog/2010/02/14/running-sms-dictionary-server-in-your-home/">
 		
-			Music in Humble Terminal</a>
+			Running SMS Dictionary Server in Your Home</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,80 +126,136 @@
   
 
 
-<time datetime="2010-01-01T18:21:29+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-02-14T04:29:35+05:30" pubdate data-updated="true">Feb 14<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
 
 
 </div>
     </div>
-		<p>_ i)  Are you in need of humble player which consumes least your memory_</p>
+		<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
-<p>_ii)  If your xserver doesnt open and your prompted to a black terminal   and need of a playing music.. _</p>
+<p><em><strong>Requirments :</strong></em></p>
 
-<p>_iii) if your admin blocked gui
-_</p>
+<p>i)  A GSM mobile phone</p>
 
-<p>Dont worry still you can hear your favourite  Music files by following simple steps</p>
+<p>ii)  Linux  with python</p>
 
-<p><strong><em>Step 1:</em></strong></p>
+<p>iii) Mysql Database</p>
 
-<p>install the <strong>sox</strong> for linux by running</p>
+<p>iv)  Gnokii-SMSD</p>
 
-<p><strong>sudo apt-get install sox</strong></p>
+<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
 
-<p><em><strong>Step 2:</strong></em></p>
+<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
 
-<p>install mp3 codec for sox (since most of our songs are in .mp3 )</p>
+<p><em><strong>Code :</strong></em></p>
 
-<p><strong>sudo apt-get install libsox-fmt-mp3</strong></p>
+<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
 
-<p><em><strong>Step 3 :</strong></em></p>
+<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
 
-<p>Now your done with  :)</p>
+<p><em>#!/usr/bin/python</em></p>
 
-<p>just locate the music folder and run the file</p>
+<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
 
-<p><strong>karthik@karthik: play  my-favourite-song.mp3</strong></p>
+<h1>    @Author:    Karthik selvakumar</h1>
 
-<p>for eg:</p>
+<h1>    Name :     Dictionary Server_</h1>
 
-<p><em>karthik@Karthik:~/Music$ play I&#39;m\ So\ Available.mp3</em></p>
+<p><em># install python-MySQLdb  before importing this module</em></p>
 
-<p><em>I&#8217;m So Available.mp3:</em></p>
+<p><em>import MySQLdb</em></p>
 
-<p><em>File Size: 7.93M     Bit Rate: 239k
-Encoding: MPEG audio    Info: 2009
-Channels: 2 @ 16-bit   Track: 3
-Samplerate: 44100Hz      Album: Akon - Collection
-Replaygain: off         Artist: Akon Feat. Flo-Rida
-Duration: 00:04:25.51  Title: I&#8217;m So Available</em></p>
+<p><em># imported inorder to perform shell operations</em></p>
 
-<p><em>In:0.84% 00:00:02.23 [00:04:23.28] Out:107k  [  ====|====- ]        Clip:0</em></p>
+<p><em>import os</em></p>
 
-<p>this is what you will see</p>
+<p><em># run as a daemon and never exit this thread</em></p>
 
-<p><em><strong>Step 4: </strong></em></p>
+<p><em>while(True):</em></p>
 
-<p>not only listening you can also record from terminal</p>
+<p><em>#defines the database parameter change according to your configuration</em></p>
 
-<p><strong>karthik@karthik: rec my-recording.wav</strong></p>
+<p><em>host=&#8221;localhost&#8221;</em></p>
 
-<p>you will se output recording screen as</p>
+<p><em>user=&#8221;root&#8221;</em></p>
 
-<p><em>Input File     : &#8216;default&#8217; (alsa)
-Channels       : 2
-Sample Rate    : 48000
-Precision      : 16-bit
-Sample Encoding: 16-bit Signed Integer PCM</em></p>
+<p><em>passwd=&#8221;password&#8221;</em></p>
 
-<p><em>In:0.00% 00:00:01.96 [00:00:00.00] Out:90.1k [      |      ]        Clip:0</em></p>
+<p><em>db=&#8221;smsgw&#8221;</em></p>
 
-<p>now your recording will be saved in my-recording.wav file in music folder</p>
+<p><em>#creates a database object for corresponding config</em></p>
 
-<p>enjoy with sox :)</p>
+<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
+
+<p><em>cursor=db.cursor()</em></p>
+
+<p><em>#performs pruning of inbox table which may contain null entities</em></p>
+
+<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
+
+<p><em>#gets the latest entered SMS from Mysql server</em></p>
+
+<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
+
+<p><em>record=cursor.fetchall()</em></p>
+
+<p><em>for result in record:</em></p>
+
+<p><em># gets the word to find meaning</em></p>
+
+<p><em>word=result[1]</em></p>
+
+<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
+
+<p><em>number=result[0]</em></p>
+
+<p><em>row=result[2]</em></p>
+
+<p><em># script to get meaning of a word from google server</em></p>
+
+<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
+
+<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
+
+<p><em># run the command in shell and write it to file named meaning.txt</em></p>
+
+<p><em>os.system(up+word+low)</em></p>
+
+<p><em># open the file in read only mode</em></p>
+
+<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
+
+<p><em># load the meaning in the string text</em></p>
+
+<p><em>text=filehandle.read()</em></p>
+
+<p><em># we no more need this</em></p>
+
+<p><em>filehandle.close()</em></p>
+
+<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
+
+<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
+
+<p><em># close all active connections :)</em></p>
+
+<p><em>cursor.close()</em></p>
+
+<p><em>db.close()</em></p>
+
+<p><em>#thank you !</em></p>
+
+<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
+
+<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
+
+<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
+
+<p>Enjoy :)</p>
 
 		
 		

@@ -4,7 +4,7 @@
   <title><![CDATA[Hacker's Diary]]></title>
   <link href="http://karthikselva.github.com/atom.xml" rel="self"/>
   <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-06T00:13:53+05:30</updated>
+  <updated>2013-05-07T21:30:40+05:30</updated>
   <id>http://karthikselva.github.com/</id>
   <author>
     <name><![CDATA[karthikselva's log]]></name>
@@ -12,6 +12,327 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Excel Sheet Alphabet to decimal Coversion]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
+    <updated>2013-05-07T21:22:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Excel (sheet.rb)</span> <a href='http://karthikselva.github.com/downloads/code/sheet.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">get_max_sum</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="mi">26</span><span class="o">**</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="n">get_max_sum</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">cal_sum</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">sum</span> <span class="o">=</span> <span class="n">get_max_sum</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">st</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">st</span><span class="o">[</span><span class="n">i</span><span class="o">]-</span><span class="mi">97</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">26</span><span class="o">**</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">sum</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">cal_sum</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[String - Naive pattern search]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/07/string-naive-pattern-search/"/>
+    <updated>2013-05-07T21:21:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/07/string-naive-pattern-search</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>NaiveSearch (naive_pattern_matching.rb)</span> <a href='http://karthikselva.github.com/downloads/code/naive_pattern_matching.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1"># Complexity: O((n-m+1)*m) </span>
+</span><span class='line'><span class="k">def</span> <span class="nf">naive_search</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="n">find</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="n">find</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">find</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">source</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">]</span> <span class="o">!=</span> <span class="n">find</span><span class="o">[</span><span class="n">j</span><span class="o">]</span>
+</span><span class='line'>        <span class="k">break</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="p">(</span><span class="n">find</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">i</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;THIS IS A TEST STRING&quot;</span>
+</span><span class='line'><span class="n">find</span><span class="o">=</span><span class="s2">&quot;TEST&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">naive_search</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="n">find</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion - Solution for NxN queens]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-solution-for-nxn-queens/"/>
+    <updated>2013-05-07T21:21:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-solution-for-nxn-queens</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='http://karthikselva.github.com/downloads/code/queen.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;received: row=</span><span class="si">#{</span><span class="n">row</span><span class="si">}</span><span class="s2"> col=</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.col</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;horizontal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;upper diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot; low diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">col</span> <span class="o">&gt;=</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;Backtracking .. &quot;</span>
+</span><span class='line'>    <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="n">a</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="k">if</span> <span class="o">!</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">to_i</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">board</span>  <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="n">N</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">board</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="mi">0</span><span class="o">]*</span><span class="n">N</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion - Contigous increasing by one search in array]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/"/>
+    <updated>2013-05-07T21:20:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Array Search (rec_arrray.rb)</span> <a href='http://karthikselva.github.com/downloads/code/rec_arrray.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1001</span><span class="p">,</span><span class="mi">1001</span><span class="p">,</span><span class="mi">1002</span><span class="p">,</span><span class="mi">1003</span><span class="p">,</span><span class="mi">1004</span><span class="p">,</span><span class="mi">1004</span><span class="p">,</span><span class="mi">1005</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">[</span><span class="n">pos</span><span class="o">]</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">key</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">pos</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">find</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="n">key</span><span class="p">,</span><span class="n">pos</span><span class="o">+</span><span class="p">(</span><span class="n">key</span><span class="o">-</span><span class="n">array</span><span class="o">[</span><span class="n">pos</span><span class="o">]</span><span class="p">))</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">key</span> <span class="o">==</span> <span class="n">array</span><span class="o">[</span><span class="n">pos</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1004</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1009</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">find</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recursion - GCD]]></title>
+    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-gcd/"/>
+    <updated>2013-05-07T21:19:00+05:30</updated>
+    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-gcd</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>GCD (gcd.rb)</span> <a href='http://karthikselva.github.com/downloads/code/gcd.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">a</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">%</span><span class="n">b</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">p</span> <span class="n">gcd</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Combinatronics - All subsets of a set]]></title>
@@ -1777,541 +2098,6 @@ puts array
 <p>This can easily escapes from our eyes while debugging the code.</p>
 
 <p>http://ruby-doc.org/core-1.9.3/Array.html#method-i-collect-21</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Binary Tree - Zigzag traversal of nodes]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes/"/>
-    <updated>2013-01-04T23:48:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Zigzag ruby (zig_zag_traversal.rb)</span> <a href='http://karthikselva.github.com/downloads/code/zig_zag_traversal.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
-</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
-</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
-</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">display</span>
-</span><span class='line'>    <span class="nb">puts</span> <span class="vi">@data</span>
-</span><span class='line'>    <span class="vi">@right</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@right</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>    <span class="vi">@left</span><span class="o">.</span><span class="n">display</span> <span class="k">if</span> <span class="o">!</span><span class="vi">@left</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">zigzag</span>
-</span><span class='line'>    <span class="n">result</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>    <span class="n">currentlevel</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>    <span class="n">nextlevel</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">toggle</span> <span class="o">=</span> <span class="kp">false</span>
-</span><span class='line'>    <span class="n">currentlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">while</span> <span class="o">!</span><span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>      <span class="n">tree</span> <span class="o">=</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">pop</span>
-</span><span class='line'>      <span class="k">unless</span> <span class="n">tree</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>        <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">.</span><span class="n">data</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">toggle</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>          <span class="n">nextlevel</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">if</span> <span class="n">currentlevel</span><span class="o">.</span><span class="n">empty?</span>
-</span><span class='line'>        <span class="n">toggle</span> <span class="o">=</span> <span class="o">!</span><span class="n">toggle</span>
-</span><span class='line'>        <span class="n">tmp</span> <span class="o">=</span> <span class="n">currentlevel</span>
-</span><span class='line'>        <span class="n">currentlevel</span> <span class="o">=</span> <span class="n">nextlevel</span>
-</span><span class='line'>        <span class="n">nextlevel</span> <span class="o">=</span> <span class="n">tmp</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>    <span class="k">return</span> <span class="n">result</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
-</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="n">test_tree</span><span class="o">.</span><span class="n">zigzag</span><span class="o">.</span><span class="n">inspect</span>
-</span><span class='line'><span class="c1">#test_tree.display</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ Rails with Vim - how and why it works ? ]]></title>
-    <link href="http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
-    <updated>2012-12-26T23:36:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
-    <content type="html"><![CDATA[<h2>How it started</h2>
-
-<p>I started my coding in a windows XP with notepad.
-I can realize now how terrible it was.
-Then I came through a term called IDE which has everything a programmer
-needs in one place. Starting with netbeans for java
-and some random Junit test tools in eclipse , I really regreted for
-wasting my time in notepad.</p>
-
-<p>Most of the times I used to do one among these listed items apart from real typing/coding:</p>
-
-<ul>
-<li><p>Searching the API sheet for exact name of method</p>
-
-<ul>
-<li>In Java typically confused with length() , size() , count or length variable usage</li>
-<li>I know rubyists , ruby has everything</li>
-</ul>
-</li>
-<li><p>Missing ( , { or some parantheses ( not as much careless as initial days  )</p>
-
-<ul>
-<li>I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet</li>
-</ul>
-</li>
-<li><p>Variable declared with one name but using it with different name</p>
-
-<ul>
-<li>I used to decalre a variable with User#name  and trying to access with User#username</li>
-</ul>
-</li>
-<li><p>Version control integration</p>
-
-<ul>
-<li>Version control itself is a different topic to discuss for hours</li>
-<li>I use some set of plugins to commit and revert ( which I don&#8217;t even bother on what command it is being translated on in background )</li>
-</ul>
-</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
-    <updated>2010-02-23T05:48:22+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
-    <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
-
-<ol>
-<li><p>ubuntu 8.10</p></li>
-<li><p>gnokii</p></li>
-<li><p>mysql 5</p></li>
-<li><p>lg kp 199</p></li>
-</ol>
-
-
-<h1><em><strong>Functionalities :</strong></em></h1>
-
-<ol>
-<li><p>just message &#8221;<strong>lock</strong>&#8221; to your server mobile to lock the screen</p></li>
-<li><p>  &#8221;<strong>unlock</strong>&#8221; to release the screen</p></li>
-<li><p>you can even change the pidgin status by messaging &#8221;<strong>status:your status here</strong> &#8221;</p></li>
-</ol>
-
-
-<p>4.  execute any shell commands that take return value  below 160  characters</p>
-
-<h1><em><strong>Procedure:</strong></em></h1>
-
-<h2><strong><em>step 1) </em></strong></h2>
-
-<ul>
-<li>set the memory for sms to sim and run the smsd daemon as</li>
-</ul>
-
-
-<p><strong>sudoo /usr/sbin/smsd -u root -d smsgw -c localhost -m mysql -u root &#8211;password=password -b SM -f /var/log/smsdaemon.log</strong></p>
-
-<h2><em><strong>step 2)</strong></em></h2>
-
-<ul>
-<li>run this python script  and minimize the shell</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/python</span>
-</span><span class='line'><span class="c">#    before running this program you must configured gnokii-smsd and it must be up and running</span>
-</span><span class='line'><span class="c">#     @Author:    Karthik selvakumar</span>
-</span><span class='line'><span class="c">#    Name :     Dictionary Server</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># install python-MySQLdb  before importing this module</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">MySQLdb</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">os</span>
-</span><span class='line'><span class="n">processed</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'><span class="k">while</span><span class="p">(</span><span class="bp">True</span><span class="p">):</span>
-</span><span class='line'>  <span class="n">host</span><span class="o">=</span><span class="s">&quot;localhost&quot;</span>
-</span><span class='line'>  <span class="n">user</span><span class="o">=</span><span class="s">&quot;root&quot;</span>
-</span><span class='line'>  <span class="n">passwd</span><span class="o">=</span><span class="s">&quot;123456&quot;</span>
-</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="s">&quot;smsgw&quot;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">db</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span><span class="n">user</span><span class="p">,</span><span class="n">passwd</span><span class="p">,</span><span class="n">db</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;delete from inbox where text=</span><span class="se">\&quot;\&quot;</span><span class="s">&quot;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; select number,text,id,processed from inbox where id=(select max(id) from inbox)&quot;</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">record</span><span class="o">=</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-</span><span class='line'>  <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">word</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">number</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">row</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">processed</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">processed</span><span class="o">==</span><span class="mi">0</span><span class="p">):</span>
-</span><span class='line'><span class="c"># script to get meaning of a word from google server</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;lock&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;gnome-screensaver-command --lock&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">==</span><span class="s">&quot;unlock&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot;xset dpms force on &amp;&amp; gnome-screensaver-command -d&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">elif</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">)):</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="s">&quot; purple-remote </span><span class="se">\&quot;</span><span class="s">setstatus?status=available&amp;message=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;status:&quot;</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">))</span><span class="o">+</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">up</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="s">&quot; &gt;meaning.txt&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c">#set the entity to be processed when taken out</span>
-</span><span class='line'>    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot; update inbox  set processed=1 where id=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">));</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># run the command in shell and write it to file named meaning.txt</span>
-</span><span class='line'>      <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">up</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">filehandle</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;meaning.txt&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># load the meaning in the string text</span>
-</span><span class='line'>      <span class="n">text</span><span class="o">=</span><span class="n">filehandle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>      <span class="k">print</span> <span class="s">&quot; text is &quot;</span><span class="o">+</span><span class="n">text</span><span class="p">;</span>
-</span><span class='line'>      <span class="n">filehandle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">text</span><span class="o">!=</span><span class="s">&quot;&quot;</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">&quot;insert into outbox(number,text) values(</span><span class="si">%s</span><span class="s">,</span><span class="si">%s</span><span class="s">)&quot;</span><span class="p">,(</span><span class="n">number</span><span class="p">,</span><span class="n">text</span><span class="p">))</span>
-</span><span class='line'>      <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class='line'>      <span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2><em><strong>step 3)</strong></em></h2>
-
-<ul>
-<li>You are done. Now message to the mobile you have connected like <strong>lock or unlock or status:status</strong> to see the magic happen :)</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A simple start to SVN]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn/"/>
-    <updated>2010-02-18T05:10:10+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn</id>
-    <content type="html"><![CDATA[<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
-
-<p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
-
-<p><em><strong>Step1 :</strong></em></p>
-
-<p>First before starting with your coding create a repo name in SVN as :</p>
-
-<p><strong>svnadmin create<your-repo-name></strong></p>
-
-<p>e.g) svnadmin create mediaplayer</p>
-
-<p>now you have created a repo named <strong>mediaplayer</strong></p>
-
-<p>this copy is the master copy for all clients</p>
-
-<p>this will be a directory with some system defined files in it</p>
-
-<p>note the directory you have  created a repositiory</p>
-
-<p><em><strong>Step 2:</strong></em></p>
-
-<p>now you cannot directly do modify on master copy</p>
-
-<p>you have to checkout this repo to some workspace and start working</p>
-
-<p>let it be a directory called workspace</p>
-
-<p><strong>mkdir workspace</strong></p>
-
-<p><strong>cd workspace</strong></p>
-
-<p>now you can checkout the master copy and start your coding process</p>
-
-<p><strong>svn co file:///home/<user-name>/<repo-name></strong></p>
-
-<p>eg:)  svn co file:///home/karthik/mediaplayer</p>
-
-<p>now you will have a directory named mediaplayer</p>
-
-<p>go into the directory  by</p>
-
-<p><strong>cd mediaplayer</strong></p>
-
-<p>then start a code name it as <strong>myfile.java</strong></p>
-
-<p>now save it in this directory  . To add this into your master copy do</p>
-
-<p><strong>svn add  <file-name></strong></p>
-
-<p>eg) svn add myfile.java</p>
-
-<p><em><strong>Step 3:</strong></em></p>
-
-<p>you can optionally use these commands</p>
-
-<p><strong>i) svn commit</strong> - to  commit the current modification to the master copy ( Do this whenever you do minor changes to you files)</p>
-
-<p><strong>ii) svn status</strong> - to check the status of files in working copy</p>
-
-<p><strong>here </strong><strong>? </strong>means unknown <strong> A </strong>means added<strong> M</strong> means modified but not added</p>
-
-<p><strong>iii) svn update</strong> - to update to the latest revision of the master copy ( this will be usefull when more than one client has modified the master copy without your knowledge )</p>
-
-<p><a href="http://www.linuxfromscratch.org/blfs/edguide/chapter03.html">for more details refere here </a></p>
-
-<p>Thank you :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
-    <updated>2010-02-14T04:29:35+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
-    <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
-
-<p><em><strong>Requirments :</strong></em></p>
-
-<p>i)  A GSM mobile phone</p>
-
-<p>ii)  Linux  with python</p>
-
-<p>iii) Mysql Database</p>
-
-<p>iv)  Gnokii-SMSD</p>
-
-<p>You must be sure that<strong> gnokii-smsd</strong> is up and running and database is available</p>
-
-<p><a href="http://karthikselvakumar.wordpress.com/2009/10/30/abc-to-qwerty-messaging/">if not refer to my previous post here</a></p>
-
-<p><em><strong>Code :</strong></em></p>
-
-<p>This code simply connects to dictionary.org and gets the meaning for the word that is latest in INBOX table and writes the meaning to OUTBOX table which will be sent to user later .May have bugs in it please report me at earliest :)</p>
-
-<p>copy and paste the code to a file . let it be <strong>dict_server.py</strong> . code is below :</p>
-
-<p><em>#!/usr/bin/python</em></p>
-
-<p>_#    before running this program you must configured gnokii-smsd and it must be up and running</p>
-
-<h1>    @Author:    Karthik selvakumar</h1>
-
-<h1>    Name :     Dictionary Server_</h1>
-
-<p><em># install python-MySQLdb  before importing this module</em></p>
-
-<p><em>import MySQLdb</em></p>
-
-<p><em># imported inorder to perform shell operations</em></p>
-
-<p><em>import os</em></p>
-
-<p><em># run as a daemon and never exit this thread</em></p>
-
-<p><em>while(True):</em></p>
-
-<p><em>#defines the database parameter change according to your configuration</em></p>
-
-<p><em>host=&#8221;localhost&#8221;</em></p>
-
-<p><em>user=&#8221;root&#8221;</em></p>
-
-<p><em>passwd=&#8221;password&#8221;</em></p>
-
-<p><em>db=&#8221;smsgw&#8221;</em></p>
-
-<p><em>#creates a database object for corresponding config</em></p>
-
-<p><em>db=MySQLdb.connect(host,user,passwd,db)</em></p>
-
-<p><em>cursor=db.cursor()</em></p>
-
-<p><em>#performs pruning of inbox table which may contain null entities</em></p>
-
-<p><em>cursor.execute(&#8220;delete from inbox where text=&#34;&#34;&#8221;)</em></p>
-
-<p><em>#gets the latest entered SMS from Mysql server</em></p>
-
-<p><em>cursor.execute(&#8221; select number,text,id from inbox where id=(select max(id) from inbox)&#8221;);</em></p>
-
-<p><em>record=cursor.fetchall()</em></p>
-
-<p><em>for result in record:</em></p>
-
-<p><em># gets the word to find meaning</em></p>
-
-<p><em>word=result[1]</em></p>
-
-<p><em># get the number bcoz u have to reply the meaning to this number later ;)</em></p>
-
-<p><em>number=result[0]</em></p>
-
-<p><em>row=result[2]</em></p>
-
-<p><em># script to get meaning of a word from google server</em></p>
-
-<p><em>up=&#8217;/usr/bin/curl -s -A &#39;Mozilla/4.0&#39; &#39;http://www.google.com/search?q=define%3A&#39;&#8217;</em></p>
-
-<p><em>low=&#8217;| html2text -ascii -nobs -style compact -width 500 | grep &#8220;*&#8221; | head -n 1 -q | tail -n 1 > meaning.txt&#8217;</em></p>
-
-<p><em># run the command in shell and write it to file named meaning.txt</em></p>
-
-<p><em>os.system(up+word+low)</em></p>
-
-<p><em># open the file in read only mode</em></p>
-
-<p><em>filehandle=open(&#8216;meaning.txt&#8217;,&#8217;r&#8217;)</em></p>
-
-<p><em># load the meaning in the string text</em></p>
-
-<p><em>text=filehandle.read()</em></p>
-
-<p><em># we no more need this</em></p>
-
-<p><em>filehandle.close()</em></p>
-
-<p><em># insert into outbox table which will send the meaning of the word to the phone number later</em></p>
-
-<p><em>cursor.execute(&#8220;insert into outbox(number,text) values(%s,%s)&#8221;,(number,text))</em></p>
-
-<p><em># close all active connections :)</em></p>
-
-<p><em>cursor.close()</em></p>
-
-<p><em>db.close()</em></p>
-
-<p><em>#thank you !</em></p>
-
-<p>now run the dictionary daemon by running <strong>python dict_server.py</strong> in terminal</p>
-
-<p>whenever a message is received to your mobile it will be read by dict_server.py and meaning of that word will be in outbox table</p>
-
-<p>to see run <strong>select * from outbox ;</strong> in mysql console</p>
-
-<p>Enjoy :)</p>
 ]]></content>
   </entry>
   

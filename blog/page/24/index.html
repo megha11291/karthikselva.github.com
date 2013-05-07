@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Current affairs, Linux I came across a facebook application which counts maximum number of clicks per second and &hellip;">
+	<meta name="description" content="Published on: Feb 18th, 2010 Tags: Linux SVN is a version control system used to track your various versions of your software over various levels &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/01/01/facebook-mouseclicks-hack/">
+		<a href="/blog/2010/02/18/a-simple-start-to-svn/">
 		
-			Facebook Mouseclicks Hack !</a>
+			A Simple Start to SVN</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,96 +126,82 @@
   
 
 
-<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
+<time datetime="2010-02-18T05:10:10+05:30" pubdate data-updated="true">Feb 18<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
+		<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
 
-<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
+<p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
 
-<p><em><strong>step 1:</strong></em></p>
+<p><em><strong>Step1 :</strong></em></p>
 
-<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
+<p>First before starting with your coding create a repo name in SVN as :</p>
 
-<p>the code seems like :</p>
+<p><strong>svnadmin create<your-repo-name></strong></p>
 
-<p><em>import java.awt.Robot;
-import java.awt.event.InputEvent;
-/<strong>
-*
-* @author karthik
-*/
-public class Main {
-/</strong>
-* @param args the command line arguments
-*/
-public static void main(String[] args) throws Throwable {
-Robot r=new Robot();</em></p>
+<p>e.g) svnadmin create mediaplayer</p>
 
-<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
-System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
-r.delay(10000);_</p>
+<p>now you have created a repo named <strong>mediaplayer</strong></p>
 
-<p><em>// TODO code application logic here
-for(int i=0;i&lt;10000;i++){
-r.mousePress(InputEvent.BUTTON1_MASK);
-System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
-r.mouseRelease(InputEvent.BUTTON1_MASK);
-System.out.println();
-System.out.println();
-}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
+<p>this copy is the master copy for all clients</p>
 
-<p><em>}
-}</em></p>
+<p>this will be a directory with some system defined files in it</p>
 
-<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
+<p>note the directory you have  created a repositiory</p>
 
-<p><em><strong>step 2:</strong></em></p>
+<p><em><strong>Step 2:</strong></em></p>
 
-<p>open <strong>terminal </strong></p>
+<p>now you cannot directly do modify on master copy</p>
 
-<p>compile the java code by running from the location where code is located by</p>
+<p>you have to checkout this repo to some workspace and start working</p>
 
-<p><strong>javac Main.java</strong></p>
+<p>let it be a directory called workspace</p>
 
-<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
+<p><strong>mkdir workspace</strong></p>
 
-<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
+<p><strong>cd workspace</strong></p>
 
-<p><em><strong>step 3:</strong></em></p>
+<p>now you can checkout the master copy and start your coding process</p>
 
-<p>Run the java code now this is critical part</p>
+<p><strong>svn co file:///home/<user-name>/<repo-name></strong></p>
 
-<p><strong>java Main </strong></p>
+<p>eg:)  svn co file:///home/karthik/mediaplayer</p>
 
-<p><strong>( you can directly run this  by extracting Main.java.zip from above )
-</strong></p>
+<p>now you will have a directory named mediaplayer</p>
 
-<p>you will get a screen saying</p>
+<p>go into the directory  by</p>
 
-<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
+<p><strong>cd mediaplayer</strong></p>
 
-<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
+<p>then start a code name it as <strong>myfile.java</strong></p>
 
-<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
+<p>now save it in this directory  . To add this into your master copy do</p>
 
-<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
+<p><strong>svn add  <file-name></strong></p>
 
-<p><strong>for more clear details watch the video below :</strong></p>
+<p>eg) svn add myfile.java</p>
 
-<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
+<p><em><strong>Step 3:</strong></em></p>
+
+<p>you can optionally use these commands</p>
+
+<p><strong>i) svn commit</strong> - to  commit the current modification to the master copy ( Do this whenever you do minor changes to you files)</p>
+
+<p><strong>ii) svn status</strong> - to check the status of files in working copy</p>
+
+<p><strong>here </strong><strong>? </strong>means unknown <strong> A </strong>means added<strong> M</strong> means modified but not added</p>
+
+<p><strong>iii) svn update</strong> - to update to the latest revision of the master copy ( this will be usefull when more than one client has modified the master copy without your knowledge )</p>
+
+<p><a href="http://www.linuxfromscratch.org/blfs/edguide/chapter03.html">for more details refere here </a></p>
 
 <p>Thank you :)</p>
-
-<p><em><strong>Disclaimer :</strong></em></p>
-
-<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
 
 		
 		

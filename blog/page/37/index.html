@@ -6,7 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux Well why Linux lags in gaming than windows , is a question nagging in most of Linux minds &#8230; As apart &hellip;">
+	<meta name="description" content="Published on: Nov 16th, 2009 Tags: Linux _
+Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_ Do you wanna taste the &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +109,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/14/linux-lags-in-gaming/">
+		<a href="/blog/2009/11/16/using-windows-nt-boot-loader/">
 		
-			Linux Lags in Gaming ?</a>
+			Using Windows NT Boot Loader With Linux</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,7 +127,7 @@
   
 
 
-<time datetime="2009-11-14T06:02:42+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
+<time datetime="2009-11-16T05:33:34+05:30" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
@@ -135,46 +136,52 @@
 
 </div>
     </div>
-		<p>Well why Linux lags in gaming than windows , is a question nagging in most of Linux  minds &#8230;</p>
+		<p>_
+Is your Box factory manufactured with windows and cant use Linux Grub or LILO ?_</p>
 
-<p>As apart  saying , geeks don&#8217;t play games or games are meant for lazy windows user or use Wine instead doesn&#8217;t  seems  like a satisfactory answer</p>
+<p><em>Do you wanna taste the difference booting your Linux system through a windows boot loader ?</em></p>
 
-<p>Well why is it so , does Linux doesn&#8217;t have the necessary modules or its a OS for who doesnt know what is entertainment and games actually mean</p>
+<p>_
+_</p>
 
-<p>Before , what makes windows run all the top most games is a hardware abstraction layer called DirectX 3D Linux have better one called OpenGL</p>
+<p><em><strong>Follow Five simple steps To make it working  :</strong></em></p>
 
-<ol>
-<li><p><strong>Direct3D</strong> is a proprietary API that provides functions to render three dimensional graphics, and uses hardware acceleration if it is available on the graphics card. It was designed by Microsoft Corporation for use on the Windows platform.</p></li>
-<li><p><strong>OpenGL</strong> is an open standard API that provides a number of functions for the rendering of 2D and 3D graphics and is available on most modern operating systems. If hardware 3D acceleration is present, OpenGL can use it.</p></li>
-</ol>
+<p><em><strong>
+</strong></em></p>
 
+<p><strong>Step i)  Copy your grub.bin  file to windows </strong></p>
 
-<p>I too had a watch of rare Linux games that are standard like open arena ,tremulous and some more first person shooter game</p>
+<p>Open your terminal and run  <strong> dd if=/dev/sdaN of=grub.bin bs=512 count=1</strong> where <strong>N</strong> denotes your Linux installed medium</p>
 
-<p>Open arena is one of my favourite</p>
+<p><em>*Step ii) Copy the grub.bin file to c:*</em></p>
 
-<p>Try <strong>sudo apt-get install openarena</strong></p>
+<p>Well now boot into windows and copy <strong>grub.bin</strong> file to your windows  primary medium (you can  use flash medium to take grub.bin from linux )</p>
 
-<p><strong>A best implementation of OpenGL that you  can feel over:</strong></p>
+<p><strong>step iii) working out in boot.ini </strong></p>
 
-<p><img src="http://www.blogcdn.com/www.downloadsquad.com/media/2006/12/openarena.jpg" alt="open arena" /></p>
+<p>now set all previleges to boot.ini file by running<strong> attrib -r -w -s c:\boot.ini </strong>on windows</p>
 
-<p><strong>
-As wikipedia states :</strong></p>
+<p><strong>step iV) add the linux entry to it</strong></p>
 
-<p>&#8221; In the earliest days of 3D accelerated gaming, performance and reliability were key benchmarks and several 3D accelerator cards competed against each other for dominance. Software was written specifically for a particular brand of graphics card. However, over the years, OpenGL and Direct3D emerged as software layers above the hardware, mainly because of industry support for a cross-hardware graphics library. Competition between the two rose as each game developer would choose either one or the other. In the 1990s, OpenGL dominated due to a better design of the interface and still dominates the console and handheld markets:</p>
+<p>Open the<strong> boot.ini </strong>file and add a line<strong> c:\grub.bin=&#8221;XPUD &#8221; </strong>denoting XP with Ubuntu Desktop , Name is  of your choice</p>
 
-<p>AppleInsider&#8217;s Prince McLean said, &#8220;OpenGL is used by Linux and, more recently, by nearly all of the major game consoles, including Sony&#8217;s PSP and PS3 and Nintendo&#8217;s Wii. The console exception is of course Microsoft&#8217;s Xbox, which was named after the DirectX graphics libraries it was designed to promote in an effort to stop a broad migration to OpenGL in gaming, and a subsequent erosion of Microsoft&#8217;s software monopoly.  &#8221;</p>
+<p><strong>Step v) save and restart</strong></p>
 
-<p>Then still why there is no standard games ( as there are for windows ) developed for linux  still even it has everything it needs?</p>
+<p>Now save all the changes and <strong>restart </strong>now you will see the windows NT loader showing two entires windows and Linux</p>
 
-<p>Because I can only  see games like Tux ( grand old Mario ) , chess  , mines and so small packed games (x&lt;1 MB)</p>
+<p><img src="http://www.xpud.org/image/windows-boot.png" alt="http://www.xpud.org/image/windows-boot.png" /></p>
 
-<p>Is it mean people using a OS say X  can only afford such a huge amount for mere gaming entertainment ?</p>
+<p>Switch between any of choices as you wish ;)</p>
 
-<p>Is this a Politics of Microsoft or no work teams of Linux  wanna take the risk of developing ?</p>
+<p><em>note i: If you got any fatal errors during the switch over try replacing grub by a rescue disk</em></p>
 
-<p>What you people think of it ?</p>
+<p>_
+note ii: if you choose not to place MBR with GRUB during linux installation then  you have no choice to load your Linux from hard disk ( for advanced users ) then you can use live CD and run above commands for Linux to fix it up _</p>
+
+<p>_
+_</p>
+
+<p>If you are ready to loose the power of grub and want  something experimenting and new I recommend  this ;)</p>
 
 		
 		

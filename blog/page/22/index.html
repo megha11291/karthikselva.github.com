@@ -6,8 +6,8 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Feb 1st, 2010 Tags: Linux, Projects _If you have more than one system and need to acces all with a single mouse ?
-_ Wanna hack your &hellip;">
+	<meta name="description" content="Published on: Dec 26th, 2012 Tags: IDE, Rails, Vim How it started I started my coding in a windows XP with notepad.
+I can realize now how terrible &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +109,9 @@ _ Wanna hack your &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/02/01/cursor-play-with-your-neigbour-system/">
+		<a href="/blog/2012/12/26/rails-with-vim-how-and-why-it-works/">
 		
-			Cursor Play With Your Neigbour System</a>
+			Rails With Vim - How and Why It Works ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,78 +127,55 @@ _ Wanna hack your &hellip;">
   
 
 
-<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
+<time datetime="2012-12-26T23:36:00+05:30" pubdate data-updated="true">Dec 26<span>th</span>, 2012</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
+	<a class='category' href='/blog/categories/ide/'>IDE</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/vim/'>Vim</a>
 
 
 </div>
     </div>
-		<p>_If you have more than one system and need to acces all with a single mouse ?
-_</p>
+		<h2>How it started</h2>
 
-<p><em>Wanna hack your neigbour node and drive him mad?</em></p>
+<p>I started my coding in a windows XP with notepad.
+I can realize now how terrible it was.
+Then I came through a term called IDE which has everything a programmer
+needs in one place. Starting with netbeans for java
+and some random Junit test tools in eclipse , I really regreted for
+wasting my time in notepad.</p>
 
-<p>_
-_</p>
+<p>Most of the times I used to do one among these listed items apart from real typing/coding:</p>
 
-<p>you can use this code to move the cursor</p>
+<ul>
+<li><p>Searching the API sheet for exact name of method</p>
 
-<p>and with little modification you can emulate a whole mouse and keyboard functionalities too &#8230;</p>
+<ul>
+<li>In Java typically confused with length() , size() , count or length variable usage</li>
+<li>I know rubyists , ruby has everything</li>
+</ul>
+</li>
+<li><p>Missing ( , { or some parantheses ( not as much careless as initial days  )</p>
 
-<p><strong><a href="http://www.box.net/shared/dgkikzmvjl">Download My code from here
-</a></strong></p>
+<ul>
+<li>I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet</li>
+</ul>
+</li>
+<li><p>Variable declared with one name but using it with different name</p>
 
-<p><strong>
-</strong></p>
+<ul>
+<li>I used to decalre a variable with User#name  and trying to access with User#username</li>
+</ul>
+</li>
+<li><p>Version control integration</p>
 
-<p><em><strong>To Do :</strong></em></p>
+<ul>
+<li>Version control itself is a different topic to discuss for hours</li>
+<li>I use some set of plugins to commit and revert ( which I don&#8217;t even bother on what command it is being translated on in background )</li>
+</ul>
+</li>
+</ul>
 
-<p><em><strong>
-</strong></em></p>
-
-<p>step i) run the server.class first in machine u want to control say A</p>
-
-<pre><code>&lt;strong&gt;java server &lt;port_numbr 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
-
-<p><strong>
-</strong></p>
-
-<p>step ii) run the client.class in second machine u have the mouse say B</p>
-
-<pre><code>&lt;strong&gt;java client &lt;ip of machine say 10.2.3.1 &gt; &lt;port_number_server 1000-65535&gt;&lt;/strong&gt;
-</code></pre>
-
-<p><strong>
-</strong></p>
-
-<p>step iii) move  mouse in machine B so that it moves on machine A</p>
-
-<p><em><strong>Algorithm behind :</strong></em></p>
-
-<p><em><strong> </strong></em>i)  get the mouse position from master machine</p>
-
-<p>ii) send the position in a &#8217;<strong>encrypt</strong>&#8217; string with X and Y positions merged</p>
-
-<p>as <strong>encrypt=X*10000+Y</strong> ( I use 10000  here assuming your screen resolution is not more than 10000X10000 :D )</p>
-
-<p>iii) send the string to slave node using Socket output stream</p>
-
-<p>iv) get the encrypt string and extract x and Y position  by</p>
-
-<p><strong>X=encrypt/10000;</strong></p>
-
-<p><strong>y=encrypt - X;</strong></p>
-
-<p><strong>
-</strong></p>
-
-<p>v) Now move the position of slave machine by <strong>mousemove(X,Y)</strong> method</p>
-
-<p>vi) You can add leftclick , right click and <strong>keyboard keys</strong> too as above  :)</p>
 
 		
 		

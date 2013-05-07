@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 21st, 2009 Tags: Linux Ubuntu 10.04 release named Lucid Lynx is the next release.. Well 10 second boot time is the main aim of &hellip;">
+	<meta name="description" content="Published on: Jan 1st, 2010 Tags: Current affairs, Linux I came across a facebook application which counts maximum number of clicks per second and &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/21/ubuntu-10-04-lucid-lynx/">
+		<a href="/blog/2010/01/01/facebook-mouseclicks-hack/">
 		
-			Ubuntu 10.04 Lucid Lynx</a>
+			Facebook Mouseclicks Hack !</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,59 +126,96 @@
   
 
 
-<time datetime="2009-11-21T04:14:16+05:30" pubdate data-updated="true">Nov 21<span>st</span>, 2009</time></div>
+<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/linux/'>Linux</a>
+	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p>Ubuntu 10.04 release named <strong>Lucid Lynx</strong> is the next release..</p>
+		<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
 
-<p><a href="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2009/11/2703706484_efd98da0bc.jpg?w=300" alt="" /></a></p>
+<p>it is as simple as a crap code &#8230; with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
 
-<p>Well<strong> 10 second boot time</strong> is the main aim of this release it seems . I felt the high speed booting of my 9.10 karmic now from older hardy heron( 65 seconds to 25 seconds ) . still lucid aims at 10 seconds boo time as the main aim to achieve  . This release seems to be released at next year 2010 .</p>
+<p><em><strong>step 1:</strong></em></p>
 
-<p><strong><em>The 10 second boot time is acheived by equal partitoin of modules at start up  with:</em></strong></p>
+<p>I wrote a java code which automtes mouseclicks for N times by for loop</p>
 
-<p>i) loading the kernel and initramfs should take two seconds,</p>
+<p>the code seems like :</p>
 
-<p>ii) driver loading, filesystem mounting, and other &#8220;plumbing&#8221; should take two seconds,</p>
+<p><em>import java.awt.Robot;
+import java.awt.event.InputEvent;
+/<strong>
+*
+* @author karthik
+*/
+public class Main {
+/</strong>
+* @param args the command line arguments
+*/
+public static void main(String[] args) throws Throwable {
+Robot r=new Robot();</em></p>
 
-<p>iii) launching Xorg should take two seconds</p>
+<p>_ System.out.println(&#8220;Hurry up ! you have 10 seconds left &#8220;);
+System.out.println(&#8220;This time you must have focused your mouse pointer on START button of facebook appln&#8221;);
+r.delay(10000);_</p>
 
-<p>iv)  the remaining four seconds should be used to launch the desktop environment and other services that are part of the user&#8217;s session.</p>
+<p><em>// TODO code application logic here
+for(int i=0;i&lt;10000;i++){
+r.mousePress(InputEvent.BUTTON1_MASK);
+System.out.println(&#8220;Clicking &#8220;+i+&#8221;th time &#8220;);
+r.mouseRelease(InputEvent.BUTTON1_MASK);
+System.out.println();
+System.out.println();
+}System.out.println(&#8220;Congrats ! you did it man  B-)&#8221;);</em></p>
 
-<p>( if you are not well verse in this terms then please open your eyes after 10 seconds from start of booting  )</p>
+<p><em>}
+}</em></p>
 
-<p><em>The computer should be fully booted and ready to use at the end of ten seconds</em></p>
+<p>now save the code as <strong>Main.java</strong> in a directory <strong>c:** in windows or </strong>/home **in linux</p>
 
-<p>_
-_</p>
+<p><em><strong>step 2:</strong></em></p>
 
-<p><em>but as a sad part GIMP is removed from standard installation of ubuntu  when queried  developers say  :</em></p>
+<p>open <strong>terminal </strong></p>
 
-<ul>
-<li><p>the general user doesn’t use it</p></li>
-<li><p>its user-interface is too complex</p></li>
-<li><p>it’s an application for professionals</p></li>
-<li><p>desktop users just want to edit photos and they can do that in F-Spot</p></li>
-<li><p>it’s a photoshop replacement and photoshop isn’t included by default in Windows…</p></li>
-<li><p>it takes up room on the disc</p></li>
-</ul>
+<p>compile the java code by running from the location where code is located by</p>
 
+<p><strong>javac Main.java</strong></p>
 
-<p>_
-_</p>
+<p>in the mean time open the <a href="http://apps.facebook.com/mychallengeclick/?ref=m">facebook application </a></p>
 
-<p><em>Im realy sad about this plot and really the fifth point  &#8220;it’s a photoshop replacement and photoshop isn’t included by default in Windows…&#8221;    . comparing a linux distro with a windows .</em></p>
+<p><img src="http://lh6.ggpht.com/_QvG2jVxfMUw/Sz3J9TO3zRI/AAAAAAAAAhQ/nzo2DulsNks/s1024/snapshot1.png" alt="" /></p>
 
-<p><strong><em>If they speak so then linux must be a simple skeleton with a sucky media player and a paint program as some others do. </em></strong></p>
+<p><em><strong>step 3:</strong></em></p>
 
-<p>well even it &#8216;s sad ,  I guess it doesnt takes more than a couple of minutes to trigger <strong>sudo apt-get install gimp :D
+<p>Run the java code now this is critical part</p>
+
+<p><strong>java Main </strong></p>
+
+<p><strong>( you can directly run this  by extracting Main.java.zip from above )
 </strong></p>
+
+<p>you will get a screen saying</p>
+
+<p><em>&#8220;Hurry up ! you have 10 seconds left</em></p>
+
+<p><em>This time you must have focused your mouse pointer on START button of facebook appln&#8221;</em></p>
+
+<p>now focus your mouse pointer to the <strong>START</strong> button of fb appln</p>
+
+<p>you will get a count more than 200 sometimes even 300 clicks per second ( depending on ur jvm )</p>
+
+<p><strong>for more clear details watch the video below :</strong></p>
+
+<p>[youtube=http://www.youtube.com/watch?v=qKdb4E28q6Y]</p>
+
+<p>Thank you :)</p>
+
+<p><em><strong>Disclaimer :</strong></em></p>
+
+<p>If you move your mouse button other than start button you will get random results around screen and may hang at times so keep the mouse pointer in <strong>START </strong>button for atleast a minute ;)</p>
 
 		
 		

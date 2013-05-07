@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 22nd, 2009 Tags: Current affairs Try  this codes in your cell if you are not familiar with this one  b4.. _This may help you when &hellip;">
+	<meta name="description" content="Published on: Jan 4th, 2010 Tags: Linux, Projects _ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/22/nokia-hacks-and-tips/">
+		<a href="/blog/2010/01/04/keyboard-as-network-packet-monitor/">
 		
-			Nokia Hacks and Tips</a>
+			Keyboard as Network Packet Monitor</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,101 +126,47 @@
   
 
 
-<time datetime="2009-11-22T06:24:36+05:30" pubdate data-updated="true">Nov 22<span>nd</span>, 2009</time></div>
+<time datetime="2010-01-04T00:48:02+05:30" pubdate data-updated="true">Jan 4<span>th</span>, 2010</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/current-affairs/'>Current affairs</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/projects/'>Projects</a>
 
 
 </div>
     </div>
-		<p>Try  this codes in your cell if you are not familiar with this one  b4..</p>
+		<p>_ You can transform Your NUM lock and SCROLL lock led&#8217;s to monitor packets send and receive :)_</p>
 
-<p>_This may help you when you are stuck up or trace some details out of your Mobile :
+<p><em>Follow the simple steps below :</em></p>
+
+<p><em><strong>i) Installation:</strong></em></p>
+
+<p>Install tleds package  bye <strong>sudo apt-get install tleds</strong></p>
+
+<p><strong><em>ii) Configure :</em></strong></p>
+
+<p>now configure the interface you use</p>
+
+<p>say for ethernet  run <strong>tleds eth0 </strong></p>
+
+<p>and for wirless  run <strong>tleds wlan0</strong></p>
+
+<p><em>Perform a restart :)</em></p>
+
+<p><em><strong>iii) Customize :</strong></em></p>
+
+<p>Now you can adjust the <strong>delay</strong> to very quick response to low response rate by adjusting -d paramter in tleds</p>
+
+<p>for very quick run <strong>tleds  eth0 -d 1</strong></p>
+
+<p>for low speed run <strong>tleds eth0 -d 200</strong></p>
+
+<p><em>now you have  tranformed your keyboard to packet monitoring system as below :</em></p>
+
+<p>_<a href="http://karthikselvakumar.files.wordpress.com/2010/01/image05141.jpg"><img src="http://karthikselvakumar.files.wordpress.com/2010/01/image05141-e1262527604460.jpg?w=300" alt="" /></a>
 _</p>
 
-<p><strong>*3370#</strong> Activate Enhanced Full Rate Codec (EFR) - Your phone uses the
-best sound quality but talk time is reduced my approx. 5%</p>
-
-<p><strong>#3370# </strong>Deactivate Enhanced Full Rate Codec (EFR)</p>
-
-<p><strong>*4720#</strong> Activate Half Rate Codec - Your phone uses a lower quality
-sound but you should gain approx 30% more Talk Time.</p>
-
-<p><strong>#4720# </strong>Deactivate Half Rate Codec.</p>
-
-<p><strong>*#0000# </strong>Displays your phones software version, 1st Line : Software
-Version, 2nd Line : Software Release Date, 3rd Line :
-Compression Type.</p>
-
-<p><em><strong>#9999# </strong>Phones software version if </em>#0000# does not work.</p>
-
-<p><strong>*#06# </strong>For checking the International Mobile Equipment Identity (IMEI
-Number).</p>
-
-<p><strong>#pw+1234567890+1# </strong>
-Provider Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+2# </strong>
-Network Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+3# </strong>
-Country Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>#pw+1234567890+4# </strong>
-SIM Card Lock Status. (use the &#8220;*&#8221; button to obtain the &#8220;p,w&#8221; and &#8220;+&#8221; symbols).</p>
-
-<p><strong>*#147#</strong> (vodafone) this lets you know who called you last.</p>
-
-<p><strong>*#1471# </strong>Last call (Only vodofone).</p>
-
-<p><strong>*#21#</strong> Allows you to check the number that &#8220;All Calls&#8221; are diverted to.</p>
-
-<p><strong>*#2640#</strong> Displays security code in use.</p>
-
-<p><strong>*#30# </strong>Lets you see the private number.</p>
-
-<p><strong>*#43# </strong>Allows you to check the &#8220;Call Waiting&#8221; status of your phone.</p>
-
-<p><strong>*#61# </strong>Allows you to check the number that &#8220;On No Reply&#8221; calls are
-diverted to.</p>
-
-<p><strong>*#62#</strong> Allows you to check the number that &#8220;Divert If Unreachable (no
-service)&#8221; calls are diverted to.</p>
-
-<p><strong>*#67#</strong> Allows you to check the number that &#8220;On Busy Calls&#8221; are diverted
-to.</p>
-
-<p><strong>*#67705646# </strong>Removes operator logo on 3310 &amp; 3330.</p>
-
-<p><strong>*#73# </strong>Reset phone timers and game scores.</p>
-
-<p><strong>*#746025625# </strong>Displays the SIM Clock status, if your phone supports this power
-saving feature &#8220;SIM Clock Stop Allowed&#8221;, it means you will get
-the best standby time possible.</p>
-
-<p><em><strong>#7760#</strong> Manufactures code.
-**
-</em>#7780#** Restore factory settings.</p>
-
-<p><strong>*#8110# </strong>Software version for the nokia 8110.</p>
-
-<p><strong>*#92702689# </strong>Displays - 1.Serial Number, 2.Date Made, 3.Purchase Date,
-4.Date of last repair (0000 for no repairs), 5.Transfer User Data.
-To exit this mode you need to switch your phone off then on again.</p>
-
-<p><strong>*#94870345123456789# </strong>Deactivate the PWM-Mem.</p>
-
-<p><strong><em>*21</em>number# </strong>Turn on &#8220;All Calls&#8221; diverting to the phone number entered.</p>
-
-<p><strong><em>*61</em>number# </strong>Turn on &#8220;No Reply&#8221; diverting to the phone number entered.</p>
-
-<p><strong><em>*67</em>number#</strong> Turn on &#8220;On Busy&#8221; diverting to the phone number entered.</p>
-
-<p><strong>12345</strong> This is the default security code.</p>
-
-<p>Remember few of these codes may not work for recent nokia models &#8230;.</p>
+<p>enjoy :)</p>
 
 		
 		

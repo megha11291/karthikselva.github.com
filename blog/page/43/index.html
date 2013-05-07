@@ -6,7 +6,7 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Nov 11th, 2009 Tags: Movie review Life is a symmetrical . We have a growing phase ,stabilize at same point then shrinking phase when &hellip;">
+	<meta name="description" content="Published on: Nov 14th, 2009 Tags: Linux _Are you a Linux critic saying graphics doesn&#8217;t work on ? Haven&#8217;t explored SDL graphic part &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,9 +108,9 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2009/11/11/curious-case-of-benjamin-button-2008/">
+		<a href="/blog/2009/11/14/graphics-h-fails-in-linux/">
 		
-			Curious Case of Benjamin Button ( 2008 )</a>
+			Graphics.h Fails in Linux ?</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -126,30 +126,60 @@
   
 
 
-<time datetime="2009-11-11T14:33:15+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
+<time datetime="2009-11-14T00:27:16+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/movie-review/'>Movie review</a>
+	<a class='category' href='/blog/categories/linux/'>Linux</a>
 
 
 </div>
     </div>
-		<p><img src="http://images.starpulse.com/Photos/Previews/Benjamin-Button-movie-28.jpg" alt="preview" /></p>
+		<p>_Are you a Linux critic saying graphics doesn&#8217;t work on ?</p>
 
-<p>Life is a symmetrical . We have a growing phase ,stabilize at same point then shrinking phase when we turn older and feeble.Vice versa is the story line .Even it seems more paradoxical and no supportive scientific ideas have been supported this movie seems great.</p>
+<p>Haven&#8217;t explored SDL graphic part thrro&#8217;   C?</p>
 
-<p>Movie seems a bit slow but steady in its flow of scenes .starting with Daisy the story rolls on towards so many interesting personality ( Quinnie  is my favorite of all , a motherly goddess) . I dono why clock maker gateau interrupts the story . Short and tragic about him . Then story captures it real pace , Thomas button abandons his child . Why the baby was so ugly and what made him so was not clearly explained ( since its not a fiction film :P )  .</p>
+<p>Switched on to linux recently and breaking your heads on graphics libraries for linux ?_</p>
 
-<p>Quinine takes the baby and grows it irrespective all the obstacle she faces from her man and doctor &#8230; why he cries like normal  baby when stamped by Tizzy under stairs rather feeble voice of a old man  . Every one miracles about survival of this man . If they wanna tell really about reversal of phases why Benjamin plays with spoon and wanna play like rest children :P  ( as in first phase of benjamin) .</p>
+<p>The packages you need before working on with graphics library in linux are:</p>
 
-<p>Then starts working with tug boat and knows part of life.And enjoys everything he can  . I guess the only girl left around entire film is Caroline :P. As the film has two perspective views from Daisy side and Benjamin side,makes viewers more interesting and careful to watch  in every scenes.</p>
+<p>Try  installing thro&#8217; console by</p>
 
-<p>&#8221; <strong>Death&#8217;s are quiet natural and its the only  sign of remembrance of a person</strong> &#8221;</p>
+<p><strong>sudo apt-get install libsdl-image1.2 libsdl-image1.2-dev guile-1.8 guile-1.8-dev libsdl1.2debian-arts libartsc0-dev libaudiofile-dev libesd0-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6(upgrade) libaa1 libaa1-dev libslang2-dev libasound2 libasound-dev</strong></p>
 
-<p>is the point more stressed and I feel out of this film . Death of Quinnie ,one who made Benjamin a place to stand in this earth when none did .I guess the movie can still be shortened and may prevented the viewers losing their patience. The last moment when Benjamin turns out to baby and when he closes his eyes finally ,  I can  feel entire thrust of the film .</p>
+<p>or select the package in <strong>synaptic </strong>it will automatically resolve dependency&#8217;s</p>
 
-<p>A good time pass rather fixing schedule to watch this film .if you get free time this one is a watchable slow paced film .</p>
+<p><em><strong>LibGraph Installing and configuring:</strong></em></p>
+
+<p>First download libgraph from <a href="http://www.box.net/shared/bnj7usolue"> here </a></p>
+
+<p>Then as usual extract
+tar.gz   and run</p>
+
+<p><strong>./configure
+make
+make install
+</strong>
+write some c with graphics implemenation and name it as <strong>test.c</strong></p>
+
+<p>Thats it :D</p>
+
+<p><em><strong>Now compile and run the file as:</strong></em></p>
+
+<p><strong>g++ test.cpp -o test.o -lgraph
+And execute the program by ./test.o
+</strong>
+-lgraph links with graphics library</p>
+
+<p>if you get any shared library error ( ofcourse most people get this thing)</p>
+
+<p>then shift as  <strong>sudo cp /usr/local/lib/libgraph.* /usr/lib</strong></p>
+
+<p>you may  now see a SDL output window showing smooth graphical 32 bit output (rather resorted dos window :P )</p>
+
+<p>3D chess  game in graphics  C  <img src="http://mfarrelly.rarelyfar.com/res/chessnix.jpg" alt="chess" /></p>
+
+<p>Learn , code and Enjoy Linux geeks  :)</p>
 
 		
 		

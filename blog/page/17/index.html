@@ -6,8 +6,28 @@
 	<title>Hacker's Diary</title>
     <meta name="author" content="karthikselva's log">
     
-	<meta name="description" content="Published on: Dec 26th, 2012 Tags: IDE, Rails, Vim How it started I started my coding in a windows XP with notepad.
-I can realize now how terrible &hellip;">
+	<meta name="description" content="Published on: Apr 10th, 2013 Tags: Algorithms ChildStair ruby (child_and_stair.rb) download 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,9 +129,9 @@ I can realize now how terrible &hellip;">
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2012/12/26/rails-with-vim-how-and-why-it-works/">
+		<a href="/blog/2013/04/10/recursion-child-and-stair-jumping-problem/">
 		
-			Rails With Vim - How and Why It Works ?</a>
+			Recursion - Child and Stair Jumping Problem</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
@@ -127,54 +147,65 @@ I can realize now how terrible &hellip;">
   
 
 
-<time datetime="2012-12-26T23:36:00+05:30" pubdate data-updated="true">Dec 26<span>th</span>, 2012</time></div>
+<time datetime="2013-04-10T23:47:00+05:30" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time></div>
       <div class="tags">Tags: 
 
 
-	<a class='category' href='/blog/categories/ide/'>IDE</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/vim/'>Vim</a>
+	<a class='category' href='/blog/categories/algorithms/'>Algorithms</a>
 
 
 </div>
     </div>
-		<h2>How it started</h2>
-
-<p>I started my coding in a windows XP with notepad.
-I can realize now how terrible it was.
-Then I came through a term called IDE which has everything a programmer
-needs in one place. Starting with netbeans for java
-and some random Junit test tools in eclipse , I really regreted for
-wasting my time in notepad.</p>
-
-<p>Most of the times I used to do one among these listed items apart from real typing/coding:</p>
-
-<ul>
-<li><p>Searching the API sheet for exact name of method</p>
-
-<ul>
-<li>In Java typically confused with length() , size() , count or length variable usage</li>
-<li>I know rubyists , ruby has everything</li>
-</ul>
-</li>
-<li><p>Missing ( , { or some parantheses ( not as much careless as initial days  )</p>
-
-<ul>
-<li>I remember my first programming lab on c which I spent most of my time in figuring out the matching parantheses for the code I copied from internet</li>
-</ul>
-</li>
-<li><p>Variable declared with one name but using it with different name</p>
-
-<ul>
-<li>I used to decalre a variable with User#name  and trying to access with User#username</li>
-</ul>
-</li>
-<li><p>Version control integration</p>
-
-<ul>
-<li>Version control itself is a different topic to discuss for hours</li>
-<li>I use some set of plugins to commit and revert ( which I don&#8217;t even bother on what command it is being translated on in background )</li>
-</ul>
-</li>
-</ul>
+		<figure class='code'><figcaption><span>ChildStair ruby (child_and_stair.rb)</span> <a href='/downloads/code/child_and_stair.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1"># Child and Stairs </span>
+</span><span class='line'><span class="k">def</span> <span class="nf">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">elsif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">1</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="k">return</span> <span class="p">(</span> <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>               <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>               <span class="n">find_chances_for</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">find_chances_for</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Output </span>
+</span><span class='line'><span class="c1"># ------</span>
+</span><span class='line'><span class="c1"># 4</span>
+</span><span class='line'><span class="c1"># Explanation</span>
+</span><span class='line'><span class="c1"># -----------</span>
+</span><span class='line'><span class="c1"># They are </span>
+</span><span class='line'><span class="c1"># (1,1,1)</span>
+</span><span class='line'><span class="c1"># (1,2)</span>
+</span><span class='line'><span class="c1"># (2,1)</span>
+</span><span class='line'><span class="c1"># (3)</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 		
