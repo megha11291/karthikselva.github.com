@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Projects | karthik selvakumar bhuvaneswaran]]></title>
-  <link href="http://localhost:4000/blog/categories/projects/atom.xml" rel="self"/>
-  <link href="http://localhost:4000/"/>
-  <updated>2014-04-24T12:15:44+05:30</updated>
-  <id>http://localhost:4000/</id>
+  <link href="http://ksk.amuzz.in/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://ksk.amuzz.in/"/>
+  <updated>2014-04-24T12:28:47+05:30</updated>
+  <id>http://ksk.amuzz.in/</id>
   <author>
     <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
     <updated>2010-02-23T05:48:22+05:30</updated>
-    <id>http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <id>http://ksk.amuzz.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
     <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
 <ol>
@@ -143,9 +143,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
     <updated>2010-02-14T04:29:35+05:30</updated>
-    <id>http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <id>http://ksk.amuzz.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
     <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
 <p><em><strong>Requirments :</strong></em></p>
@@ -272,9 +272,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
     <updated>2010-02-01T03:33:06+05:30</updated>
-    <id>http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <id>http://ksk.amuzz.in/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
     <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 
@@ -343,9 +343,9 @@ _</p>
   
   <entry>
     <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
-    <link href="http://localhost:4000/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
     <updated>2010-01-04T00:48:02+05:30</updated>
-    <id>http://localhost:4000/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
+    <id>http://ksk.amuzz.in/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
     <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led's to monitor packets send and receive :)_</p>
 
 <p><em>Follow the simple steps below :</em></p>
@@ -383,9 +383,9 @@ _</p>
   
   <entry>
     <title type="html"><![CDATA[Remote car on 'C']]></title>
-    <link href="http://localhost:4000/blog/2009/10/24/remote-car-on-c/"/>
+    <link href="http://ksk.amuzz.in/blog/2009/10/24/remote-car-on-c/"/>
     <updated>2009-10-24T06:58:12+05:30</updated>
-    <id>http://localhost:4000/blog/2009/10/24/remote-car-on-c</id>
+    <id>http://ksk.amuzz.in/blog/2009/10/24/remote-car-on-c</id>
     <content type="html"><![CDATA[<p>remote car on c</p>
 
 <p>/** This is a basic hardware program in c interfacing a remote car

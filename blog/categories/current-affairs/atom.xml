@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Current affairs | karthik selvakumar bhuvaneswaran]]></title>
-  <link href="http://localhost:4000/blog/categories/current-affairs/atom.xml" rel="self"/>
-  <link href="http://localhost:4000/"/>
-  <updated>2014-04-24T12:15:44+05:30</updated>
-  <id>http://localhost:4000/</id>
+  <link href="http://ksk.amuzz.in/blog/categories/current-affairs/atom.xml" rel="self"/>
+  <link href="http://ksk.amuzz.in/"/>
+  <updated>2014-04-24T12:28:47+05:30</updated>
+  <id>http://ksk.amuzz.in/</id>
   <author>
     <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Installing Network Simulator 2 in Ubuntu ]]></title>
-    <link href="http://localhost:4000/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
     <updated>2010-02-10T22:08:25+05:30</updated>
-    <id>http://localhost:4000/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
+    <id>http://ksk.amuzz.in/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
     <content type="html"><![CDATA[<p><em>Are you baffled by random errands saying "  ns2 doesn't work on ubuntu " and so ?</em></p>
 
 <p><em>Are you a linux geek don't wanna boot to windows for network simulator software ?</em></p>
@@ -173,9 +173,9 @@ $ns run</em></p>
   
   <entry>
     <title type="html"><![CDATA[Facebook mouseclicks hack !]]></title>
-    <link href="http://localhost:4000/blog/2010/01/01/facebook-mouseclicks-hack/"/>
+    <link href="http://ksk.amuzz.in/blog/2010/01/01/facebook-mouseclicks-hack/"/>
     <updated>2010-01-01T21:05:04+05:30</updated>
-    <id>http://localhost:4000/blog/2010/01/01/facebook-mouseclicks-hack</id>
+    <id>http://ksk.amuzz.in/blog/2010/01/01/facebook-mouseclicks-hack</id>
     <content type="html"><![CDATA[<p>I came across a facebook application which counts maximum number of clicks per second and thought of emulating it in java ;)</p>
 
 <p>it is as simple as a crap code ... with simple steps <a href="http://www.box.net/shared/6gfq0vh81p">Download it from here</a></p>
@@ -262,9 +262,9 @@ System.out.println();
   
   <entry>
     <title type="html"><![CDATA[Nokia Hacks and tips ]]></title>
-    <link href="http://localhost:4000/blog/2009/11/22/nokia-hacks-and-tips/"/>
+    <link href="http://ksk.amuzz.in/blog/2009/11/22/nokia-hacks-and-tips/"/>
     <updated>2009-11-22T06:24:36+05:30</updated>
-    <id>http://localhost:4000/blog/2009/11/22/nokia-hacks-and-tips</id>
+    <id>http://ksk.amuzz.in/blog/2009/11/22/nokia-hacks-and-tips</id>
     <content type="html"><![CDATA[<p>Try  this codes in your cell if you are not familiar with this one  b4..</p>
 
 <p>_This may help you when you are stuck up or trace some details out of your Mobile :
@@ -356,9 +356,9 @@ To exit this mode you need to switch your phone off then on again.</p>
   
   <entry>
     <title type="html"><![CDATA[Is New Orkut Really New ?]]></title>
-    <link href="http://localhost:4000/blog/2009/11/16/is-new-orkut-really-new/"/>
+    <link href="http://ksk.amuzz.in/blog/2009/11/16/is-new-orkut-really-new/"/>
     <updated>2009-11-16T06:39:26+05:30</updated>
-    <id>http://localhost:4000/blog/2009/11/16/is-new-orkut-really-new</id>
+    <id>http://ksk.amuzz.in/blog/2009/11/16/is-new-orkut-really-new</id>
     <content type="html"><![CDATA[<p>Well few days Back I heard something called new orkut . It took weeks before since last time I logged in  Orkut . Facebook attracted me more and some how addicted to it .Now heard about<strong> "New Orkut "</strong> I came back to my old orkut :) .</p>
 
 <p>Goodness I got invite from some one ( sad thing is New Orkut too is a<strong> Invite and use system</strong> ). Well when I saw try new orkut at top , Clicked it really expecting a amazing wonder as an Alice . But I seen a page something very similar to face-book which disappointed me a lot .</p>
@@ -387,9 +387,9 @@ To exit this mode you need to switch your phone off then on again.</p>
   
   <entry>
     <title type="html"><![CDATA[Google Chrome Os - Rush Time ]]></title>
-    <link href="http://localhost:4000/blog/2009/11/15/google-chrome-os-rush-time/"/>
+    <link href="http://ksk.amuzz.in/blog/2009/11/15/google-chrome-os-rush-time/"/>
     <updated>2009-11-15T02:40:50+05:30</updated>
-    <id>http://localhost:4000/blog/2009/11/15/google-chrome-os-rush-time</id>
+    <id>http://ksk.amuzz.in/blog/2009/11/15/google-chrome-os-rush-time</id>
     <content type="html"><![CDATA[<p><strong>As for Google mentioned :</strong></p>
 
 <p><em>" Google Chrome OS is an open source, lightweight operating system that will initially be targeted at net-books. Later this year we will open-source its code, and net books running Google Chrome OS will be available for consumers in the second half of 2010. Because we’re already talking to partners about the project, and we’ll soon be working with the open source community, we wanted to share our vision now so everyone understands what we are trying to achieve. "</em></p>

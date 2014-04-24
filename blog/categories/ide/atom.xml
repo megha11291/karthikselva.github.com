@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: IDE | karthik selvakumar bhuvaneswaran]]></title>
-  <link href="http://localhost:4000/blog/categories/ide/atom.xml" rel="self"/>
-  <link href="http://localhost:4000/"/>
-  <updated>2014-04-24T12:15:44+05:30</updated>
-  <id>http://localhost:4000/</id>
+  <link href="http://ksk.amuzz.in/blog/categories/ide/atom.xml" rel="self"/>
+  <link href="http://ksk.amuzz.in/"/>
+  <updated>2014-04-24T12:28:47+05:30</updated>
+  <id>http://ksk.amuzz.in/</id>
   <author>
     <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ Rails with Vim - how and why it works ? ]]></title>
-    <link href="http://localhost:4000/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
+    <link href="http://ksk.amuzz.in/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
     <updated>2012-12-26T23:36:00+05:30</updated>
-    <id>http://localhost:4000/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
+    <id>http://ksk.amuzz.in/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
     <content type="html"><![CDATA[<h2>How it started</h2>
 
 <p>I started my coding in a windows XP with notepad.
