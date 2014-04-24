@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Regex | karthik selvakumar bhuvaneswaran]]></title>
-  <link href="http://ksk.amuzz.in/blog/categories/regex/atom.xml" rel="self"/>
-  <link href="http://ksk.amuzz.in/"/>
-  <updated>2014-04-24T12:34:03+05:30</updated>
-  <id>http://ksk.amuzz.in/</id>
+  <link href="http://rand.amuzz.in/blog/categories/regex/atom.xml" rel="self"/>
+  <link href="http://rand.amuzz.in/"/>
+  <updated>2014-04-24T13:23:03+05:30</updated>
+  <id>http://rand.amuzz.in/</id>
   <author>
     <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Regex saves the day - Part 1]]></title>
-    <link href="http://ksk.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1/"/>
+    <link href="http://rand.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1/"/>
     <updated>2013-03-15T23:10:00+05:30</updated>
-    <id>http://ksk.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1</id>
+    <id>http://rand.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1</id>
     <content type="html"><![CDATA[<blockquote><p>Regular expression is a good servant but a bad master (analogy to fire in real life)</p></blockquote>
 
 <h2>Before Regular expressions </h2>
