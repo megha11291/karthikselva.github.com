@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Algorithms | karthik selvakumar bhuvaneswaran]]></title>
+  <title><![CDATA[Category: Algorithms | randam muzzin's of a geek]]></title>
   <link href="http://rand.amuzz.in/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://rand.amuzz.in/"/>
-  <updated>2014-04-24T14:42:52+05:30</updated>
+  <updated>2014-04-24T20:50:01+05:30</updated>
   <id>http://rand.amuzz.in/</id>
   <author>
-    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
+    <name><![CDATA[randam muzzin's of a geek]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
