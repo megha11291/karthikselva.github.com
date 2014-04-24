@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Regex | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/regex/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: Regex | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/regex/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Regex saves the day - Part 1]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1/"/>
+    <link href="http://localhost:4000/blog/2013/03/15/regex-saves-the-day-part-1/"/>
     <updated>2013-03-15T23:10:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/03/15/regex-saves-the-day-part-1</id>
+    <id>http://localhost:4000/blog/2013/03/15/regex-saves-the-day-part-1</id>
     <content type="html"><![CDATA[<blockquote><p>Regular expression is a good servant but a bad master (analogy to fire in real life)</p></blockquote>
 
 <h2>Before Regular expressions </h2>

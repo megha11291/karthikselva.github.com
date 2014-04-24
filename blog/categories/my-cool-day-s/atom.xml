@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: My Cool day's | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/my-cool-day-s/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: My Cool day's | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/my-cool-day-s/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Orkut Scrap made me mad Before ]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/15/orkut-scrap-made-me-mad-before/"/>
+    <link href="http://localhost:4000/blog/2009/11/15/orkut-scrap-made-me-mad-before/"/>
     <updated>2009-11-15T19:40:33+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/15/orkut-scrap-made-me-mad-before</id>
+    <id>http://localhost:4000/blog/2009/11/15/orkut-scrap-made-me-mad-before</id>
     <content type="html"><![CDATA[<p>well this morning I received a flash embedded scrap from my friend and I'm really afraid and searched for web cam's all around and even tried after disconnecting from net  what a shit  worked too :(</p>
 
 <p>Now take a try of this application as many times as possible till you find it fails , and  let they accept you cheated it ...</p>
@@ -38,61 +38,6 @@
 A simple logic now keenly watch all the logos in multiples of 9 ..( Thats what you are going to get   :P)</strong></p>
 
 <p>and try now you got the thing ( if you didn't know its logic so far ) and see how many pale faces are still waiting to be cheated :D</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SEM V '.']]></title>
-    <link href="http://karthikselva.github.com/blog/2009/11/12/sem-v/"/>
-    <updated>2009-11-12T17:35:32+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/11/12/sem-v</id>
-    <content type="html"><![CDATA[<p><img src="http://www.tsiba.org.za/uploads/images/give_5_logo_op_2.jpg" alt="5 Th sem :(" /></p>
-
-<p>Semester five .. well a suckiest sem I have ever seen  .</p>
-
-<p> well every time I speak I used to say the latter is the worst . But now  situation seems more and more bad :) . Writing exams for filling up 3 hours and not even bothering about labs . But actually that's  the sem i thought to do lots and more :P .</p>
-
-<p>successfully completed my semester examinations at worser than worse. That doesn't even matter for me . Thought of enjoying a full month leave .Nothing gonna help me releaving from this boring holidays ( I tried everything I can ) .  But happiest one is Sem V is no more . I have passed by one of the 8 . ( Not sure about results )</p>
-
-<p>But this semester made a huge list of remarkable things and actually I feel the semester I have enjoyed a lot relatively . Proximity knows about that :P. Let it B.</p>
-
-<p>Thought of doing some useful things in this holidays .Let me see what awaits ;) .</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Back again]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/09/03/back-again/"/>
-    <updated>2009-09-03T22:09:05+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/09/03/back-again</id>
-    <content type="html"><![CDATA[<p>long back blogging again.
-   Unable to do so since my network limit reached.
-well Then Second internals at peek now. Some tragic news Anounced leave tomorow . let it b . writing internals nowadays had become very bore . Finishing within half an hour ( ofcourse nothin in paper ) and runing out . Then new friends njoyin life But studies is lagging behind . every thing usual .  Really confused .</p>
-
-<pre><code>   will b   back again bye!
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My department culturals]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/08/20/my-department-culturals/"/>
-    <updated>2009-08-20T01:01:56+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/08/20/my-department-culturals</id>
-    <content type="html"><![CDATA[<p>well Meet you back after a long time due to some personal reasons ( my free limit for internet is reached ) . our department culturals so called esperto is to be held on august 22 . decided to participate on some events. Then paper too s pending for honey well .  well have to search for it.  Then very lazy classes .late night sleep and 8 o clock wake up has become my life. Data warehousing abstract is too pending to be submited .
- A conflict between FOSS guide and me . At last  convinced her and came back .</p>
-
-<pre><code>                         Swine flu and its spread are drastic around world . let me seewhere it ends !!!
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A day wasted]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/08/14/a-day-wasted/"/>
-    <updated>2009-08-14T05:34:18+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/08/14/a-day-wasted</id>
-    <content type="html"><![CDATA[<p>Of course I wasted this day .Late wake up around 12 and then had my favourite coffee . Im becoming too lazy nowadays. feeling lazy to eat , bath ,and even get up from the bed . well lets see where it neds ends</p>
 ]]></content>
   </entry>
   

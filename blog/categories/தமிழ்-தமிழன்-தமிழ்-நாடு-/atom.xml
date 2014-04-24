@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: தமிழ் ! தமிழன் !! தமிழ் நாடு !!! | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/தமிழ்-தமிழன்-தமிழ்-நாடு-/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: தமிழ் ! தமிழன் !! தமிழ் நாடு !!! | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/தமிழ்-தமிழன்-தமிழ்-நாடு-/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[இனிய பிறந்த நாள் வாழ்த்துக்கள் !]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/08/08/my-friends-bday/"/>
+    <link href="http://localhost:4000/blog/2009/08/08/my-friends-bday/"/>
     <updated>2009-08-08T05:43:11+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/08/08/my-friends-bday</id>
+    <id>http://localhost:4000/blog/2009/08/08/my-friends-bday</id>
     <content type="html"><![CDATA[<p>நாளை  பிறக்கும்  உறவே
 உலகில் மலரும் நிலவே</p>
 
@@ -71,9 +71,9 @@ to my friends ( I gawthaman  and Elanchezhian )</p>
   
   <entry>
     <title type="html"><![CDATA[ காதல வலிகள் ]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/08/07/my-first-kavithai/"/>
+    <link href="http://localhost:4000/blog/2009/08/07/my-first-kavithai/"/>
     <updated>2009-08-07T04:21:01+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/08/07/my-first-kavithai</id>
+    <id>http://localhost:4000/blog/2009/08/07/my-first-kavithai</id>
     <content type="html"><![CDATA[<p><strong>
 </strong></p>
 

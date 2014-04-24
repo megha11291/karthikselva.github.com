@@ -1,106 +1,53 @@
-<!DOCTYPE HTML>
-<html>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>Blog Archive - Hacker's Diary</title>
-    <meta name="author" content="karthikselva's log">
-    
-	<meta name="description" content=" Published on: May 7th, 2013 Tags: Algorithms Liquid error: undefined method `index&#8217; for nil:NilClass ">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
 
-	<link href="/atom.xml" rel="alternate" title="Hacker's Diary" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <title>Blog Archive |  karthik selvakumar bhuvaneswaran</title>
+  <meta name="author" content="karthik selvakumar bhuvaneswaran">
+  
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+  
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <!-- CSS: implied media=all -->
+  <!-- CSS concatenated and minified via ant build script-->
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <!-- end CSS-->
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
+       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="/javascripts/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
 
   <div id="container">
     <header>
-    <img src="http://karthikselva.github.com/images/header.png" alt="Ivan Jovanovic in search for the next abstraction" />
-    <h1>in search for the next abstraction</h1>
+      <h1> >_ random software geek </h1>
     </header>
+
     <div id="main" role="main">
-      <!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        karthikselva&#8217;s log
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/karthikselva" class="github" title="Github"></a>
-  </li>
-  
-  
-  <!-- Google Plus -->
-  <li>
-  <a href="http://plus.google.com/115315132809115213147?rel=author" class="google" title="Google+"></a>
-  </li>
-  
-  
-  <!-- Facebook -->
-  <li>
-  <a href="http://www.facebook.com/karthikselvakumar47" class="facebook" title="Facebook"></a>
-  </li>
-  
-  
-  <!-- Twitter -->
-  <li>
-  <a href="http://www.twitter.com/karthikselva" class="twitter" title="Twitter"></a>
-  </li>
-  
-  
-  
-  <!-- Skype -->
-  <li>
-  <a href="http://myskype.info/karthikselvakumar" class="skype" title="Skype"></a>
-  </li>
-  
-  
-  
-</ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="//index.html">Home</a></li>
-	<li id="ajax"><a href="//blog/archives/index.html">Archives</a></li>
-	<li ><a href="http://careers.stackoverflow.com/karthikselva">About</a></li>
-    <li><a href="//atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
-</ul>
-
-
-
-
+      <header>
+    <a href="http://localhost:4000">Home</a> | 
+    <a href="http://localhost:4000/archives">Archives</a>
+</header>
 
 <div id="blog-archives">
 
@@ -111,19 +58,12 @@
   <h2>2013</h2>
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/">
-		
-			Excel Sheet Alphabet to Decimal Coversion</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -132,42 +72,26 @@
   
 
 
-<time datetime="2013-05-07T21:22:00+05:30" pubdate data-updated="true">May 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-07T21:22:00+05:30" pubdate  data-updated="true" >May 7<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/">Excel Sheet Alphabet to decimal Coversion</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/07/string-naive-pattern-search/">
-		
-			String - Naive Pattern Search</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -176,42 +100,26 @@
   
 
 
-<time datetime="2013-05-07T21:21:00+05:30" pubdate data-updated="true">May 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-07T21:21:00+05:30" pubdate  data-updated="true" >May 7<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/07/string-naive-pattern-search/">String - Naive pattern search</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/07/recursion-solution-for-nxn-queens/">
-		
-			Recursion - Solution for NxN Queens</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -220,42 +128,26 @@
   
 
 
-<time datetime="2013-05-07T21:21:00+05:30" pubdate data-updated="true">May 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-07T21:21:00+05:30" pubdate  data-updated="true" >May 7<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/07/recursion-solution-for-nxn-queens/">Recursion - Solution for NxN queens</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/">
-		
-			Recursion - Contigous Increasing by One Search in Array</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -264,42 +156,26 @@
   
 
 
-<time datetime="2013-05-07T21:20:00+05:30" pubdate data-updated="true">May 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-07T21:20:00+05:30" pubdate  data-updated="true" >May 7<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/">Recursion - Contigous increasing by one search in array</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/07/recursion-gcd/">
-		
-			Recursion - GCD</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -308,42 +184,26 @@
   
 
 
-<time datetime="2013-05-07T21:19:00+05:30" pubdate data-updated="true">May 7<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-07T21:19:00+05:30" pubdate  data-updated="true" >May 7<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/07/recursion-gcd/">Recursion - GCD</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/05/combinatronics-all-subsets-of-a-set/">
-		
-			Combinatronics - All Subsets of a Set</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -352,42 +212,26 @@
   
 
 
-<time datetime="2013-05-05T23:58:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-05T23:58:00+05:30" pubdate  data-updated="true" >May 5<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/05/combinatronics-all-subsets-of-a-set/">Combinatronics - All subsets of a set</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/05/linked-list-loop-detection-and-removal/">
-		
-			Linked List - Loop Detection and Removal</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -396,42 +240,26 @@
   
 
 
-<time datetime="2013-05-05T23:18:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-05T23:18:00+05:30" pubdate  data-updated="true" >May 5<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/05/linked-list-loop-detection-and-removal/">Linked List - Loop detection and Removal</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/05/matrix-robot-with-block-detection/">
-		
-			Matrix - Robot With Block Detection</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -440,42 +268,26 @@
   
 
 
-<time datetime="2013-05-05T22:35:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-05T22:35:00+05:30" pubdate  data-updated="true" >May 5<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/05/matrix-robot-with-block-detection/">Matrix - Robot with block detection</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/05/prime-seive-of-erastothenes/">
-		
-			Prime - Seive of Erastothenes</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -484,42 +296,26 @@
   
 
 
-<time datetime="2013-05-05T19:38:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-05T19:38:00+05:30" pubdate  data-updated="true" >May 5<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/05/prime-seive-of-erastothenes/">Prime - Seive of Erastothenes</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right/">
-		
-			Matrix - Rotate a Matrix 90* to Right</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -528,42 +324,26 @@
   
 
 
-<time datetime="2013-05-05T02:17:00+05:30" pubdate data-updated="true">May 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-05-05T02:17:00+05:30" pubdate  data-updated="true" >May 5<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right/">Matrix - Rotate a matrix 90* to Right</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index/">
-		
-			Array - Maximum Subsequence With Start and End of Index</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -572,42 +352,26 @@
   
 
 
-<time datetime="2013-04-17T23:53:00+05:30" pubdate data-updated="true">Apr 17<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-17T23:53:00+05:30" pubdate  data-updated="true" >Apr 17<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index/">Array - Maximum Subsequence with start and end of index</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j/">
-		
-			Bit Manipulation - Merge M Bits Into N Bits at Given I and J</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -616,42 +380,26 @@
   
 
 
-<time datetime="2013-04-11T18:03:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-11T18:03:00+05:30" pubdate  data-updated="true" >Apr 11<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j/">Bit Manipulation - Merge m bits into n bits at given i and j</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/">
-		
-			Bit Manipulation - Floating Decimal to Binary</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -660,42 +408,26 @@
   
 
 
-<time datetime="2013-04-11T17:33:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-11T17:33:00+05:30" pubdate  data-updated="true" >Apr 11<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/">Bit Manipulation - Floating Decimal to Binary</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/11/linked-list-kth-element-from-last-recursion/">
-		
-			Linked List - Kth Element From Last - Recursion</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -704,42 +436,26 @@
   
 
 
-<time datetime="2013-04-11T03:01:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-11T03:01:00+05:30" pubdate  data-updated="true" >Apr 11<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/11/linked-list-kth-element-from-last-recursion/">Linked List - kth element from last - Recursion </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/">
-		
-			Linked List - Find Palindrome Ina Linked List</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -748,42 +464,26 @@
   
 
 
-<time datetime="2013-04-11T02:53:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-11T02:53:00+05:30" pubdate  data-updated="true" >Apr 11<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/">Linked List - Find Palindrome ina linked list</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/11/recursion-find-all-subsets-of-given-set/">
-		
-			Recursion - Find All Subsets of Given Set</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -792,42 +492,26 @@
   
 
 
-<time datetime="2013-04-11T00:24:00+05:30" pubdate data-updated="true">Apr 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-11T00:24:00+05:30" pubdate  data-updated="true" >Apr 11<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/11/recursion-find-all-subsets-of-given-set/">Recursion - Find all subsets of given set</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/10/recursion-child-and-stair-jumping-problem/">
-		
-			Recursion - Child and Stair Jumping Problem</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -836,42 +520,26 @@
   
 
 
-<time datetime="2013-04-10T23:47:00+05:30" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-10T23:47:00+05:30" pubdate  data-updated="true" >Apr 10<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/10/recursion-child-and-stair-jumping-problem/">Recursion - Child and Stair Jumping Problem</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/04/08/binary-tree-find-vertical-sum/">
-		
-			Binary Tree - Find Vertical Sum</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -880,42 +548,26 @@
   
 
 
-<time datetime="2013-04-08T20:01:00+05:30" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-04-08T20:01:00+05:30" pubdate  data-updated="true" >Apr 8<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/04/08/binary-tree-find-vertical-sum/">Binary Tree - Find Vertical Sum</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/03/15/regex-saves-the-day-part-1/">
-		
-			Regex Saves the Day - Part 1</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -924,42 +576,26 @@
   
 
 
-<time datetime="2013-03-15T23:10:00+05:30" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-03-15T23:10:00+05:30" pubdate  data-updated="true" >Mar 15<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/03/15/regex-saves-the-day-part-1/">Regex saves the day - Part 1</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/programming/'>Programming</a>, <a class='category' href='//blog/categories/regex/'>Regex</a>, <a class='category' href='//blog/categories/ruby/'>Ruby</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/03/15/mischeivous-bang-operator-in-ruby/">
-		
-			Mischeivous Bang(!) Operator in Ruby</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -968,42 +604,26 @@
   
 
 
-<time datetime="2013-03-15T16:02:00+05:30" pubdate data-updated="true">Mar 15<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-03-15T16:02:00+05:30" pubdate  data-updated="true" >Mar 15<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/03/15/mischeivous-bang-operator-in-ruby/">Mischeivous bang(!) operator in Ruby</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/programming/'>Programming</a>, <a class='category' href='//blog/categories/rails/'>Rails</a>, <a class='category' href='//blog/categories/ruby/'>Ruby</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes/">
-		
-			Binary Tree - Zigzag Traversal of Nodes</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1012,23 +632,14 @@
   
 
 
-<time datetime="2013-01-04T23:48:00+05:30" pubdate data-updated="true">Jan 4<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2013-01-04T23:48:00+05:30" pubdate  data-updated="true" >Jan 4<span>th</span>, 2013</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2013/01/04/binary-tree-zigzag-traversal-of-nodes/">Binary Tree - Zigzag traversal of nodes</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/algorithms/'>Algorithms</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
@@ -1038,19 +649,12 @@
   <h2>2012</h2>
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2012/12/26/rails-with-vim-how-and-why-it-works/">
-		
-			Rails With Vim - How and Why It Works ?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1059,23 +663,14 @@
   
 
 
-<time datetime="2012-12-26T23:36:00+05:30" pubdate data-updated="true">Dec 26<span>th</span>, 2012</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2012-12-26T23:36:00+05:30" pubdate  data-updated="true" >Dec 26<span>th</span>, 2012</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"> Rails with Vim - how and why it works ? </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/ide/'>IDE</a>, <a class='category' href='//blog/categories/rails/'>Rails</a>, <a class='category' href='//blog/categories/vim/'>Vim</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
@@ -1085,19 +680,12 @@
   <h2>2010</h2>
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/02/23/lock-and-unlock-gnome-with-gsm/">
-		
-			Lock and Unlock Gnome With Gsm</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1106,42 +694,26 @@
   
 
 
-<time datetime="2010-02-23T05:48:22+05:30" pubdate data-updated="true">Feb 23<span>rd</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-02-23T05:48:22+05:30" pubdate  data-updated="true" >Feb 23<span>rd</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/">lock and unlock gnome with gsm</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>, <a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/02/18/a-simple-start-to-svn/">
-		
-			A Simple Start to SVN</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1150,42 +722,26 @@
   
 
 
-<time datetime="2010-02-18T05:10:10+05:30" pubdate data-updated="true">Feb 18<span>th</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-02-18T05:10:10+05:30" pubdate  data-updated="true" >Feb 18<span>th</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/02/18/a-simple-start-to-svn/">A simple start to SVN</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/02/14/running-sms-dictionary-server-in-your-home/">
-		
-			Running SMS Dictionary Server in Your Home</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1194,42 +750,26 @@
   
 
 
-<time datetime="2010-02-14T04:29:35+05:30" pubdate data-updated="true">Feb 14<span>th</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-02-14T04:29:35+05:30" pubdate  data-updated="true" >Feb 14<span>th</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home/">Running SMS Dictionary server  in your  Home </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>, <a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/02/10/installing-network-simulator-2-in-ubuntu/">
-		
-			Installing Network Simulator 2 in Ubuntu</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1238,42 +778,26 @@
   
 
 
-<time datetime="2010-02-10T22:08:25+05:30" pubdate data-updated="true">Feb 10<span>th</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-02-10T22:08:25+05:30" pubdate  data-updated="true" >Feb 10<span>th</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/">Installing Network Simulator 2 in Ubuntu </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/02/01/cursor-play-with-your-neigbour-system/">
-		
-			Cursor Play With Your Neigbour System</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1282,42 +806,26 @@
   
 
 
-<time datetime="2010-02-01T03:33:06+05:30" pubdate data-updated="true">Feb 1<span>st</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-02-01T03:33:06+05:30" pubdate  data-updated="true" >Feb 1<span>st</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system/">Cursor Play With your  neigbour System</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>, <a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/01/04/keyboard-as-network-packet-monitor/">
-		
-			Keyboard as Network Packet Monitor</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1326,42 +834,26 @@
   
 
 
-<time datetime="2010-01-04T00:48:02+05:30" pubdate data-updated="true">Jan 4<span>th</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-01-04T00:48:02+05:30" pubdate  data-updated="true" >Jan 4<span>th</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/01/04/keyboard-as-network-packet-monitor/">Keyboard as Network  Packet Monitor</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>, <a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/01/01/facebook-mouseclicks-hack/">
-		
-			Facebook Mouseclicks Hack !</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1370,42 +862,26 @@
   
 
 
-<time datetime="2010-01-01T21:05:04+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-01-01T21:05:04+05:30" pubdate  data-updated="true" >Jan 1<span>st</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/01/01/facebook-mouseclicks-hack/">Facebook mouseclicks hack !</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/01/01/music-in-humble-terminal/">
-		
-			Music in Humble Terminal</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1414,42 +890,26 @@
   
 
 
-<time datetime="2010-01-01T18:21:29+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-01-01T18:21:29+05:30" pubdate  data-updated="true" >Jan 1<span>st</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/01/01/music-in-humble-terminal/">Music in Humble terminal</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2010/01/01/read-cpu-core-temperature/">
-		
-			Read CPU Core Temperature</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1458,23 +918,14 @@
   
 
 
-<time datetime="2010-01-01T04:30:24+05:30" pubdate data-updated="true">Jan 1<span>st</span>, 2010</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2010-01-01T04:30:24+05:30" pubdate  data-updated="true" >Jan 1<span>st</span>, 2010</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2010/01/01/read-cpu-core-temperature/">Read CPU Core Temperature </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
@@ -1484,19 +935,12 @@
   <h2>2009</h2>
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/12/29/avatar-2009/">
-		
-			Avatar (2009)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1505,42 +949,26 @@
   
 
 
-<time datetime="2009-12-29T00:54:43+05:30" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-12-29T00:54:43+05:30" pubdate  data-updated="true" >Dec 29<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/12/29/avatar-2009/">Avatar (2009)</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/movie-review/'>Movie review</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/22/nokia-hacks-and-tips/">
-		
-			Nokia Hacks and Tips</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1549,42 +977,26 @@
   
 
 
-<time datetime="2009-11-22T06:24:36+05:30" pubdate data-updated="true">Nov 22<span>nd</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-22T06:24:36+05:30" pubdate  data-updated="true" >Nov 22<span>nd</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/22/nokia-hacks-and-tips/">Nokia Hacks and tips </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/21/ubuntu-10-04-lucid-lynx/">
-		
-			Ubuntu 10.04 Lucid Lynx</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1593,42 +1005,26 @@
   
 
 
-<time datetime="2009-11-21T04:14:16+05:30" pubdate data-updated="true">Nov 21<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-21T04:14:16+05:30" pubdate  data-updated="true" >Nov 21<span>st</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/21/ubuntu-10-04-lucid-lynx/">Ubuntu 10.04 Lucid Lynx</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/18/make-your-own-os/">
-		
-			Make Your Own OS</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1637,42 +1033,26 @@
   
 
 
-<time datetime="2009-11-18T18:56:52+05:30" pubdate data-updated="true">Nov 18<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-18T18:56:52+05:30" pubdate  data-updated="true" >Nov 18<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/18/make-your-own-os/">Make your own OS </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/16/is-new-orkut-really-new/">
-		
-			Is New Orkut Really New ?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1681,42 +1061,26 @@
   
 
 
-<time datetime="2009-11-16T06:39:26+05:30" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-16T06:39:26+05:30" pubdate  data-updated="true" >Nov 16<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/16/is-new-orkut-really-new/">Is New Orkut Really New ?</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/16/using-windows-nt-boot-loader/">
-		
-			Using Windows NT Boot Loader With Linux</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1725,42 +1089,26 @@
   
 
 
-<time datetime="2009-11-16T05:33:34+05:30" pubdate data-updated="true">Nov 16<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-16T05:33:34+05:30" pubdate  data-updated="true" >Nov 16<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/16/using-windows-nt-boot-loader/">Using windows NT Boot Loader with Linux</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/15/orkut-scrap-made-me-mad-before/">
-		
-			Orkut Scrap Made Me Mad Before</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1769,42 +1117,26 @@
   
 
 
-<time datetime="2009-11-15T19:40:33+05:30" pubdate data-updated="true">Nov 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-15T19:40:33+05:30" pubdate  data-updated="true" >Nov 15<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/15/orkut-scrap-made-me-mad-before/">Orkut Scrap made me mad Before </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/15/google-chrome-os-rush-time/">
-		
-			Google Chrome Os - Rush Time</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1813,42 +1145,26 @@
   
 
 
-<time datetime="2009-11-15T02:40:50+05:30" pubdate data-updated="true">Nov 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-15T02:40:50+05:30" pubdate  data-updated="true" >Nov 15<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/15/google-chrome-os-rush-time/">Google Chrome Os - Rush Time </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/14/grub-or-lilo-what-are-they/">
-		
-			Grub or Lilo ? What Are They ?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1857,42 +1173,26 @@
   
 
 
-<time datetime="2009-11-14T14:55:03+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-14T14:55:03+05:30" pubdate  data-updated="true" >Nov 14<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/14/grub-or-lilo-what-are-they/">Grub or Lilo ? what are they ?</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/14/is-google-go-gonna-take-a-go/">
-		
-			Is Google Go Gonna Take a Go?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1901,42 +1201,26 @@
   
 
 
-<time datetime="2009-11-14T07:15:02+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-14T07:15:02+05:30" pubdate  data-updated="true" >Nov 14<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/14/is-google-go-gonna-take-a-go/">Is Google Go  gonna take a go?</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/14/linux-lags-in-gaming/">
-		
-			Linux Lags in Gaming ?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1945,42 +1229,26 @@
   
 
 
-<time datetime="2009-11-14T06:02:42+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-14T06:02:42+05:30" pubdate  data-updated="true" >Nov 14<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/14/linux-lags-in-gaming/">Linux lags in Gaming ?</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/14/graphics-h-fails-in-linux/">
-		
-			Graphics.h Fails in Linux ?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -1989,42 +1257,26 @@
   
 
 
-<time datetime="2009-11-14T00:27:16+05:30" pubdate data-updated="true">Nov 14<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-14T00:27:16+05:30" pubdate  data-updated="true" >Nov 14<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/14/graphics-h-fails-in-linux/">Graphics.h fails in Linux  ? </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/13/google-wave/">
-		
-			Google Wave</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2033,42 +1285,26 @@
   
 
 
-<time datetime="2009-11-13T17:59:14+05:30" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-13T17:59:14+05:30" pubdate  data-updated="true" >Nov 13<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/13/google-wave/">Google wave </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/12/often-moving-out-feeling-harder-to-lock-always/">
-		
-			Often Moving Out ? Feeling Harder to Lock Always?</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2077,42 +1313,26 @@
   
 
 
-<time datetime="2009-11-12T17:48:24+05:30" pubdate data-updated="true">Nov 12<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-12T17:48:24+05:30" pubdate  data-updated="true" >Nov 12<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/12/often-moving-out-feeling-harder-to-lock-always/">Often Moving out ? Feeling harder to lock always?</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/12/sem-v/">
-		
-			SEM v &#8216;.&#8217;</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2121,42 +1341,26 @@
   
 
 
-<time datetime="2009-11-12T17:35:32+05:30" pubdate data-updated="true">Nov 12<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-11T23:47:07+05:30" pubdate  data-updated="true" >Nov 11<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/11/happy-bday-firefox/">Happy Bday Firefox</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/11/happy-bday-firefox/">
-		
-			Happy Bday Firefox</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2165,42 +1369,26 @@
   
 
 
-<time datetime="2009-11-11T23:47:07+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-11T14:33:15+05:30" pubdate  data-updated="true" >Nov 11<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/11/curious-case-of-benjamin-button-2008/">Curious case of Benjamin button ( 2008 )</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/11/curious-case-of-benjamin-button-2008/">
-		
-			Curious Case of Benjamin Button ( 2008 )</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2209,42 +1397,26 @@
   
 
 
-<time datetime="2009-11-11T14:33:15+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-11T13:46:04+05:30" pubdate  data-updated="true" >Nov 11<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/11/this-is-called-makrekting-d/">This is called Makrekting :D</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/movie-review/'>Movie review</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/11/this-is-called-makrekting-d/">
-		
-			This Is Called Makrekting :D</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2253,42 +1425,26 @@
   
 
 
-<time datetime="2009-11-11T13:46:04+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-11T13:28:25+05:30" pubdate  data-updated="true" >Nov 11<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/11/best-torrent-i-have-seen-ever/">Best Torrent Downloader I have ever seen</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/11/best-torrent-i-have-seen-ever/">
-		
-			Best Torrent Downloader I Have Ever Seen</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2297,42 +1453,26 @@
   
 
 
-<time datetime="2009-11-11T13:28:25+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-05T08:46:44+05:30" pubdate  data-updated="true" >Nov 5<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/05/windows-inside-ubuntu/">Windows inside Ubuntu  </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/05/windows-inside-ubuntu/">
-		
-			Windows Inside Ubuntu</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2341,42 +1481,26 @@
   
 
 
-<time datetime="2009-11-05T08:46:44+05:30" pubdate data-updated="true">Nov 5<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-11-01T18:33:26+05:30" pubdate  data-updated="true" >Nov 1<span>st</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/11/01/ubuntu-9-10-release/">Ubuntu 9.10 release</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/01/ubuntu-9-10-release/">
-		
-			Ubuntu 9.10 Release</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2385,42 +1509,26 @@
   
 
 
-<time datetime="2009-11-01T18:33:26+05:30" pubdate data-updated="true">Nov 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-10-30T21:04:59+05:30" pubdate  data-updated="true" >Oct 30<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/10/30/abc-to-qwerty-messaging/">abc to qwerty Messaging </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>, <a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/11/01/file-secure-make-secureyour-rare-files/">
-		
-			File Secure -Make Secure Your Rare Files</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2429,42 +1537,26 @@
   
 
 
-<time datetime="2009-11-01T00:56:03+05:30" pubdate data-updated="true">Nov 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-10-24T06:58:12+05:30" pubdate  data-updated="true" >Oct 24<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/10/24/remote-car-on-c/">Remote car on &#8216;C&#8217;</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/30/abc-to-qwerty-messaging/">
-		
-			Abc to Qwerty Messaging</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2473,42 +1565,26 @@
   
 
 
-<time datetime="2009-10-30T21:04:59+05:30" pubdate data-updated="true">Oct 30<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-10-24T06:46:25+05:30" pubdate  data-updated="true" >Oct 24<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/10/24/eye-cursor/">Eye cursor</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/linux/'>Linux</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/24/simple-chess/">
-		
-			Simple Chess</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2517,42 +1593,26 @@
   
 
 
-<time datetime="2009-10-24T07:02:52+05:30" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-10-11T02:04:42+05:30" pubdate  data-updated="true" >Oct 11<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/10/11/saving-private-ryan/">Saving Private Ryan </a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/24/remote-car-on-c/">
-		
-			Remote Car on &#8216;C&#8217;</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2561,42 +1621,26 @@
   
 
 
-<time datetime="2009-10-24T06:58:12+05:30" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
+<time datetime="2009-08-08T05:43:11+05:30" pubdate  data-updated="true" >Aug 8<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/08/08/my-friends-bday/">இனிய பிறந்த நாள் வாழ்த்துக்கள் !</a>
+    </p>
+  </div>
 
-	<a class='category' href='//blog/categories/projects/'>Projects</a>
+</article>
 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
 
 
 <article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/24/eye-cursor/">
-		
-			Eye Cursor</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+  <article>
 
 
-
+  <div class="article-read-more">
+    <p class="meta">
+      
 
 
 
@@ -2605,1415 +1649,14 @@
   
 
 
-<time datetime="2009-10-24T06:46:25+05:30" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
 
-
-	<a class='category' href='//blog/categories/projects/'>Projects</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
+<time datetime="2009-08-07T04:21:01+05:30" pubdate  data-updated="true" >Aug 7<span>th</span>, 2009</time>
+      <a rel="full-article" href="http://localhost:4000/blog/2009/08/07/my-first-kavithai/"> காதல வலிகள் </a>
+    </p>
+  </div>
 
 </article>
 
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/11/saving-private-ryan/">
-		
-			Saving Private Ryan</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-11T02:04:42+05:30" pubdate data-updated="true">Oct 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/movie-review/'>Movie review</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/10/03/simple-webpage-for-ac-s/">
-		
-			Simple Webpage for Ac &#8216;S</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-03T23:53:07+05:30" pubdate data-updated="true">Oct 3<span>rd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-aim-s/'>My aim&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/09/03/back-again/">
-		
-			Back Again</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-09-03T22:09:05+05:30" pubdate data-updated="true">Sep 3<span>rd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/20/my-department-culturals/">
-		
-			My Department Culturals</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-20T01:01:56+05:30" pubdate data-updated="true">Aug 20<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/14/a-day-wasted/">
-		
-			A Day Wasted</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-14T05:34:18+05:30" pubdate data-updated="true">Aug 14<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/12/dreamy-one/">
-		
-			Dreamy One</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-12T02:52:59+05:30" pubdate data-updated="true">Aug 12<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/11/one-of-my-boring-lab-session/">
-		
-			One of My Boring Lab Session</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-11T03:26:34+05:30" pubdate data-updated="true">Aug 11<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/09/mathematics-basic-cat/">
-		
-			Mathematics - Basic CAT</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-09T20:39:51+05:30" pubdate data-updated="true">Aug 9<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/cat-preparation/'>CAT Preparation</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/09/english-a-basic-need-for-cat/">
-		
-			English a Basic Need for CAT</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-09T20:28:20+05:30" pubdate data-updated="true">Aug 9<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/cat-preparation/'>CAT Preparation</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/09/meet-back/">
-		
-			Meet Back</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-09T19:59:44+05:30" pubdate data-updated="true">Aug 9<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/08/my-friends-bday/">
-		
-			இனிய பிறந்த நாள் வாழ்த்துக்கள் !</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-08T05:43:11+05:30" pubdate data-updated="true">Aug 8<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/தமிழ்-தமிழன்-தமிழ்-நாடு-/'>தமிழ் ! தமிழன் !! தமிழ் நாடு !!!</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/07/my-first-kavithai/">
-		
-			காதல வலிகள்</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-07T04:21:01+05:30" pubdate data-updated="true">Aug 7<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/தமிழ்-தமிழன்-தமிழ்-நாடு-/'>தமிழ் ! தமிழன் !! தமிழ் நாடு !!!</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/07/culturals-in-tce/">
-		
-			Culturals in My College</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-07T01:50:28+05:30" pubdate data-updated="true">Aug 7<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/05/head-ache-starts/">
-		
-			Head Ache Starts &#8230;&#8230;&#8230;&#8230;</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-05T22:55:45+05:30" pubdate data-updated="true">Aug 5<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/05/end-of-internals-i-at-fifth-semester/">
-		
-			End of INTERNALS I ( at Fifth Semester )</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-05T00:20:01+05:30" pubdate data-updated="true">Aug 5<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/03/worser-than-ever/">
-		
-			Worser Than Ever</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-03T23:23:39+05:30" pubdate data-updated="true">Aug 3<span>rd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/03/nano-a-pseudo-car/">
-		
-			Nano - a Pseudo Car</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-03T04:39:35+05:30" pubdate data-updated="true">Aug 3<span>rd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/current-affairs/'>Current affairs</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/02/sunday-only-day-i-like-in-the-week/">
-		
-			Sunday - Only Day I Like in the Week</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-02T23:09:53+05:30" pubdate data-updated="true">Aug 2<span>nd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/01/internals-i-semster-5/">
-		
-			Internals I Semester 5</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-01T19:42:30+05:30" pubdate data-updated="true">Aug 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/01/first-paper-in-life/">
-		
-			First Paper in Life</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-01T19:33:33+05:30" pubdate data-updated="true">Aug 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/01/back-from-iv/">
-		
-			Back From Iv</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-01T19:18:30+05:30" pubdate data-updated="true">Aug 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/08/01/higher-studies/">
-		
-			Higher Studies</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-01T19:05:11+05:30" pubdate data-updated="true">Aug 1<span>st</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-aim-s/'>My aim&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/07/08/ma-iv/">
-		
-			Ma IV</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-08T01:35:44+05:30" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/06/30/a-rainy-day/">
-		
-			A Rainy Day</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-30T16:28:53+05:30" pubdate data-updated="true">Jun 30<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/06/23/semester-v/">
-		
-			Semester V</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-23T02:49:04+05:30" pubdate data-updated="true">Jun 23<span>rd</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/06/15/end-of-holidays/">
-		
-			End of Holidays</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-15T00:11:41+05:30" pubdate data-updated="true">Jun 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/06/15/forum/">
-		
-			Forum</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-15T00:04:53+05:30" pubdate data-updated="true">Jun 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/06/15/data-warehousing/">
-		
-			Data Warehousing</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-15T00:02:06+05:30" pubdate data-updated="true">Jun 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-aim-s/'>My aim&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/04/30/semester-is-on/">
-		
-			Semester Is On!</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-30T01:41:08+05:30" pubdate data-updated="true">Apr 30<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/04/16/a-blog-day/">
-		
-			A Blog Day</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-16T05:12:22+05:30" pubdate data-updated="true">Apr 16<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-cool-day-s/'>My Cool day&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/04/16/when-im-i-sem1/">
-		
-			Make Your &#8220;LAMPP&#8221; Glow to the World</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-16T04:48:26+05:30" pubdate data-updated="true">Apr 16<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-aim-s/'>My aim&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
-
-</article>
-
-
-
-<article>
-  
-	<h2 class="title">
-		
-		<a href="//blog/2009/04/15/miles-to-go/">
-		
-			And Miles to Go&#8230;..</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-15T20:30:15+05:30" pubdate data-updated="true">Apr 15<span>th</span>, 2009</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='//blog/categories/my-aim-s/'>My aim&#8217;s</a>
-
-
-</div>
-    </div>
-		Liquid error: undefined method `index&#8217; for nil:NilClass
-		
-		
-	</div>
-
-<div class="meta">
-	
-</div>
 
 </article>
 
@@ -4058,6 +1701,14 @@
   </script>
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

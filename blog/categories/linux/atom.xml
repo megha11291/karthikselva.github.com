@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: Linux | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <link href="http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
     <updated>2010-02-23T05:48:22+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <id>http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
     <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
 <ol>
@@ -143,9 +143,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[A simple start to SVN]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn/"/>
+    <link href="http://localhost:4000/blog/2010/02/18/a-simple-start-to-svn/"/>
     <updated>2010-02-18T05:10:10+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/18/a-simple-start-to-svn</id>
+    <id>http://localhost:4000/blog/2010/02/18/a-simple-start-to-svn</id>
     <content type="html"><![CDATA[<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
 
 <p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
@@ -218,9 +218,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <link href="http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
     <updated>2010-02-14T04:29:35+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <id>http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
     <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
 <p><em><strong>Requirments :</strong></em></p>
@@ -347,9 +347,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Installing Network Simulator 2 in Ubuntu ]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
+    <link href="http://localhost:4000/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
     <updated>2010-02-10T22:08:25+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
+    <id>http://localhost:4000/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
     <content type="html"><![CDATA[<p><em>Are you baffled by random errands saying "  ns2 doesn't work on ubuntu " and so ?</em></p>
 
 <p><em>Are you a linux geek don't wanna boot to windows for network simulator software ?</em></p>
@@ -505,9 +505,9 @@ $ns run</em></p>
   
   <entry>
     <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <link href="http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
     <updated>2010-02-01T03:33:06+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <id>http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
     <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 

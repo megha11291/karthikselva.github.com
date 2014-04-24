@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Projects | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/projects/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: Projects | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <link href="http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
     <updated>2010-02-23T05:48:22+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <id>http://localhost:4000/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
     <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
 <ol>
@@ -143,9 +143,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <link href="http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
     <updated>2010-02-14T04:29:35+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <id>http://localhost:4000/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
     <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
 <p><em><strong>Requirments :</strong></em></p>
@@ -272,9 +272,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <link href="http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
     <updated>2010-02-01T03:33:06+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <id>http://localhost:4000/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
     <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 
@@ -343,9 +343,9 @@ _</p>
   
   <entry>
     <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
-    <link href="http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
+    <link href="http://localhost:4000/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
     <updated>2010-01-04T00:48:02+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
+    <id>http://localhost:4000/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
     <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led's to monitor packets send and receive :)_</p>
 
 <p><em>Follow the simple steps below :</em></p>
@@ -382,15 +382,217 @@ _</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Simple chess]]></title>
-    <link href="http://karthikselva.github.com/blog/2009/10/24/simple-chess/"/>
-    <updated>2009-10-24T07:02:52+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2009/10/24/simple-chess</id>
-    <content type="html"><![CDATA[<p>Is it too boring ..?
-Then try my  web chess ,  a simple  php and mysql based application with simple GUI .
-(guess you Know we need two people to play chess )<br/>
-<a href="http://karthikselva.noadsfree.com/webchess/">Try the link from anywhere around the world and choose opponent's from every where . </a>
-Have Fun :)</p>
+    <title type="html"><![CDATA[Remote car on 'C']]></title>
+    <link href="http://localhost:4000/blog/2009/10/24/remote-car-on-c/"/>
+    <updated>2009-10-24T06:58:12+05:30</updated>
+    <id>http://localhost:4000/blog/2009/10/24/remote-car-on-c</id>
+    <content type="html"><![CDATA[<p>remote car on c</p>
+
+<p>/** This is a basic hardware program in c interfacing a remote car
+here consider a basic table</p>
+
+<p>lpt port has pin 2-9 for data we can send data to it by calling</p>
+
+<p>here we use only data pins 2,3,4,5 only</p>
+
+<p>syntax : outport(port_address,number);</p>
+
+<p>port address is 0×378 for lpt 2 and 0×3bc for lpt 1</p>
+
+<p>well now move towards the code concentrate on lowest 4 bits</p>
+
+<p>number data operation</p>
+
+<p>1 0001 right steer
+2 0010 left steer
+4 0100 forward
+8 1000 backward
+5 0101 right steering + forward (right turn forward)
+10 1010 left steering + backward (left turn backward)
+6 0110 right steering + backward (right turn back)
+9 1001 left steering + forward(left turn front)</p>
+
+<p>this is the logic of code
+*/</p>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<h1>include</h1>
+
+<p>void circle() //to move in circular path
+{int i=0;
+while(!getch())
+{
+outport(0×3bc,5); // 5 = 0101 means on the right and on the forward</p>
+
+<p>}
+}</p>
+
+<p>void rectangle()
+{
+int i=0;
+coutl;cin>>b;
+while(!getch())
+{
+outport(0×3bc,4); // forward
+i++;
+delay(1000<em>b);
+outport(0×3bc,5); // right steer
+delay(1000);
+outport(0×3bc,4); // forward
+delay(1000</em>l);
+}
+}</p>
+
+<p>void zigzag()
+{
+while(!getch())
+{
+outport(0×3bc,5); //right forward
+delay(3000);
+outport(0×3bc,9); // left forward
+delay(3000);</p>
+
+<p>}
+}</p>
+
+<p>void manual()</p>
+
+<p>{char c=’a';
+while(c!=’x')
+{
+clear();
+cout&lt;&lt;endl&lt;&lt;endl&lt;&lt;" use move keys for direction 'x' to exit";
+c=getch();
+if(c=='<sup>[[A')</sup>
+{
+outportb(0x3bc,1);
+delay(1000);
+}
+else if(c=='<sup>[[B')</sup>
+{
+outport(0x3bc,4);
+}
+else if(c=='<sup>[[C')</sup>
+{
+outportb(0x3bc,2);
+delay(1000);
+}
+else if(c=='<sup>[[D')</sup>
+{
+outportb(0x3bc,8);
+delay(1000);
+}
+}
+}</p>
+
+<p>void manual(char choice, int time) // oveloaded fn for creative
+{char c;
+c=choice;
+while(c!='x')
+{
+clear();</p>
+
+<p>if(c=='<sup>[[A')</sup>
+{
+outportb(0x3bc,1);
+delay(time<em>1000);
+}
+else if(c=='<sup>[[B')</sup>
+{
+outport(0x3bc,4);
+delay(time</em>1000);
+}
+else if(c=='<sup>[[C')</sup>
+{
+outportb(0x3bc,2);
+delay(time<em>1000);
+}
+else if(c=='<sup>[[D')</sup>
+{
+outportb(0x3bc,8);
+delay(time</em>1000);
+}
+}
+}
+void creative()
+{
+char str[20];
+int i=0,n[20];
+while(str[i]!='x')
+{
+coutstr[i];
+coutn[i];
+i++;
+}
+i=0;
+while(str[i]!=’x')
+{
+manual(str[i],n[i]);
+}
+}</p>
+
+<p>void automatic()
+{
+clear(); int g,h;
+cout&lt;&lt;" enter 1 to circle "&lt;&lt;endl&lt;&lt;" 2 to rectangle move"g;</p>
+
+<p>if(g==1)
+{
+circle();
+}
+else if(g==2)
+{
+rectangle();
+}
+else if(g==3)
+{
+zigzag();
+}
+else if(g==4)
+{
+creative();
+}
+}</p>
+
+<p>void clear()
+{
+int n=0;
+while(n&lt;300)
+{
+cout&lt;&lt;endl;
+n++;
+}
+}</p>
+
+<p>void menu()
+{
+clear(); int ch;
+cout&lt;&lt;" 1 for manual"&lt;&lt;endl&lt;&lt;" 2 for automatic "ch;
+if(ch==1)
+{
+manual();
+}
+else if(ch==2)
+{
+automatic();
+}
+}
+/* now its time to open your car’s remote
+step 1: find the wires which goes for right ,left forward backward
+step 2: attach lpt ports pin 2 to right 3 to left 4 to forward 5 to backward and ground to pin 23
+warning ! remove external batteries from remote which may leak at times
+step 3: run this code and enjoy racing !</p>
+
+<p>thank you !
+by karthik selvakumar B</p>
+
+<p>mail bugs to karthikselvakumar@tce.edu
+*/</p>
 ]]></content>
   </entry>
   

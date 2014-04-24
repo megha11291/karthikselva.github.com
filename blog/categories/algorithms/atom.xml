@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Algorithms | Hacker's Diary]]></title>
-  <link href="http://karthikselva.github.com/blog/categories/algorithms/atom.xml" rel="self"/>
-  <link href="http://karthikselva.github.com/"/>
-  <updated>2013-05-07T21:30:40+05:30</updated>
-  <id>http://karthikselva.github.com/</id>
+  <title><![CDATA[Category: Algorithms | karthik selvakumar bhuvaneswaran]]></title>
+  <link href="http://localhost:4000/blog/categories/algorithms/atom.xml" rel="self"/>
+  <link href="http://localhost:4000/"/>
+  <updated>2014-04-24T12:15:44+05:30</updated>
+  <id>http://localhost:4000/</id>
   <author>
-    <name><![CDATA[karthikselva's log]]></name>
+    <name><![CDATA[karthik selvakumar bhuvaneswaran]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Excel Sheet Alphabet to decimal Coversion]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
+    <link href="http://localhost:4000/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
     <updated>2013-05-07T21:22:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
+    <id>http://localhost:4000/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Excel (sheet.rb)</span> <a href='/downloads/code/sheet.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -59,9 +59,9 @@
   
   <entry>
     <title type="html"><![CDATA[String - Naive pattern search]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/05/07/string-naive-pattern-search/"/>
+    <link href="http://localhost:4000/blog/2013/05/07/string-naive-pattern-search/"/>
     <updated>2013-05-07T21:21:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/05/07/string-naive-pattern-search</id>
+    <id>http://localhost:4000/blog/2013/05/07/string-naive-pattern-search</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>NaiveSearch (naive_pattern_matching.rb)</span> <a href='/downloads/code/naive_pattern_matching.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -111,9 +111,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Solution for NxN queens]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-solution-for-nxn-queens/"/>
+    <link href="http://localhost:4000/blog/2013/05/07/recursion-solution-for-nxn-queens/"/>
     <updated>2013-05-07T21:21:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-solution-for-nxn-queens</id>
+    <id>http://localhost:4000/blog/2013/05/07/recursion-solution-for-nxn-queens</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='/downloads/code/queen.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -261,9 +261,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Contigous increasing by one search in array]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/"/>
+    <link href="http://localhost:4000/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/"/>
     <updated>2013-05-07T21:20:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array</id>
+    <id>http://localhost:4000/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Array Search (rec_arrray.rb)</span> <a href='/downloads/code/rec_arrray.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -303,9 +303,9 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - GCD]]></title>
-    <link href="http://karthikselva.github.com/blog/2013/05/07/recursion-gcd/"/>
+    <link href="http://localhost:4000/blog/2013/05/07/recursion-gcd/"/>
     <updated>2013-05-07T21:19:00+05:30</updated>
-    <id>http://karthikselva.github.com/blog/2013/05/07/recursion-gcd</id>
+    <id>http://localhost:4000/blog/2013/05/07/recursion-gcd</id>
     <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>GCD (gcd.rb)</span> <a href='/downloads/code/gcd.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
