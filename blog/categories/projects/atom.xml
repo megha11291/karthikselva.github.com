@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Projects | randam muzzin's of a geek]]></title>
-  <link href="http://rand.amuzz.in/blog/categories/projects/atom.xml" rel="self"/>
-  <link href="http://rand.amuzz.in/"/>
-  <updated>2014-04-24T20:50:01+05:30</updated>
-  <id>http://rand.amuzz.in/</id>
+  <link href="http://karthikselva.in/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://karthikselva.in/"/>
+  <updated>2014-07-09T19:58:19-07:00</updated>
+  <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[randam muzzin's of a geek]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://rand.amuzz.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
-    <updated>2010-02-23T05:48:22+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
+    <link href="http://karthikselva.in/blog/2010/02/22/lock-and-unlock-gnome-with-gsm/"/>
+    <updated>2010-02-22T16:18:22-08:00</updated>
+    <id>http://karthikselva.in/blog/2010/02/22/lock-and-unlock-gnome-with-gsm</id>
     <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
 <ol>
@@ -143,9 +143,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://rand.amuzz.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
-    <updated>2010-02-14T04:29:35+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
+    <link href="http://karthikselva.in/blog/2010/02/13/running-sms-dictionary-server-in-your-home/"/>
+    <updated>2010-02-13T14:59:35-08:00</updated>
+    <id>http://karthikselva.in/blog/2010/02/13/running-sms-dictionary-server-in-your-home</id>
     <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
 <p><em><strong>Requirments :</strong></em></p>
@@ -272,9 +272,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://rand.amuzz.in/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
-    <updated>2010-02-01T03:33:06+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
+    <link href="http://karthikselva.in/blog/2010/01/31/cursor-play-with-your-neigbour-system/"/>
+    <updated>2010-01-31T14:03:06-08:00</updated>
+    <id>http://karthikselva.in/blog/2010/01/31/cursor-play-with-your-neigbour-system</id>
     <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 
@@ -343,9 +343,9 @@ _</p>
   
   <entry>
     <title type="html"><![CDATA[Keyboard as Network  Packet Monitor]]></title>
-    <link href="http://rand.amuzz.in/blog/2010/01/04/keyboard-as-network-packet-monitor/"/>
-    <updated>2010-01-04T00:48:02+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2010/01/04/keyboard-as-network-packet-monitor</id>
+    <link href="http://karthikselva.in/blog/2010/01/03/keyboard-as-network-packet-monitor/"/>
+    <updated>2010-01-03T11:18:02-08:00</updated>
+    <id>http://karthikselva.in/blog/2010/01/03/keyboard-as-network-packet-monitor</id>
     <content type="html"><![CDATA[<p>_ You can transform Your NUM lock and SCROLL lock led's to monitor packets send and receive :)_</p>
 
 <p><em>Follow the simple steps below :</em></p>
@@ -383,9 +383,9 @@ _</p>
   
   <entry>
     <title type="html"><![CDATA[Remote car on 'C']]></title>
-    <link href="http://rand.amuzz.in/blog/2009/10/24/remote-car-on-c/"/>
-    <updated>2009-10-24T06:58:12+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2009/10/24/remote-car-on-c</id>
+    <link href="http://karthikselva.in/blog/2009/10/23/remote-car-on-c/"/>
+    <updated>2009-10-23T18:28:12-07:00</updated>
+    <id>http://karthikselva.in/blog/2009/10/23/remote-car-on-c</id>
     <content type="html"><![CDATA[<p>remote car on c</p>
 
 <p>/** This is a basic hardware program in c interfacing a remote car

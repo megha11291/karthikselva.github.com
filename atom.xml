@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[randam muzzin's of a geek]]></title>
-  <link href="http://rand.amuzz.in/atom.xml" rel="self"/>
-  <link href="http://rand.amuzz.in/"/>
-  <updated>2014-04-24T20:50:01+05:30</updated>
-  <id>http://rand.amuzz.in/</id>
+  <link href="http://karthikselva.in/atom.xml" rel="self"/>
+  <link href="http://karthikselva.in/"/>
+  <updated>2014-07-09T19:58:19-07:00</updated>
+  <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[randam muzzin's of a geek]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Excel Sheet Alphabet to decimal Coversion]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
-    <updated>2013-05-07T21:22:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Excel (sheet.rb)</span> <a href='http://rand.amuzz.in/downloads/code/sheet.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
+    <updated>2013-05-07T21:22:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Excel (sheet.rb)</span> <a href='http://karthikselva.in/downloads/code/sheet.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -60,10 +60,10 @@
   
   <entry>
     <title type="html"><![CDATA[String - Naive pattern search]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/07/string-naive-pattern-search/"/>
-    <updated>2013-05-07T21:21:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/07/string-naive-pattern-search</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>NaiveSearch (naive_pattern_matching.rb)</span> <a href='http://rand.amuzz.in/downloads/code/naive_pattern_matching.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/07/string-naive-pattern-search/"/>
+    <updated>2013-05-07T21:21:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/07/string-naive-pattern-search</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>NaiveSearch (naive_pattern_matching.rb)</span> <a href='http://karthikselva.in/downloads/code/naive_pattern_matching.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -113,10 +113,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Solution for NxN queens]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/07/recursion-solution-for-nxn-queens/"/>
-    <updated>2013-05-07T21:21:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/07/recursion-solution-for-nxn-queens</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='http://rand.amuzz.in/downloads/code/queen.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/07/recursion-solution-for-nxn-queens/"/>
+    <updated>2013-05-07T21:21:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/07/recursion-solution-for-nxn-queens</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='http://karthikselva.in/downloads/code/queen.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -264,10 +264,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Contigous increasing by one search in array]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/"/>
-    <updated>2013-05-07T21:20:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Array Search (rec_arrray.rb)</span> <a href='http://rand.amuzz.in/downloads/code/rec_arrray.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array/"/>
+    <updated>2013-05-07T21:20:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/07/recursion-contigous-increasing-by-one-search-in-array</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Array Search (rec_arrray.rb)</span> <a href='http://karthikselva.in/downloads/code/rec_arrray.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -307,10 +307,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - GCD]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/07/recursion-gcd/"/>
-    <updated>2013-05-07T21:19:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/07/recursion-gcd</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>GCD (gcd.rb)</span> <a href='http://rand.amuzz.in/downloads/code/gcd.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/07/recursion-gcd/"/>
+    <updated>2013-05-07T21:19:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/07/recursion-gcd</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>GCD (gcd.rb)</span> <a href='http://karthikselva.in/downloads/code/gcd.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -336,10 +336,10 @@
   
   <entry>
     <title type="html"><![CDATA[Combinatronics - All subsets of a set]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/05/combinatronics-all-subsets-of-a-set/"/>
-    <updated>2013-05-05T23:58:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/05/combinatronics-all-subsets-of-a-set</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span> (combinatronic_subset.rb)</span> <a href='http://rand.amuzz.in/downloads/code/combinatronic_subset.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/05/combinatronics-all-subsets-of-a-set/"/>
+    <updated>2013-05-05T23:58:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/05/combinatronics-all-subsets-of-a-set</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span> (combinatronic_subset.rb)</span> <a href='http://karthikselva.in/downloads/code/combinatronic_subset.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -397,10 +397,10 @@
   
   <entry>
     <title type="html"><![CDATA[Linked List - Loop detection and Removal]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/05/linked-list-loop-detection-and-removal/"/>
-    <updated>2013-05-05T23:18:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/05/linked-list-loop-detection-and-removal</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>LoopInList ruby (loop_in_list.rb)</span> <a href='http://rand.amuzz.in/downloads/code/loop_in_list.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/05/linked-list-loop-detection-and-removal/"/>
+    <updated>2013-05-05T23:18:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/05/linked-list-loop-detection-and-removal</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>LoopInList ruby (loop_in_list.rb)</span> <a href='http://karthikselva.in/downloads/code/loop_in_list.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -506,10 +506,10 @@
   
   <entry>
     <title type="html"><![CDATA[Matrix - Robot with block detection]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/05/matrix-robot-with-block-detection/"/>
-    <updated>2013-05-05T22:35:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/05/matrix-robot-with-block-detection</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>RobotMatrix ruby (path_to_robot.rb)</span> <a href='http://rand.amuzz.in/downloads/code/path_to_robot.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/05/matrix-robot-with-block-detection/"/>
+    <updated>2013-05-05T22:35:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/05/matrix-robot-with-block-detection</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>RobotMatrix ruby (path_to_robot.rb)</span> <a href='http://karthikselva.in/downloads/code/path_to_robot.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -631,10 +631,10 @@
   
   <entry>
     <title type="html"><![CDATA[Prime - Seive of Erastothenes]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/05/prime-seive-of-erastothenes/"/>
-    <updated>2013-05-05T19:38:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/05/prime-seive-of-erastothenes</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>SeiveOfErastothens (seive_of_erastothenes.rb)</span> <a href='http://rand.amuzz.in/downloads/code/seive_of_erastothenes.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/05/prime-seive-of-erastothenes/"/>
+    <updated>2013-05-05T19:38:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/05/prime-seive-of-erastothenes</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>SeiveOfErastothens (seive_of_erastothenes.rb)</span> <a href='http://karthikselva.in/downloads/code/seive_of_erastothenes.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -734,10 +734,10 @@
   
   <entry>
     <title type="html"><![CDATA[Matrix - Rotate a matrix 90* to Right]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right/"/>
-    <updated>2013-05-05T02:17:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Rotate ruby (rotate_matrix.rb)</span> <a href='http://rand.amuzz.in/downloads/code/rotate_matrix.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right/"/>
+    <updated>2013-05-05T02:17:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/05/05/matrix-rotate-a-matrix-90-star-to-right</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Rotate ruby (rotate_matrix.rb)</span> <a href='http://karthikselva.in/downloads/code/rotate_matrix.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -845,10 +845,10 @@
   
   <entry>
     <title type="html"><![CDATA[Array - Maximum Subsequence with start and end of index]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index/"/>
-    <updated>2013-04-17T23:53:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>MaximumSubsequence ruby (maximum_subsequence.rb)</span> <a href='http://rand.amuzz.in/downloads/code/maximum_subsequence.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index/"/>
+    <updated>2013-04-17T23:53:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/17/array-maximum-subsequence-with-start-and-end-of-index</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>MaximumSubsequence ruby (maximum_subsequence.rb)</span> <a href='http://karthikselva.in/downloads/code/maximum_subsequence.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -934,10 +934,10 @@
   
   <entry>
     <title type="html"><![CDATA[Bit Manipulation - Merge m bits into n bits at given i and j]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j/"/>
-    <updated>2013-04-11T18:03:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>MergeMBits (merge_m_to_n_bit.rb)</span> <a href='http://rand.amuzz.in/downloads/code/merge_m_to_n_bit.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j/"/>
+    <updated>2013-04-11T18:03:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/11/bit-manipulation-merge-m-bits-into-n-bits-at-given-i-and-j</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>MergeMBits (merge_m_to_n_bit.rb)</span> <a href='http://karthikselva.in/downloads/code/merge_m_to_n_bit.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -993,10 +993,10 @@
   
   <entry>
     <title type="html"><![CDATA[Bit Manipulation - Floating Decimal to Binary]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/"/>
-    <updated>2013-04-11T17:33:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>decimal_to_binary (decimal_to_binary.rb)</span> <a href='http://rand.amuzz.in/downloads/code/decimal_to_binary.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary/"/>
+    <updated>2013-04-11T17:33:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/11/bit-manipulation-floating-decimal-to-binary</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>decimal_to_binary (decimal_to_binary.rb)</span> <a href='http://karthikselva.in/downloads/code/decimal_to_binary.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1378,10 +1378,10 @@
   
   <entry>
     <title type="html"><![CDATA[Linked List - kth element from last - Recursion ]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/11/linked-list-kth-element-from-last-recursion/"/>
-    <updated>2013-04-11T03:01:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/11/linked-list-kth-element-from-last-recursion</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>KthELementList ruby (kth_element_in_list.rb)</span> <a href='http://rand.amuzz.in/downloads/code/kth_element_in_list.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/11/linked-list-kth-element-from-last-recursion/"/>
+    <updated>2013-04-11T03:01:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/11/linked-list-kth-element-from-last-recursion</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>KthELementList ruby (kth_element_in_list.rb)</span> <a href='http://karthikselva.in/downloads/code/kth_element_in_list.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1465,10 +1465,10 @@
   
   <entry>
     <title type="html"><![CDATA[Linked List - Find Palindrome ina linked list]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/"/>
-    <updated>2013-04-11T02:53:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ListPalindrome ruby (palindrome_list.rb)</span> <a href='http://rand.amuzz.in/downloads/code/palindrome_list.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list/"/>
+    <updated>2013-04-11T02:53:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/11/linked-list-find-palindrome-ina-linked-list</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ListPalindrome ruby (palindrome_list.rb)</span> <a href='http://karthikselva.in/downloads/code/palindrome_list.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1582,10 +1582,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Find all subsets of given set]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set/"/>
-    <updated>2013-04-11T00:24:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Subset ruby (subsets_of_set.rb)</span> <a href='http://rand.amuzz.in/downloads/code/subsets_of_set.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set/"/>
+    <updated>2013-04-11T00:24:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Subset ruby (subsets_of_set.rb)</span> <a href='http://karthikselva.in/downloads/code/subsets_of_set.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1641,10 +1641,10 @@
   
   <entry>
     <title type="html"><![CDATA[Recursion - Child and Stair Jumping Problem]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/10/recursion-child-and-stair-jumping-problem/"/>
-    <updated>2013-04-10T23:47:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/10/recursion-child-and-stair-jumping-problem</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ChildStair ruby (child_and_stair.rb)</span> <a href='http://rand.amuzz.in/downloads/code/child_and_stair.rb'>download</a></figcaption>
+    <link href="http://karthikselva.in/blog/2013/04/10/recursion-child-and-stair-jumping-problem/"/>
+    <updated>2013-04-10T23:47:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/10/recursion-child-and-stair-jumping-problem</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>ChildStair ruby (child_and_stair.rb)</span> <a href='http://karthikselva.in/downloads/code/child_and_stair.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1700,12 +1700,12 @@
   
   <entry>
     <title type="html"><![CDATA[Binary Tree - Find Vertical Sum]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/04/08/binary-tree-find-vertical-sum/"/>
-    <updated>2013-04-08T20:01:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/04/08/binary-tree-find-vertical-sum</id>
+    <link href="http://karthikselva.in/blog/2013/04/08/binary-tree-find-vertical-sum/"/>
+    <updated>2013-04-08T20:01:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/04/08/binary-tree-find-vertical-sum</id>
     <content type="html"><![CDATA[<p><a href="http://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/">Original Source</a></p>
 
-<figure class='code'><figcaption><span>VerticalSum ruby (vertical_sum.rb)</span> <a href='http://rand.amuzz.in/downloads/code/vertical_sum.rb'>download</a></figcaption>
+<figure class='code'><figcaption><span>VerticalSum ruby (vertical_sum.rb)</span> <a href='http://karthikselva.in/downloads/code/vertical_sum.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -1767,9 +1767,9 @@
   
   <entry>
     <title type="html"><![CDATA[Regex saves the day - Part 1]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1/"/>
-    <updated>2013-03-15T23:10:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/03/15/regex-saves-the-day-part-1</id>
+    <link href="http://karthikselva.in/blog/2013/03/15/regex-saves-the-day-part-1/"/>
+    <updated>2013-03-15T23:10:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/03/15/regex-saves-the-day-part-1</id>
     <content type="html"><![CDATA[<blockquote><p>Regular expression is a good servant but a bad master (analogy to fire in real life)</p></blockquote>
 
 <h2>Before Regular expressions </h2>
@@ -2064,9 +2064,9 @@ some set of regex which occurs in our javascript validation day-to-day.
   
   <entry>
     <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>
-    <link href="http://rand.amuzz.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby/"/>
-    <updated>2013-03-15T16:02:00+05:30</updated>
-    <id>http://rand.amuzz.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby</id>
+    <link href="http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby/"/>
+    <updated>2013-03-15T16:02:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby</id>
     <content type="html"><![CDATA[<p>This is a typical ruby programmer&#8217;s style of overwriting on the same object:</p>
 
 <pre><code>array = [1.2 , 2.7] 
