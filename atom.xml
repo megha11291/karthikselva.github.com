@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[randam muzzin's of a geek]]></title>
+  <title><![CDATA[random software geek]]></title>
   <link href="http://karthikselva.in/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-09T19:58:19-07:00</updated>
+  <updated>2014-07-15T01:43:31-07:00</updated>
   <id>http://karthikselva.in/</id>
   <author>
-    <name><![CDATA[randam muzzin's of a geek]]></name>
+    <name><![CDATA[karthikselva]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript - my old friend]]></title>
+    <link href="http://karthikselva.in/blog/2014/07/15/javascript-my-old-friend/"/>
+    <updated>2014-07-15T00:09:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2014/07/15/javascript-my-old-friend</id>
+    <content type="html"><![CDATA[<p>Javascript and me were longtime friends. We occasionaly met whenever I need something from him. But sadly I couldn&#8217;t understand his real face for a long time. I always seen him hanging out with his friend html. html is so liberal and he allows Javascript everywhere into his home using script tag. But I know Javascript and html should not be too close and they belong in different places.</p>
+
+<p> My guilty consciousness increased each time when I allowed him to play with html. It still got high when I used global variables everywhere. He messed up the clean home of html. Sometimes he got angry and he screamed &#8216;undefined&#8217;,&#8217;undefined&#8217; everywhere. He even destroyed entire house of html. I thought I should take action immediately or it would go worse.</p>
+
+<p>Javascript loved div a lot. He made her life more dynamic. He gave all those transitions.  I seen him playing hide and seek with her many times. He gave life to her in one click and removed it back in another. They were in love for a longtime. He secretly worked with AJAX to give her all the required ornaments. html was happy since he didn&#8217;t destroy his home again and again by reload. He gave freedom to Javascript since he didn&#8217;t disturb him.</p>
+
+<p>Then came this super guy jQuery from nowhere. He gave more luxury to div. Everyone started praising him and Javascript was left alone. div din&#8217;t even looked back at him after that. He was all alone. He tried to explain jQuery is nothing but him, but no one ever beleived. jQuery proved himself to be powerful in each and every action. My friendship with Javascript started to fade away.</p>
+
+<p>After a long time I met him again. I met him where I never expected. He was happy. He didn&#8217;t reside in html&#8217;s home this time. He was handling web requests. Yes he was sitting as a king in the server palace. He called himself node.js and did everything the old king rails would do. He proved himself to be the powerful king. jQuery and div gazed with envy. I couldn&#8217;t leave my old king but still couldn&#8217;t resist accepting that he is the best. Sorry my friend I shouldn&#8217;t have forgotten you.</p>
+
+<p>to be continued &#8230;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Excel Sheet Alphabet to decimal Coversion]]></title>
@@ -2059,45 +2078,6 @@ and all sorts of unstructured big datas. May be I am true to some extent.
 Web-developers may not need to write a new regular expression parser but we really need
 some set of regex which occurs in our javascript validation day-to-day.
 <a href="http://web.archive.org/web/20090318193321/http://immike.net/blog/2007/04/06/5-regular-expressions-every-web-programmer-should-know/">This post gives five basic regex which every regex programmer should know.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>
-    <link href="http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby/"/>
-    <updated>2013-03-15T16:02:00-07:00</updated>
-    <id>http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby</id>
-    <content type="html"><![CDATA[<p>This is a typical ruby programmer&#8217;s style of overwriting on the same object:</p>
-
-<pre><code>array = [1.2 , 2.7] 
-array.map!(&amp;:floor)
-</code></pre>
-
-<p>This will modify my same object <em>array</em>.</p>
-
-<pre><code>puts array
-#=&gt; [1,2]
-</code></pre>
-
-<p>Similarly, the below code removes <strong>nil</strong> values from an array :</p>
-
-<pre><code>array = [1 , 2, nil, 3, nil, 5]
-new_array = array.compact
-puts new_array
-#=&gt; [1,2,3,5]
-</code></pre>
-
-<p>But if we try to use bang operator for compact we will end up with nil for no nil value cases in an array.</p>
-
-<pre><code>array = [1 , 2, 3] # No nil values present
-array.compact!
-puts array
-#=&gt; nil
-</code></pre>
-
-<p>This can easily escapes from our eyes while debugging the code.</p>
-
-<p>http://ruby-doc.org/core-1.9.3/Array.html#method-i-collect-21</p>
 ]]></content>
   </entry>
   
