@@ -48,7 +48,7 @@
 
 
   <h1 class="article-title">Recursion - NxN Queens Solution 2</h1>
-  <div class="article-content"><figure class='code'><figcaption><span>QUEEN (nqueen.rb)</span> <a href='/downloads/code/nqueen.rb'>download</a></figcaption>
+  <div class="article-content"><figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='/downloads/code/queen.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -119,80 +119,76 @@
 <span class='line-number'>68</span>
 <span class='line-number'>69</span>
 <span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">ChessBoard</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:board</span><span class="p">,</span> <span class="ss">:dimension</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;received: row=</span><span class="si">#{</span><span class="n">row</span><span class="si">}</span><span class="s2"> col=</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
-</span><span class='line'>      <span class="vi">@board</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>      <span class="vi">@dimension</span> <span class="o">=</span> <span class="n">dimension</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.col</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;horizontal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">place_nqn</span>
-</span><span class='line'>      <span class="n">_place_nqn</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;upper diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="kp">private</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">_place_nqn</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-</span><span class='line'>      <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">place_qn?</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>              <span class="vi">@board</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
-</span><span class='line'>              <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="p">(</span><span class="vi">@dimension</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>                  <span class="n">board</span>
-</span><span class='line'>              <span class="k">else</span>
-</span><span class='line'>                  <span class="n">_place_nqn</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot; low diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">place_qn?</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">x</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">i</span> <span class="ow">or</span> <span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">y</span>
-</span><span class='line'>              <span class="k">return</span> <span class="kp">false</span>
-</span><span class='line'>          <span class="k">elsif</span> <span class="p">(</span><span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="n">to_i</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span> <span class="o">==</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span>
-</span><span class='line'>              <span class="k">return</span> <span class="kp">false</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">board</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot; NEW BOARD &quot;</span>
-</span><span class='line'>      <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="nb">print</span> <span class="s2">&quot;|&quot;</span>
-</span><span class='line'>          <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
-</span><span class='line'>              <span class="k">if</span> <span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">j</span>
-</span><span class='line'>                  <span class="nb">print</span> <span class="s1">&#39; X |&#39;</span>
-</span><span class='line'>              <span class="k">else</span>
-</span><span class='line'>                  <span class="nb">print</span> <span class="s2">&quot;   |&quot;</span>
-</span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>          <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">true</span>
 </span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">cb</span> <span class="o">=</span> <span class="no">ChessBoard</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span><span class='line'><span class="n">cb</span><span class="o">.</span><span class="n">place_nqn</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">col</span> <span class="o">&gt;=</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;Backtracking .. &quot;</span>
+</span><span class='line'>    <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1"># Output:</span>
-</span><span class='line'><span class="c1"># ------</span>
-</span><span class='line'><span class="c1">#</span>
-</span><span class='line'><span class="c1">#  NEW BOARD</span>
-</span><span class='line'><span class="c1"># |   | X |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   |   | X |</span>
-</span><span class='line'><span class="c1"># | X |   |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   | X |   |</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="n">a</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="k">if</span> <span class="o">!</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">to_i</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">board</span>  <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="n">N</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">board</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="mi">0</span><span class="o">]*</span><span class="n">N</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1">#  NEW BOARD</span>
-</span><span class='line'><span class="c1"># |   |   | X |   |</span>
-</span><span class='line'><span class="c1"># | X |   |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   |   | X |</span>
-</span><span class='line'><span class="c1"># |   | X |   |   |</span>
+</span><span class='line'><span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>

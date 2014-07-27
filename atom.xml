@@ -4,7 +4,7 @@
   <title><![CDATA[random software geek]]></title>
   <link href="http://karthikselva.in/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-26T15:56:03-07:00</updated>
+  <updated>2014-07-26T20:39:20-07:00</updated>
   <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[karthikselva]]></name>
@@ -14,11 +14,84 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Dynamic Programming - Minimum coin change]]></title>
+    <link href="http://karthikselva.in/blog/2014/07/26/dynmaic-programming-minimum-coin-change/"/>
+    <updated>2014-07-26T20:36:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2014/07/26/dynmaic-programming-minimum-coin-change</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>CoinChange (coin_change.rb)</span> <a href='http://karthikselva.in/downloads/code/coin_change.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Exchange</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:denom</span><span class="p">,</span> <span class="ss">:min_change</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">denom</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@denom</span> <span class="o">=</span> <span class="n">denom</span>
+</span><span class='line'>      <span class="vi">@min_change</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">req_change</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">changes</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>      <span class="vi">@denom</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+</span><span class='line'>          <span class="n">next_change</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">-</span> <span class="n">d</span>
+</span><span class='line'>          <span class="k">if</span> <span class="n">next_change</span> <span class="o">&lt;</span> <span class="mi">0</span>
+</span><span class='line'>              <span class="k">next</span>
+</span><span class='line'>          <span class="k">elsif</span> <span class="n">next_change</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>              <span class="n">changes</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+</span><span class='line'>          <span class="k">elsif</span> <span class="o">!</span><span class="n">min_change</span><span class="o">[</span><span class="n">next_change</span><span class="o">].</span><span class="n">nil?</span>
+</span><span class='line'>              <span class="n">changes</span> <span class="o">&lt;&lt;</span> <span class="n">min_change</span><span class="o">[</span><span class="n">next_change</span><span class="o">]</span>
+</span><span class='line'>          <span class="k">else</span>
+</span><span class='line'>              <span class="n">changes</span> <span class="o">&lt;&lt;</span> <span class="n">req_change</span><span class="p">(</span><span class="n">next_change</span><span class="p">)</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">min_change</span><span class="o">[</span><span class="n">sum</span><span class="o">]</span> <span class="o">=</span> <span class="n">changes</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">to_i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="n">min_change</span><span class="o">[</span><span class="n">sum</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ex</span> <span class="o">=</span> <span class="no">Exchange</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">ex</span><span class="o">.</span><span class="n">req_change</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Output: 2 # coin combination is =&gt; (3,2)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Recursion - NxN queens Solution 2 ]]></title>
     <link href="http://karthikselva.in/blog/2014/07/26/recursion-nxn-queens-solution-2/"/>
     <updated>2014-07-26T15:21:00-07:00</updated>
     <id>http://karthikselva.in/blog/2014/07/26/recursion-nxn-queens-solution-2</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>QUEEN (nqueen.rb)</span> <a href='http://karthikselva.in/downloads/code/nqueen.rb'>download</a></figcaption>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>QUEEN (queen.rb)</span> <a href='http://karthikselva.in/downloads/code/queen.rb'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -89,80 +162,76 @@
 <span class='line-number'>68</span>
 <span class='line-number'>69</span>
 <span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">ChessBoard</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:board</span><span class="p">,</span> <span class="ss">:dimension</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;received: row=</span><span class="si">#{</span><span class="n">row</span><span class="si">}</span><span class="s2"> col=</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">dimension</span><span class="p">)</span>
-</span><span class='line'>      <span class="vi">@board</span> <span class="o">=</span> <span class="o">[]</span>
-</span><span class='line'>      <span class="vi">@dimension</span> <span class="o">=</span> <span class="n">dimension</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.col</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;horizontal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">col</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">r</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">place_nqn</span>
-</span><span class='line'>      <span class="n">_place_nqn</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;upper diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="kp">private</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">_place_nqn</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-</span><span class='line'>      <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">place_qn?</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
-</span><span class='line'>              <span class="vi">@board</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
-</span><span class='line'>              <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="p">(</span><span class="vi">@dimension</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>                  <span class="n">board</span>
-</span><span class='line'>              <span class="k">else</span>
-</span><span class='line'>                  <span class="n">_place_nqn</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="n">r</span> <span class="o">=</span> <span class="n">row</span>
+</span><span class='line'>  <span class="n">c</span> <span class="o">=</span> <span class="n">col</span>
+</span><span class='line'>  <span class="k">while</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot; low diagonal: (</span><span class="si">#{</span><span class="n">r</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="s2">)&quot;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">board</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">r</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">c</span> <span class="o">-=</span> <span class="mi">1</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">place_qn?</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">x</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">i</span> <span class="ow">or</span> <span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">y</span>
-</span><span class='line'>              <span class="k">return</span> <span class="kp">false</span>
-</span><span class='line'>          <span class="k">elsif</span> <span class="p">(</span><span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="n">to_i</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span> <span class="o">==</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span>
-</span><span class='line'>              <span class="k">return</span> <span class="kp">false</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>      <span class="k">return</span> <span class="kp">true</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">board</span>
-</span><span class='line'>      <span class="nb">puts</span> <span class="s2">&quot; NEW BOARD &quot;</span>
-</span><span class='line'>      <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>          <span class="nb">print</span> <span class="s2">&quot;|&quot;</span>
-</span><span class='line'>          <span class="vi">@dimension</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
-</span><span class='line'>              <span class="k">if</span> <span class="vi">@board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">j</span>
-</span><span class='line'>                  <span class="nb">print</span> <span class="s1">&#39; X |&#39;</span>
-</span><span class='line'>              <span class="k">else</span>
-</span><span class='line'>                  <span class="nb">print</span> <span class="s2">&quot;   |&quot;</span>
-</span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>          <span class="k">end</span>
-</span><span class='line'>          <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
-</span><span class='line'>      <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">true</span>
 </span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">cb</span> <span class="o">=</span> <span class="no">ChessBoard</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span><span class='line'><span class="n">cb</span><span class="o">.</span><span class="n">place_nqn</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">col</span> <span class="o">&gt;=</span> <span class="n">board</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">length</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">safe?</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">col</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;Backtracking .. &quot;</span>
+</span><span class='line'>    <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1"># Output:</span>
-</span><span class='line'><span class="c1"># ------</span>
-</span><span class='line'><span class="c1">#</span>
-</span><span class='line'><span class="c1">#  NEW BOARD</span>
-</span><span class='line'><span class="c1"># |   | X |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   |   | X |</span>
-</span><span class='line'><span class="c1"># | X |   |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   | X |   |</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">array</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="n">a</span><span class="o">.</span><span class="n">inspect</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="k">if</span> <span class="o">!</span><span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">to_i</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'>  <span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="n">board</span>  <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="n">N</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">board</span> <span class="o">&lt;&lt;</span> <span class="o">[</span><span class="mi">0</span><span class="o">]*</span><span class="n">N</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1">#  NEW BOARD</span>
-</span><span class='line'><span class="c1"># |   |   | X |   |</span>
-</span><span class='line'><span class="c1"># | X |   |   |   |</span>
-</span><span class='line'><span class="c1"># |   |   |   | X |</span>
-</span><span class='line'><span class="c1"># |   | X |   |   |</span>
+</span><span class='line'><span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
@@ -1868,73 +1937,6 @@
 </span><span class='line'><span class="c1"># (2,1)</span>
 </span><span class='line'><span class="c1"># (3)</span>
 </span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Binary Tree - Find Vertical Sum]]></title>
-    <link href="http://karthikselva.in/blog/2013/04/08/binary-tree-find-vertical-sum/"/>
-    <updated>2013-04-08T20:01:00-07:00</updated>
-    <id>http://karthikselva.in/blog/2013/04/08/binary-tree-find-vertical-sum</id>
-    <content type="html"><![CDATA[<p><a href="http://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/">Original Source</a></p>
-
-<figure class='code'><figcaption><span>VerticalSum ruby (vertical_sum.rb)</span> <a href='http://karthikselva.in/downloads/code/vertical_sum.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">SUM</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'><span class="k">class</span> <span class="nc">Tree</span>
-</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:right</span> <span class="p">,</span> <span class="ss">:left</span> <span class="p">,</span> <span class="ss">:data</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
-</span><span class='line'>    <span class="vi">@right</span> <span class="o">=</span> <span class="n">r</span>
-</span><span class='line'>    <span class="vi">@left</span> <span class="o">=</span> <span class="n">l</span>
-</span><span class='line'>    <span class="vi">@data</span> <span class="o">=</span> <span class="n">d</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="n">dist</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">if</span> <span class="o">!</span><span class="n">node</span><span class="o">.</span><span class="n">nil?</span>
-</span><span class='line'>      <span class="no">SUM</span><span class="o">[</span><span class="n">dist</span><span class="o">]</span> <span class="o">+=</span> <span class="n">node</span><span class="o">.</span><span class="n">data</span>
-</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span><span class="n">dist</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">vertical_sums</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span><span class="n">dist</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span> <span class="o">=</span> <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)),</span>
-</span><span class='line'>        <span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">),</span><span class="no">Tree</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="kp">nil</span><span class="p">,</span><span class="kp">nil</span><span class="p">)))</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">test_tree</span><span class="o">.</span><span class="n">vertical_sums</span><span class="p">(</span><span class="n">test_tree</span><span class="p">)</span>
-</span><span class='line'><span class="nb">puts</span> <span class="no">SUM</span><span class="o">.</span><span class="n">inspect</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># Output:</span>
-</span><span class='line'><span class="c1"># {0=&gt;15, -1=&gt;3, -2=&gt;1, 1=&gt;7, 2=&gt;8}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
 
 ]]></content>
   </entry>
