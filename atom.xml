@@ -4,7 +4,7 @@
   <title><![CDATA[random software geek]]></title>
   <link href="http://karthikselva.in/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-26T21:22:15-07:00</updated>
+  <updated>2014-07-27T18:38:24-07:00</updated>
   <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[karthikselva]]></name>
@@ -12,6 +12,121 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dynamic Programming - Longest Common Subsequence two strings]]></title>
+    <link href="http://karthikselva.in/blog/2014/07/27/dynamic-programming-longest-common-subsequence-two-strings/"/>
+    <updated>2014-07-27T18:37:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2014/07/27/dynamic-programming-longest-common-subsequence-two-strings</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>LCS (longest_common_subsequence.rb)</span> <a href='http://karthikselva.in/downloads/code/longest_common_subsequence.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Patternizer</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:str1</span><span class="p">,</span> <span class="ss">:str2</span><span class="p">,</span> <span class="ss">:mat</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="n">str2</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@str1</span> <span class="o">=</span> <span class="n">str1</span>
+</span><span class='line'>      <span class="vi">@str2</span> <span class="o">=</span> <span class="n">str2</span>
+</span><span class='line'>      <span class="vi">@mat</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">p_mat</span>
+</span><span class='line'>      <span class="p">(</span><span class="vi">@str1</span><span class="o">.</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>          <span class="p">(</span><span class="vi">@str2</span><span class="o">.</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
+</span><span class='line'>              <span class="nb">print</span> <span class="s2">&quot; </span><span class="si">#{</span><span class="vi">@mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          <span class="nb">puts</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">lc_subsequence</span>
+</span><span class='line'>      <span class="p">(</span><span class="vi">@str1</span><span class="o">.</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>          <span class="vi">@mat</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">]*</span><span class="p">(</span><span class="vi">@str2</span><span class="o">.</span><span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="vi">@str1</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>          <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>          <span class="vi">@str2</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
+</span><span class='line'>              <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>              <span class="nb">p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">j</span><span class="si">}</span><span class="s2"> : </span><span class="si">#{</span><span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>              <span class="k">if</span> <span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+</span><span class='line'>                  <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
+</span><span class='line'>              <span class="k">else</span>
+</span><span class='line'>                  <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">,</span><span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]].</span><span class="n">max</span>
+</span><span class='line'>              <span class="k">end</span>
+</span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>      <span class="n">p_mat</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">pat</span> <span class="o">=</span> <span class="no">Patternizer</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;ABACEB&quot;</span><span class="p">,</span><span class="s2">&quot;ADBAVCEB&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="n">pat</span><span class="o">.</span><span class="n">lc_subsequence</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Output:</span>
+</span><span class='line'><span class="c1"># ------- </span>
+</span><span class='line'><span class="c1">#</span>
+</span><span class='line'> <span class="c1"># 0  0  0  0  0  0  0  0  0</span>
+</span><span class='line'> <span class="c1"># 0  1  1  1  1  1  1  1  1</span>
+</span><span class='line'> <span class="c1"># 0  1  1  2  2  2  2  2  2</span>
+</span><span class='line'> <span class="c1"># 0  1  1  2  3  3  3  3  3</span>
+</span><span class='line'> <span class="c1"># 0  1  1  2  3  3  4  4  4</span>
+</span><span class='line'> <span class="c1"># 0  1  1  2  3  3  4  5  5</span>
+</span><span class='line'> <span class="c1"># 0  1  1  2  3  3  4  5  6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dynamic Programming - Cutting a Rod]]></title>
@@ -1895,65 +2010,6 @@
 </span><span class='line'><span class="n">test_list</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="no">List</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="nb">p</span> <span class="n">test_list</span><span class="o">.</span><span class="n">is_palindrome</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Recursion - Find all subsets of given set]]></title>
-    <link href="http://karthikselva.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set/"/>
-    <updated>2013-04-11T00:24:00-07:00</updated>
-    <id>http://karthikselva.in/blog/2013/04/11/recursion-find-all-subsets-of-given-set</id>
-    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Subset ruby (subsets_of_set.rb)</span> <a href='http://karthikselva.in/downloads/code/subsets_of_set.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">get_first</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">str</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">0</span><span class="o">]</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">exclude_first</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">str</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">subsets</span><span class="p">(</span><span class="n">set</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">if</span> <span class="n">set</span><span class="o">.</span><span class="n">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
-</span><span class='line'>      <span class="n">all_sets</span> <span class="o">=</span> <span class="n">subsets</span><span class="p">(</span><span class="n">exclude_first</span><span class="p">(</span><span class="n">set</span><span class="p">))</span>
-</span><span class='line'>      <span class="n">all_sets</span><span class="o">.</span><span class="n">clone</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">val</span><span class="o">|</span>
-</span><span class='line'>          <span class="n">all_sets</span> <span class="o">&lt;&lt;</span> <span class="n">val</span><span class="o">+</span><span class="n">get_first</span><span class="p">(</span><span class="n">set</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">end</span>  
-</span><span class='line'>      <span class="k">return</span> <span class="n">all_sets</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>      <span class="k">return</span> <span class="o">[</span><span class="n">set</span><span class="o">]</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="n">subsets</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="o">.</span><span class="n">inspect</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#Output:</span>
-</span><span class='line'><span class="c1">#[&quot;&quot;, &quot;a&quot;, &quot;b&quot;, &quot;ba&quot;, &quot;c&quot;, &quot;ca&quot;, &quot;cb&quot;, &quot;cba&quot;, &quot;d&quot;, &quot;da&quot;, &quot;db&quot;, &quot;dba&quot;, &quot;dc&quot;, &quot;dca&quot;, &quot;dcb&quot;, &quot;dcba&quot;]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
