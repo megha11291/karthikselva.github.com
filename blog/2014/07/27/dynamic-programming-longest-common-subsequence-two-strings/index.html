@@ -100,7 +100,6 @@
 <span class='line-number'>49</span>
 <span class='line-number'>50</span>
 <span class='line-number'>51</span>
-<span class='line-number'>52</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Patternizer</span>
 </span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:str1</span><span class="p">,</span> <span class="ss">:str2</span><span class="p">,</span> <span class="ss">:mat</span>
 </span><span class='line'>
@@ -128,7 +127,6 @@
 </span><span class='line'>          <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span class='line'>          <span class="vi">@str2</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
 </span><span class='line'>              <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'>              <span class="nb">p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">j</span><span class="si">}</span><span class="s2"> : </span><span class="si">#{</span><span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>              <span class="k">if</span> <span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
 </span><span class='line'>                  <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
 </span><span class='line'>              <span class="k">else</span>

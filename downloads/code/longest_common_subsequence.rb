@@ -25,7 +25,6 @@ class Patternizer
 			i = i + 1
 			@str2.length.times do |j|
 				j = j + 1
-				p "#{i},#{j} : #{@str1[i-1]},#{@str2[j-1]}"
 				if @str1[i-1] == @str2[j-1]
 					mat[i][j] = 1 + mat[i-1][j-1]
 				else 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithms | random software geek]]></title>
   <link href="http://karthikselva.in/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-27T18:38:24-07:00</updated>
+  <updated>2014-07-28T19:58:30-07:00</updated>
   <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[karthikselva]]></name>
@@ -12,6 +12,96 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Check if a number is palindrome (No extra space)]]></title>
+    <link href="http://karthikselva.in/blog/2014/07/28/check-if-a-number-is-palindrome/"/>
+    <updated>2014-07-28T19:56:00-07:00</updated>
+    <id>http://karthikselva.in/blog/2014/07/28/check-if-a-number-is-palindrome</id>
+    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>NumberPalindrome (number_is_palindrome.rb)</span> <a href='/downloads/code/number_is_palindrome.rb'>download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Number</span>
+</span><span class='line'>	<span class="kp">attr_accessor</span> <span class="ss">:num</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span><span class='line'>		<span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+</span><span class='line'>	<span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>	<span class="k">def</span> <span class="nf">is_palindrome?</span>
+</span><span class='line'>		<span class="n">div</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>		<span class="n">t</span> <span class="o">=</span> <span class="vi">@num</span>
+</span><span class='line'>		
+</span><span class='line'>		<span class="k">while</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">10</span>
+</span><span class='line'>			<span class="n">div</span> <span class="o">=</span> <span class="n">div</span><span class="o">*</span><span class="mi">10</span>
+</span><span class='line'>			<span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">/</span><span class="mi">10</span>
+</span><span class='line'>		<span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="n">t</span> <span class="o">=</span> <span class="vi">@num</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="k">while</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="mi">10</span>
+</span><span class='line'>			<span class="n">l</span> <span class="o">=</span> <span class="n">t</span><span class="o">/</span><span class="n">div</span>
+</span><span class='line'>			<span class="n">r</span> <span class="o">=</span> <span class="n">t</span><span class="o">%</span><span class="mi">10</span>
+</span><span class='line'>			<span class="k">if</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span>
+</span><span class='line'>				<span class="k">return</span> <span class="kp">false</span>
+</span><span class='line'>			<span class="k">end</span>
+</span><span class='line'>			<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">%</span><span class="n">div</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span>
+</span><span class='line'>			<span class="n">div</span> <span class="o">=</span> <span class="n">div</span><span class="o">/</span><span class="mi">100</span>
+</span><span class='line'>		<span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>		<span class="k">return</span> <span class="kp">true</span>
+</span><span class='line'>	<span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">n</span> <span class="o">=</span> <span class="no">Number</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">12321</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">is_palindrome?</span> <span class="c1"># Odd palindrome =&gt; true</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">n</span> <span class="o">=</span> <span class="no">Number</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">123321</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">is_palindrome?</span> <span class="c1"># Even Palindrome =&gt; true</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">n</span> <span class="o">=</span> <span class="no">Number</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">123212</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">n</span><span class="o">.</span><span class="n">is_palindrome?</span> <span class="c1"># Not a Palindrome =&gt; false</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dynamic Programming - Longest Common Subsequence two strings]]></title>
@@ -70,7 +160,6 @@
 <span class='line-number'>49</span>
 <span class='line-number'>50</span>
 <span class='line-number'>51</span>
-<span class='line-number'>52</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Patternizer</span>
 </span><span class='line'>	<span class="kp">attr_accessor</span> <span class="ss">:str1</span><span class="p">,</span> <span class="ss">:str2</span><span class="p">,</span> <span class="ss">:mat</span>
 </span><span class='line'>
@@ -98,7 +187,6 @@
 </span><span class='line'>			<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span class='line'>			<span class="vi">@str2</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
 </span><span class='line'>				<span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'>				<span class="nb">p</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">j</span><span class="si">}</span><span class="s2"> : </span><span class="si">#{</span><span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>				<span class="k">if</span> <span class="vi">@str1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="vi">@str2</span><span class="o">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
 </span><span class='line'>					<span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">mat</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>
 </span><span class='line'>				<span class="k">else</span>
@@ -421,50 +509,6 @@
 </span><span class='line'>
 </span><span class='line'><span class="n">solve</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
 </span><span class='line'><span class="nb">display</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Excel Sheet Alphabet to decimal Coversion]]></title>
-    <link href="http://karthikselva.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion/"/>
-    <updated>2013-05-07T21:22:00-07:00</updated>
-    <id>http://karthikselva.in/blog/2013/05/07/excel-sheet-alphabet-to-decimal-coversion</id>
-    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Excel (sheet.rb)</span> <a href='/downloads/code/sheet.rb'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">def</span> <span class="nf">get_max_sum</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>    <span class="k">return</span> <span class="p">(</span><span class="mi">26</span><span class="o">**</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="n">get_max_sum</span><span class="p">(</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">cal_sum</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">sum</span> <span class="o">=</span> <span class="n">get_max_sum</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">st</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-</span><span class='line'>    <span class="n">sum</span> <span class="o">+=</span> <span class="p">(</span><span class="n">st</span><span class="o">[</span><span class="n">i</span><span class="o">]-</span><span class="mi">97</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">26</span><span class="o">**</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">sum</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">p</span> <span class="n">cal_sum</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
