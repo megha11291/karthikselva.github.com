@@ -274,7 +274,13 @@
     </url>
     <url>
         <loc>http://karthikselva.in/blog/2014/07/28/check-if-a-number-is-palindrome/</loc>
-        <lastmod>2014-07-28T19:58:07-07:00</lastmod>
+        <lastmod>2014-07-28T20:03:00-07:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://karthikselva.in/blog/2014/07/28/arrays-finding-kth-smallest-element-in-two-sorted-arrays/
+        </loc>
+        <lastmod>2014-07-28T20:25:57-07:00</lastmod>
     </url>
     <url>
         <loc>http://karthikselva.in/404.html</loc>
@@ -282,15 +288,15 @@
     </url>
     <url>
         <loc>http://karthikselva.in/archives/</loc>
-        <lastmod>2014-07-28T19:58:07-07:00</lastmod>
+        <lastmod>2014-07-28T20:25:57-07:00</lastmod>
     </url>
     <url>
         <loc>http://karthikselva.in/blog/archives/</loc>
-        <lastmod>2014-07-28T19:58:07-07:00</lastmod>
+        <lastmod>2014-07-28T20:25:57-07:00</lastmod>
     </url>
     <url>
         <loc>http://karthikselva.in/</loc>
-        <lastmod>2014-07-28T19:58:07-07:00</lastmod>
+        <lastmod>2014-07-28T20:25:57-07:00</lastmod>
     </url>
     <url>
         <loc>http://karthikselva.in/search.html</loc>
