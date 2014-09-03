@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | random software geek]]></title>
   <link href="http://karthikselva.in/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-28T20:26:07-07:00</updated>
+  <updated>2014-09-03T09:13:07+05:30</updated>
   <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[karthikselva]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mischeivous bang(!) operator in Ruby]]></title>
     <link href="http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby/"/>
-    <updated>2013-03-15T16:02:00-07:00</updated>
+    <updated>2013-03-15T16:02:00+05:30</updated>
     <id>http://karthikselva.in/blog/2013/03/15/mischeivous-bang-operator-in-ruby</id>
     <content type="html"><![CDATA[<p>This is a typical ruby programmer's style of overwriting on the same object:</p>
 
@@ -55,7 +55,7 @@ puts array
   <entry>
     <title type="html"><![CDATA[ Rails with Vim - how and why it works ? ]]></title>
     <link href="http://karthikselva.in/blog/2012/12/26/rails-with-vim-how-and-why-it-works/"/>
-    <updated>2012-12-26T23:36:00-08:00</updated>
+    <updated>2012-12-26T23:36:00+05:30</updated>
     <id>http://karthikselva.in/blog/2012/12/26/rails-with-vim-how-and-why-it-works</id>
     <content type="html"><![CDATA[<h2>How it started</h2>
 

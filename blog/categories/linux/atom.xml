@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | random software geek]]></title>
   <link href="http://karthikselva.in/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://karthikselva.in/"/>
-  <updated>2014-07-28T20:26:07-07:00</updated>
+  <updated>2014-09-03T09:13:07+05:30</updated>
   <id>http://karthikselva.in/</id>
   <author>
     <name><![CDATA[karthikselva]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[lock and unlock gnome with gsm]]></title>
-    <link href="http://karthikselva.in/blog/2010/02/22/lock-and-unlock-gnome-with-gsm/"/>
-    <updated>2010-02-22T16:18:22-08:00</updated>
-    <id>http://karthikselva.in/blog/2010/02/22/lock-and-unlock-gnome-with-gsm</id>
+    <link href="http://karthikselva.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm/"/>
+    <updated>2010-02-23T05:48:22+05:30</updated>
+    <id>http://karthikselva.in/blog/2010/02/23/lock-and-unlock-gnome-with-gsm</id>
     <content type="html"><![CDATA[<h1><strong><em>Tested with :</em></strong></h1>
 
 <ol>
@@ -143,9 +143,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[A simple start to SVN]]></title>
-    <link href="http://karthikselva.in/blog/2010/02/17/a-simple-start-to-svn/"/>
-    <updated>2010-02-17T15:40:10-08:00</updated>
-    <id>http://karthikselva.in/blog/2010/02/17/a-simple-start-to-svn</id>
+    <link href="http://karthikselva.in/blog/2010/02/18/a-simple-start-to-svn/"/>
+    <updated>2010-02-18T05:10:10+05:30</updated>
+    <id>http://karthikselva.in/blog/2010/02/18/a-simple-start-to-svn</id>
     <content type="html"><![CDATA[<p>SVN is a version control system used to track your various versions of your software over various levels called <strong>Revisions</strong>.</p>
 
 <p>Basically every software will be stored in SVN as REPO called <strong>Repositories .</strong></p>
@@ -218,9 +218,9 @@ if(processed==0):
   
   <entry>
     <title type="html"><![CDATA[Running SMS Dictionary server  in your  Home ]]></title>
-    <link href="http://karthikselva.in/blog/2010/02/13/running-sms-dictionary-server-in-your-home/"/>
-    <updated>2010-02-13T14:59:35-08:00</updated>
-    <id>http://karthikselva.in/blog/2010/02/13/running-sms-dictionary-server-in-your-home</id>
+    <link href="http://karthikselva.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home/"/>
+    <updated>2010-02-14T04:29:35+05:30</updated>
+    <id>http://karthikselva.in/blog/2010/02/14/running-sms-dictionary-server-in-your-home</id>
     <content type="html"><![CDATA[<p><em>Do you want to run a dictionary server that messages you the actual meaning</em></p>
 
 <p><em><strong>Requirments :</strong></em></p>
@@ -348,7 +348,7 @@ if(processed==0):
   <entry>
     <title type="html"><![CDATA[Installing Network Simulator 2 in Ubuntu ]]></title>
     <link href="http://karthikselva.in/blog/2010/02/10/installing-network-simulator-2-in-ubuntu/"/>
-    <updated>2010-02-10T08:38:25-08:00</updated>
+    <updated>2010-02-10T22:08:25+05:30</updated>
     <id>http://karthikselva.in/blog/2010/02/10/installing-network-simulator-2-in-ubuntu</id>
     <content type="html"><![CDATA[<p><em>Are you baffled by random errands saying "  ns2 doesn't work on ubuntu " and so ?</em></p>
 
@@ -505,9 +505,9 @@ $ns run</em></p>
   
   <entry>
     <title type="html"><![CDATA[Cursor Play With your  neigbour System]]></title>
-    <link href="http://karthikselva.in/blog/2010/01/31/cursor-play-with-your-neigbour-system/"/>
-    <updated>2010-01-31T14:03:06-08:00</updated>
-    <id>http://karthikselva.in/blog/2010/01/31/cursor-play-with-your-neigbour-system</id>
+    <link href="http://karthikselva.in/blog/2010/02/01/cursor-play-with-your-neigbour-system/"/>
+    <updated>2010-02-01T03:33:06+05:30</updated>
+    <id>http://karthikselva.in/blog/2010/02/01/cursor-play-with-your-neigbour-system</id>
     <content type="html"><![CDATA[<p>_If you have more than one system and need to acces all with a single mouse ?
 _</p>
 

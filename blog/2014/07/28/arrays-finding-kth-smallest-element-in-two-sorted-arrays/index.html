@@ -92,6 +92,28 @@
 <span class='line-number'>41</span>
 <span class='line-number'>42</span>
 <span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
 </pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="k">class</span> <span class="nc">Arrays</span>
 </span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:arr1</span><span class="p">,</span> <span class="ss">:arr2</span>
 </span><span class='line'>
@@ -101,8 +123,13 @@
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="k">def</span> <span class="nf">find_kth_smallest</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-</span><span class='line'>      <span class="n">tot</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@arr1</span><span class="o">.</span><span class="n">length</span> <span class="o">+</span> <span class="vi">@arr2</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">tot</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">len_arr1</span> <span class="o">=</span> <span class="vi">@arr1</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>      <span class="n">len_arr2</span> <span class="o">=</span> <span class="vi">@arr2</span><span class="o">.</span><span class="n">length</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">tot</span> <span class="o">=</span> <span class="p">(</span><span class="n">len_arr1</span> <span class="o">+</span> <span class="n">len_arr2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">tot</span>
 </span><span class='line'>          <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span><span class='line'>      <span class="k">else</span>
 </span><span class='line'>          <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -113,20 +140,35 @@
 </span><span class='line'>              <span class="k">if</span> <span class="n">k_cur</span> <span class="o">&gt;</span> <span class="n">k</span>
 </span><span class='line'>                  <span class="k">return</span> <span class="n">t</span>
 </span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>              <span class="k">if</span> <span class="vi">@arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="vi">@arr2</span><span class="o">[</span><span class="n">j</span><span class="o">]</span>
+</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">len_arr1</span> <span class="ow">and</span> <span class="vi">@arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="vi">@arr2</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">)</span> <span class="ow">or</span> <span class="n">j</span> <span class="o">==</span> <span class="n">len_arr2</span>
 </span><span class='line'>                  <span class="n">t</span> <span class="o">=</span> <span class="vi">@arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span>
 </span><span class='line'>                  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
-</span><span class='line'>              <span class="k">else</span>
+</span><span class='line'>              <span class="k">elsif</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">len_arr2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">len_arr1</span> <span class="o">==</span> <span class="n">i</span>
 </span><span class='line'>                  <span class="n">t</span> <span class="o">=</span> <span class="vi">@arr2</span><span class="o">[</span><span class="n">j</span><span class="o">]</span>
 </span><span class='line'>                  <span class="n">j</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span>
 </span><span class='line'>              <span class="k">end</span>
-</span><span class='line'>              <span class="n">k_cur</span> <span class="o">=</span> <span class="n">k_cur</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>              
+</span><span class='line'>              <span class="n">k_cur</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span>
 </span><span class='line'>          <span class="k">end</span>
+</span><span class='line'>          <span class="k">return</span> <span class="n">t</span>
 </span><span class='line'>      <span class="k">end</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'><span class="n">arrs</span> <span class="o">=</span> <span class="no">Arrays</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">arr</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">e</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">arr</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+</span><span class='line'>          <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">e</span><span class="si">}#{</span><span class="n">f</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="n">arr</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">g</span><span class="o">|</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="n">g</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">arrs</span> <span class="o">=</span> <span class="no">Arrays</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="o">]</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="nb">puts</span> <span class="n">arrs</span><span class="o">.</span><span class="n">find_kth_smallest</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># =&gt;  2</span>
 </span><span class='line'>
@@ -134,7 +176,9 @@
 </span><span class='line'>
 </span><span class='line'><span class="nb">puts</span> <span class="n">arrs</span><span class="o">.</span><span class="n">find_kth_smallest</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># =&gt; 4</span>
 </span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="n">arrs</span><span class="o">.</span><span class="n">find_kth_smallest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># =&gt; -1</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">arrs</span><span class="o">.</span><span class="n">find_kth_smallest</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># =&gt; -1</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">arrs</span><span class="o">.</span><span class="n">find_kth_smallest</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span> <span class="c1"># =&gt; 10</span>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
